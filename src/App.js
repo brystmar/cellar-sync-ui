@@ -1,4 +1,5 @@
 import React from 'react';
+import {Switch, Route} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
@@ -19,6 +20,11 @@ function App() {
           Learn React
         </a>
       </header>
+      <Switch>
+        <Route exact path="/">
+          App goes here
+        </Route>
+      </Switch>
     </div>
   );
 }
