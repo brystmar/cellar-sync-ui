@@ -1,32 +1,22 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header";
+import BeerTable from "./components/BeerTable";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Switch>
-        <Route exact path="/">
-          App goes here
-        </Route>
-      </Switch>
-    </div>
-  );
+    return (
+        <div className="app-container">
+            <Header userName="Berg"/>
+            <div className="content-container">
+                <Switch>
+                    <Route exact path="/">
+                        <BeerTable/>
+                    </Route>
+                </Switch>
+            </div>
+        </div>
+    );
 }
 
 export default App;
