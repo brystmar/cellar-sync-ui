@@ -2,7 +2,7 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import './App.css';
 import Header from "./components/Header";
-import BeerTable from "./components/BeerTable";
+import CellarDisplay from "./components/CellarDisplay";
 
 function App() {
     return (
@@ -11,7 +11,7 @@ function App() {
             <div className="content-container">
                 <Switch>
                     <Route exact path="/">
-                        <BeerTable/>
+                        <CellarDisplay userName="Berg"/>
                     </Route>
                 </Switch>
             </div>

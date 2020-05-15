@@ -2,13 +2,13 @@
 	font-style: normal;
 	/*margin: 3px;*/
 	/*width: auto;*/
-	max-width: 1200px;
+	max-width: 1280px;
 	text-align: -webkit-center;
 	/*alignment: center;*/
 }
 
 .navbar-custom-container, .content-container, .footer-container {
-	max-width: 1200px;
+	max-width: 1280px;
 	margin: 0 auto;
 	/*float: none !important;*/
 	/*text-align: -webkit-center;*/
@@ -21,4 +21,16 @@
 
 .navbar-custom-container {
 	margin-bottom: 20px;
+}
+
+.expanded-list-item {
+	border-width: thin;
+	border-style: solid;
+	border-top-style: hidden;
+}
+
+.svg-inline--fa {
+	color: gray;
+	height: 13px;
+	cursor: default;
 }
