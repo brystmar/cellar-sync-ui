@@ -2,27 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/noun_Bat_2088669.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/noun_Bat_689342.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/noun_Beer_style1_1975813.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/noun_Beer_style2_5693.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/noun_Euro_2343076.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/noun_False_2049513.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/noun_Wine_Bottles_1922141.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/noun_beer_bottle_3349472.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/noun_true_2049512.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/noun_true_or_false_2946218.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/noun_wine_bottle_246969.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/list_items/ELIButtons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/list_items/styles/list_items.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/functions/set_trade_value_icon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_items/AttrAgingPotential.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_items/AttrBatch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_items/AttrBottleDate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_items/AttrLocation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_items/AttrNote.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_items/AttrQty.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_items/AttrSize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_items/AttrSpecificStyle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_items/AttrStyle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_items/AttrTrade.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_items/AttrTradeValue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_items/AttrUntappd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_items/AttrYear.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BeerDataTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BeerDataTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CellarDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CellarDisplay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ExpandedListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_items/ExpandedListItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list_items/ELIButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_items/ELIButtons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list_items/ExpandedListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_items/ExpandedListItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list_items/styles/list_items.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_items/styles/list_items.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functions/set_trade_value_icon.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +112,7 @@
       <workItem from="1585521530821" duration="3733000" />
       <workItem from="1585706850341" duration="613000" />
       <workItem from="1589142872812" duration="31395000" />
-      <workItem from="1589768523820" duration="2733000" />
+      <workItem from="1589768523820" duration="10612000" />
     </task>
     <task id="LOCAL-00001" summary="Installed react-router">
       <created>1585522324328</created>
@@ -138,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589515289527</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Edit buttons in place but don't work yet.  Added icons.">
+      <created>1589771293168</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1589771293168</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,25 +155,26 @@
     <MESSAGE value="Installed react-router" />
     <MESSAGE value="Proof of concept" />
     <MESSAGE value="Inventory table works &amp; rows expand" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inventory table works &amp; rows expand" />
+    <MESSAGE value="Edit buttons in place but don't work yet.  Added icons." />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit buttons in place but don't work yet.  Added icons." />
   </component>
   <component name="WindowStateProjectService">
     <state x="845" y="333" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589505660733">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
     <state x="845" y="333" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1589505660733" />
-    <state x="690" y="181" key="CommitChangelistDialog2" timestamp="1589515289342">
+    <state x="690" y="181" key="CommitChangelistDialog2" timestamp="1589771292940">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="690" y="181" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1589515289342" />
+    <state x="690" y="181" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1589771292940" />
     <state x="962" y="479" width="480" height="291" key="Github.ShareDialog" timestamp="1585521965827">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
     <state x="962" y="479" width="480" height="291" key="Github.ShareDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1585521965827" />
-    <state x="707" y="319" key="Vcs.Push.Dialog.v2" timestamp="1589515291889">
+    <state x="707" y="319" key="Vcs.Push.Dialog.v2" timestamp="1589771297599">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1589515291889" />
+    <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1589771297599" />
     <state x="784" y="411" key="com.intellij.ide.util.TipDialog" timestamp="1585706984671">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>

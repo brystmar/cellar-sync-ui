@@ -1,16 +1,34 @@
 import React from 'react';
 import './styles/list_items.css';
 import ELIButtons from './ELIButtons';
-import set_trade_value_icon from '../../functions/set_trade_value_icon'
+import AttrLocation from './AttrLocation';
+import AttrQty from './AttrQty';
+import AttrBatch from './AttrBatch';
+import AttrYear from './AttrYear';
+import AttrBottleDate from './AttrBottleDate';
+import AttrSize from './AttrSize';
+import AttrStyle from './AttrStyle';
+import AttrSpecificStyle from './AttrSpecificStyle';
+import AttrTrade from './AttrTrade';
+import AttrTradeValue from './AttrTradeValue';
+import AttrAgingPotential from './AttrAgingPotential';
+import AttrUntappd from './AttrUntappd';
+import AttrNote from './AttrNote';
 
 class ExpandedListItem extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            editMode: false
-        }
+        this.state = this.props.data
+
         this.toggleEditMode = this.toggleEditMode.bind(this);
+        this.updateBeverageState = this.updateBeverageState(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        this.setState({
+            editMode: false
+        })
     }
 
     toggleEditMode() {
@@ -19,153 +37,117 @@ class ExpandedListItem extends React.Component {
         })
     }
 
+    updateBeverageState(newData) {
+        // Update local state when values change on an Attribute
+        console.log("Calling updateBevState");
+        this.setState(newData)
+    }
+
     handleSubmit() {
+        console.log("Clicked Save!")
+
+        // Flip buttons back to their default state
+        this.toggleEditMode();
+
+        // Define a variable for the updated beverage
+        let updatedBeverageData = this.state;
+
+        // Remove 'editMode' from the updated beverage
+        delete updatedBeverageData['editMode'];
+
+        // Update the item in the db
 
     }
 
     render() {
-        console.log(this.props.data);
-        console.log(this.state.editMode);
+        // console.log(this.props.data);
+        // console.log(this.state.editMode);
 
         return (
             <div className="expanded-list-item">
                 <table className="expanded-list-table">
                     <tbody>
                     <tr>
-                        <td className="list-item-table-key">
-                            <i className="fas fa-map-marked-alt"/>
-                        </td>
-                        <td className="list-item-table-value">
-                            {this.props.data.location}
-                        </td>
+                        <AttrLocation location={this.state.location}
+                                      updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
-                        <td className="list-item-table-key">
-                            <i className="fas fa-hashtag"/>
-                        </td>
-                        <td className="list-item-table-value">
-                            {this.props.data.qty}
-                        </td>
+                        <AttrQty qty={this.state.qty}
+                                 updateBeverageState={this.updateBeverageState}/>
+                    {/*</tr>*/}
+                    {/*<tr>*/}
+                        <AttrSize size={this.state.size}
+                                  updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
-                        <td className="list-item-table-key">
-                            <i className="fas fa-wine-bottle"/>
-                            {/*<img src="./icons/noun_wine_bottle_246969.svg"*/}
-                            {/*     alt="Size"*/}
-                            {/*     className="list-item-icon-key"/>*/}
-                            {/*<img src="./icons/noun_Wine_Bottles_1922141.svg"*/}
-                            {/*     alt="Size"*/}
-                            {/*     className="list-item-icon-key"/>*/}
-                        </td>
-                        <td className="list-item-table-value">
-                            {this.props.data.size}
-                        </td>
+                        <AttrYear year={this.state.year}
+                                  updateBeverageState={this.updateBeverageState}/>
+
+                        <AttrAgingPotential aging_potential={this.state.aging_potential}
+                                            updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
-                        <td className="list-item-table-key">
-                            <i className="fas fa-calendar-alt"/>
-                        </td>
-                        <td className="list-item-table-value">
-                            {this.props.data.year}
-                        </td>
+                        <AttrBottleDate bottle_date={this.state.bottle_date}
+                                        updateBeverageState={this.updateBeverageState}/>
+
+                        <AttrTrade for_trade={this.state.for_trade}
+                                   updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
-                        <td className="list-item-table-key">
-                            <i className="far fa-calendar-alt"/>
-                        </td>
-                        <td className="list-item-table-value">
-                            {this.props.data.bottle_date}
-                        </td>
+                        <AttrBatch batch={this.state.batch}
+                                   updateBeverageState={this.updateBeverageState}/>
+
+                        <AttrTradeValue trade_value={this.state.trade_value}
+                                        updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
-                        <td className="list-item-table-key">
-                            {/*<span className="svg-inline--fa">b</span>*/}
-                            <img src="./icons/noun_Bat_2088669.svg"
-                                 alt="Batch"
-                                 className="list-item-icon-key"/>
-                        </td>
-                        <td className="list-item-table-value">
-                            {this.props.data.batch}
-                        </td>
+
+                        <AttrStyle style={this.state.style}
+                                   updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
-                        <td className="list-item-table-key">
-                            <img src="./icons/noun_Beer_style1_1975813.svg"
-                                 alt="Style"
-                                 className="list-item-icon-key"/>
-                        </td>
-                        <td className="list-item-table-value">
-                            {this.props.data.style}
-                        </td>
+                        <AttrSpecificStyle specific_style={this.state.specific_style}
+                                           updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
-                        <td className="list-item-table-key">
-                            <img src="./icons/noun_Beer_style2_5693.svg"
-                                 alt="Specific Style"
-                                 className="list-item-icon-key"/>
-                        </td>
-                        <td className="list-item-table-value">
-                            {this.props.data.specific_style}
-                        </td>
+                        <AttrUntappd untappd={this.state.untappd}
+                                     updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
-                        <td className="list-item-table-key">
-                            {/*<i className="fas fa-money-check-alt"/>*/}
-                            <i className="fas fa-euro-sign"/>
-                        </td>
-                        <td className="list-item-table-value">
-                            {set_trade_value_icon(this.props.data.trade_value)}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="list-item-table-key">
-                            {/*<span className="svg-inline--fa">⇆</span>*/}
-                            <i className="fas fa-exchange-alt"/>
-                        </td>
-                        <td className="list-item-table-value">
-                            {!!this.props.data.for_trade ? this.props.data.for_trade ?
-                                <img src="./icons/noun_true_2049512.svg"
-                                     alt="For Trade? Yes."
-                                     className="list-item-icon-value"/>
-                                : <img src="./icons/noun_False_2049513.svg"
-                                       alt="For Trade? No."
-                                       className="list-item-icon-value"/>
-                                : <img src="./icons/noun_true_or_false_2946218.svg"
-                                       alt="For Trade? Unknown."
-                                       className="list-item-icon-value"/>}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="list-item-table-key">
-                            <i className="fas fa-spider"/>
-                        </td>
-                        <td className="list-item-table-value">
-                            {this.props.data.aging_potential}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="list-item-table-key">
-                            <i className="fas fa-link"/>
-                        </td>
-                        <td className="list-item-table-value">
-                            {this.props.data.untappd}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="list-item-table-key">
-                            <i className="far fa-sticky-note"/>
-                        </td>
-                        <td className="list-item-table-value">
-                            {this.props.data.note}
-                        </td>
+                        <AttrNote note={this.state.note}
+                                  updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     </tbody>
                 </table>
 
                 <ELIButtons editMode={this.state.editMode}
-                            toggleEditMode={this.toggleEditMode}/>
+                            toggleEditMode={this.toggleEditMode}
+                            handleSubmit={this.handleSubmit}/>
             </div>
         )
+    }
+}
+
+ExpandedListItem.defaultProps = {
+    data: {
+        beer_id: "",
+        name: "",
+        brewery: "",
+        year: 0,
+        batch: 0,
+        size: "",
+        bottle_date: "",
+        location: "",
+        style: "",
+        specific_style: "",
+        qty: 0,
+        untappd: "",
+        aging_potential: "",
+        trade_value: "",
+        for_trade: false,
+        note: "",
+        date_added: 0,
+        last_modified: 0
     }
 }
 

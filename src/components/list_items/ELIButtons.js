@@ -8,7 +8,7 @@ function ELIButtons(props) {
                     variant="success"
                     className="list-item-edit-button"
                     hidden={props.editMode}
-                    onClick={() => props.toggleEditMode(!props.editMode)}>
+                    onClick={() => props.toggleEditMode()}>
                 Edit</Button>
 
             <Button size="sm"
@@ -22,7 +22,7 @@ function ELIButtons(props) {
                     variant="primary"
                     className="list-item-save-button"
                     hidden={!props.editMode}
-                    onClick={() => props.toggleEditMode()}>
+                    onClick={() => props.handleSubmit()}>
                 Save</Button>
         </p>
     )
