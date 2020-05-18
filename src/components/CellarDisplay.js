@@ -18,7 +18,7 @@ class CellarDisplay extends React.Component {
 
     getAllBeers() {
         // Retrieve the list of beers from the backend
-        console.log("Calling the backend...")
+        // console.log("Calling the backend...")
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar")
             .then(response => response.json())
             .then(result => this.setState({beerList: result.data}))

@@ -22,15 +22,3 @@
 .navbar-custom-container {
 	margin-bottom: 20px;
 }
-
-.expanded-list-item {
-	border-width: thin;
-	border-style: solid;
-	border-top-style: hidden;
-}
-
-.svg-inline--fa {
-	color: gray;
-	height: 13px;
-	cursor: default;
-}

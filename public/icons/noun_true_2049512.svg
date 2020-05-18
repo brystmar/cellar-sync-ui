@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   height="140"
+   width="140"
+   sodipodi:docname="noun_true_2049512.svg"
+   id="svg354"
+   version="1.1"
+   y="0px"
+   x="0px"
+   viewBox="0 0 140 140">
+  <metadata
+     id="metadata360">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs358" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg354"
+     inkscape:window-maximized="0"
+     inkscape:window-y="23"
+     inkscape:window-x="0"
+     inkscape:cy="60.062599"
+     inkscape:cx="70"
+     inkscape:zoom="3.4988737"
+     showgrid="false"
+     id="namedview356"
+     inkscape:window-height="734"
+     inkscape:window-width="1185"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <title
+     id="title334">Fichier 72</title>
+  <g
+     id="g348"
+     data-name="Calque 2">
+    <g
+       id="g346"
+       data-name="Calque 3">
+      <path
+         id="path336"
+         d="M 70,6 A 64,64 0 1 1 6,70 64.07,64.07 0 0 1 70,6 M 70,0 A 70,70 0 1 0 140,70 70,70 0 0 0 70,0 Z" />
+      <polygon
+         id="polygon338"
+         points="21.5,81.5 35.64,67.36 53.64,85.36 102,37 116.14,51.14 53.64,113.64 " />
+      <path
+         id="path340"
+         d="M 53.64,114.35 20.79,81.5 35.64,66.65 l 18,18 L 102,36.29 116.85,51.14 Z M 22.21,81.5 53.64,112.93 115.43,51.14 102,37.71 53.64,86.07 l -18,-18 z" />
+      <line
+         id="line342"
+         y2="51.139999"
+         x2="116.14"
+         y1="51.5"
+         x1="116.5" />
+      <rect
+         id="rect344"
+         transform="rotate(-45,116.31735,51.319777)"
+         height="0.50999999"
+         width="1"
+         y="51.07"
+         x="115.82" />
+    </g>
+  </g>
+</svg>

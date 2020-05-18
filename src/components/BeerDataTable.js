@@ -1,7 +1,7 @@
 import React from 'react';
 import DataTable from 'react-data-table-component';
 import DataTableExtensions from 'react-data-table-component-extensions';
-import ExpandedListItem from './ExpandedListItem';
+import ExpandedListItem from './list_items/ExpandedListItem';
 
 function BeerDataTable(props) {
     let columns = [

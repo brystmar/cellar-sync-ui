@@ -1,0 +1,45 @@
+.svg-inline--fa {
+	color: gray;
+	height: 13px;
+	cursor: default;
+}
+
+.list-item-table-key,
+.list-item-table-value {
+	margin: 2px 2px;
+}
+
+.expanded-list-item {
+	border-width: thin;
+	border-style: solid;
+	border-top-style: hidden;
+}
+
+.list-item-icon-key {
+	max-height: 15px;
+	max-width: 20px;
+}
+
+.list-item-icon-value {
+	max-width: 18px;
+}
+
+.list-item-table-key {
+	text-align: -webkit-center;
+	vertical-align: center;
+}
+
+.list-item-table-value {
+	text-align: -webkit-left;
+	vertical-align: center;
+}
+
+.list-item-edit-button {
+	/*text-align: -webkit-right;*/
+}
+
+.list-item-edit-button,
+.list-item-cancel-button,
+.list-item-save-button {
+	margin: 4px 4px 4px 2px;
+}

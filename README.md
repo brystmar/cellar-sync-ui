@@ -1,5 +1,18 @@
-_UI for the https://github.com/brystmar/cellar-sync/ project._
+_UI for the [cellar sync](https://github.com/brystmar/cellar-sync/) project._
 
 # Cellar Sync
+Basic inventory management for bored tech workers with unwieldy cellars of beer, wine, mead, and/or cider.
 
-Basic cellar inventory management for bored tech workers with an unwieldy cellar.
+### Attribution
+Icon sources:
+* David from [The Noun Project](https://thenounproject.com/)
+* Nikita Kozin from [The Noun Project](https://thenounproject.com/)
+* Poups from [The Noun Project](https://thenounproject.com/)
+* Andri Graphic from [The Noun Project](https://thenounproject.com/)
+* Adnen Kadri from [The Noun Project](https://thenounproject.com/)
+* Clockwise from [The Noun Project](https://thenounproject.com/)
+* ghayn from [The Noun Project](https://thenounproject.com/)
+* Vladimir Belochkin from [The Noun Project](https://thenounproject.com/)
+* Gabriele Malaspina from [The Noun Project](https://thenounproject.com/)
+* nauraicon from [The Noun Project](https://thenounproject.com/)
+* [Font Awesome](https://fontawesome.com/)
