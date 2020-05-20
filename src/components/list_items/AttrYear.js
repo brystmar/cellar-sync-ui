@@ -6,7 +6,8 @@ function AttrYear(props) {
             <td className="list-item-table-key">
                 <i className="fas fa-calendar-alt"/>
             </td>
-            <td className="list-item-table-value">
+            <td className="list-item-table-value"
+                onClick={() => props.updateBeverageState({editMode: true})}>
                 {props.year}
             </td>
         </>

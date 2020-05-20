@@ -21,7 +21,7 @@ class ExpandedListItem extends React.Component {
         this.state = this.props.data
 
         this.toggleEditMode = this.toggleEditMode.bind(this);
-        this.updateBeverageState = this.updateBeverageState(this);
+        this.updateBeverageState = this.updateBeverageState.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -31,15 +31,20 @@ class ExpandedListItem extends React.Component {
         })
     }
 
-    toggleEditMode() {
-        this.setState({
-            editMode: !this.state.editMode
-        })
+    toggleEditMode(enabled = NaN) {
+        if (isNaN(enabled)) {
+            this.setState({
+                editMode: !this.state.editMode
+            })
+        } else {
+            this.setState({
+                editMode: enabled
+            })
+        }
     }
 
     updateBeverageState(newData) {
         // Update local state when values change on an Attribute
-        console.log("Calling updateBevState");
         this.setState(newData)
     }
 
@@ -47,7 +52,7 @@ class ExpandedListItem extends React.Component {
         console.log("Clicked Save!")
 
         // Flip buttons back to their default state
-        this.toggleEditMode();
+        this.toggleEditMode(false);
 
         // Define a variable for the updated beverage
         let updatedBeverageData = this.state;
@@ -69,52 +74,64 @@ class ExpandedListItem extends React.Component {
                     <tbody>
                     <tr>
                         <AttrLocation location={this.state.location}
+                                      editMode={this.state.editMode}
                                       updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
                         <AttrQty qty={this.state.qty}
+                                 editMode={this.state.editMode}
                                  updateBeverageState={this.updateBeverageState}/>
-                    {/*</tr>*/}
-                    {/*<tr>*/}
+
                         <AttrSize size={this.state.size}
+                                  editMode={this.state.editMode}
                                   updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
                         <AttrYear year={this.state.year}
+                                  editMode={this.state.editMode}
                                   updateBeverageState={this.updateBeverageState}/>
 
-                        <AttrAgingPotential aging_potential={this.state.aging_potential}
+                        <AttrAgingPotential aging_potential={this.state.aging_potential ? this.state.aging_potential : 2}
+                                            editMode={this.state.editMode}
                                             updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
                         <AttrBottleDate bottle_date={this.state.bottle_date}
+                                        editMode={this.state.editMode}
                                         updateBeverageState={this.updateBeverageState}/>
 
                         <AttrTrade for_trade={this.state.for_trade}
+                                   editMode={this.state.editMode}
                                    updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
                         <AttrBatch batch={this.state.batch}
+                                   editMode={this.state.editMode}
                                    updateBeverageState={this.updateBeverageState}/>
 
-                        <AttrTradeValue trade_value={this.state.trade_value}
+                        <AttrTradeValue trade_value={this.state.trade_value ? this.state.trade_value : 2}
+                                        editMode={this.state.editMode}
                                         updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
 
                         <AttrStyle style={this.state.style}
+                                   editMode={this.state.editMode}
                                    updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
                         <AttrSpecificStyle specific_style={this.state.specific_style}
+                                           editMode={this.state.editMode}
                                            updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
                         <AttrUntappd untappd={this.state.untappd}
+                                     editMode={this.state.editMode}
                                      updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
                         <AttrNote note={this.state.note}
+                                  editMode={this.state.editMode}
                                   updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     </tbody>

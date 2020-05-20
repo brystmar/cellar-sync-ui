@@ -15,4 +15,4 @@ Icon sources:
 * Vladimir Belochkin from [The Noun Project](https://thenounproject.com/)
 * Gabriele Malaspina from [The Noun Project](https://thenounproject.com/)
 * nauraicon from [The Noun Project](https://thenounproject.com/)
-* [Font Awesome](https://fontawesome.com/)
+* [Font Awesome](https://fontawesome.com/license)

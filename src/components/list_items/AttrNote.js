@@ -6,7 +6,8 @@ function AttrNote(props) {
             <td className="list-item-table-key">
                 <i className="far fa-sticky-note"/>
             </td>
-            <td className="list-item-table-value">
+            <td className="list-item-table-value"
+                onClick={() => props.updateBeverageState({editMode: true})}>
                 {props.note}
             </td>
         </>

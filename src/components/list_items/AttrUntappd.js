@@ -6,7 +6,8 @@ function AttrUntappd(props) {
             <td className="list-item-table-key">
                 <i className="fas fa-link"/>
             </td>
-            <td className="list-item-table-value">
+            <td className="list-item-table-value"
+                onClick={() => props.updateBeverageState({editMode: true})}>
                 {props.untappd}
             </td>
         </>

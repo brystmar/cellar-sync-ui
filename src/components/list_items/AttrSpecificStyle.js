@@ -8,7 +8,8 @@ function AttrSpecificStyle(props) {
                      alt="Specific Style"
                      className="list-item-icon-key"/>
             </td>
-            <td className="list-item-table-value">
+            <td className="list-item-table-value"
+                onClick={() => props.updateBeverageState({editMode: true})}>
                 {props.specific_style}
             </td>
         </>

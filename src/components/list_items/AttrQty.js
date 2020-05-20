@@ -6,7 +6,8 @@ function AttrQty(props) {
             <td className="list-item-table-key">
                 <i className="fas fa-hashtag"/>
             </td>
-            <td className="list-item-table-value">
+            <td className="list-item-table-value"
+                onClick={() => props.updateBeverageState({editMode: true})}>
                 {props.qty}
             </td>
         </>
