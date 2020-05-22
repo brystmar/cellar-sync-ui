@@ -3,10 +3,10 @@ import DataTable from 'react-data-table-component';
 import DataTableExtensions from 'react-data-table-component-extensions';
 import ExpandedListItem from './list_items/ExpandedListItem';
 
-function BeerDataTable(props) {
+function BeverageDataTable(props) {
     let columns = [
         {
-            name: 'Producer',
+            name: 'Brewery',
             selector: 'brewery',
             sortable: true,
             grow: 0.8  // https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow
@@ -51,7 +51,7 @@ function BeerDataTable(props) {
     ];
 
     return (
-        <div className="datatable-wrapper">
+        <>
             <DataTableExtensions columns={columns}
                                  data={props.beerList}
                                  filter={true}
@@ -78,15 +78,15 @@ function BeerDataTable(props) {
                            paginationRowsPerPageOptions={props.paginationRowsPerPageOptions}
                 />
             </DataTableExtensions>
-        </div>
+        </>
     )
 }
 
-BeerDataTable.defaultProps = {
+BeverageDataTable.defaultProps = {
     userName: "",
     beerList: [],
     paginationPerPage: 20,
     paginationRowsPerPageOptions: [20, 40, 60, 80, 100, 150, 200, 250, 300, 400, 500]
 }
 
-export default BeerDataTable;
+export default BeverageDataTable;

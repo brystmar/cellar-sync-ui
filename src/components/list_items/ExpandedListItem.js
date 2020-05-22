@@ -46,6 +46,7 @@ class ExpandedListItem extends React.Component {
     updateBeverageState(newData) {
         // Update local state when values change on an Attribute
         this.setState(newData)
+        console.log("Updated " + JSON.stringify(newData));
     }
 
     handleSubmit() {
@@ -61,7 +62,6 @@ class ExpandedListItem extends React.Component {
         delete updatedBeverageData['editMode'];
 
         // Update the item in the db
-
     }
 
     render() {
@@ -96,7 +96,7 @@ class ExpandedListItem extends React.Component {
                                             updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
-                        <AttrBottleDate bottle_date={this.state.bottle_date}
+                        <AttrBottleDate bottle_date={this.state.bottle_date ? this.state.bottle_date : ""}
                                         editMode={this.state.editMode}
                                         updateBeverageState={this.updateBeverageState}/>
 
@@ -105,7 +105,7 @@ class ExpandedListItem extends React.Component {
                                    updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
-                        <AttrBatch batch={this.state.batch}
+                        <AttrBatch batch={this.state.batch ? this.state.batch : ""}
                                    editMode={this.state.editMode}
                                    updateBeverageState={this.updateBeverageState}/>
 
@@ -115,22 +115,22 @@ class ExpandedListItem extends React.Component {
                     </tr>
                     <tr>
 
-                        <AttrStyle style={this.state.style}
+                        <AttrStyle style={this.state.style ? this.state.style : ""}
                                    editMode={this.state.editMode}
                                    updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
-                        <AttrSpecificStyle specific_style={this.state.specific_style}
+                        <AttrSpecificStyle specific_style={this.state.specific_style ? this.state.specific_style : ""}
                                            editMode={this.state.editMode}
                                            updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
-                        <AttrUntappd untappd={this.state.untappd}
+                        <AttrUntappd untappd={this.state.untappd ? this.state.untappd : ""}
                                      editMode={this.state.editMode}
                                      updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
-                        <AttrNote note={this.state.note}
+                        <AttrNote note={this.state.note ? this.state.note : ""}
                                   editMode={this.state.editMode}
                                   updateBeverageState={this.updateBeverageState}/>
                     </tr>

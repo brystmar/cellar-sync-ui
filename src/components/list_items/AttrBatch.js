@@ -1,20 +1,66 @@
 import React from 'react';
 
-function AttrBatch(props) {
-    return (
-        <>
-            <td className="list-item-table-key">
-                {/*<span className="svg-inline--fa">b</span>*/}
-                <img src="./icons/noun_Bat_2088669.svg"
-                     alt="Batch"
-                     className="list-item-icon-key"/>
-            </td>
-            <td className="list-item-table-value"
-                onClick={() => props.updateBeverageState({editMode: true})}>
-                {props.batch}
-            </td>
-        </>
-    )
+class AttrBatch extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            editMode: false,
+            batch: this.props.batch
+        }
+
+        this.handleChange = this.handleChange.bind(this);
+        this.toggleEditMode = this.toggleEditMode.bind(this);
+    }
+
+    handleChange(event) {
+        const {name, value} = event.target;
+        this.setState({
+            [name]: value
+        })
+    }
+
+    toggleEditMode(enabled = NaN) {
+        if (isNaN(enabled)) {
+            this.setState({
+                editMode: !this.state.editMode
+            })
+        } else {
+            this.setState({
+                editMode: enabled
+            })
+        }
+    }
+
+    render() {
+        return (
+            <>
+                <td className="list-item-table-key">
+                    {/*<span className="svg-inline--fa">b</span>*/}
+                    <img src="./icons/noun_Bat_2088669.svg"
+                         alt="Batch"
+                         className="list-item-icon-key"/>
+                </td>
+
+                <td className="list-item-table-value"
+                    onMouseOver={() => this.toggleEditMode(true)}
+                    onClick={() => this.toggleEditMode(true)}>
+                    <input name="batch"
+                           type="number"
+                           min={0}
+                           max={9999}
+                           className="input-number"
+                           value={this.state.batch}
+                           disabled={!this.state.editMode}
+                           onChange={this.handleChange}
+                           onBlur={() => this.props.updateBeverageState({batch: this.state.batch})}/>
+                </td>
+            </>
+        )
+    }
+}
+
+AttrBatch.defaultProps = {
+    batch: ""
 }
 
 export default AttrBatch;

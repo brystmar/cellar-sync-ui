@@ -1,5 +1,5 @@
 import React from 'react';
-import BeerDataTable from './BeerDataTable';
+import BeverageDataTable from './BeverageDataTable';
 
 
 class CellarDisplay extends React.Component {
@@ -29,7 +29,7 @@ class CellarDisplay extends React.Component {
         return (
             <div className="beer-table-container">
                 <h1>Beer List</h1>
-                <BeerDataTable beerList={this.state.beerList}/>
+                <BeverageDataTable beerList={this.state.beerList}/>
             </div>
         )
     }

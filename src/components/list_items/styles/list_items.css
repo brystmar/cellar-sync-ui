@@ -1,6 +1,11 @@
+.expanded-list-table td {
+	cursor: default;
+}
+
 .list-item-table-key,
 .list-item-table-value {
 	margin: 2px 2px;
+	box-sizing: border-box;
 }
 
 .list-item-table-key .svg-inline--fa {
@@ -41,8 +46,17 @@
 	padding: 2px 30px 2px 2px;
 }
 
-.list-item-table-value:hover {
-	border-color: gray;
+.list-item-table-value input {
+	border-style: hidden;
+	border-collapse: separate;
+	color: inherit;
+	width: min-content;
+}
+
+.list-item-table-value:hover input {
+	/*border-color: gray;*/
+	/*border-style: solid;*/
+	/*border-width: 1px;*/
 }
 
 .list-item-edit-button {
@@ -58,3 +72,15 @@
 .clickable-toggle {
 	cursor: pointer;
 }
+
+.input-text:hover {
+	border-color: gray;
+	border-style: solid;
+	border-width: 1px;
+}
+
+/*.input-date:hover {*/
+/*	border-color: gray;*/
+/*	border-style: solid;*/
+/*	border-width: 1px;*/
+/*}*/
