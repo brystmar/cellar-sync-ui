@@ -17,12 +17,17 @@ class CellarDisplay extends React.Component {
     }
 
     getAllBeers() {
-        // Retrieve the list of beers from the backend
-        // console.log("Calling the backend...")
+        // Retrieve the list of beverages from the backend
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar")
             .then(response => response.json())
             .then(result => this.setState({beerList: result.data}))
             .catch(error => console.log("Error retrieving beer list data:", error));
+
+        // Retrieve all picklist values from the backend
+        fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/picklist-data")
+            .then(response => response.json())
+            .then(result => this.setState({beerList: result.data}))
+            .catch(error => console.log("Error retrieving picklist data:", error));
     }
 
     render() {

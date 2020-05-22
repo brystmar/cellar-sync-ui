@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/BeerListItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/set_aging_potential_icon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/set_for_trade_icon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/set_trade_value_icon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BeerDataTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BeverageDataTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CellarDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CellarDisplay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_items/AttrBatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_items/AttrBatch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_items/AttrBottleDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_items/AttrBottleDate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_items/AttrNote.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_items/AttrNote.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_items/AttrQty.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_items/AttrQty.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_items/AttrUntappd.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_items/AttrUntappd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_items/AttrYear.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_items/AttrYear.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_items/ExpandedListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_items/ExpandedListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_items/styles/list_items.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_items/styles/list_items.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +104,8 @@
       <workItem from="1589142872812" duration="31395000" />
       <workItem from="1589768523820" duration="10811000" />
       <workItem from="1589928918460" duration="34000" />
-      <workItem from="1589929320679" duration="16148000" />
+      <workItem from="1589929320679" duration="16857000" />
+      <workItem from="1590158268931" duration="1157000" />
     </task>
     <task id="LOCAL-00001" summary="Installed react-router">
       <created>1585522324328</created>
@@ -153,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589950616139</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Updating listitem components to toggle for edits">
+      <created>1590122186669</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1590122186669</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,25 +173,26 @@
     <MESSAGE value="Edit buttons in place but don't work yet.  Added icons." />
     <MESSAGE value="Created components for each ELI attribute" />
     <MESSAGE value="Icon-based values now toggle when clicked" />
-    <option name="LAST_COMMIT_MESSAGE" value="Icon-based values now toggle when clicked" />
+    <MESSAGE value="Updating listitem components to toggle for edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating listitem components to toggle for edits" />
   </component>
   <component name="WindowStateProjectService">
     <state x="845" y="333" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589505660733">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
     <state x="845" y="333" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1589505660733" />
-    <state x="690" y="181" key="CommitChangelistDialog2" timestamp="1589950615922">
+    <state x="690" y="181" key="CommitChangelistDialog2" timestamp="1590122186440">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="690" y="181" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1589950615922" />
+    <state x="690" y="181" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590122186440" />
     <state x="962" y="479" width="480" height="291" key="Github.ShareDialog" timestamp="1585521965827">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
     <state x="962" y="479" width="480" height="291" key="Github.ShareDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1585521965827" />
-    <state x="707" y="319" key="Vcs.Push.Dialog.v2" timestamp="1589950618625">
+    <state x="707" y="319" key="Vcs.Push.Dialog.v2" timestamp="1590122188787">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1589950618625" />
+    <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590122188787" />
     <state x="784" y="411" key="com.intellij.ide.util.TipDialog" timestamp="1585706984671">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
