@@ -1,11 +1,11 @@
 import React from 'react';
 
-class AttrQty extends React.Component {
+class AttrBatch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             editMode: false,
-            qty: this.props.qty
+            batch: this.props.batch
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -35,29 +35,40 @@ class AttrQty extends React.Component {
         return (
             <>
                 <td className="list-item-table-key">
-                    <i className="fas fa-hashtag"/>
+                    {/*<span className="svg-inline--fa">b</span>*/}
+                    <img src="./icons/noun_Bat_2088669.svg"
+                         alt="Batch"
+                         className="list-item-icon-key"/>
                 </td>
 
                 <td className="list-item-table-value"
                     onMouseOver={() => this.toggleEditMode(true)}
-                    onClick={() => this.toggleEditMode(true)}>
-                    <input name="qty"
+                    onClick={() => {
+                        this.toggleEditMode(true);
+                        this.props.updateBeverageState({
+                            editMode: true
+                        })
+                    }}>
+                    <input name="batch"
                            type="number"
                            min={0}
-                           max={100}
+                           max={9999}
                            className="input-number"
-                           value={this.state.qty}
+                           value={this.state.batch}
                            disabled={!this.state.editMode}
                            onChange={this.handleChange}
-                           onBlur={() => this.props.updateBeverageState({qty: this.state.qty})}/>
+                           onBlur={() => this.props.updateBeverageState({
+                               batch: this.state.batch,
+                               editMode: true
+                           })}/>
                 </td>
             </>
         )
     }
 }
 
-AttrQty.defaultProps = {
-    qty: 0
+AttrBatch.defaultProps = {
+    batch: ""
 }
 
-export default AttrQty;
+export default AttrBatch;

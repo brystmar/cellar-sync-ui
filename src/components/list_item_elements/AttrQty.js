@@ -1,11 +1,11 @@
 import React from 'react';
 
-class AttrYear extends React.Component {
+class AttrQty extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             editMode: false,
-            year: this.props.year
+            qty: this.props.qty
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -35,29 +35,32 @@ class AttrYear extends React.Component {
         return (
             <>
                 <td className="list-item-table-key">
-                    <i className="fas fa-calendar-alt"/>
+                    <i className="fas fa-hashtag"/>
                 </td>
 
                 <td className="list-item-table-value"
                     onMouseOver={() => this.toggleEditMode(true)}
-                    onClick={() => this.toggleEditMode(true)}>
-                    <input name="year"
+                    onClick={() => {
+                        this.toggleEditMode(true);
+                        this.props.updateBeverageState({editMode: true});
+                    }}>
+                    <input name="qty"
                            type="number"
-                           min={1980}
-                           max={2050}
+                           min={0}
+                           max={100}
                            className="input-number"
-                           value={this.state.year}
+                           value={this.state.qty}
                            disabled={!this.state.editMode}
                            onChange={this.handleChange}
-                           onBlur={() => this.props.updateBeverageState({year: this.state.year})}/>
+                           onBlur={() => this.props.updateBeverageState({qty: this.state.qty})}/>
                 </td>
             </>
         )
     }
 }
 
-AttrYear.defaultProps = {
-    year: 2020
+AttrQty.defaultProps = {
+    qty: 0
 }
 
-export default AttrYear;
+export default AttrQty;

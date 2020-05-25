@@ -19,6 +19,9 @@ class AttrBottleDate extends React.Component {
         this.setState({
             bottleDate: newDate
         })
+
+        // Update edit mode for the list item
+        this.props.updateBeverageState({editMode: true});
     }
 
     updateBevState(newDate) {
@@ -40,11 +43,6 @@ class AttrBottleDate extends React.Component {
         }
     }
 
-    handleSubmit() {
-        console.log("Submitted!")
-
-    }
-
     render() {
         return (
             <>
@@ -53,7 +51,10 @@ class AttrBottleDate extends React.Component {
                 </td>
                 <td className="list-item-table-value"
                     onMouseOver={() => this.toggleEditMode(true)}
-                    onClick={() => this.toggleEditMode(true)}>
+                    onClick={() => {
+                        this.toggleEditMode(true);
+                        this.props.updateBeverageState({editMode: true});
+                    }}>
                     <DatePicker className="input-date"
                                 selected={Date.parse(this.state.bottleDate)}
                                 disabled={!this.state.editMode}

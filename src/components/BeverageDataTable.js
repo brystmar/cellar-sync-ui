@@ -1,64 +1,19 @@
 import React from 'react';
 import DataTable from 'react-data-table-component';
 import DataTableExtensions from 'react-data-table-component-extensions';
-import ExpandedListItem from './list_items/ExpandedListItem';
+import beverageDataTableColumns from './BeverageDataTableColumns';
+import ListItemTemplate from './ListItemTemplate';
 
 function BeverageDataTable(props) {
-    let columns = [
-        {
-            name: 'Brewery',
-            selector: 'brewery',
-            sortable: true,
-            grow: 0.8  // https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow
-        },
-        {
-            name: 'Name',
-            selector: 'name',
-            sortable: true,
-            grow: 1.5
-        },
-        {
-            name: 'Year',
-            selector: 'year',
-            sortable: true,
-            hide: 1079,
-            maxWidth: '50px',
-            grow: 0
-        },
-        {
-            name: 'Location',
-            selector: 'location',
-            sortable: true,
-            hide: 'sm',
-            grow: 0.5
-        },
-        {
-            name: 'Size',
-            selector: 'size',
-            sortable: true,
-            hide: 'md',
-            maxWidth: '55px',
-            grow: 0
-        },
-        {
-            name: 'Qty',
-            selector: 'qty',
-            sortable: true,
-            hide: 'md',
-            maxWidth: '25px',
-            grow: 0
-        }
-    ];
-
     return (
         <>
-            <DataTableExtensions columns={columns}
+            <DataTableExtensions columns={beverageDataTableColumns}
                                  data={props.beerList}
                                  filter={true}
                                  filterHidden={true}
                                  export={false}
                                  print={false}>
-                <DataTable columns={columns}
+                <DataTable columns={beverageDataTableColumns}
                            data={props.beerList}
                            keyField="beer_id"
                            striped={true}
@@ -69,7 +24,9 @@ function BeverageDataTable(props) {
                            defaultSortField="brewery"
 
                            expandableRows={true}
-                           expandableRowsComponent={<ExpandedListItem/>}
+                           expandableRowsComponent={
+                               <ListItemTemplate updateBeverageList={props.updateBeverageList}/>
+                           }
                            expandOnRowClicked={true}
                            expandableRowsHideExpander={true}
 

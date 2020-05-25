@@ -1,11 +1,11 @@
 import React from 'react';
 
-class AttrBatch extends React.Component {
+class AttrUntappd extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             editMode: false,
-            batch: this.props.batch
+            untappd: this.props.untappd
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -35,32 +35,29 @@ class AttrBatch extends React.Component {
         return (
             <>
                 <td className="list-item-table-key">
-                    {/*<span className="svg-inline--fa">b</span>*/}
-                    <img src="./icons/noun_Bat_2088669.svg"
-                         alt="Batch"
-                         className="list-item-icon-key"/>
+                    <i className="fas fa-link"/>
                 </td>
-
                 <td className="list-item-table-value"
                     onMouseOver={() => this.toggleEditMode(true)}
-                    onClick={() => this.toggleEditMode(true)}>
-                    <input name="batch"
-                           type="number"
-                           min={0}
-                           max={9999}
-                           className="input-number"
-                           value={this.state.batch}
+                    onClick={() => {
+                        this.toggleEditMode(true);
+                        this.props.updateBeverageState({editMode: true});
+                    }}>
+                    <input name="untappd"
+                           type="text"
+                           className="input-text"
+                           value={this.state.untappd}
                            disabled={!this.state.editMode}
                            onChange={this.handleChange}
-                           onBlur={() => this.props.updateBeverageState({batch: this.state.batch})}/>
+                           onBlur={() => this.props.updateBeverageState({untappd: this.state.untappd})}/>
                 </td>
             </>
         )
     }
 }
 
-AttrBatch.defaultProps = {
-    batch: ""
+AttrUntappd.defaultProps = {
+    untappd: ""
 }
 
-export default AttrBatch;
+export default AttrUntappd;

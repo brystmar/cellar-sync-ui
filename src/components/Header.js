@@ -10,7 +10,10 @@ function Header(props) {
                 expand="sm"
                 className="navbar-custom-container">
             <LinkContainer to="/">
-                <Navbar.Brand>{props.userName} Cellar</Navbar.Brand>
+                <Navbar.Brand>Inventory</Navbar.Brand>
+            </LinkContainer>
+            <LinkContainer to="/picklists">
+                <Navbar.Brand>Picklists</Navbar.Brand>
             </LinkContainer>
         </Navbar>
     )

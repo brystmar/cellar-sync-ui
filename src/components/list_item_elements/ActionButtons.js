@@ -1,9 +1,9 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 
-function ELIButtons(props) {
+function ActionButtons(props) {
     return (
-        <p className="list-item-edit-button">
+        <p className="list-item-buttons">
             <Button size="sm"
                     variant="success"
                     className="list-item-edit-button"
@@ -13,9 +13,9 @@ function ELIButtons(props) {
 
             <Button size="sm"
                     variant="danger"
-                    className="list-item-cancel-button"
+                    className="list-item-reset-button"
                     hidden={!props.editMode}
-                    onClick={() => props.toggleEditMode()}>
+                    onClick={() => props.resetBeverageData()}>
                 Cancel</Button>
 
             <Button size="sm"
@@ -28,4 +28,4 @@ function ELIButtons(props) {
     )
 }
 
-export default ELIButtons;
+export default ActionButtons;

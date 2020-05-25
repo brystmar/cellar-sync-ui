@@ -1,11 +1,11 @@
 import React from 'react';
 
-class AttrUntappd extends React.Component {
+class AttrYear extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             editMode: false,
-            untappd: this.props.untappd
+            year: this.props.year
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -35,26 +35,32 @@ class AttrUntappd extends React.Component {
         return (
             <>
                 <td className="list-item-table-key">
-                    <i className="fas fa-link"/>
+                    <i className="fas fa-calendar-alt"/>
                 </td>
+
                 <td className="list-item-table-value"
                     onMouseOver={() => this.toggleEditMode(true)}
-                    onClick={() => this.toggleEditMode(true)}>
-                    <input name="untappd"
-                           type="text"
-                           className="input-text"
-                           value={this.state.untappd}
+                    onClick={() => {
+                        this.toggleEditMode(true);
+                        this.props.updateBeverageState({editMode: true});
+                    }}>
+                    <input name="year"
+                           type="number"
+                           min={1980}
+                           max={2050}
+                           className="input-number"
+                           value={this.state.year}
                            disabled={!this.state.editMode}
                            onChange={this.handleChange}
-                           onBlur={() => this.props.updateBeverageState({untappd: this.state.untappd})}/>
+                           onBlur={() => this.props.updateBeverageState({year: this.state.year})}/>
                 </td>
             </>
         )
     }
 }
 
-AttrUntappd.defaultProps = {
-    untappd: ""
+AttrYear.defaultProps = {
+    year: 2020
 }
 
-export default AttrUntappd;
+export default AttrYear;

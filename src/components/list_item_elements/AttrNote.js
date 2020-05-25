@@ -40,7 +40,10 @@ class AttrNote extends React.Component {
 
                 <td className="list-item-table-value"
                     onMouseOver={() => this.toggleEditMode(true)}
-                    onClick={() => this.toggleEditMode(true)}>
+                    onClick={() => {
+                        this.toggleEditMode(true);
+                        this.props.updateBeverageState({editMode: true});
+                    }}>
                     <input name="note"
                            type="text"
                            className="input-text"
