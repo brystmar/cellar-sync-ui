@@ -2,8 +2,9 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
-import PicklistValues from './components/PicklistValues';
-import BeverageDataTable from "./components/BeverageDataTable";
+import PicklistValuesContainer from './components/PicklistValuesContainer';
+import BeverageDataTable from './components/BeverageDataTable';
+import PageTitle from './components/PageTitle';
 
 class App extends React.Component {
     constructor() {
@@ -30,7 +31,13 @@ class App extends React.Component {
         // Retrieve all picklist values from the backend
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/picklist-data")
             .then(response => response.json())
-            .then(result => this.setState({beerList: result.data}))
+            .then(result => {
+                console.log("Picklist data:");
+                console.log(result.data);
+                this.setState({
+                    picklistData: result.data
+                })
+            })
             .catch(error => console.log("Error retrieving picklist data:", error));
     }
 
@@ -56,12 +63,13 @@ class App extends React.Component {
                 <div className="content-container">
                     <Switch>
                         <Route exact path="/">
-                            <h1>Cellar for {userName}</h1>
+                            <PageTitle title={"Cellar for " + {userName}}/>
                             <BeverageDataTable beerList={this.state.beerList}
                                                updateBeverageList={this.updateBeverageList}/>
                         </Route>
                         <Route path="/picklists">
-                            <PicklistValues/>
+                            <PageTitle title={"Picklist Values"}/>
+                            <PicklistValuesContainer data={this.state.picklistData}/>
                         </Route>
                     </Switch>
                 </div>

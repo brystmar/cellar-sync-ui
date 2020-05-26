@@ -18,18 +18,12 @@ import AttrNote from './list_item_elements/AttrNote'
 class ListItemTemplate extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.data
+        this.state = Object.assign(this.props.data, {editMode: false});
 
         this.toggleEditMode = this.toggleEditMode.bind(this);
         this.updateBeverageState = this.updateBeverageState.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.resetBeverageData = this.resetBeverageData.bind(this);
-    }
-
-    componentDidMount() {
-        this.setState({
-            editMode: false
-        })
     }
 
     toggleEditMode(enabled = NaN) {
