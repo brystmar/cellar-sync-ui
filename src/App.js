@@ -32,8 +32,6 @@ class App extends React.Component {
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/picklist-data")
             .then(response => response.json())
             .then(result => {
-                console.log("Picklist data:");
-                console.log(result.data);
                 this.setState({
                     picklistData: result.data
                 })
@@ -63,7 +61,7 @@ class App extends React.Component {
                 <div className="content-container">
                     <Switch>
                         <Route exact path="/">
-                            <PageTitle title={"Cellar for " + {userName}}/>
+                            <PageTitle title={userName + "'s Cellar"}/>
                             <BeverageDataTable beerList={this.state.beerList}
                                                updateBeverageList={this.updateBeverageList}/>
                         </Route>

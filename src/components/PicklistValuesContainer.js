@@ -1,40 +1,38 @@
 import React from 'react';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import LocationDisplay from "./LocationDisplay";
+import LocationPicklist from './LocationPicklist';
+import SizePicklist from './SizePicklist';
+import StylePicklist from './StylePicklist';
 
 function PicklistValuesContainer(props) {
-    // const locationData = props.data.map(picklist =>
-    //     <LocationDisplay name={picklist.list_name}
-    //                      values={picklist.list_values}/>);
+    let locationData, styleData, sizeData, i=0;
+
+    // Parse the data for each type of picklist
+    while (i < props.data.length) {
+        if (props.data[i].list_name === "size") {
+            sizeData = props.data[i].list_values;
+        } else if (props.data[i].list_name === "style") {
+            styleData = props.data[i].list_values;
+        } else if (props.data[i].list_name === "location") {
+            locationData = props.data[i].list_values;
+        }
+        i += 1;
+    }
 
     return (
         <>
             <Tabs defaultActiveKey="location" id="picklist-values-container">
                 <Tab eventKey="location" title="Location">
-                    Location location location!
+                    <LocationPicklist data={locationData}/>
                 </Tab>
                 <Tab eventKey="size" title="Size">
-                    Size matters
+                    <SizePicklist data={sizeData}/>
                 </Tab>
                 <Tab eventKey="style" title="Style">
-                    What's your style?
+                    <StylePicklist data={styleData}/>
                 </Tab>
             </Tabs>
-            <p>
-                {JSON.stringify(props.data[0].list_name)}
-                {JSON.stringify(props.data[0].list_values)}
-                <br/>
-                {JSON.stringify(props.data[1].list_name)}
-                <br/>
-                {JSON.stringify(props.data[2].list_name)}
-                <br/>
-                {/*{locationData}*/}
-                {/*{typeof (locationData)}*/}
-                {/*{JSON.stringify(props.data[1])}*/}
-                {/*<br/>*/}
-                {/*{JSON.stringify(props.data[2])}*/}
-            </p>
         </>
     )
 }
@@ -45,17 +43,17 @@ PicklistValuesContainer.defaultProps = {
     // style: ['Defaults', 'Rauchbier', 'Rat Beer']
     data: [
         {
-            list_name: [],
+            list_name: "a",
             list_values: [],
             last_modified: 0
         },
         {
-            list_name: [],
+            list_name: "b",
             list_values: [],
             last_modified: 0
         },
         {
-            list_name: [],
+            list_name: "c",
             list_values: [],
             last_modified: 0
         }

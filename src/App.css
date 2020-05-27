@@ -22,3 +22,8 @@
 .navbar-custom-container {
 	margin-bottom: 20px;
 }
+
+.picklist-tab-values {
+	margin-top: 3px;
+	width: auto;
+}
