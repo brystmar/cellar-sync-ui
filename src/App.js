@@ -43,12 +43,17 @@ class App extends React.Component {
         let newState = this.state.beerList;
 
         if (!isNew) {
+            console.log(newState);
             // When updating an item, first remove the original beverage from the overall list
+            console.log("Deleting beer_id:" + beverage.beer_id);
             delete newState[beverage.beer_id]
+            console.log(newState);
         }
 
+        newState.push(beverage);
+
         this.setState({
-            beerList: newState.push(beverage)
+            beerList: newState
         })
     }
 

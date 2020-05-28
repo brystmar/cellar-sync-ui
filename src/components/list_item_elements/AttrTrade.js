@@ -20,7 +20,7 @@ function mapForTradeIcons(props) {
                     alt="For Trade? Yes"
                     className="list-item-icon-value clickable-toggle"
                     onClick={() => props.updateBeverageState({
-                        for_trade: !props.for_trade,
+                        for_trade: false,
                         editMode: true
                     })}/>
     } else if (props.for_trade === false) {
@@ -28,7 +28,7 @@ function mapForTradeIcons(props) {
                     alt="For Trade? No"
                     className="list-item-icon-value clickable-toggle"
                     onClick={() => props.updateBeverageState({
-                        for_trade: !props.for_trade,
+                        for_trade: true,
                         editMode: true
                     })}/>
     } else {

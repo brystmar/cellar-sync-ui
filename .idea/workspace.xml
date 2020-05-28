@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/SizePicklist.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StylePicklist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BeerListItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CellarDisplay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/LocationDisplay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LocationDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LocationPicklist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PicklistValuesContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PicklistValuesContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ListItemTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItemTemplate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrTrade.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrTrade.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +112,7 @@
       <workItem from="1589929320679" duration="16857000" />
       <workItem from="1590158268931" duration="1321000" />
       <workItem from="1590365596577" duration="19000" />
-      <workItem from="1590417577606" duration="26268000" />
+      <workItem from="1590417577606" duration="28052000" />
     </task>
     <task id="LOCAL-00001" summary="Installed react-router">
       <created>1585522324328</created>
@@ -184,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590468066770</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="All picklist values visible!">
+      <created>1590542073249</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1590542073249</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,17 +212,18 @@
     <MESSAGE value="Working on support for picklists" />
     <MESSAGE value="editMode toggles work for all list item elements" />
     <MESSAGE value="Working on the picklist page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on the picklist page" />
+    <MESSAGE value="All picklist values visible!" />
+    <option name="LAST_COMMIT_MESSAGE" value="All picklist values visible!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="845" y="333" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590422920159">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
     <state x="845" y="333" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590422920159" />
-    <state x="690" y="181" key="CommitChangelistDialog2" timestamp="1590468066613">
+    <state x="690" y="181" key="CommitChangelistDialog2" timestamp="1590542073077">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="690" y="181" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590468066613" />
+    <state x="690" y="181" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590542073077" />
     <state x="962" y="479" width="480" height="291" key="Github.ShareDialog" timestamp="1585521965827">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
@@ -224,10 +232,10 @@
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
     <state x="705" y="250" key="RollbackChangesDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590429872063" />
-    <state x="707" y="319" key="Vcs.Push.Dialog.v2" timestamp="1590468069462">
+    <state x="707" y="319" key="Vcs.Push.Dialog.v2" timestamp="1590542075309">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590468069462" />
+    <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590542075309" />
     <state x="784" y="411" key="com.intellij.ide.util.TipDialog" timestamp="1585706984671">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>

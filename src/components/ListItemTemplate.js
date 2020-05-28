@@ -60,7 +60,7 @@ class ListItemTemplate extends React.Component {
         console.log("Clicked Save!")
 
         // Organize the updated data object
-        let beverageData = this.state.beverageData;
+        let beverageData = this.state;
         delete beverageData['editMode'];
         delete beverageData['originalData'];
 
@@ -80,7 +80,7 @@ class ListItemTemplate extends React.Component {
                 this.toggleEditMode(false);
 
                 // Update state of the parent component using the provided function
-                this.props.addRecipeToState(result.data);
+                this.props.updateBeverageList(result.data);
             })
             .catch(error => console.log("Error retrieving beer list data:", error));
     }
