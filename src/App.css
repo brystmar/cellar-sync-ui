@@ -23,7 +23,31 @@
 	margin-bottom: 20px;
 }
 
+.page-title {
+	cursor: default;
+}
+
 .picklist-tab-values {
 	margin-top: 3px;
 	width: auto;
+}
+
+.substyle-display {
+	margin-left: 20px;
+}
+
+.footer-container {
+	font-size: small;
+	margin: 40px 3px 10px;
+	cursor: default;
+	text-align: -webkit-left;
+	vertical-align: text-bottom;
+}
+
+.footer-container a {
+	color: inherit;
+}
+
+.footer-container img {
+	max-height: 70px;
 }

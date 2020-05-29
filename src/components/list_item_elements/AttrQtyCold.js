@@ -1,11 +1,11 @@
 import React from 'react';
 
-class AttrQty extends React.Component {
+class AttrQtyCold extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             editMode: false,
-            qty: this.props.qty
+            qty_cold: this.props.qty_cold
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -35,7 +35,10 @@ class AttrQty extends React.Component {
         return (
             <>
                 <td className="list-item-table-key">
-                    <i className="fas fa-hashtag"/>
+                    {/*<img src="./icons/snowflake-regular.svg"*/}
+                    {/* alt="Qty Cold"*/}
+                    {/* className="list-item-icon-key"/>*/}
+                    <i className="far fa-snowflake"/>
                 </td>
 
                 <td className="list-item-table-value"
@@ -44,23 +47,23 @@ class AttrQty extends React.Component {
                         this.toggleEditMode(true);
                         this.props.updateBeverageState({editMode: true});
                     }}>
-                    <input name="qty"
+                    <input name="qty_cold"
                            type="number"
                            min={0}
                            max={99}
                            className="input-number"
-                           value={this.state.qty}
+                           value={this.state.qty_cold}
                            disabled={!this.state.editMode}
                            onChange={this.handleChange}
-                           onBlur={() => this.props.updateBeverageState({qty: this.state.qty})}/>
+                           onBlur={() => this.props.updateBeverageState({qty: this.state.qty_cold})}/>
                 </td>
             </>
         )
     }
 }
 
-AttrQty.defaultProps = {
-    qty: 0
+AttrQtyCold.defaultProps = {
+    qty_cold: 0
 }
 
-export default AttrQty;
+export default AttrQtyCold;

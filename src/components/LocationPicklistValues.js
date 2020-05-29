@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 
-function LocationPicklist(props) {
+function LocationPicklistValues(props) {
     let orderedData = props.data.sort((a, b) => parseFloat(a.display_order) - parseFloat(b.display_order));
     let locations = orderedData.map(item =>
         <Form.Control type="text"
@@ -9,7 +9,7 @@ function LocationPicklist(props) {
                       className="picklist-tab-values"
                       rows={1}
                       defaultValue={item.value}/>);
-    console.log(locations)
+    // console.log(locations)
     return (
         <>
             {locations}
@@ -17,7 +17,7 @@ function LocationPicklist(props) {
     )
 }
 
-LocationPicklist.defaultProps = {
+LocationPicklistValues.defaultProps = {
     data: [
         {
             value: "Default",
@@ -30,4 +30,4 @@ LocationPicklist.defaultProps = {
     ]
 }
 
-export default LocationPicklist;
+export default LocationPicklistValues;

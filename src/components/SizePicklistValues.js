@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 
-function SizePicklist(props) {
+function SizePicklistValues(props) {
     let orderedData = props.data.sort((a, b) => parseFloat(a.display_order) - parseFloat(b.display_order));
     let sizes = orderedData.map(item =>
         <Form.Control type="text"
@@ -18,7 +18,7 @@ function SizePicklist(props) {
     )
 }
 
-SizePicklist.defaultProps = {
+SizePicklistValues.defaultProps = {
     data: [
         {
             value: "Default",
@@ -31,4 +31,4 @@ SizePicklist.defaultProps = {
     ]
 }
 
-export default SizePicklist;
+export default SizePicklistValues;

@@ -1,9 +1,9 @@
 import React from 'react';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import LocationPicklist from './LocationPicklist';
-import SizePicklist from './SizePicklist';
-import StylePicklist from './StylePicklist';
+import LocationPicklistValues from './LocationPicklistValues';
+import SizePicklistValues from './SizePicklistValues';
+import StylePicklistValues from './StylePicklistValues';
 
 function PicklistValuesContainer(props) {
     let locationData, styleData, sizeData, i=0;
@@ -24,13 +24,13 @@ function PicklistValuesContainer(props) {
         <>
             <Tabs defaultActiveKey="location" id="picklist-values-container">
                 <Tab eventKey="location" title="Location">
-                    <LocationPicklist data={locationData}/>
+                    <LocationPicklistValues data={locationData}/>
                 </Tab>
                 <Tab eventKey="size" title="Size">
-                    <SizePicklist data={sizeData}/>
+                    <SizePicklistValues data={sizeData}/>
                 </Tab>
                 <Tab eventKey="style" title="Style">
-                    <StylePicklist data={styleData}/>
+                    <StylePicklistValues data={styleData}/>
                 </Tab>
             </Tabs>
         </>

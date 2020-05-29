@@ -5,6 +5,7 @@ import Header from './components/Header';
 import PicklistValuesContainer from './components/PicklistValuesContainer';
 import BeverageDataTable from './components/BeverageDataTable';
 import PageTitle from './components/PageTitle';
+import Footer from './components/Footer';
 
 class App extends React.Component {
     constructor() {
@@ -40,17 +41,18 @@ class App extends React.Component {
     }
 
     updateBeverageList(beverage, isNew = false) {
+        console.log(this.state.beerList);
         let newState = this.state.beerList;
 
         if (!isNew) {
-            console.log(newState);
             // When updating an item, first remove the original beverage from the overall list
-            console.log("Deleting beer_id:" + beverage.beer_id);
             delete newState[beverage.beer_id]
-            console.log(newState);
         }
 
+        // Add the new beverage
         newState.push(beverage);
+        console.log("Added new beer: " + beverage);
+        console.log(newState);
 
         this.setState({
             beerList: newState
@@ -59,7 +61,7 @@ class App extends React.Component {
 
     render() {
         const userName = "Barks & RAK";
-        console.log(this.state.beerList)
+        // console.log(this.state.beerList)
 
         return (
             <div className="app-container">
@@ -77,6 +79,7 @@ class App extends React.Component {
                         </Route>
                     </Switch>
                 </div>
+                <Footer/>
             </div>
         );
     }

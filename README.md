@@ -5,6 +5,7 @@ Basic inventory management for bored tech workers with unwieldy cellars of beer,
 
 ### Attribution
 Icon sources:
+* [Font Awesome](https://fontawesome.com/license)
 * David from [The Noun Project](https://thenounproject.com/)
 * Nikita Kozin from [The Noun Project](https://thenounproject.com/)
 * Poups from [The Noun Project](https://thenounproject.com/)
@@ -15,4 +16,3 @@ Icon sources:
 * Vladimir Belochkin from [The Noun Project](https://thenounproject.com/)
 * Gabriele Malaspina from [The Noun Project](https://thenounproject.com/)
 * nauraicon from [The Noun Project](https://thenounproject.com/)
-* [Font Awesome](https://fontawesome.com/license)

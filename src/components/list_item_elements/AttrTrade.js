@@ -42,4 +42,9 @@ function mapForTradeIcons(props) {
     }
 }
 
+AttrTrade.defaultProps = {
+    for_trade: true,
+    editMode: false
+}
+
 export default AttrTrade;
