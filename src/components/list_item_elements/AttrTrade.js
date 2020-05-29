@@ -14,7 +14,7 @@ function AttrTrade(props) {
 }
 
 function mapForTradeIcons(props) {
-    console.log(props.for_trade + ", type: " + typeof(props.for_trade));
+    // console.log(props.for_trade + ", type: " + typeof(props.for_trade));
     if (props.for_trade === true) {
         return <img src="./icons/noun_true_2049512.svg"
                     alt="For Trade? Yes"

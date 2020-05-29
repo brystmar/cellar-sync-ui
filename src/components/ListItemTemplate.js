@@ -47,10 +47,10 @@ class ListItemTemplate extends React.Component {
 
     resetBeverageData() {
         // Reset the data for this list item to its original values
-        console.log("Resetting data to:")
-        console.log(JSON.stringify(this.state.originalData));
-        console.log("Orig props:");
-        console.log(JSON.stringify(this.props.data));
+        // console.log("Resetting data to:")
+        // console.log(JSON.stringify(this.state.originalData));
+        // console.log("Orig props:");
+        // console.log(JSON.stringify(this.props.data));
         this.setState({
             beverageData: this.state.originalData,
             editMode: false

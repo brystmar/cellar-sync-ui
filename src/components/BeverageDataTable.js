@@ -42,7 +42,8 @@ function BeverageDataTable(props) {
 BeverageDataTable.defaultProps = {
     userName: "",
     beerList: [],
-    paginationPerPage: 20,
+    picklistData: [],
+    paginationPerPage: 40,
     paginationRowsPerPageOptions: [20, 40, 60, 80, 100, 150, 200, 250, 300, 400, 500]
 }
 

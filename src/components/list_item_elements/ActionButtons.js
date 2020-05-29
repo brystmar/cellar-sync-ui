@@ -4,12 +4,12 @@ import Button from 'react-bootstrap/Button';
 function ActionButtons(props) {
     return (
         <p className="list-item-buttons">
-            <Button size="sm"
-                    variant="success"
-                    className="list-item-edit-button"
-                    hidden={props.editMode}
-                    onClick={() => props.toggleEditMode()}>
-                Edit</Button>
+            {/*<Button size="sm"*/}
+            {/*        variant="success"*/}
+            {/*        className="list-item-edit-button"*/}
+            {/*        hidden={props.editMode}*/}
+            {/*        onClick={() => props.toggleEditMode()}>*/}
+            {/*    Edit</Button>*/}
 
             <Button size="sm"
                     variant="danger"
