@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/BeerListItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CellarDisplay.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/LocationDisplay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListItemTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItemTemplate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrTrade.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrTrade.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LocationPicklist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LocationPicklist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PicklistValuesContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PicklistValuesContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SizePicklist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SizePicklist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StylePicklist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StylePicklist.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +112,8 @@
       <workItem from="1589929320679" duration="16857000" />
       <workItem from="1590158268931" duration="1321000" />
       <workItem from="1590365596577" duration="19000" />
-      <workItem from="1590417577606" duration="28052000" />
+      <workItem from="1590417577606" duration="28686000" />
+      <workItem from="1590697981698" duration="3134000" />
     </task>
     <task id="LOCAL-00001" summary="Installed react-router">
       <created>1585522324328</created>
@@ -191,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590542073249</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Working on picklist display">
+      <created>1590688637633</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1590688637633</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,29 +221,46 @@
     <MESSAGE value="editMode toggles work for all list item elements" />
     <MESSAGE value="Working on the picklist page" />
     <MESSAGE value="All picklist values visible!" />
-    <option name="LAST_COMMIT_MESSAGE" value="All picklist values visible!" />
+    <MESSAGE value="Working on picklist display" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on picklist display" />
   </component>
   <component name="WindowStateProjectService">
     <state x="845" y="333" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590422920159">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
     <state x="845" y="333" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590422920159" />
-    <state x="690" y="181" key="CommitChangelistDialog2" timestamp="1590542073077">
+    <state x="690" y="181" key="CommitChangelistDialog2" timestamp="1590688637495">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="690" y="181" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590542073077" />
+    <state x="690" y="181" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590688637495" />
     <state x="962" y="479" width="480" height="291" key="Github.ShareDialog" timestamp="1585521965827">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
     <state x="962" y="479" width="480" height="291" key="Github.ShareDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1585521965827" />
+    <state width="1950" height="313" key="GridCell.Tab.0.bottom" timestamp="1590698023764">
+      <screen x="0" y="23" width="1994" height="1129" />
+    </state>
+    <state width="1950" height="313" key="GridCell.Tab.0.bottom/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590698023764" />
+    <state width="1950" height="313" key="GridCell.Tab.0.center" timestamp="1590698023764">
+      <screen x="0" y="23" width="1994" height="1129" />
+    </state>
+    <state width="1950" height="313" key="GridCell.Tab.0.center/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590698023764" />
+    <state width="1950" height="313" key="GridCell.Tab.0.left" timestamp="1590698023763">
+      <screen x="0" y="23" width="1994" height="1129" />
+    </state>
+    <state width="1950" height="313" key="GridCell.Tab.0.left/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590698023763" />
+    <state width="1950" height="313" key="GridCell.Tab.0.right" timestamp="1590698023764">
+      <screen x="0" y="23" width="1994" height="1129" />
+    </state>
+    <state width="1950" height="313" key="GridCell.Tab.0.right/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590698023764" />
     <state x="705" y="250" key="RollbackChangesDialog" timestamp="1590429872063">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
     <state x="705" y="250" key="RollbackChangesDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590429872063" />
-    <state x="707" y="319" key="Vcs.Push.Dialog.v2" timestamp="1590542075309">
+    <state x="707" y="319" key="Vcs.Push.Dialog.v2" timestamp="1590688640171">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590542075309" />
+    <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590688640171" />
     <state x="784" y="411" key="com.intellij.ide.util.TipDialog" timestamp="1585706984671">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
@@ -244,9 +269,9 @@
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
     <state x="895" y="500" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590108270682" />
-    <state x="662" y="252" width="670" height="676" key="search.everywhere.popup" timestamp="1590427287354">
+    <state x="662" y="252" width="670" height="676" key="search.everywhere.popup" timestamp="1590698846601">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="662" y="252" width="670" height="676" key="search.everywhere.popup/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590427287354" />
+    <state x="662" y="252" width="670" height="676" key="search.everywhere.popup/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590698846601" />
   </component>
 </project>

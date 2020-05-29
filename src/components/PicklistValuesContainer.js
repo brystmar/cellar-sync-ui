@@ -43,17 +43,17 @@ PicklistValuesContainer.defaultProps = {
     // style: ['Defaults', 'Rauchbier', 'Rat Beer']
     data: [
         {
-            list_name: "a",
+            list_name: "location",
             list_values: [],
             last_modified: 0
         },
         {
-            list_name: "b",
+            list_name: "size",
             list_values: [],
             last_modified: 0
         },
         {
-            list_name: "c",
+            list_name: "style",
             list_values: [],
             last_modified: 0
         }

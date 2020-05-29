@@ -59,6 +59,7 @@ class App extends React.Component {
 
     render() {
         const userName = "Barks & RAK";
+        console.log(this.state.beerList)
 
         return (
             <div className="app-container">

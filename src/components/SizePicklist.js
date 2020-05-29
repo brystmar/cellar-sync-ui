@@ -19,10 +19,16 @@ function SizePicklist(props) {
 }
 
 SizePicklist.defaultProps = {
-    data: [{
-        value: "",
-        display_order: 0
-    }]
+    data: [
+        {
+            value: "Default",
+            display_order: 0
+        },
+        {
+            value: "12 oz",
+            display_order: 1
+        }
+    ]
 }
 
 export default SizePicklist;
