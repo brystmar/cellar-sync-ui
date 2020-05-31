@@ -14,9 +14,7 @@ function parse_picklists(picklistData, listName = "") {
     while (i < picklistData.length) {
         if (picklistData[i].list_name === listName) {
             // Found data for the requested list
-            return {
-                [listName]: picklistData[i].list_values
-            }
+            return picklistData[i].list_values
         } else {
             // Add this to the output object literal
             output = Object.assign(output, {[picklistData[i].list_name]: picklistData[i].list_values})

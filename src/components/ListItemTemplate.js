@@ -93,12 +93,14 @@ class ListItemTemplate extends React.Component {
                     <tr>
                         <AttrLocation location={this.state.location}
                                       editMode={this.state.editMode}
-                                      picklistData={parse_picklists(this.props.picklistData).location}
+                                      // TODO: Replace parse_picklists with an arrow function
+                                      picklistData={parse_picklists(this.props.picklistData, "location")}
                                       updateBeverageState={this.updateBeverageState}/>
 
                         <AttrSize size={this.state.size}
                                   editMode={this.state.editMode}
-                                  picklistData={parse_picklists(this.props.picklistData).size}
+                                  // TODO: Replace parse_picklists with an arrow function
+                                  picklistData={parse_picklists(this.props.picklistData, "size")}
                                   updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
@@ -143,7 +145,8 @@ class ListItemTemplate extends React.Component {
                             style={this.state.style}
                             specific_style={this.state.specific_style}
                             editMode={this.state.editMode}
-                            picklistData={parse_picklists(this.props.picklistData).style}
+                            // TODO: Replace parse_picklists with an arrow function
+                            picklistData={parse_picklists(this.props.picklistData, "style")}
                             updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>

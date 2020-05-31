@@ -3,8 +3,7 @@ import React from 'react';
 function PageTitle(props) {
     return (
         <h1 className="page-title">
-            <img src="./icons/cellar-logo.jpg"
-                 alt="Trade Value: High"/>
+            {props.logo ? props.logo : ""}
             {props.title}
             {props.includeHr ? <hr/> : ""}
         </h1>
@@ -12,7 +11,8 @@ function PageTitle(props) {
 }
 
 PageTitle.defaultProps = {
-    title: "Default Title",
+    title: "Default",
+    logo: "",
     includeHr: true
 }
 

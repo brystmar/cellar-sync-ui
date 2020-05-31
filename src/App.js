@@ -61,6 +61,7 @@ class App extends React.Component {
 
     render() {
         const userName = "Barks & RAK";
+        const cellarLogo = <img src="./icons/cellar-logo.jpg" alt="Cellar Logo"/>
         // console.log(this.state.picklistData)
 
         return (
@@ -69,7 +70,7 @@ class App extends React.Component {
                 <div className="content-container">
                     <Switch>
                         <Route exact path="/">
-                            <PageTitle title={userName}/>
+                            <PageTitle title={userName} logo={cellarLogo}/>
                             <BeverageDataTable beerList={this.state.beerList}
                                                picklistData={this.state.picklistData}
                                                updateBeverageList={this.updateBeverageList}/>
