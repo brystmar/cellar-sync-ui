@@ -25,7 +25,8 @@ function BeverageDataTable(props) {
 
                            expandableRows={true}
                            expandableRowsComponent={
-                               <ListItemTemplate updateBeverageList={props.updateBeverageList}/>
+                               <ListItemTemplate updateBeverageList={props.updateBeverageList}
+                                                 picklistData={props.picklistData}/>
                            }
                            expandOnRowClicked={true}
                            expandableRowsHideExpander={true}

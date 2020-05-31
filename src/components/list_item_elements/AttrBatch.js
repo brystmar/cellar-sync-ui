@@ -68,7 +68,7 @@ class AttrBatch extends React.Component {
 }
 
 AttrBatch.defaultProps = {
-    batch: ""
+    batch: 0
 }
 
 export default AttrBatch;

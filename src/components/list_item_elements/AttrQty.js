@@ -35,7 +35,10 @@ class AttrQty extends React.Component {
         return (
             <>
                 <td className="list-item-table-key">
-                    <i className="fas fa-hashtag"/>
+                    <img src="./icons/hashtag-solid.svg"
+                         alt="Quantity (overall)"
+                         className="list-item-icon-key"/>
+                    {/*<i className="fas fa-hashtag"/>*/}
                 </td>
 
                 <td className="list-item-table-value"

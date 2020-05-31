@@ -1,26 +1,30 @@
-// Accepts an array of picklists, returning a structured object literal
+// Accepts an array of picklists, returning a structured object literal by default
+// Alternatively, returns only the picklist values for the requested list
 
-function parse_picklists(picklistData) {
-    console.log(picklistData)
-    let locationData, styleData, sizeData, i=0;
+function parse_picklists(picklistData, listName = "") {
+    // console.log(picklistData);
+    if (typeof (picklistData) !== typeof ([]) || picklistData.length === 0) {
+        console.log("picklistData is empty");
+        return {};
+    }
+
+    let i = 0, output = {};
 
     // Parse the data for each type of picklist
     while (i < picklistData.length) {
-        if (picklistData[i].list_name === "size") {
-            sizeData = picklistData[i].list_values;
-        } else if (picklistData[i].list_name === "style") {
-            styleData = picklistData[i].list_values;
-        } else if (picklistData[i].list_name === "location") {
-            locationData = picklistData[i].list_values;
+        if (picklistData[i].list_name === listName) {
+            // Found data for the requested list
+            return {
+                [listName]: picklistData[i].list_values
+            }
+        } else {
+            // Add this to the output object literal
+            output = Object.assign(output, {[picklistData[i].list_name]: picklistData[i].list_values})
         }
         i += 1;
     }
 
-    return {
-        'location': locationData,
-        'size': sizeData,
-        'style': styleData
-    }
+    return output;
 }
 
-export default parse_picklists();
+export default parse_picklists;

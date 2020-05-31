@@ -4,7 +4,10 @@ function AttrTrade(props) {
     return (
         <>
             <td className="list-item-table-key">
-                <i className="fas fa-exchange-alt"/>
+                <img src="./icons/exchange-alt-solid.svg"
+                     alt="For Trade?"
+                     className="list-item-icon-key"/>
+                {/*<i className="fas fa-exchange-alt"/>*/}
             </td>
             <td className="list-item-table-value">
                 {mapForTradeIcons(props)}

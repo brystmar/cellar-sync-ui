@@ -8,13 +8,13 @@ import AttrYear from './list_item_elements/AttrYear';
 import AttrBottleDate from './list_item_elements/AttrBottleDate';
 import AttrSize from './list_item_elements/AttrSize';
 import AttrStyle from './list_item_elements/AttrStyle';
-import AttrSpecificStyle from './list_item_elements/AttrSpecificStyle';
 import AttrTrade from './list_item_elements/AttrTrade';
 import AttrTradeValue from './list_item_elements/AttrTradeValue';
 import AttrAgingPotential from './list_item_elements/AttrAgingPotential';
 import AttrUntappd from './list_item_elements/AttrUntappd';
 import AttrNote from './list_item_elements/AttrNote'
 import AttrQtyCold from './list_item_elements/AttrQtyCold';
+import parse_picklists from "../functions/parse_picklists";
 
 class ListItemTemplate extends React.Component {
     constructor(props) {
@@ -94,10 +94,12 @@ class ListItemTemplate extends React.Component {
                     <tr>
                         <AttrLocation location={this.state.location}
                                       editMode={this.state.editMode}
+                                      picklistData={parse_picklists(this.props.picklistData).location}
                                       updateBeverageState={this.updateBeverageState}/>
 
                         <AttrSize size={this.state.size}
                                   editMode={this.state.editMode}
+                                  picklistData={parse_picklists(this.props.picklistData).size}
                                   updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
@@ -141,16 +143,11 @@ class ListItemTemplate extends React.Component {
                             updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
-
                         <AttrStyle
-                            style={this.state.style ? this.state.style : ""}
+                            style={this.state.style}
+                            specific_style={this.state.specific_style}
                             editMode={this.state.editMode}
-                            updateBeverageState={this.updateBeverageState}/>
-                    </tr>
-                    <tr>
-                        <AttrSpecificStyle
-                            specific_style={this.state.specific_style ? this.state.specific_style : ""}
-                            editMode={this.state.editMode}
+                            picklistData={parse_picklists(this.props.picklistData).style}
                             updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
@@ -197,7 +194,8 @@ ListItemTemplate.defaultProps = {
         note: "",
         date_added: 0,
         last_modified: 0
-    }
+    },
+    picklistData: []
 }
 
 export default ListItemTemplate;

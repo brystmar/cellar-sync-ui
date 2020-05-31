@@ -35,10 +35,10 @@ class AttrQtyCold extends React.Component {
         return (
             <>
                 <td className="list-item-table-key">
-                    {/*<img src="./icons/snowflake-regular.svg"*/}
-                    {/* alt="Qty Cold"*/}
-                    {/* className="list-item-icon-key"/>*/}
-                    <i className="far fa-snowflake"/>
+                    <img src="./icons/snowflake-regular.svg"
+                         alt="Qty Cold"
+                         className="list-item-icon-key"/>
+                    {/*<i className="far fa-snowflake"/>*/}
                 </td>
 
                 <td className="list-item-table-value"

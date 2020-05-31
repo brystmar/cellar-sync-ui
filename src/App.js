@@ -61,7 +61,7 @@ class App extends React.Component {
 
     render() {
         const userName = "Barks & RAK";
-        console.log(this.state.picklistData)
+        // console.log(this.state.picklistData)
 
         return (
             <div className="app-container">
@@ -69,7 +69,7 @@ class App extends React.Component {
                 <div className="content-container">
                     <Switch>
                         <Route exact path="/">
-                            <PageTitle title={userName + "'s Cellar"}/>
+                            <PageTitle title={userName}/>
                             <BeverageDataTable beerList={this.state.beerList}
                                                picklistData={this.state.picklistData}
                                                updateBeverageList={this.updateBeverageList}/>

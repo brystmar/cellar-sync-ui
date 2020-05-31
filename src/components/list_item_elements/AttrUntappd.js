@@ -35,7 +35,10 @@ class AttrUntappd extends React.Component {
         return (
             <>
                 <td className="list-item-table-key">
-                    <i className="fas fa-link"/>
+                    <img src="./icons/link-solid.svg"
+                         alt="Untappd Link"
+                         className="list-item-icon-key"/>
+                    {/*<i className="fas fa-link"/>*/}
                 </td>
                 <td className="list-item-table-value"
                     onMouseOver={() => this.toggleEditMode(true)}

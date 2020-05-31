@@ -35,7 +35,10 @@ class AttrYear extends React.Component {
         return (
             <>
                 <td className="list-item-table-key">
-                    <i className="fas fa-calendar-alt"/>
+                    <img src="./icons/calendar-alt-solid.svg"
+                         alt="Year"
+                         className="list-item-icon-key"/>
+                    {/*<i className="fas fa-calendar-alt"/>*/}
                 </td>
 
                 <td className="list-item-table-value"

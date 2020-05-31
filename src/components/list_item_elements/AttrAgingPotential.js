@@ -5,7 +5,9 @@ function AttrAgingPotential(props) {
     return (
         <>
             <td className="list-item-table-key">
-                <i className="fas fa-spider"/>
+                <img src="./icons/spider-solid.svg"
+                     alt="Aging Potential"
+                     className="list-item-icon-key"/>
             </td>
             <td className="list-item-table-value">
                 {mapAgingPotentialIcons(props)}
@@ -40,6 +42,10 @@ function mapAgingPotentialIcons(props) {
                         editMode: true
                     })}/>;
     }
+}
+
+AttrAgingPotential.defaultProps = {
+    aging_potential: 0
 }
 
 export default AttrAgingPotential;

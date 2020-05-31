@@ -7,9 +7,10 @@ import StylePicklistValues from './StylePicklistValues';
 import parse_picklists from '../functions/parse_picklists';
 
 function PicklistValuesContainer(props) {
+    // TODO: Clean this up
     let realData = <div>no data</div>;
 
-    if (props.data !== "default") {
+    if (props.data.length > 0) {
         let picklists = parse_picklists(props.data);
 
         realData = <div className="picklist-values-container">
@@ -28,32 +29,14 @@ function PicklistValuesContainer(props) {
     }
 
     return (
-        {realData}
+        <>
+            {realData}
+        </>
     )
 }
 
 PicklistValuesContainer.defaultProps = {
-    // location: ['Default', 'Home', 'Wine Storage'],
-    // size: ['Defaults', '750 mL', '22 oz', '500 mL', '375 mL'],
-    // style: ['Defaults', 'Rauchbier', 'Rat Beer']
-    // data: [
-    //     {
-    //         list_name: "location",
-    //         list_values: [],
-    //         last_modified: 0
-    //     },
-    //     {
-    //         list_name: "size",
-    //         list_values: [],
-    //         last_modified: 0
-    //     },
-    //     {
-    //         list_name: "style",
-    //         list_values: [],
-    //         last_modified: 0
-    //     }
-    // ],
-    data: "default"
+    data: []
 }
 
 export default PicklistValuesContainer;

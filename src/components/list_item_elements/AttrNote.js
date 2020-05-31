@@ -35,7 +35,10 @@ class AttrNote extends React.Component {
         return (
             <>
                 <td className="list-item-table-key">
-                    <i className="far fa-sticky-note"/>
+                    <img src="./icons/sticky-note-regular.svg"
+                         alt="Note"
+                         className="list-item-icon-key"/>
+                    {/*<i className="far fa-sticky-note"/>*/}
                 </td>
 
                 <td className="list-item-table-value"

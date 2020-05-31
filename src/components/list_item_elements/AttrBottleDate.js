@@ -47,7 +47,10 @@ class AttrBottleDate extends React.Component {
         return (
             <>
                 <td className="list-item-table-key">
-                    <i className="far fa-calendar-alt"/>
+                    <img src="./icons/calendar-alt-regular.svg"
+                         alt="Bottle Date"
+                         className="list-item-icon-key"/>
+                    {/*<i className="far fa-calendar-alt"/>*/}
                 </td>
                 <td className="list-item-table-value"
                     onMouseOver={() => this.toggleEditMode(true)}

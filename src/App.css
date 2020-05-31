@@ -27,6 +27,10 @@
 	cursor: default;
 }
 
+.page-title img {
+	max-height: 100px;
+}
+
 .picklist-tab-values {
 	margin-top: 3px;
 	width: auto;
