@@ -7,33 +7,48 @@ class AttrQty extends React.Component {
             qty: this.props.qty,
             qty_cold: this.props.qty_cold
         }
-
         this.handleChange = this.handleChange.bind(this);
-        this.validateQtyCold = this.validateQtyCold.bind(this);
     }
 
     handleChange(event) {
         const {name, value} = event.target;
-        this.validateQtyCold();
 
-        // Update local state
-        this.setState({
-            [name]: value
-        })
+        // Validate that qty >= qty_cold
+        if (name === "qty") {
+            if (value >= this.state.qty_cold) {
+                // Update local state
+                this.setState({
+                    qty: value
+                })
 
-        // Update state of the parent beverage
-        this.props.updateBeverageState({
-            [name]: value,
-            editMode: true
-        })
-    }
+                // Update state of the parent beverage
+                this.props.updateBeverageState({
+                    [name]: value,
+                    editMode: true
+                })
+            } else {
+                // Reduce qty_cold to match qty
+                this.setState({
+                    qty: value,
+                    qty_cold: value
+                })
+            }
+        } else if (name === "qty_cold") {
+            if (value <= this.state.qty) {
+                this.setState({
+                    qty_cold: value
+                })
 
-    validateQtyCold() {
-        // Ensures that qty >= qty_cold
-        if (this.state.qty < this.state.qty_cold) {
-            this.setState({
-                qty_cold: this.state.qty
-            })
+                // Update state of the parent beverage
+                this.props.updateBeverageState({
+                    [name]: value,
+                    editMode: true
+                })
+            } else {
+                this.setState({
+                    qty_cold: value
+                })
+            }
         }
     }
 
@@ -55,7 +70,7 @@ class AttrQty extends React.Component {
                            className="input-number"
                            value={this.state.qty}
                            onChange={this.handleChange}
-                           onBlur={this.validateQtyCold}/>
+                           onBlur={this.handleChange}/>
                 </td>
 
                 <td className="list-item-table-key">
@@ -73,7 +88,7 @@ class AttrQty extends React.Component {
                            className="input-number"
                            value={this.state.qty_cold}
                            onChange={this.handleChange}
-                           onBlur={this.validateQtyCold}/>
+                           onBlur={this.handleChange}/>
                 </td>
             </>
         )
