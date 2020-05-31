@@ -20,12 +20,8 @@ function LocationPicklistValues(props) {
 LocationPicklistValues.defaultProps = {
     data: [
         {
-            value: "Default",
-            display_order: 0
-        },
-        {
             value: "Home",
-            display_order: 1
+            display_order: 0
         }
     ]
 }

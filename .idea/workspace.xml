@@ -2,38 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="Picklist displays are good enough">
-      <change afterPath="$PROJECT_DIR$/public/icons/calendar-alt-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/calendar-alt-solid.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/euro-sign-solid.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/exchange-alt-solid.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/hashtag-solid.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/link-solid.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/map-marked-alt-solid.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/sticky-note-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/icons/wine-bottle-solid.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BeverageDataTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BeverageDataTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListItemTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItemTemplate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PageTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageTitle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PicklistValuesContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PicklistValuesContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrAgingPotential.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrAgingPotential.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrBatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrBatch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrBottleDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrBottleDate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LocationPicklistValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LocationPicklistValues.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrLocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrLocation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrNote.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrNote.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrQty.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrQty.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrQtyCold.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrQtyCold.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrSize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrSize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrSpecificStyle.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrStyle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrTrade.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrTrade.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrTradeValue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrTradeValue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrUntappd.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrUntappd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrYear.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrYear.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/parse_picklists.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/parse_picklists.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,10 +286,10 @@
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
     <state x="895" y="500" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590108270682" />
-    <state x="558" y="223" width="670" height="592" key="search.everywhere.popup" timestamp="1590902875174">
-      <screen x="0" y="23" width="1680" height="988" />
+    <state x="662" y="252" width="670" height="676" key="search.everywhere.popup" timestamp="1590935366791">
+      <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="662" y="252" width="670" height="676" key="search.everywhere.popup/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590764174863" />
+    <state x="662" y="252" width="670" height="676" key="search.everywhere.popup/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590935366791" />
     <state x="558" y="223" width="670" height="592" key="search.everywhere.popup/0.23.1680.988@0.23.1680.988" timestamp="1590902875174" />
   </component>
 </project>

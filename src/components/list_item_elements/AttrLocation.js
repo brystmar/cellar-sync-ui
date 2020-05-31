@@ -12,10 +12,11 @@ function AttrLocation(props) {
                      alt="Location"
                      className="list-item-icon-key"/>
             </td>
-            <td className="list-item-table-value"
-                onClick={() => props.updateBeverageState({editMode: true})}>
+            <td className="list-item-table-value">
                 {/*<Form.Label>Location</Form.Label>*/}
                 <Form.Control as="select"
+                              size="sm"
+                              disabled={true}
                               className="picklist-selector"
                               defaultValue={props.location}>
                     {locations}

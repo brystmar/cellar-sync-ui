@@ -12,9 +12,10 @@ function AttrSize(props) {
                      alt="Bottle Size"
                      className="list-item-icon-key"/>
             </td>
-            <td className="list-item-table-value"
-                onClick={() => props.updateBeverageState({editMode: true})}>
+            <td className="list-item-table-value">
                 <Form.Control as="select"
+                              size="sm"
+                              disabled={true}
                               className="picklist-selector"
                               defaultValue={props.size}>
                     {sizes}
