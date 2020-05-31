@@ -13,8 +13,7 @@ import AttrTradeValue from './list_item_elements/AttrTradeValue';
 import AttrAgingPotential from './list_item_elements/AttrAgingPotential';
 import AttrUntappd from './list_item_elements/AttrUntappd';
 import AttrNote from './list_item_elements/AttrNote'
-import AttrQtyCold from './list_item_elements/AttrQtyCold';
-import parse_picklists from "../functions/parse_picklists";
+import parse_picklists from '../functions/parse_picklists';
 
 class ListItemTemplate extends React.Component {
     constructor(props) {
@@ -104,12 +103,9 @@ class ListItemTemplate extends React.Component {
                     </tr>
                     <tr>
                         <AttrQty qty={this.state.qty}
+                                 qty_cold={this.state.qty_cold}
                                  editMode={this.state.editMode}
                                  updateBeverageState={this.updateBeverageState}/>
-
-                        <AttrQtyCold qty={this.state.qty_cold}
-                                     editMode={this.state.editMode}
-                                     updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
                         <AttrYear year={this.state.year}
@@ -187,6 +183,7 @@ ListItemTemplate.defaultProps = {
         style: "",
         specific_style: "",
         qty: 0,
+        qty_cold: 0,
         untappd: "",
         aging_potential: "",
         trade_value: "",

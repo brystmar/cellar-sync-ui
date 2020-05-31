@@ -4,29 +4,35 @@ class AttrQty extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            editMode: false,
-            qty: this.props.qty
+            qty: this.props.qty,
+            qty_cold: this.props.qty_cold
         }
 
         this.handleChange = this.handleChange.bind(this);
-        this.toggleEditMode = this.toggleEditMode.bind(this);
+        this.validateQtyCold = this.validateQtyCold.bind(this);
     }
 
     handleChange(event) {
         const {name, value} = event.target;
+        this.validateQtyCold();
+
+        // Update local state
         this.setState({
             [name]: value
         })
+
+        // Update state of the parent beverage
+        this.props.updateBeverageState({
+            [name]: value,
+            editMode: true
+        })
     }
 
-    toggleEditMode(enabled = NaN) {
-        if (isNaN(enabled)) {
+    validateQtyCold() {
+        // Ensures that qty >= qty_cold
+        if (this.state.qty < this.state.qty_cold) {
             this.setState({
-                editMode: !this.state.editMode
-            })
-        } else {
-            this.setState({
-                editMode: enabled
+                qty_cold: this.state.qty
             })
         }
     }
@@ -41,21 +47,33 @@ class AttrQty extends React.Component {
                     {/*<i className="fas fa-hashtag"/>*/}
                 </td>
 
-                <td className="list-item-table-value"
-                    onMouseOver={() => this.toggleEditMode(true)}
-                    onClick={() => {
-                        this.toggleEditMode(true);
-                        this.props.updateBeverageState({editMode: true});
-                    }}>
+                <td className="list-item-table-value">
                     <input name="qty"
                            type="number"
                            min={0}
                            max={99}
                            className="input-number"
                            value={this.state.qty}
-                           disabled={!this.state.editMode}
                            onChange={this.handleChange}
-                           onBlur={() => this.props.updateBeverageState({qty: this.state.qty})}/>
+                           onBlur={this.validateQtyCold}/>
+                </td>
+
+                <td className="list-item-table-key">
+                    <img src="./icons/snowflake-regular.svg"
+                         alt="Qty Cold"
+                         className="list-item-icon-key"/>
+                    {/*<i className="far fa-snowflake"/>*/}
+                </td>
+
+                <td className="list-item-table-value">
+                    <input name="qty_cold"
+                           type="number"
+                           min={0}
+                           max={this.state.qty}
+                           className="input-number"
+                           value={this.state.qty_cold}
+                           onChange={this.handleChange}
+                           onBlur={this.validateQtyCold}/>
                 </td>
             </>
         )
@@ -63,7 +81,8 @@ class AttrQty extends React.Component {
 }
 
 AttrQty.defaultProps = {
-    qty: 0
+    qty: 0,
+    qty_cold: 0
 }
 
 export default AttrQty;

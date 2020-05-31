@@ -41,26 +41,28 @@ class AttrBatch extends React.Component {
                          className="list-item-icon-key"/>
                 </td>
 
-                <td className="list-item-table-value"
-                    onMouseOver={() => this.toggleEditMode(true)}
-                    onClick={() => {
-                        this.toggleEditMode(true);
-                        this.props.updateBeverageState({
-                            editMode: true
-                        })
-                    }}>
+                <td className="list-item-table-value-disabled"
+                    // onMouseOver={() => this.toggleEditMode(true)}
+                    // onClick={() => {
+                    //     this.toggleEditMode(true);
+                    //     this.props.updateBeverageState({
+                    //         editMode: true
+                    //     })
+                    // }}>
+                    >
                     <input name="batch"
                            type="number"
                            min={0}
                            max={9999}
                            className="input-number"
                            value={this.state.batch}
-                           disabled={!this.state.editMode}
+                           disabled={true}
                            onChange={this.handleChange}
-                           onBlur={() => this.props.updateBeverageState({
-                               batch: this.state.batch,
-                               editMode: true
-                           })}/>
+                           // onBlur={() => this.props.updateBeverageState({
+                           //     batch: this.state.batch,
+                           //     editMode: true
+                           // })}
+                    />
                 </td>
             </>
         )

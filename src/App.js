@@ -51,7 +51,7 @@ class App extends React.Component {
 
         // Add the new beverage
         newState.push(beverage);
-        console.log("Added new beer: " + beverage);
+        console.log("Added new beer: " + JSON.stringify(beverage));
         console.log(newState);
 
         this.setState({

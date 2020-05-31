@@ -2,10 +2,11 @@
 	cursor: default;
 }
 
-.expanded-list-table input:hover {
-	border-color: gray;
+.expanded-list-item table {
+	border-collapse: separate;
+	border-width: thin;
 	border-style: solid;
-	border-width: 1px;
+	/*border-top-style: hidden;*/
 }
 
 .list-item-table-key,
@@ -18,13 +19,6 @@
 	color: gray;
 	height: 13px;
 	cursor: default;
-}
-
-.expanded-list-item table {
-	border-collapse: separate;
-	border-width: thin;
-	border-style: solid;
-	/*border-top-style: hidden;*/
 }
 
 .list-item-icon-key {
@@ -46,10 +40,14 @@
 .list-item-table-value {
 	text-align: -webkit-left;
 	vertical-align: center;
+
 	border-style: solid;
 	border-width: 1px;
 	border-color: #fff;
+
 	padding: 2px 30px 2px 2px;
+
+	width: min-content;
 }
 
 .list-item-table-value input {
@@ -60,13 +58,9 @@
 }
 
 .list-item-table-value:hover input {
-	/*border-color: gray;*/
-	/*border-style: solid;*/
-	/*border-width: 1px;*/
-}
-
-.list-item-edit-button {
-	/*text-align: -webkit-right;*/
+	border-color: gray;
+	border-style: solid;
+	border-width: 1px;
 }
 
 .list-item-edit-button,
@@ -78,12 +72,6 @@
 .clickable-toggle {
 	cursor: pointer;
 }
-
-/*.input-text:hover {*/
-/*	border-color: gray;*/
-/*	border-style: solid;*/
-/*	border-width: 1px;*/
-/*}*/
 
 .input-date {
 	max-width: 100px;

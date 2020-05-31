@@ -41,21 +41,23 @@ class AttrYear extends React.Component {
                     {/*<i className="fas fa-calendar-alt"/>*/}
                 </td>
 
-                <td className="list-item-table-value"
-                    onMouseOver={() => this.toggleEditMode(true)}
-                    onClick={() => {
-                        this.toggleEditMode(true);
-                        this.props.updateBeverageState({editMode: true});
-                    }}>
+                <td className="list-item-table-value-disabled"
+                    // onMouseOver={() => this.toggleEditMode(true)}
+                    // onClick={() => {
+                    //     this.toggleEditMode(true);
+                    //     this.props.updateBeverageState({editMode: true});
+                    // }}
+                >
                     <input name="year"
                            type="number"
-                           min={1980}
-                           max={2050}
+                           min={1900}
+                           max={(new Date()).getFullYear()}
                            className="input-number"
                            value={this.state.year}
-                           disabled={!this.state.editMode}
-                           onChange={this.handleChange}
-                           onBlur={() => this.props.updateBeverageState({year: this.state.year})}/>
+                           disabled={true}
+                           // onChange={this.handleChange}
+                           // onBlur={() => this.props.updateBeverageState({year: this.state.year})}
+                    />
                 </td>
             </>
         )
