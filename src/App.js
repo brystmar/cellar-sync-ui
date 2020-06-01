@@ -6,6 +6,7 @@ import PicklistValuesContainer from './components/PicklistValuesContainer';
 import BeverageDataTable from './components/BeverageDataTable';
 import PageTitle from './components/PageTitle';
 import Footer from './components/Footer';
+import AddBeverage from './components/AddBeverage';
 
 class App extends React.Component {
     constructor() {
@@ -26,17 +27,17 @@ class App extends React.Component {
         // Retrieve the list of beverages from the backend
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar")
             .then(response => response.json())
-            .then(result => this.setState({beerList: result.data}))
+            .then(result => {
+                console.log(result.data);
+                this.setState({beerList: result.data})
+            })
+            // .then(() => console.log(this.state.beerList))
             .catch(error => console.log("Error retrieving beer list data:", error));
 
         // Retrieve all picklist values from the backend
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/picklist-data")
             .then(response => response.json())
-            .then(result => {
-                this.setState({
-                    picklistData: result.data
-                })
-            })
+            .then(result => this.setState({picklistData: result.data}))
             .catch(error => console.log("Error retrieving picklist data:", error));
     }
 
@@ -74,6 +75,8 @@ class App extends React.Component {
                             <BeverageDataTable beerList={this.state.beerList}
                                                picklistData={this.state.picklistData}
                                                updateBeverageList={this.updateBeverageList}/>
+                            <AddBeverage picklistData={this.state.picklistData}
+                                         updateBeverageList={this.updateBeverageList}/>
                         </Route>
                         <Route path="/picklists">
                             <PageTitle title={"Picklist Values"}/>

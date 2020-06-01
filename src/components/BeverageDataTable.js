@@ -21,7 +21,7 @@ function BeverageDataTable(props) {
 
                            noHeader={true}
                            subHeader={false}
-                           defaultSortField="brewery"
+                           // defaultSortField="brewery"
 
                            expandableRows={true}
                            expandableRowsComponent={
