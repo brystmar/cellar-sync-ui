@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/AddBeverageForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/list_item_elements/.AttrSpecificStyle.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/list_item_elements/.AttrTrade 2.js.icloud" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrQtyCold.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/styles/add_beverage_form.css" afterDir="false" />
+    <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="Working on the">
+      <change afterPath="$PROJECT_DIR$/public/icons/address-card-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/icons/nametag.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrSpecificStyle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrTrade 2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AddBeverage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddBeverage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListItemTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItemTemplate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/ActionButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/ActionButtons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrBatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrBatch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrBottleDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrBottleDate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrLocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrLocation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrNote.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrNote.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrQty.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrQty.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrSize.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrSize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrUntappd.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrUntappd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddBeverageForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddBeverageForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/.AttrSpecificStyle.js.icloud" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/.AttrTrade 2.js.icloud" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrYear.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrYear.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/styles/list_items.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/styles/list_items.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/styles/add_beverage_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/styles/add_beverage_form.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +122,8 @@
       <workItem from="1590417577606" duration="28686000" />
       <workItem from="1590697981698" duration="10964000" />
       <workItem from="1590982670213" duration="1017000" />
-      <workItem from="1590983702337" duration="12350000" />
+      <workItem from="1590983702337" duration="17803000" />
+      <workItem from="1591042145044" duration="265000" />
     </task>
     <task id="LOCAL-00001" summary="Installed react-router">
       <created>1585522324328</created>
@@ -263,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590988376140</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Re-arranged fields under each list item">
+      <created>1591032154210</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1591032154210</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +295,8 @@
     <MESSAGE value="Added logo prop to title, other misc cleanup" />
     <MESSAGE value="Improved qty/qty_cold validation" />
     <MESSAGE value="Working on the Add button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on the Add button" />
+    <MESSAGE value="Re-arranged fields under each list item" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re-arranged fields under each list item" />
   </component>
   <component name="WindowStateProjectService">
     <state x="680" y="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591029950426">
@@ -305,10 +308,10 @@
     </state>
     <state x="845" y="333" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590422920159" />
     <state x="712" y="294" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.988@0.23.1680.988" timestamp="1590862298731" />
-    <state x="690" y="181" key="CommitChangelistDialog2" timestamp="1590988375961">
+    <state x="690" y="181" key="CommitChangelistDialog2" timestamp="1591042390020">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="690" y="181" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590988375961" />
+    <state x="690" y="181" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1591042390020" />
     <state x="581" y="161" key="CommitChangelistDialog2/0.23.1680.988@0.23.1680.988" timestamp="1590859493562" />
     <state x="962" y="479" width="480" height="291" key="Github.ShareDialog" timestamp="1585521965827">
       <screen x="0" y="23" width="1994" height="1129" />
@@ -334,10 +337,10 @@
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
     <state x="705" y="250" key="RollbackChangesDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590429872063" />
-    <state x="707" y="319" key="Vcs.Push.Dialog.v2" timestamp="1590988378260">
+    <state x="707" y="319" key="Vcs.Push.Dialog.v2" timestamp="1591032157403">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590988378260" />
+    <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1591032157403" />
     <state x="784" y="411" key="com.intellij.ide.util.TipDialog" timestamp="1585706984671">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>

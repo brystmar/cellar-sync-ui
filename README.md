@@ -17,3 +17,4 @@ Icons from:
 * Vladimir Belochkin from [The Noun Project](https://thenounproject.com/)
 * Gabriele Malaspina from [The Noun Project](https://thenounproject.com/)
 * nauraicon from [The Noun Project](https://thenounproject.com/)
+* Pixel Perfect from [Flat Icon](https://www.flaticon.com/authors/pixel-perfect)

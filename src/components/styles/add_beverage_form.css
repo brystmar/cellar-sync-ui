@@ -3,3 +3,8 @@
 	bottom: 20px;
 	right: 20px;
 }
+
+.popover {
+	min-width: 500px;
+	min-height: 650px;
+}

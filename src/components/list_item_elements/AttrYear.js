@@ -43,13 +43,13 @@ class AttrYear extends React.Component {
                 <td className="list-item-table-value list-item-table-value-disabled">
                     <input name="year"
                            type="number"
-                           min={1900}
-                           max={(new Date()).getFullYear()}
+                           min={1950}
+                           max={(new Date()).getFullYear() + 1}
                            className="input-number"
                            value={this.state.year}
                            disabled={true}
-                           // onChange={this.handleChange}
-                           // onBlur={() => this.props.updateBeverageState({year: this.state.year})}
+                        // onChange={this.handleChange}
+                        // onBlur={() => this.props.updateBeverageState({year: this.state.year})}
                     />
                 </td>
             </>
