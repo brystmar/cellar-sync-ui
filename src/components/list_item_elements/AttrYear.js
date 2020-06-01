@@ -38,16 +38,9 @@ class AttrYear extends React.Component {
                     <img src="./icons/calendar-alt-solid.svg"
                          alt="Year"
                          className="list-item-icon-key"/>
-                    {/*<i className="fas fa-calendar-alt"/>*/}
                 </td>
 
-                <td className="list-item-table-value-disabled"
-                    // onMouseOver={() => this.toggleEditMode(true)}
-                    // onClick={() => {
-                    //     this.toggleEditMode(true);
-                    //     this.props.updateBeverageState({editMode: true});
-                    // }}
-                >
+                <td className="list-item-table-value list-item-table-value-disabled">
                     <input name="year"
                            type="number"
                            min={1900}

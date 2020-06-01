@@ -1,11 +1,11 @@
 import React from 'react';
 
-class AttrBatch extends React.Component {
+class AttrQtyCold extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             editMode: false,
-            batch: this.props.batch
+            qty_cold: this.props.qty_cold
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -35,33 +35,35 @@ class AttrBatch extends React.Component {
         return (
             <>
                 <td className="list-item-table-key">
-                    <img src="./icons/noun_Bat_2088669.svg"
-                         alt="Batch"
+                    <img src="./icons/snowflake-regular.svg"
+                         alt="Qty Cold"
                          className="list-item-icon-key"/>
+                    {/*<i className="far fa-snowflake"/>*/}
                 </td>
 
-                <td className="list-item-table-value list-item-table-value-disabled">
-                    <input name="batch"
+                <td className="list-item-table-value"
+                    onMouseOver={() => this.toggleEditMode(true)}
+                    onClick={() => {
+                        this.toggleEditMode(true);
+                        this.props.updateBeverageState({editMode: true});
+                    }}>
+                    <input name="qty_cold"
                            type="number"
                            min={0}
-                           max={9999}
+                           max={99}
                            className="input-number"
-                           value={this.state.batch}
-                           disabled={true}
+                           value={this.state.qty_cold}
+                           disabled={!this.state.editMode}
                            onChange={this.handleChange}
-                        // onBlur={() => this.props.updateBeverageState({
-                        //     batch: this.state.batch,
-                        //     editMode: true
-                        // })}
-                    />
+                           onBlur={() => this.props.updateBeverageState({qty: this.state.qty_cold})}/>
                 </td>
             </>
         )
     }
 }
 
-AttrBatch.defaultProps = {
-    batch: 0
+AttrQtyCold.defaultProps = {
+    qty_cold: 0
 }
 
-export default AttrBatch;
+export default AttrQtyCold;

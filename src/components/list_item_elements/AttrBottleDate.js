@@ -50,15 +50,8 @@ class AttrBottleDate extends React.Component {
                     <img src="./icons/calendar-alt-regular.svg"
                          alt="Bottle Date"
                          className="list-item-icon-key"/>
-                    {/*<i className="far fa-calendar-alt"/>*/}
                 </td>
-                <td className="list-item-table-value-disabled"
-                    // onMouseOver={() => this.toggleEditMode(true)}
-                    // onClick={() => {
-                    //     this.toggleEditMode(true);
-                    //     this.props.updateBeverageState({editMode: true});
-                    // }}
-                    >
+                <td className="list-item-table-value list-item-table-value-disabled">
                     <DatePicker className="input-date"
                                 selected={Date.parse(this.state.bottleDate)}
                                 disabled={true}

@@ -16,16 +16,20 @@ class AttrQty extends React.Component {
         // Validate that qty >= qty_cold
         if (name === "qty") {
             if (value >= this.state.qty_cold) {
-                // Update local state
-                this.setState({
-                    qty: value
-                })
+                // Only update if the value changed
+                // `value` is a string here for some reason
+                if (value.toString() !== this.state.qty.toString()) {
+                    // Update local state
+                    this.setState({
+                        qty: value
+                    })
 
-                // Update state of the parent beverage
-                this.props.updateBeverageState({
-                    [name]: value,
-                    editMode: true
-                })
+                    // Update state of the parent beverage
+                    this.props.updateBeverageState({
+                        [name]: value,
+                        editMode: true
+                    })
+                }
             } else {
                 // Reduce qty_cold to match qty
                 this.setState({
@@ -35,15 +39,18 @@ class AttrQty extends React.Component {
             }
         } else if (name === "qty_cold") {
             if (value <= this.state.qty) {
-                this.setState({
-                    qty_cold: value
-                })
+                // Only update if the value changed
+                if (value.toString() !== this.state.qty_cold.toString()) {
+                    this.setState({
+                        qty_cold: value
+                    })
 
-                // Update state of the parent beverage
-                this.props.updateBeverageState({
-                    [name]: value,
-                    editMode: true
-                })
+                    // Update state of the parent beverage
+                    this.props.updateBeverageState({
+                        [name]: value,
+                        editMode: true
+                    })
+                }
             } else {
                 this.setState({
                     qty_cold: value
@@ -53,6 +60,7 @@ class AttrQty extends React.Component {
     }
 
     render() {
+        console.log("Qty: " + this.state.qty + ", Cold: " + this.state.qty_cold)
         return (
             <>
                 <td className="list-item-table-key">

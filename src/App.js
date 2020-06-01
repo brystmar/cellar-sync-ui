@@ -75,7 +75,8 @@ class App extends React.Component {
                             <BeverageDataTable beerList={this.state.beerList}
                                                picklistData={this.state.picklistData}
                                                updateBeverageList={this.updateBeverageList}/>
-                            <AddBeverage picklistData={this.state.picklistData}
+                            <AddBeverage beerList={this.state.beerList}
+                                         picklistData={this.state.picklistData}
                                          updateBeverageList={this.updateBeverageList}/>
                         </Route>
                         <Route path="/picklists">

@@ -12,7 +12,7 @@ function AttrSize(props) {
                      alt="Bottle Size"
                      className="list-item-icon-key"/>
             </td>
-            <td className="list-item-table-value">
+            <td className="list-item-table-value list-item-table-value-disabled">
                 <Form.Control as="select"
                               size="sm"
                               disabled={true}

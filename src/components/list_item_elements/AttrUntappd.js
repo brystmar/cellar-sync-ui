@@ -4,31 +4,25 @@ class AttrUntappd extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            editMode: false,
             untappd: this.props.untappd
         }
 
         this.handleChange = this.handleChange.bind(this);
-        this.toggleEditMode = this.toggleEditMode.bind(this);
     }
 
     handleChange(event) {
         const {name, value} = event.target;
+
+        // Update local state
         this.setState({
             [name]: value
         })
-    }
 
-    toggleEditMode(enabled = NaN) {
-        if (isNaN(enabled)) {
-            this.setState({
-                editMode: !this.state.editMode
-            })
-        } else {
-            this.setState({
-                editMode: enabled
-            })
-        }
+        // Update parent beverage state
+        this.props.updateBeverageState({
+            [name]: value,
+            editMode: true
+        })
     }
 
     render() {
@@ -38,21 +32,13 @@ class AttrUntappd extends React.Component {
                     <img src="./icons/link-solid.svg"
                          alt="Untappd Link"
                          className="list-item-icon-key"/>
-                    {/*<i className="fas fa-link"/>*/}
                 </td>
-                <td className="list-item-table-value"
-                    onMouseOver={() => this.toggleEditMode(true)}
-                    onClick={() => {
-                        this.toggleEditMode(true);
-                        this.props.updateBeverageState({editMode: true});
-                    }}>
+                <td className="list-item-table-value">
                     <input name="untappd"
                            type="text"
                            className="input-text"
                            value={this.state.untappd}
-                           disabled={!this.state.editMode}
-                           onChange={this.handleChange}
-                           onBlur={() => this.props.updateBeverageState({untappd: this.state.untappd})}/>
+                           onChange={this.handleChange}/>
                 </td>
             </>
         )

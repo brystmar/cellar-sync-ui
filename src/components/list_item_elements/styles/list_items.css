@@ -15,15 +15,20 @@
 	box-sizing: border-box;
 }
 
-.list-item-table-key .svg-inline--fa {
+.list-item-table-key {
 	color: gray;
-	height: 13px;
+	width: 15px;
+	height: 15px;
 	cursor: default;
 }
 
 .list-item-icon-key {
 	max-height: 15px;
 	max-width: 20px;
+	/*SVG color conversion tool: https://codepen.io/sosuke/pen/Pjoqqp
+	Prefix with brightness(0) saturate(100%) to ensure all SVGs start completely black.
+	Now we can set SVG color to #808080 gray.*/
+	filter: brightness(0) saturate(100%) invert(54%) sepia(7%) saturate(0%) hue-rotate(226deg) brightness(92%) contrast(83%);
 }
 
 .list-item-icon-value {
@@ -42,23 +47,22 @@
 	vertical-align: center;
 	width: min-content;
 
-	border-style: solid;
-	border-width: 1px;
-	border-color: #fff;
+	border-style: hidden;
+	/*border-width: 1px;*/
+	/*border-color: #fff;*/
+	/*border-collapse: separate;*/
 	padding: 2px 30px 2px 2px;
 }
 
 .list-item-table-value input {
-	border-style: hidden;
-	border-collapse: separate;
+	border: 1px solid transparent;
+	box-sizing: border-box;
 	color: inherit;
 	width: min-content;
 }
 
 .list-item-table-value:hover input {
 	border-color: gray;
-	border-style: solid;
-	border-width: 1px;
 }
 
 .list-item-edit-button,
@@ -73,10 +77,4 @@
 
 .input-date {
 	max-width: 100px;
-}
-
-.add-button-floating {
-	position: fixed;
-	bottom: 20px;
-	right: 20px;
 }

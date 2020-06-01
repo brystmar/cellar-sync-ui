@@ -1,6 +1,6 @@
 import React from 'react';
 import './list_item_elements/styles/list_items.css';
-import ELIButtons from './list_item_elements/ActionButtons';
+import ActionButtons from './list_item_elements/ActionButtons';
 import AttrLocation from './list_item_elements/AttrLocation';
 import AttrQty from './list_item_elements/AttrQty';
 import AttrBatch from './list_item_elements/AttrBatch';
@@ -12,7 +12,7 @@ import AttrTrade from './list_item_elements/AttrTrade';
 import AttrTradeValue from './list_item_elements/AttrTradeValue';
 import AttrAgingPotential from './list_item_elements/AttrAgingPotential';
 import AttrUntappd from './list_item_elements/AttrUntappd';
-import AttrNote from './list_item_elements/AttrNote'
+import AttrNote from './list_item_elements/AttrNote';
 import parse_picklists from '../functions/parse_picklists';
 
 class ListItemTemplate extends React.Component {
@@ -91,47 +91,14 @@ class ListItemTemplate extends React.Component {
                 <table className="expanded-list-table">
                     <tbody>
                     <tr>
-                        <AttrLocation location={this.state.location}
-                                      editMode={this.state.editMode}
-                                      // TODO: Replace parse_picklists with an arrow function
-                                      picklistData={parse_picklists(this.props.picklistData, "location")}
-                                      updateBeverageState={this.updateBeverageState}/>
-
-                        <AttrSize size={this.state.size}
-                                  editMode={this.state.editMode}
-                                  // TODO: Replace parse_picklists with an arrow function
-                                  picklistData={parse_picklists(this.props.picklistData, "size")}
-                                  updateBeverageState={this.updateBeverageState}/>
-                    </tr>
-                    <tr>
-                        <AttrQty qty={this.state.qty}
-                                 qty_cold={this.state.qty_cold}
-                                 editMode={this.state.editMode}
-                                 updateBeverageState={this.updateBeverageState}/>
-                    </tr>
-                    <tr>
-                        <AttrYear year={this.state.year}
-                                  editMode={this.state.editMode}
-                                  updateBeverageState={this.updateBeverageState}/>
-
-                        <AttrAgingPotential
-                            aging_potential={this.state.aging_potential ? this.state.aging_potential : 2}
-                            editMode={this.state.editMode}
-                            updateBeverageState={this.updateBeverageState}/>
-                    </tr>
-                    <tr>
-                        <AttrBottleDate
-                            bottle_date={this.state.bottle_date ? this.state.bottle_date : ""}
+                        <AttrQty
+                            qty={this.state.qty}
+                            qty_cold={this.state.qty_cold}
                             editMode={this.state.editMode}
                             updateBeverageState={this.updateBeverageState}/>
 
-                        <AttrTrade for_trade={this.state.for_trade}
-                                   editMode={this.state.editMode}
-                                   updateBeverageState={this.updateBeverageState}/>
-                    </tr>
-                    <tr>
-                        <AttrBatch
-                            batch={this.state.batch ? this.state.batch : ""}
+                        <AttrTrade
+                            for_trade={this.state.for_trade}
                             editMode={this.state.editMode}
                             updateBeverageState={this.updateBeverageState}/>
 
@@ -141,17 +108,16 @@ class ListItemTemplate extends React.Component {
                             updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     <tr>
+                        {/*TODO: Replace parse_picklists with an arrow function*/}
                         <AttrStyle
                             style={this.state.style}
                             specific_style={this.state.specific_style}
                             editMode={this.state.editMode}
-                            // TODO: Replace parse_picklists with an arrow function
                             picklistData={parse_picklists(this.props.picklistData, "style")}
                             updateBeverageState={this.updateBeverageState}/>
-                    </tr>
-                    <tr>
-                        <AttrUntappd
-                            untappd={this.state.untappd ? this.state.untappd : ""}
+
+                        <AttrAgingPotential
+                            aging_potential={this.state.aging_potential ? this.state.aging_potential : 2}
                             editMode={this.state.editMode}
                             updateBeverageState={this.updateBeverageState}/>
                     </tr>
@@ -160,14 +126,49 @@ class ListItemTemplate extends React.Component {
                             note={this.state.note ? this.state.note : ""}
                             editMode={this.state.editMode}
                             updateBeverageState={this.updateBeverageState}/>
+
+                        <AttrUntappd
+                            untappd={this.state.untappd ? this.state.untappd : ""}
+                            editMode={this.state.editMode}
+                            updateBeverageState={this.updateBeverageState}/>
+
+                        <AttrBatch
+                            batch={this.state.batch ? this.state.batch : ""}
+                            editMode={this.state.editMode}
+                            updateBeverageState={this.updateBeverageState}/>
+                    </tr>
+                    <tr>
+                        {/*TODO: Replace parse_picklists with an arrow function*/}
+                        <AttrLocation
+                            location={this.state.location}
+                            editMode={this.state.editMode}
+                            picklistData={parse_picklists(this.props.picklistData, "location")}
+                            updateBeverageState={this.updateBeverageState}/>
+
+                        <AttrSize
+                            size={this.state.size}
+                            editMode={this.state.editMode}
+                            picklistData={parse_picklists(this.props.picklistData, "size")}
+                            updateBeverageState={this.updateBeverageState}/>
+
+                        <AttrYear
+                            year={this.state.year}
+                            editMode={this.state.editMode}
+                            updateBeverageState={this.updateBeverageState}/>
+
+                        <AttrBottleDate
+                            bottle_date={this.state.bottle_date ? this.state.bottle_date : ""}
+                            editMode={this.state.editMode}
+                            updateBeverageState={this.updateBeverageState}/>
                     </tr>
                     </tbody>
                 </table>
 
-                <ELIButtons editMode={this.state.editMode}
-                            toggleEditMode={this.toggleEditMode}
-                            resetBeverageData={this.resetBeverageData}
-                            handleSubmit={this.handleSubmit}/>
+                <ActionButtons
+                    editMode={this.state.editMode}
+                    toggleEditMode={this.toggleEditMode}
+                    resetBeverageData={this.resetBeverageData}
+                    handleSubmit={this.handleSubmit}/>
             </div>
         )
     }
