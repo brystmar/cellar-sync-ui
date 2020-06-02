@@ -1,73 +1,50 @@
 import React from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
+import Form from 'react-bootstrap/Form';
+// import DatePicker from 'react-datepicker';
+// import DateTimeField from '@texada/date-picker';
+// import '@texada/date-picker/dist/styles.min.css';
 
 class AttrBottleDate extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            editMode: false,
-            bottleDate: this.props.bottle_date
+            bottle_date: this.props.bottle_date
         }
 
-        this.handleDateChange = this.handleDateChange.bind(this);
-        this.toggleEditMode = this.toggleEditMode.bind(this);
-        this.updateBevState = this.updateBevState.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    handleDateChange(newDate) {
+    handleChange(event) {
+        const {name, value} = event.target;
         this.setState({
-            bottleDate: newDate
+            [name]: value
         })
-
-        // Update edit mode for the list item
-        this.props.updateBeverageState({editMode: true});
-    }
-
-    updateBevState(newDate) {
-        this.setState({
-            bottleDate: newDate
-        })
-        this.props.updateBeverageState({bottle_date: newDate.toString()})
-    }
-
-    toggleEditMode(enabled = NaN) {
-        if (isNaN(enabled)) {
-            this.setState({
-                editMode: !this.state.editMode
-            })
-        } else {
-            this.setState({
-                editMode: enabled
-            })
-        }
     }
 
     render() {
         return (
-            <>
-                <td className="list-item-table-key">
+            <Form.Group controlId="formBottleDate">
+                <Form.Label>
                     <img src="./icons/calendar-alt-regular.svg"
                          alt="Bottle Date"
                          className="list-item-icon-key"/>
-                </td>
-                <td className="list-item-table-value list-item-table-value-disabled">
-                    <DatePicker className="input-date"
-                                selected={Date.parse(this.state.bottleDate)}
-                                disabled={true}
-                                onChange={this.handleDateChange}
-                                onSelect={this.updateBevState}
-                                dateFormat="yyyy-MM-dd"
-                                useWeekdaysShort={true}
-                                onBlur={() => this.props.updateBeverageState({bottle_date: this.state.bottleDate})}/>
-                </td>
-            </>
+                    {this.props.forNewBeverage ? "Bottle Date" : ""}
+                </Form.Label>
+                <Form.Control name="bottle_date"
+                              type="text"
+                              value={this.state.bottle_date}
+                              placeholder="YYYY-MM-DD"
+                              className="input-text list-item-value"
+                              onChange={this.handleChange}
+                              disabled={!this.props.forNewBeverage}/>
+            </Form.Group>
         )
     }
 }
 
 AttrBottleDate.defaultProps = {
-    bottle_date: "2020-01-01"
+    bottle_date: "",
+    forNewBeverage: false
 }
 
 export default AttrBottleDate;

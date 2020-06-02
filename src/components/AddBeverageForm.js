@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles/add_beverage_form.css';
 import Form from 'react-bootstrap/Form';
+import './styles/add_beverage_form.css';
 import parse_picklists from '../functions/parse_picklists';
 
 class AddBeverageForm extends React.Component {

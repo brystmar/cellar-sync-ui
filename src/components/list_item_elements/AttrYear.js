@@ -5,12 +5,10 @@ class AttrYear extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            editMode: false,
             year: this.props.year
         }
 
         this.handleChange = this.handleChange.bind(this);
-        this.toggleEditMode = this.toggleEditMode.bind(this);
     }
 
     handleChange(event) {
@@ -20,43 +18,30 @@ class AttrYear extends React.Component {
         })
     }
 
-    toggleEditMode(enabled = NaN) {
-        if (isNaN(enabled)) {
-            this.setState({
-                editMode: !this.state.editMode
-            })
-        } else {
-            this.setState({
-                editMode: enabled
-            })
-        }
-    }
-
     render() {
         return (
-            <>
-                <td className="list-item-table-key">
+            <Form.Group controlId="formYear">
+                <Form.Label>
                     <img src="./icons/calendar-alt-solid.svg"
                          alt="Year"
                          className="list-item-icon-key"/>
-                </td>
-
-                <td className="list-item-table-value list-item-table-value-disabled">
-                    <Form.Control name="year"
-                                  type="number"
-                                  min={1950}
-                                  max={(new Date()).getFullYear() + 1}
-                                  className="input-number"
-                                  value={this.state.year}
-                                  disabled={true}/>
-                </td>
-            </>
+                    {this.props.forNewBeverage ? "Year" : ""}
+                </Form.Label>
+                <Form.Control name="year"
+                              type="number"
+                              min={1950}
+                              max={(new Date()).getFullYear() + 1}
+                              placeholder="Year"
+                              className="input-number list-item-value"
+                              value={this.state.year}
+                              disabled={!this.props.forNewBeverage}/>
+            </Form.Group>
         )
     }
 }
 
 AttrYear.defaultProps = {
-    year: (new Date()).getFullYear(),
+    year: "",
     forNewBeverage: false
 }
 

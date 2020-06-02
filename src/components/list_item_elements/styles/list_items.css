@@ -25,6 +25,8 @@
 .list-item-icon-key {
 	max-height: 15px;
 	max-width: 20px;
+	min-height: 10px;
+	min-width: 10px;
 	/*SVG color conversion tool: https://codepen.io/sosuke/pen/Pjoqqp
 	Prefix with brightness(0) saturate(100%) to ensure all SVGs start completely black.
 	Now we can set SVG color to #808080 gray.*/

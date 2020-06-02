@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from "react-bootstrap/Form";
 
 class AttrQty extends React.Component {
     constructor(props) {
@@ -60,44 +61,45 @@ class AttrQty extends React.Component {
     }
 
     render() {
-        console.log("Qty: " + this.state.qty + ", Cold: " + this.state.qty_cold)
         return (
             <>
-                <td className="list-item-table-key">
-                    <img src="./icons/hashtag-solid.svg"
-                         alt="Quantity (overall)"
-                         className="list-item-icon-key"/>
-                </td>
+                <Form.Group controlId="formQty">
+                    <Form.Label>
+                        <img src="./icons/hashtag-solid.svg"
+                             alt="Quantity (overall)"
+                             className="list-item-icon-key"/>
+                         {this.props.forNewBeverage ? "Qty" : ""}
+                    </Form.Label>
 
-                <td className="list-item-table-value">
-                    <input name="qty"
-                           type="number"
-                           min={0}
-                           max={99}
-                           placeholder="Qty"
-                           className="input-number"
-                           value={this.state.qty}
-                           onChange={this.handleChange}
-                           onBlur={this.handleChange}/>
-                </td>
+                    <Form.Control name="qty"
+                                  type="number"
+                                  min={0}
+                                  max={99}
+                                  placeholder="Qty"
+                                  className="input-number list-item-value"
+                                  value={this.state.qty}
+                                  onChange={this.handleChange}
+                                  onBlur={this.handleChange}/>
+                </Form.Group>
 
-                <td className="list-item-table-key">
-                    <img src="./icons/snowflake-regular.svg"
-                         alt="Qty Cold"
-                         className="list-item-icon-key"/>
-                </td>
+                <Form.Group controlId="formQtyCold">
+                    <Form.Label>
+                        <img src="./icons/snowflake-regular.svg"
+                             alt="Qty Cold"
+                             className="list-item-icon-key"/>
+                        {this.props.forNewBeverage ? "Qty Cold" : ""}
+                    </Form.Label>
 
-                <td className="list-item-table-value">
-                    <input name="qty_cold"
-                           type="number"
-                           min={0}
-                           max={this.state.qty}
-                           placeholder="Qty Cold"
-                           className="input-number"
-                           value={this.state.qty_cold}
-                           onChange={this.handleChange}
-                           onBlur={this.handleChange}/>
-                </td>
+                    <Form.Control name="qty_cold"
+                                  type="number"
+                                  min={0}
+                                  max={this.state.qty}
+                                  placeholder="Qty Cold"
+                                  className="input-number list-item-value"
+                                  value={this.state.qty_cold}
+                                  onChange={this.handleChange}
+                                  onBlur={this.handleChange}/>
+                </Form.Group>
             </>
         )
     }
@@ -105,7 +107,8 @@ class AttrQty extends React.Component {
 
 AttrQty.defaultProps = {
     qty: 0,
-    qty_cold: 0
+    qty_cold: 0,
+    forNewBeverage: false
 }
 
 export default AttrQty;

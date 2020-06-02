@@ -1,18 +1,18 @@
 import React from 'react';
+import Form from "react-bootstrap/Form";
 
 function AttrTrade(props) {
     return (
-        <>
-            <td className="list-item-table-key">
+        <Form.Group controlId="formTrade">
+            <Form.Label>
                 <img src="./icons/exchange-alt-solid.svg"
                      alt="For Trade?"
                      className="list-item-icon-key"/>
-                {/*<i className="fas fa-exchange-alt"/>*/}
-            </td>
-            <td className="list-item-table-value">
-                {mapForTradeIcons(props)}
-            </td>
-        </>
+                {props.forNewBeverage ? "For Trade?" : ""}
+            </Form.Label>
+
+            {mapForTradeIcons(props)}
+        </Form.Group>
     )
 }
 
@@ -47,7 +47,7 @@ function mapForTradeIcons(props) {
 
 AttrTrade.defaultProps = {
     for_trade: true,
-    editMode: false
+    forNewBeverage: false
 }
 
 export default AttrTrade;

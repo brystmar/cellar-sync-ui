@@ -7,7 +7,6 @@ class AttrUntappd extends React.Component {
         this.state = {
             untappd: this.props.untappd
         }
-
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -28,27 +27,27 @@ class AttrUntappd extends React.Component {
 
     render() {
         return (
-            <>
-                <td className="list-item-table-key">
+            <Form.Group controlId="formUntappd">
+                <Form.Label>
                     <img src="./icons/link-solid.svg"
                          alt="Untappd Link"
                          className="list-item-icon-key"/>
-                </td>
-                <td className="list-item-table-value">
-                    <Form.Control name="untappd"
-                                  type="text"
-                                  placeholder="Untappd Link"
-                                  className="input-text"
-                                  value={this.state.untappd}
-                                  onChange={this.handleChange}/>
-                </td>
-            </>
+                         {this.props.forNewBeverage ? "Untappd" : ""}
+                </Form.Label>
+                <Form.Control name="untappd"
+                              type="text"
+                              placeholder="Untappd Link"
+                              className="input-text-long list-item-value"
+                              value={this.state.untappd}
+                              onChange={this.handleChange}/>
+            </Form.Group>
         )
     }
 }
 
 AttrUntappd.defaultProps = {
-    untappd: ""
+    untappd: "",
+    forNewBeverage: false
 }
 
 export default AttrUntappd;

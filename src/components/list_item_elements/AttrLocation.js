@@ -6,27 +6,27 @@ function AttrLocation(props) {
         <option key={location.value}>{location.value}</option>);
 
     return (
-        <>
-            <td className="list-item-table-key">
+        <Form.Group controlId="formLocation">
+            <Form.Label>
                 <img src="./icons/map-marked-alt-solid.svg"
                      alt="Location"
                      className="list-item-icon-key"/>
-            </td>
-            <td className="list-item-table-value list-item-table-value-disabled">
-                <Form.Control as="select"
-                              size="sm"
-                              disabled={true}
-                              className="picklist-selector"
-                              defaultValue={props.location}>
-                    {locations}
-                </Form.Control>
-            </td>
-        </>
+                {props.forNewBeverage ? "Location" : ""}
+            </Form.Label>
+            <Form.Control as="select"
+                          size="sm"
+                          disabled={true}
+                          className="picklist-selector list-item-value"
+                          defaultValue={props.location}>
+                {locations}
+            </Form.Control>
+        </Form.Group>
     )
 }
 
 AttrLocation.defaultProps = {
     location: "Home",
+    forNewBeverage: false,
     picklistData: {
         value: "Home",
         display_order: 0

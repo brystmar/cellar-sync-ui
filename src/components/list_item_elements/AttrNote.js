@@ -5,10 +5,8 @@ class AttrNote extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            editMode: false,
             note: this.props.note
         }
-
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -29,28 +27,28 @@ class AttrNote extends React.Component {
 
     render() {
         return (
-            <>
-                <td className="list-item-table-key">
+            <Form.Group controlId="formNote">
+                <Form.Label>
                     <img src="./icons/sticky-note-regular.svg"
                          alt="Note"
                          className="list-item-icon-key"/>
-                </td>
+                    {this.props.forNewBeverage ? "Notes" : ""}
+                </Form.Label>
 
-                <td className="list-item-table-value">
-                    <Form.Control name="note"
-                                  type="text"
-                                  placeholder="Notes"
-                                  className="input-text"
-                                  value={this.state.note}
-                                  onChange={this.handleChange}/>
-                </td>
-            </>
+                <Form.Control name="note"
+                              type="text"
+                              placeholder="Notes"
+                              className="input-text-long list-item-value"
+                              value={this.state.note}
+                              onChange={this.handleChange}/>
+            </Form.Group>
         )
     }
 }
 
 AttrNote.defaultProps = {
-    note: ""
+    note: "",
+    forNewBeverage: false
 }
 
 export default AttrNote;

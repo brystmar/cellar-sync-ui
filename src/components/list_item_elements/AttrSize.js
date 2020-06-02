@@ -6,29 +6,30 @@ function AttrSize(props) {
         <option key={size.value}>{size.value}</option>);
 
     return (
-        <>
-            <td className="list-item-table-key">
+        <Form.Group controlId="formSize">
+            <Form.Label>
                 <img src="./icons/wine-bottle-solid.svg"
-                     alt="Bottle Size"
+                     alt="Size"
                      className="list-item-icon-key"/>
-            </td>
-            <td className="list-item-table-value list-item-table-value-disabled">
-                <Form.Control as="select"
-                              size="sm"
-                              disabled={true}
-                              className="picklist-selector"
-                              defaultValue={props.size}>
-                    {sizes}
-                </Form.Control>
-            </td>
-        </>
+                {props.forNewBeverage ? "Size" : ""}
+            </Form.Label>
+            <Form.Control as="select"
+                          name="size"
+                          size="sm"
+                          disabled={true}
+                          className="picklist-selector list-item-value"
+                          defaultValue={props.size}>
+                {sizes}
+            </Form.Control>
+        </Form.Group>
     )
 }
 
 AttrSize.defaultProps = {
-    size: "750 mL",
+    size: "",
+    forNewBeverage: false,
     picklistData: {
-        value: "750 mL",
+        value: "375 mL",
         display_order: 0
     }
 }

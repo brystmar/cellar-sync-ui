@@ -82,7 +82,7 @@ class AttrStyle extends React.Component {
             <option key={style.value}>{style.value}</option>);
 
         // Create the list of options for the SpecificStyle picklist
-        let i=0, specificStyleValues = [];
+        let i = 0, specificStyleValues = [];
         if (this.state.spStyleList.length > 0) {
             while (i < this.state.spStyleList.length) {
                 specificStyleValues.push(
@@ -99,36 +99,40 @@ class AttrStyle extends React.Component {
 
         return (
             <>
-                <td className="list-item-table-key">
-                    <img src="./icons/noun_Beer_style1_1975813.svg"
-                         alt="Style"
-                         className="list-item-icon-key"/>
-                </td>
-                <td className="list-item-table-value">
+                <Form.Group controlId="formStyle">
+                    <Form.Label>
+                        <img src="./icons/noun_Beer_style1_1975813.svg"
+                             alt="Style"
+                             className="list-item-icon-key"/>
+                        {this.props.forNewBeverage ? "Style" : ""}
+                    </Form.Label>
                     <Form.Control as="select"
+                                  name="style"
                                   size="sm"
-                                  className="picklist-selector"
+                                  className="picklist-selector list-item-value"
                                   value={this.state.style}
                                   onChange={this.handleStyleChange}>
                         {styleValues}
                     </Form.Control>
-                </td>
+                </Form.Group>
 
-                <td className="list-item-table-key">
-                    <img src="./icons/noun_Beer_style2_5693.svg"
-                         alt="Specific Style"
-                         className="list-item-icon-key"/>
-                </td>
-                <td className="list-item-table-value">
+                <Form.Group controlId="formSpecificStyle">
+                    <Form.Label>
+                        <img src="./icons/noun_Beer_style2_5693.svg"
+                             alt="Specific Style"
+                             className="list-item-icon-key"/>
+                        {this.props.forNewBeverage ? "Specific Style" : ""}
+                    </Form.Label>
                     <Form.Control as="select"
+                                  name="specific_style"
                                   size="sm"
-                                  className="picklist-selector"
+                                  className="picklist-selector list-item-value"
                                   value={this.state.spStyle}
                                   disabled={this.state.spStyleList.length === 0}
                                   onChange={this.handleSpStyleChange}>
                         {specificStyleValues}
                     </Form.Control>
-                </td>
+                </Form.Group>
             </>
         )
     }

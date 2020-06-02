@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form';
 import './list_item_elements/styles/list_items.css';
 import ActionButtons from './list_item_elements/ActionButtons';
 import AttrLocation from './list_item_elements/AttrLocation';
@@ -18,12 +19,24 @@ import parse_picklists from '../functions/parse_picklists';
 class ListItemTemplate extends React.Component {
     constructor(props) {
         super(props);
-        this.state = Object.assign(this.props.data, {editMode: false});
+        this.state = Object.assign(this.props.data, {
+            editMode: false,
+            validated: false
+        });
 
         this.toggleEditMode = this.toggleEditMode.bind(this);
         this.updateBeverageState = this.updateBeverageState.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.resetBeverageData = this.resetBeverageData.bind(this);
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        // Store the initial state of this beverage once its data arrives
+        if (prevProps.data.beer_id !== this.props.beer_id) {
+            this.setState({
+                originalData: this.props.data
+            })
+        }
     }
 
     toggleEditMode(enabled = NaN) {
@@ -50,10 +63,10 @@ class ListItemTemplate extends React.Component {
         // console.log(JSON.stringify(this.state.originalData));
         // console.log("Orig props:");
         // console.log(JSON.stringify(this.props.data));
-        this.setState({
-            beverageData: this.state.originalData,
-            editMode: false
-        })
+        this.setState(Object.assign(this.state.originalData, {
+            editMode: false,
+            validated: false
+        }))
     }
 
     handleSubmit() {
@@ -87,89 +100,82 @@ class ListItemTemplate extends React.Component {
 
     render() {
         return (
-            <div className="expanded-list-item">
-                <table className="expanded-list-table">
-                    <tbody>
-                    <tr>
-                        <AttrQty
-                            qty={this.state.qty}
-                            qty_cold={this.state.qty_cold}
-                            editMode={this.state.editMode}
-                            updateBeverageState={this.updateBeverageState}/>
+            <Form className="expanded-list-item"
+                  onSubmit={this.handleSubmit}
+                  validated={this.state.validated}>
+                <AttrQty
+                    qty={this.state.qty}
+                    qty_cold={this.state.qty_cold}
+                    editMode={this.state.editMode}
+                    updateBeverageState={this.updateBeverageState}/>
 
-                        <AttrTrade
-                            for_trade={this.state.for_trade}
-                            editMode={this.state.editMode}
-                            updateBeverageState={this.updateBeverageState}/>
+                <AttrTrade
+                    for_trade={this.state.for_trade}
+                    editMode={this.state.editMode}
+                    updateBeverageState={this.updateBeverageState}/>
 
-                        <AttrTradeValue
-                            trade_value={this.state.trade_value ? this.state.trade_value : 2}
-                            editMode={this.state.editMode}
-                            updateBeverageState={this.updateBeverageState}/>
-                    </tr>
-                    <tr>
-                        {/*TODO: Replace parse_picklists with an arrow function*/}
-                        <AttrStyle
-                            style={this.state.style}
-                            specific_style={this.state.specific_style}
-                            editMode={this.state.editMode}
-                            picklistData={parse_picklists(this.props.picklistData, "style")}
-                            updateBeverageState={this.updateBeverageState}/>
+                <AttrTradeValue
+                    trade_value={this.state.trade_value ? this.state.trade_value : 2}
+                    editMode={this.state.editMode}
+                    updateBeverageState={this.updateBeverageState}/>
 
-                        <AttrAgingPotential
-                            aging_potential={this.state.aging_potential ? this.state.aging_potential : 2}
-                            editMode={this.state.editMode}
-                            updateBeverageState={this.updateBeverageState}/>
-                    </tr>
-                    <tr>
-                        <AttrNote
-                            note={this.state.note ? this.state.note : ""}
-                            editMode={this.state.editMode}
-                            updateBeverageState={this.updateBeverageState}/>
+                {/*TODO: Replace parse_picklists with an arrow function*/}
+                <AttrStyle
+                    style={this.state.style}
+                    specific_style={this.state.specific_style}
+                    editMode={this.state.editMode}
+                    picklistData={parse_picklists(this.props.picklistData, "style")}
+                    updateBeverageState={this.updateBeverageState}/>
 
-                        <AttrUntappd
-                            untappd={this.state.untappd ? this.state.untappd : ""}
-                            editMode={this.state.editMode}
-                            updateBeverageState={this.updateBeverageState}/>
+                <AttrAgingPotential
+                    aging_potential={this.state.aging_potential ? this.state.aging_potential : 2}
+                    editMode={this.state.editMode}
+                    updateBeverageState={this.updateBeverageState}/>
 
-                        <AttrBatch
-                            batch={this.state.batch ? this.state.batch : ""}
-                            editMode={this.state.editMode}
-                            updateBeverageState={this.updateBeverageState}/>
-                    </tr>
-                    <tr>
-                        {/*TODO: Replace parse_picklists with an arrow function*/}
-                        <AttrLocation
-                            location={this.state.location}
-                            editMode={this.state.editMode}
-                            picklistData={parse_picklists(this.props.picklistData, "location")}
-                            updateBeverageState={this.updateBeverageState}/>
+                <AttrNote
+                    note={this.state.note ? this.state.note : ""}
+                    editMode={this.state.editMode}
+                    updateBeverageState={this.updateBeverageState}/>
 
-                        <AttrSize
-                            size={this.state.size}
-                            editMode={this.state.editMode}
-                            picklistData={parse_picklists(this.props.picklistData, "size")}
-                            updateBeverageState={this.updateBeverageState}/>
+                <AttrUntappd
+                    untappd={this.state.untappd ? this.state.untappd : ""}
+                    editMode={this.state.editMode}
+                    updateBeverageState={this.updateBeverageState}/>
 
-                        <AttrYear
-                            year={this.state.year}
-                            editMode={this.state.editMode}
-                            updateBeverageState={this.updateBeverageState}/>
+                <AttrBatch
+                    batch={this.state.batch ? this.state.batch : ""}
+                    editMode={this.state.editMode}
+                    updateBeverageState={this.updateBeverageState}/>
 
-                        <AttrBottleDate
-                            bottle_date={this.state.bottle_date ? this.state.bottle_date : ""}
-                            editMode={this.state.editMode}
-                            updateBeverageState={this.updateBeverageState}/>
-                    </tr>
-                    </tbody>
-                </table>
+                {/*TODO: Replace parse_picklists with an arrow function*/}
+                <AttrLocation
+                    location={this.state.location}
+                    editMode={this.state.editMode}
+                    picklistData={parse_picklists(this.props.picklistData, "location")}
+                    updateBeverageState={this.updateBeverageState}/>
+
+                <AttrSize
+                    size={this.state.size}
+                    editMode={this.state.editMode}
+                    picklistData={parse_picklists(this.props.picklistData, "size")}
+                    updateBeverageState={this.updateBeverageState}/>
+
+                <AttrYear
+                    year={this.state.year}
+                    editMode={this.state.editMode}
+                    updateBeverageState={this.updateBeverageState}/>
+
+                <AttrBottleDate
+                    bottle_date={this.state.bottle_date ? this.state.bottle_date : ""}
+                    editMode={this.state.editMode}
+                    updateBeverageState={this.updateBeverageState}/>
 
                 <ActionButtons
                     editMode={this.state.editMode}
                     toggleEditMode={this.toggleEditMode}
                     resetBeverageData={this.resetBeverageData}
                     handleSubmit={this.handleSubmit}/>
-            </div>
+            </Form>
         )
     }
 }
