@@ -2,7 +2,7 @@
 // Alternatively, returns only the picklist values for the requested list
 
 function parse_picklists(picklistData, listName = "") {
-    // console.log(picklistData);
+    // Ensure we receive data to parse
     if (typeof (picklistData) !== typeof ([]) || picklistData.length === 0) {
         console.log("picklistData is empty");
         return {};
@@ -17,7 +17,9 @@ function parse_picklists(picklistData, listName = "") {
             return picklistData[i].list_values
         } else {
             // Add this to the output object literal
-            output = Object.assign(output, {[picklistData[i].list_name]: picklistData[i].list_values})
+            output = Object.assign(output, {
+                [picklistData[i].list_name]: picklistData[i].list_values
+            })
         }
         i += 1;
     }

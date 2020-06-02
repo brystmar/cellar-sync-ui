@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form';
 
 class AttrBatch extends React.Component {
     constructor(props) {
@@ -41,19 +42,17 @@ class AttrBatch extends React.Component {
                 </td>
 
                 <td className="list-item-table-value list-item-table-value-disabled">
-                    <input name="batch"
-                           type="number"
-                           min={0}
-                           max={9999}
-                           className="input-number"
-                           value={this.state.batch}
-                           disabled={true}
-                           onChange={this.handleChange}
-                        // onBlur={() => this.props.updateBeverageState({
-                        //     batch: this.state.batch,
-                        //     editMode: true
-                        // })}
-                    />
+                    <Form.Control type="number"
+                                  name="batch"
+                                  size="sm"
+                                  min={0}
+                                  max={99999}
+                                  placeholder="Batch #"
+                                  className="input-number"
+                                  id="input-batch-number"
+                                  value={this.state.batch}
+                                  disabled={true}
+                                  onChange={this.handleChange}/>
                 </td>
             </>
         )

@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form';
 
 class AttrNote extends React.Component {
     constructor(props) {
@@ -36,11 +37,12 @@ class AttrNote extends React.Component {
                 </td>
 
                 <td className="list-item-table-value">
-                    <input name="note"
-                           type="text"
-                           className="input-text"
-                           value={this.state.note}
-                           onChange={this.handleChange}/>
+                    <Form.Control name="note"
+                                  type="text"
+                                  placeholder="Notes"
+                                  className="input-text"
+                                  value={this.state.note}
+                                  onChange={this.handleChange}/>
                 </td>
             </>
         )

@@ -18,17 +18,6 @@ function AddBeverage(props) {
 
     return (
         <div className="add-beverage">
-            {/*<OverlayTrigger id="add-beverage-tooltip"*/}
-            {/*                placement="left"*/}
-            {/*                trigger={["hover", "focus", "click"]}*/}
-            {/*                overlay={<Tooltip id="tooltip-disabled">Add Beverage</Tooltip>}>*/}
-            {/*    <img src="./icons/button_plus.png"*/}
-            {/*         alt="Add Beverage"*/}
-            {/*         className="add-button-floating"*/}
-            {/*         onClick={() => {*/}
-            {/*             console.log("Clicked add (tooltip)!")*/}
-            {/*         }}/>*/}
-            {/*</OverlayTrigger>*/}
             <OverlayTrigger id="add-beverage-overlay-form"
                             placement="left"
                             trigger="click"

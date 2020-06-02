@@ -28,7 +28,7 @@ class App extends React.Component {
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar")
             .then(response => response.json())
             .then(result => {
-                console.log(result.data);
+                // console.log(result.data);
                 this.setState({beerList: result.data})
             })
             // .then(() => console.log(this.state.beerList))

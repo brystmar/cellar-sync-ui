@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form';
 
 class AttrYear extends React.Component {
     constructor(props) {
@@ -41,16 +42,13 @@ class AttrYear extends React.Component {
                 </td>
 
                 <td className="list-item-table-value list-item-table-value-disabled">
-                    <input name="year"
-                           type="number"
-                           min={1950}
-                           max={(new Date()).getFullYear() + 1}
-                           className="input-number"
-                           value={this.state.year}
-                           disabled={true}
-                        // onChange={this.handleChange}
-                        // onBlur={() => this.props.updateBeverageState({year: this.state.year})}
-                    />
+                    <Form.Control name="year"
+                                  type="number"
+                                  min={1950}
+                                  max={(new Date()).getFullYear() + 1}
+                                  className="input-number"
+                                  value={this.state.year}
+                                  disabled={true}/>
                 </td>
             </>
         )
@@ -58,7 +56,8 @@ class AttrYear extends React.Component {
 }
 
 AttrYear.defaultProps = {
-    year: 2020
+    year: (new Date()).getFullYear(),
+    forNewBeverage: false
 }
 
 export default AttrYear;

@@ -13,7 +13,6 @@ function AttrLocation(props) {
                      className="list-item-icon-key"/>
             </td>
             <td className="list-item-table-value list-item-table-value-disabled">
-                {/*<Form.Label>Location</Form.Label>*/}
                 <Form.Control as="select"
                               size="sm"
                               disabled={true}

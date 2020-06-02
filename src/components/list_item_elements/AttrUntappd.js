@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form';
 
 class AttrUntappd extends React.Component {
     constructor(props) {
@@ -34,11 +35,12 @@ class AttrUntappd extends React.Component {
                          className="list-item-icon-key"/>
                 </td>
                 <td className="list-item-table-value">
-                    <input name="untappd"
-                           type="text"
-                           className="input-text"
-                           value={this.state.untappd}
-                           onChange={this.handleChange}/>
+                    <Form.Control name="untappd"
+                                  type="text"
+                                  placeholder="Untappd Link"
+                                  className="input-text"
+                                  value={this.state.untappd}
+                                  onChange={this.handleChange}/>
                 </td>
             </>
         )

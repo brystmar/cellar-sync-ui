@@ -67,7 +67,6 @@ class AttrQty extends React.Component {
                     <img src="./icons/hashtag-solid.svg"
                          alt="Quantity (overall)"
                          className="list-item-icon-key"/>
-                    {/*<i className="fas fa-hashtag"/>*/}
                 </td>
 
                 <td className="list-item-table-value">
@@ -75,6 +74,7 @@ class AttrQty extends React.Component {
                            type="number"
                            min={0}
                            max={99}
+                           placeholder="Qty"
                            className="input-number"
                            value={this.state.qty}
                            onChange={this.handleChange}
@@ -85,7 +85,6 @@ class AttrQty extends React.Component {
                     <img src="./icons/snowflake-regular.svg"
                          alt="Qty Cold"
                          className="list-item-icon-key"/>
-                    {/*<i className="far fa-snowflake"/>*/}
                 </td>
 
                 <td className="list-item-table-value">
@@ -93,6 +92,7 @@ class AttrQty extends React.Component {
                            type="number"
                            min={0}
                            max={this.state.qty}
+                           placeholder="Qty Cold"
                            className="input-number"
                            value={this.state.qty_cold}
                            onChange={this.handleChange}

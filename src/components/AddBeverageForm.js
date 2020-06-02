@@ -24,11 +24,29 @@ class AddBeverageForm extends React.Component {
             trade_value: "",
             for_trade: false,
             note: "",
-            validated: false
+            validated: false,
+            sizeList: [],
+            styleList: [],
+            locationList: []
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log("Chance to update, props.pld.len:" + this.state.sizeList.length)
+        if (this.props.picklistData.length > 0 && this.state.sizeList.length === 0) {
+            console.log("Updating!")
+            // Update state w/all picklist values
+            this.setState({
+                styleList: parse_picklists(this.props.picklistData, "style"),
+                sizeList: parse_picklists(this.props.picklistData, "size")
+                    .map(size => <option key={size.value}>{size.value}</option>),
+                locationList: parse_picklists(this.props.picklistData, "location")
+                    .map(size => <option key={size.value}>{size.value}</option>)
+            })
+        }
     }
 
     handleChange(event) {
@@ -43,15 +61,13 @@ class AddBeverageForm extends React.Component {
     }
 
     render() {
-        const sizes = parse_picklists(this.props.picklistData, "size").map(size =>
-            <option key={size.value}>{size.value}</option>);
-
+        console.log(this.props.picklistData);
         return (
             <Form className="add-beverage-form"
                   onSubmit={this.handleSubmit}
                   validated={this.state.validated}>
                 <Form.Row>
-                    <Form.Group controlId="formBevProducer">
+                    <Form.Group controlId="formBevProducer" className="add-beverage-form-group">
                         <Form.Label>Producer</Form.Label>
                         <Form.Control type="text"
                                       name="brewery"
@@ -61,7 +77,7 @@ class AddBeverageForm extends React.Component {
                                       required={true}/>
                     </Form.Group>
 
-                    <Form.Group controlId="formBevName">
+                    <Form.Group controlId="formBevName" className="add-beverage-form-group">
                         <Form.Label>Name</Form.Label>
                         <Form.Control type="text"
                                       name="name"
@@ -71,19 +87,19 @@ class AddBeverageForm extends React.Component {
                                       required={true}/>
                     </Form.Group>
 
-                    <Form.Group controlId="formBevSize">
+                    <Form.Group controlId="formBevSize" className="add-beverage-form-group">
                         <Form.Label>Size</Form.Label>
-                        <Form.Control type="text"
+                        <Form.Control as="select"
                                       name="size"
                                       value={this.state.size}
                                       onChange={this.handleChange}
                                       required={true}>
-                            {sizes}
+                            {this.state.sizeList}
                         </Form.Control>
                     </Form.Group>
                 </Form.Row>
                 <Form.Row>
-                    <Form.Group controlId="formBevYear">
+                    <Form.Group controlId="formBevYear" className="add-beverage-form-group">
                         <Form.Label>Year</Form.Label>
                         <Form.Control type="number"
                                       name="year"
@@ -95,7 +111,7 @@ class AddBeverageForm extends React.Component {
                                       required={true}/>
                     </Form.Group>
 
-                    <Form.Group controlId="formBevBottleDate">
+                    <Form.Group controlId="formBevBottleDate" className="add-beverage-form-group">
                         <Form.Label>Bottle Date</Form.Label>
                         <Form.Control type="text"
                                       name="bottle_date"

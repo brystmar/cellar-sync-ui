@@ -65,6 +65,10 @@
 	border-color: gray;
 }
 
+#input-batch-number {
+	min-width: 85px;
+}
+
 .list-item-edit-button,
 .list-item-reset-button,
 .list-item-save-button {
