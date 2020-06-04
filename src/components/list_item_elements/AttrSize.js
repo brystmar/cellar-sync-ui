@@ -2,23 +2,38 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 
 function AttrSize(props) {
-    const sizes = props.picklistData.map(size =>
+    let sizes = props.picklistData.map(size =>
         <option key={size.value}>{size.value}</option>);
+
+    // Add a null value if this is for adding a new beverage
+    if (props.forNewBeverage) {
+        sizes.unshift(<option key={"null"} value={""}>{""}</option>);
+    }
+
+    function handleChange(event) {
+        const {name, value} = event.target;
+
+        // Update parent beverage state
+        props.updateBeverageState({
+            [name]: value,
+            editMode: true
+        })
+    }
 
     return (
         <Form.Group controlId="formSize">
-            <Form.Label>
-                <img src="./icons/wine-bottle-solid.svg"
-                     alt="Size"
-                     className="list-item-icon-key"/>
-                {props.forNewBeverage ? "Size" : ""}
-            </Form.Label>
+            <img alt="Size"
+                 src="./icons/wine-bottle-solid.svg"
+                 className="list-item-icon-key"/>
+            {props.forNewBeverage ? <Form.Label>Size</Form.Label> : ""}
+
             <Form.Control as="select"
                           name="size"
                           size="sm"
-                          disabled={true}
+                          disabled={!props.forNewBeverage}
                           className="picklist-selector list-item-value"
-                          defaultValue={props.size}>
+                          value={props.size}
+                          onChange={handleChange}>
                 {sizes}
             </Form.Control>
         </Form.Group>
@@ -29,7 +44,7 @@ AttrSize.defaultProps = {
     size: "",
     forNewBeverage: false,
     picklistData: {
-        value: "375 mL",
+        value: "",
         display_order: 0
     }
 }

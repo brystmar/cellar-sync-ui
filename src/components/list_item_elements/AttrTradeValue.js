@@ -1,19 +1,35 @@
 import React from 'react';
 import toggle_value_icons from '../../functions/toggle_value_icons';
 import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function AttrTradeValue(props) {
     return (
-        <Form.Group controlId="formTradeValue">
-            <Form.Label>
-                <img src="./icons/euro-sign-solid.svg"
-                     alt="Trade Value"
-                     className="list-item-icon-key"/>
-                {props.forNewBeverage ? "Trade Value" : ""}
-            </Form.Label>
+        <>
+            {props.forNewBeverage ?
+                <Form.Group as={Row} controlId="formTradeValue">
+                    <Form.Label column={true} sm={10}>
+                        Trade Value
+                        <img alt="Trade Value"
+                             src="./icons/euro-sign-solid.svg"
+                             className="list-item-icon-key"/>
+                    </Form.Label>
+                    <Col sm={3}>
+                        {mapTradeValueIcons(props)}
+                    </Col>
+                </Form.Group>
 
-            {mapTradeValueIcons(props)}
-        </Form.Group>
+                : <Form.Group controlId="formTradeValue">
+                    <img alt="Trade Value"
+                         src="./icons/euro-sign-solid.svg"
+                         className="list-item-icon-key"/>
+                    {props.forNewBeverage ? <Form.Label>Trade Value</Form.Label> : ""}
+
+                    {mapTradeValueIcons(props)}
+                </Form.Group>
+            }
+        </>
     )
 }
 

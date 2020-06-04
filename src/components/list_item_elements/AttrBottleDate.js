@@ -16,20 +16,27 @@ class AttrBottleDate extends React.Component {
 
     handleChange(event) {
         const {name, value} = event.target;
+
+        // Update local state
         this.setState({
             [name]: value
+        })
+
+        // Update parent beverage state
+        this.props.updateBeverageState({
+            [name]: value,
+            editMode: true
         })
     }
 
     render() {
         return (
             <Form.Group controlId="formBottleDate">
-                <Form.Label>
-                    <img src="./icons/calendar-alt-regular.svg"
-                         alt="Bottle Date"
-                         className="list-item-icon-key"/>
-                    {this.props.forNewBeverage ? "Bottle Date" : ""}
-                </Form.Label>
+                <img alt="Bottle Date"
+                     src="./icons/calendar-alt-regular.svg"
+                     className="list-item-icon-key"/>
+                {this.props.forNewBeverage ? <Form.Label>Bottle Date</Form.Label> : ""}
+
                 <Form.Control name="bottle_date"
                               type="text"
                               value={this.state.bottle_date}

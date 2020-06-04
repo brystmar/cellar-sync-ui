@@ -17,7 +17,7 @@ class AttrQty extends React.Component {
         // Validate that qty >= qty_cold
         if (name === "qty") {
             if (value >= this.state.qty_cold) {
-                // Only update if the value changed
+                // Only update if the entry is valid
                 // `value` is a string here for some reason
                 if (value.toString() !== this.state.qty.toString()) {
                     // Update local state
@@ -40,7 +40,7 @@ class AttrQty extends React.Component {
             }
         } else if (name === "qty_cold") {
             if (value <= this.state.qty) {
-                // Only update if the value changed
+                // Only update if the entry is valid
                 if (value.toString() !== this.state.qty_cold.toString()) {
                     this.setState({
                         qty_cold: value
@@ -64,18 +64,16 @@ class AttrQty extends React.Component {
         return (
             <>
                 <Form.Group controlId="formQty">
-                    <Form.Label>
-                        <img src="./icons/hashtag-solid.svg"
-                             alt="Quantity (overall)"
-                             className="list-item-icon-key"/>
-                         {this.props.forNewBeverage ? "Qty" : ""}
-                    </Form.Label>
+                    <img alt="Qty (Overall)"
+                         src="./icons/hashtag-solid.svg"
+                         className="list-item-icon-key"/>
+                    {this.props.forNewBeverage ? <Form.Label>Qty</Form.Label> : ""}
 
                     <Form.Control name="qty"
                                   type="number"
                                   min={0}
                                   max={99}
-                                  placeholder="Qty"
+                                  placeholder="#"
                                   className="input-number list-item-value"
                                   value={this.state.qty}
                                   onChange={this.handleChange}
@@ -83,18 +81,16 @@ class AttrQty extends React.Component {
                 </Form.Group>
 
                 <Form.Group controlId="formQtyCold">
-                    <Form.Label>
-                        <img src="./icons/snowflake-regular.svg"
-                             alt="Qty Cold"
-                             className="list-item-icon-key"/>
-                        {this.props.forNewBeverage ? "Qty Cold" : ""}
-                    </Form.Label>
+                    <img alt="Qty (Cold)"
+                         src="./icons/snowflake-regular.svg"
+                         className="list-item-icon-key"/>
+                    {this.props.forNewBeverage ? <Form.Label>Qty Cold</Form.Label> : ""}
 
                     <Form.Control name="qty_cold"
                                   type="number"
                                   min={0}
                                   max={this.state.qty}
-                                  placeholder="Qty Cold"
+                                  placeholder="# Cold"
                                   className="input-number list-item-value"
                                   value={this.state.qty_cold}
                                   onChange={this.handleChange}

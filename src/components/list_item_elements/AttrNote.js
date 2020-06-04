@@ -28,16 +28,14 @@ class AttrNote extends React.Component {
     render() {
         return (
             <Form.Group controlId="formNote">
-                <Form.Label>
-                    <img src="./icons/sticky-note-regular.svg"
-                         alt="Note"
-                         className="list-item-icon-key"/>
-                    {this.props.forNewBeverage ? "Notes" : ""}
-                </Form.Label>
+                <img alt="Note"
+                     src="./icons/sticky-note-regular.svg"
+                     className="list-item-icon-key"/>
+                {this.props.forNewBeverage ? <Form.Label>Note</Form.Label> : ""}
 
                 <Form.Control name="note"
                               type="text"
-                              placeholder="Notes"
+                              placeholder="Note"
                               className="input-text-long list-item-value"
                               value={this.state.note}
                               onChange={this.handleChange}/>

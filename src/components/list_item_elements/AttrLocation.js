@@ -2,22 +2,37 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 
 function AttrLocation(props) {
-    const locations = props.picklistData.map(location =>
+    let locations = props.picklistData.map(location =>
         <option key={location.value}>{location.value}</option>);
+
+    // Add a null value if this is for adding a new beverage
+    if (props.forNewBeverage) {
+        locations.unshift(<option key={"null"} value={""}>{""}</option>);
+    }
+
+    function handleChange(event) {
+        const {name, value} = event.target;
+
+        // Update parent beverage state
+        props.updateBeverageState({
+            [name]: value,
+            editMode: true
+        })
+    }
 
     return (
         <Form.Group controlId="formLocation">
-            <Form.Label>
-                <img src="./icons/map-marked-alt-solid.svg"
-                     alt="Location"
-                     className="list-item-icon-key"/>
-                {props.forNewBeverage ? "Location" : ""}
-            </Form.Label>
+            <img alt="Location"
+                 src="./icons/map-marked-alt-solid.svg"
+                 className="list-item-icon-key"/>
+            {props.forNewBeverage ? <Form.Label>Location</Form.Label> : ""}
+
             <Form.Control as="select"
                           size="sm"
-                          disabled={true}
+                          disabled={!props.forNewBeverage}
                           className="picklist-selector list-item-value"
-                          defaultValue={props.location}>
+                          value={props.location}
+                          onChange={handleChange}>
                 {locations}
             </Form.Control>
         </Form.Group>
@@ -25,10 +40,10 @@ function AttrLocation(props) {
 }
 
 AttrLocation.defaultProps = {
-    location: "Home",
+    location: "",
     forNewBeverage: false,
     picklistData: {
-        value: "Home",
+        value: "",
         display_order: 0
     }
 }

@@ -28,12 +28,11 @@ class AttrUntappd extends React.Component {
     render() {
         return (
             <Form.Group controlId="formUntappd">
-                <Form.Label>
-                    <img src="./icons/link-solid.svg"
-                         alt="Untappd Link"
-                         className="list-item-icon-key"/>
-                         {this.props.forNewBeverage ? "Untappd" : ""}
-                </Form.Label>
+                <img src="./icons/link-solid.svg"
+                     alt="Untappd"
+                     className="list-item-icon-key"/>
+                {this.props.forNewBeverage ? <Form.Label>Untappd</Form.Label> : ""}
+
                 <Form.Control name="untappd"
                               type="text"
                               placeholder="Untappd Link"

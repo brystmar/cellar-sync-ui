@@ -21,20 +21,20 @@ class AttrYear extends React.Component {
     render() {
         return (
             <Form.Group controlId="formYear">
-                <Form.Label>
-                    <img src="./icons/calendar-alt-solid.svg"
-                         alt="Year"
-                         className="list-item-icon-key"/>
-                    {this.props.forNewBeverage ? "Year" : ""}
-                </Form.Label>
+                <img alt="Year"
+                     src="./icons/calendar-alt-solid.svg"
+                     className="list-item-icon-key"/>
+                {this.props.forNewBeverage ? <Form.Label>Year</Form.Label> : ""}
+
                 <Form.Control name="year"
                               type="number"
                               min={1950}
                               max={(new Date()).getFullYear() + 1}
-                              placeholder="Year"
+                              placeholder="YYYY"
                               className="input-number list-item-value"
+                              disabled={!this.props.forNewBeverage}
                               value={this.state.year}
-                              disabled={!this.props.forNewBeverage}/>
+                              onChange={this.handleChange}/>
             </Form.Group>
         )
     }

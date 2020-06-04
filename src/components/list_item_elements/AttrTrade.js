@@ -1,18 +1,33 @@
 import React from 'react';
 import Form from "react-bootstrap/Form";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 function AttrTrade(props) {
     return (
-        <Form.Group controlId="formTrade">
-            <Form.Label>
-                <img src="./icons/exchange-alt-solid.svg"
-                     alt="For Trade?"
-                     className="list-item-icon-key"/>
-                {props.forNewBeverage ? "For Trade?" : ""}
-            </Form.Label>
+        <>
+            {props.forNewBeverage ?
+                <Form.Group as={Row} controlId="formTrade">
+                    <Form.Label column={true} sm={10}>
+                        For Trade?
+                        <img alt="For Trade?"
+                             src="./icons/exchange-alt-solid.svg"
+                             className="list-item-icon-key"/>
+                    </Form.Label>
+                    <Col sm={3}>
+                        {mapForTradeIcons(props)}
+                    </Col>
+                </Form.Group>
 
-            {mapForTradeIcons(props)}
-        </Form.Group>
+                : <Form.Group controlId="formTrade">
+                    <img alt="For Trade?"
+                         src="./icons/exchange-alt-solid.svg"
+                         className="list-item-icon-key"/>
+
+                    {mapForTradeIcons(props)}
+                </Form.Group>
+            }
+        </>
     )
 }
 

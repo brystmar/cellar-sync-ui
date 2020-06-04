@@ -21,7 +21,8 @@ class ListItemTemplate extends React.Component {
         super(props);
         this.state = Object.assign(this.props.data, {
             editMode: false,
-            validated: false
+            validated: false,
+            originalData: ""
         });
 
         this.toggleEditMode = this.toggleEditMode.bind(this);
@@ -32,10 +33,13 @@ class ListItemTemplate extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         // Store the initial state of this beverage once its data arrives
-        if (prevProps.data.beer_id !== this.props.beer_id) {
+        if (prevProps.data.beer_id !== this.props.beer_id
+            && this.state.originalData === "") {
             this.setState({
                 originalData: this.props.data
             })
+            console.log("Storing originalData:")
+            console.log(this.props.data)
         }
     }
 
@@ -52,7 +56,7 @@ class ListItemTemplate extends React.Component {
     }
 
     updateBeverageState(newData) {
-        // Update local state when values change on an Attribute
+        // Update local state when values change on a child attribute
         this.setState(newData)
         console.log("Updated " + JSON.stringify(newData));
     }
@@ -63,10 +67,7 @@ class ListItemTemplate extends React.Component {
         // console.log(JSON.stringify(this.state.originalData));
         // console.log("Orig props:");
         // console.log(JSON.stringify(this.props.data));
-        this.setState(Object.assign(this.state.originalData, {
-            editMode: false,
-            validated: false
-        }))
+        this.setState(Object.assign(this.state.originalData));
     }
 
     handleSubmit() {
@@ -75,6 +76,7 @@ class ListItemTemplate extends React.Component {
         // Organize the updated data object
         let beverageData = this.state;
         delete beverageData['editMode'];
+        delete beverageData['validated'];
         delete beverageData['originalData'];
 
         // Update the item in the db
@@ -106,68 +108,56 @@ class ListItemTemplate extends React.Component {
                 <AttrQty
                     qty={this.state.qty}
                     qty_cold={this.state.qty_cold}
-                    editMode={this.state.editMode}
                     updateBeverageState={this.updateBeverageState}/>
 
                 <AttrTrade
                     for_trade={this.state.for_trade}
-                    editMode={this.state.editMode}
                     updateBeverageState={this.updateBeverageState}/>
 
                 <AttrTradeValue
                     trade_value={this.state.trade_value ? this.state.trade_value : 2}
-                    editMode={this.state.editMode}
                     updateBeverageState={this.updateBeverageState}/>
 
                 {/*TODO: Replace parse_picklists with an arrow function*/}
                 <AttrStyle
                     style={this.state.style}
                     specific_style={this.state.specific_style}
-                    editMode={this.state.editMode}
                     picklistData={parse_picklists(this.props.picklistData, "style")}
                     updateBeverageState={this.updateBeverageState}/>
 
                 <AttrAgingPotential
                     aging_potential={this.state.aging_potential ? this.state.aging_potential : 2}
-                    editMode={this.state.editMode}
                     updateBeverageState={this.updateBeverageState}/>
 
                 <AttrNote
                     note={this.state.note ? this.state.note : ""}
-                    editMode={this.state.editMode}
                     updateBeverageState={this.updateBeverageState}/>
 
                 <AttrUntappd
                     untappd={this.state.untappd ? this.state.untappd : ""}
-                    editMode={this.state.editMode}
                     updateBeverageState={this.updateBeverageState}/>
 
                 <AttrBatch
                     batch={this.state.batch ? this.state.batch : ""}
-                    editMode={this.state.editMode}
                     updateBeverageState={this.updateBeverageState}/>
 
                 {/*TODO: Replace parse_picklists with an arrow function*/}
                 <AttrLocation
                     location={this.state.location}
-                    editMode={this.state.editMode}
                     picklistData={parse_picklists(this.props.picklistData, "location")}
                     updateBeverageState={this.updateBeverageState}/>
 
                 <AttrSize
                     size={this.state.size}
-                    editMode={this.state.editMode}
                     picklistData={parse_picklists(this.props.picklistData, "size")}
                     updateBeverageState={this.updateBeverageState}/>
 
                 <AttrYear
                     year={this.state.year}
-                    editMode={this.state.editMode}
                     updateBeverageState={this.updateBeverageState}/>
 
                 <AttrBottleDate
                     bottle_date={this.state.bottle_date ? this.state.bottle_date : ""}
-                    editMode={this.state.editMode}
                     updateBeverageState={this.updateBeverageState}/>
 
                 <ActionButtons

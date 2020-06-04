@@ -100,12 +100,11 @@ class AttrStyle extends React.Component {
         return (
             <>
                 <Form.Group controlId="formStyle">
-                    <Form.Label>
-                        <img src="./icons/noun_Beer_style1_1975813.svg"
-                             alt="Style"
-                             className="list-item-icon-key"/>
-                        {this.props.forNewBeverage ? "Style" : ""}
-                    </Form.Label>
+                    <img alt="Style"
+                         src="./icons/noun_Beer_style1_1975813.svg"
+                         className="list-item-icon-key"/>
+                    {this.props.forNewBeverage ? <Form.Label>Style</Form.Label> : ""}
+
                     <Form.Control as="select"
                                   name="style"
                                   size="sm"
@@ -117,12 +116,11 @@ class AttrStyle extends React.Component {
                 </Form.Group>
 
                 <Form.Group controlId="formSpecificStyle">
-                    <Form.Label>
-                        <img src="./icons/noun_Beer_style2_5693.svg"
-                             alt="Specific Style"
-                             className="list-item-icon-key"/>
-                        {this.props.forNewBeverage ? "Specific Style" : ""}
-                    </Form.Label>
+                    <img alt="Specific Style"
+                         src="./icons/noun_Beer_style2_5693.svg"
+                         className="list-item-icon-key"/>
+                    {this.props.forNewBeverage ? <Form.Label>Specific Style</Form.Label> : ""}
+
                     <Form.Control as="select"
                                   name="specific_style"
                                   size="sm"
