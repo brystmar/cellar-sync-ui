@@ -31,9 +31,10 @@ function AttrSize(props) {
                           name="size"
                           size="sm"
                           disabled={!props.forNewBeverage}
-                          className="picklist-selector list-item-value"
+                          className="input-picklist list-item-value"
                           value={props.size}
-                          onChange={handleChange}>
+                          onChange={handleChange}
+                          required={true}>
                 {sizes}
             </Form.Control>
         </Form.Group>

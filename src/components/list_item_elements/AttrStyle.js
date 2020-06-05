@@ -108,7 +108,7 @@ class AttrStyle extends React.Component {
                     <Form.Control as="select"
                                   name="style"
                                   size="sm"
-                                  className="picklist-selector list-item-value"
+                                  className="input-picklist list-item-value"
                                   value={this.state.style}
                                   onChange={this.handleStyleChange}>
                         {styleValues}
@@ -124,7 +124,7 @@ class AttrStyle extends React.Component {
                     <Form.Control as="select"
                                   name="specific_style"
                                   size="sm"
-                                  className="picklist-selector list-item-value"
+                                  className="input-picklist list-item-value"
                                   value={this.state.spStyle}
                                   disabled={this.state.spStyleList.length === 0}
                                   onChange={this.handleSpStyleChange}>

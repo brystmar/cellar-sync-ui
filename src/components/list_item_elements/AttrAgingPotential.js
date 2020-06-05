@@ -1,26 +1,22 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import toggle_value_icons from '../../functions/toggle_value_icons';
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 function AttrAgingPotential(props) {
     return (
         <>
             {props.forNewBeverage ?
-                <Form.Group as={Row} controlId="formAgingPotential">
-                    <Form.Label column={true} sm={10}>
-                        Aging Potential
+                <Form.Group controlId="formAgingPotential" className="list-item-form-group">
+                    <Form.Label className="list-item-form-label">
                         <img alt="Aging Potential"
-                         src="./icons/spider-solid.svg"
-                         className="list-item-icon-key"/>
+                             src="./icons/spider-solid.svg"
+                             className="list-item-icon-key"/>
+                        Aging Potential
                     </Form.Label>
-                    <Col sm={3}>
-                        {mapAgingPotentialIcons(props)}
-                    </Col>
+                    {mapAgingPotentialIcons(props)}
                 </Form.Group>
 
-                : <Form.Group controlId="formAgingPotential">
+                : <Form.Group controlId="formAgingPotential" className="list-item-form-group">
                     <img alt="Aging Potential"
                          src="./icons/spider-solid.svg"
                          className="list-item-icon-key"/>

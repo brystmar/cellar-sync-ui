@@ -38,7 +38,6 @@ class AddBeverageForm extends React.Component {
             for_trade: false,
             note: "",
             validated: false,
-            originalData: "zzx",
             sizeValues: parse_picklists(this.props.picklistData, "size"),
             locationValues: parse_picklists(this.props.picklistData, "location"),
             styleValues: parse_picklists(this.props.picklistData, "style")
@@ -52,42 +51,105 @@ class AddBeverageForm extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         // Store the initial state of this beverage once its data arrives
-        console.log("oD: " + this.state.originalData + ", sV.len: " + this.state.sizeValues.length);
-        if (this.state.originalData === "zzx"
-            && this.state.sizeValues.length > 0) {
-            this.setState({
-                originalData: this.props.data
-            })
-            console.log("Storing originalData:")
-            console.log(this.props.data)
-        }
+        // if (this.state.originalData === "zzx"
+        //     && this.state.sizeValues.length > 0) {
+        //     this.setState({
+        //         originalData: this.props.data
+        //     })
+        //     console.log("Storing originalData:")
+        //     console.log(this.props.data)
+        // }
     }
 
     handleChange(event) {
+        // console.log("Event:")
+        // console.log(event)
         const {name, value} = event.target;
         this.setState({
             [name]: value
         })
     }
 
-    handleSubmit() {
-        console.log("AddBev form submitted");
+    handleSubmit(event) {
+        console.log("AddBev form submitted.  Valid? " + event.currentTarget.checkValidity());
+        console.log(this.state);
+        event.preventDefault();
 
         // Prep the new beverage for db insert
-        let newBeverage = this.state;
+        let newBeverage = {...this.state};
         delete newBeverage['editMode'];
         delete newBeverage['validated'];
+        delete newBeverage['originalData'];
         delete newBeverage['sizeValues'];
         delete newBeverage['styleValues'];
         delete newBeverage['locationValues'];
 
+        // if (!this.state.validated) {
+        //     console.log("Form not valid.  Halting.")
+        //     return
+        // }
+
+        // event.preventDefault();
+        // event.stopPropagation();
+        console.log("Form is valid!  event.currentTarget.checkValidity=" + event.currentTarget.checkValidity())
+
+        // Set the beer_id
+        if (newBeverage.bottle_date && newBeverage.bottle_date !== "") {
+            // Prefer bottle_date over batch
+            newBeverage.beer_id = newBeverage.brewery + "_" + newBeverage.name + "_" +
+                newBeverage.size + "_" + newBeverage.year + "_" + newBeverage.bottle_date
+        } else {
+            newBeverage.beer_id = newBeverage.brewery + "_" + newBeverage.name + "_" +
+                newBeverage.size + "_" + newBeverage.year + "_" + newBeverage.batch
+        }
+
+        console.log("Adding beverage:");
         console.log(newBeverage);
+        // if (form.checkValidity() === false) {
+        //     event.preventDefault();
+        //     event.stopPropagation();
+        // }
+
+        // Retrieve the list of beverages from the backend
+        fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar",
+            {
+                method: "POST",
+                body: JSON.stringify(newBeverage)
+            })
+            .then(response => {
+                console.log("POST complete, response:", response.status, response.ok);
+                return response.json();
+            })
+            .then(result => {
+                console.log("New beverage saved:", result.data);
+            }).then(() => this.setState({
+                beer_id: "",
+                name: "",
+                brewery: "",
+                year: "",
+                batch: "",
+                size: "",
+                bottle_date: "",
+                location: "",
+                style: "",
+                specific_style: "",
+                qty: 0,
+                qty_cold: 0,
+                untappd: "",
+                aging_potential: "",
+                trade_value: "",
+                for_trade: false,
+                note: "",
+                validated: false
+            }
+        ))
+            .catch(error => console.log("Error adding new beverage:", error));
     }
 
     resetBeverageData() {
-        // console.log("Resetting the AddBev Form to:");
-        // console.log(this.state.originalData);
-        // this.setState(this.state.originalData);
+        console.log("Resetting the AddBev Form to:");
+        console.log(this.state.originalData);
+        this.setState(this.state.originalData);
     }
 
     updateBeverageState(newData) {
@@ -138,7 +200,8 @@ class AddBeverageForm extends React.Component {
                               forNewBeverage={true}
                               picklistData={this.state.sizeValues}
                               updateBeverageState={this.updateBeverageState}/>
-
+                </Form.Row>
+                <Form.Row>
                     <AttrQty qty={this.state.qty}
                              qty_cold={this.state.qty_cold}
                              forNewBeverage={true}
@@ -167,13 +230,9 @@ class AddBeverageForm extends React.Component {
                     <AttrTrade for_trade={this.state.for_trade}
                                forNewBeverage={true}
                                updateBeverageState={this.updateBeverageState}/>
-                </Form.Row>
-                <Form.Row>
                     <AttrTradeValue trade_value={this.state.trade_value}
                                     forNewBeverage={true}
                                     updateBeverageState={this.updateBeverageState}/>
-                </Form.Row>
-                <Form.Row>
                     <AttrAgingPotential aging_potential={this.state.aging_potential}
                                         forNewBeverage={true}
                                         updateBeverageState={this.updateBeverageState}/>
@@ -199,7 +258,8 @@ class AddBeverageForm extends React.Component {
     }
 }
 
-AddBeverageForm.defaultProps = {
+AddBeverageForm
+    .defaultProps = {
     beerList: [],
     picklistData: []
 }

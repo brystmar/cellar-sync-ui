@@ -1,30 +1,25 @@
 import React from 'react';
 import toggle_value_icons from '../../functions/toggle_value_icons';
 import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 function AttrTradeValue(props) {
     return (
         <>
             {props.forNewBeverage ?
-                <Form.Group as={Row} controlId="formTradeValue">
-                    <Form.Label column={true} sm={10}>
-                        Trade Value
+                <Form.Group controlId="formTradeValue" className="list-item-form-group">
+                    <Form.Label className="list-item-form-label">
                         <img alt="Trade Value"
                              src="./icons/euro-sign-solid.svg"
                              className="list-item-icon-key"/>
+                        Trade Value
                     </Form.Label>
-                    <Col sm={3}>
-                        {mapTradeValueIcons(props)}
-                    </Col>
+                    {mapTradeValueIcons(props)}
                 </Form.Group>
 
-                : <Form.Group controlId="formTradeValue">
+                : <Form.Group controlId="formTradeValue" className="list-item-form-group">
                     <img alt="Trade Value"
                          src="./icons/euro-sign-solid.svg"
                          className="list-item-icon-key"/>
-                    {props.forNewBeverage ? <Form.Label>Trade Value</Form.Label> : ""}
 
                     {mapTradeValueIcons(props)}
                 </Form.Group>
@@ -35,24 +30,24 @@ function AttrTradeValue(props) {
 
 function mapTradeValueIcons(props) {
     if (props.trade_value === 1) {
-        return <img src="./icons/arrow-alt-circle-up-solid.svg"
-                    alt="Trade Value: High"
+        return <img alt="Trade Value: High"
+                    src="./icons/arrow-alt-circle-up-solid.svg"
                     className="list-item-icon-value clickable-toggle"
                     onClick={() => props.updateBeverageState({
                         trade_value: toggle_value_icons(props.trade_value),
                         editMode: true
                     })}/>
     } else if (props.trade_value === 3) {
-        return <img src="./icons/arrow-alt-circle-down-solid.svg"
-                    alt="Trade Value: Low"
+        return <img alt="Trade Value: Low"
+                    src="./icons/arrow-alt-circle-down-solid.svg"
                     className="list-item-icon-value clickable-toggle"
                     onClick={() => props.updateBeverageState({
                         trade_value: toggle_value_icons(props.trade_value),
                         editMode: true
                     })}/>
     } else {
-        return <img src="./icons/arrows-alt-horiz-solid.svg"
-                    alt="Trade Value: Medium"
+        return <img alt="Trade Value: Moderate"
+                    src="./icons/arrows-alt-horiz-solid.svg"
                     className="list-item-icon-value clickable-toggle"
                     onClick={() => props.updateBeverageState({
                         trade_value: toggle_value_icons(props.trade_value),

@@ -16,6 +16,12 @@ class AttrYear extends React.Component {
         this.setState({
             [name]: value
         })
+
+        // Update parent beverage state
+        this.props.updateBeverageState({
+            [name]: value,
+            editMode: true
+        })
     }
 
     render() {
@@ -34,14 +40,15 @@ class AttrYear extends React.Component {
                               className="input-number list-item-value"
                               disabled={!this.props.forNewBeverage}
                               value={this.state.year}
-                              onChange={this.handleChange}/>
+                              onChange={this.handleChange}
+                              required={true}/>
             </Form.Group>
         )
     }
 }
 
 AttrYear.defaultProps = {
-    year: "",
+    year: (new Date()).getFullYear(),
     forNewBeverage: false
 }
 

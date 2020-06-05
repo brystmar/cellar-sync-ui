@@ -35,8 +35,8 @@ class AttrBatch extends React.Component {
                 <Form.Control name="batch"
                               type="number"
                               min={0}
-                              max={99999}
-                              placeholder="Batch #"
+                              max={9999}
+                              placeholder="b#"
                               className="input-number list-item-value"
                               id="input-batch-number"
                               value={this.state.batch}

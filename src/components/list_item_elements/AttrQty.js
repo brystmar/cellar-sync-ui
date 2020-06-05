@@ -74,7 +74,7 @@ class AttrQty extends React.Component {
                                   min={0}
                                   max={99}
                                   placeholder="#"
-                                  className="input-number list-item-value"
+                                  className="input-number list-item-value input-qty"
                                   value={this.state.qty}
                                   onChange={this.handleChange}
                                   onBlur={this.handleChange}/>
@@ -84,14 +84,14 @@ class AttrQty extends React.Component {
                     <img alt="Qty (Cold)"
                          src="./icons/snowflake-regular.svg"
                          className="list-item-icon-key"/>
-                    {this.props.forNewBeverage ? <Form.Label>Qty Cold</Form.Label> : ""}
+                    {this.props.forNewBeverage ? <Form.Label>Cold</Form.Label> : ""}
 
                     <Form.Control name="qty_cold"
                                   type="number"
                                   min={0}
                                   max={this.state.qty}
-                                  placeholder="# Cold"
-                                  className="input-number list-item-value"
+                                  placeholder="#"
+                                  className="input-number list-item-value input-qty"
                                   value={this.state.qty_cold}
                                   onChange={this.handleChange}
                                   onBlur={this.handleChange}/>

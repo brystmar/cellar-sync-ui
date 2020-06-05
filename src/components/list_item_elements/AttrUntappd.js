@@ -12,8 +12,6 @@ class AttrUntappd extends React.Component {
 
     handleChange(event) {
         const {name, value} = event.target;
-
-        // Update local state
         this.setState({
             [name]: value
         })

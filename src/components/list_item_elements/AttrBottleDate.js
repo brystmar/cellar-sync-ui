@@ -41,7 +41,7 @@ class AttrBottleDate extends React.Component {
                               type="text"
                               value={this.state.bottle_date}
                               placeholder="YYYY-MM-DD"
-                              className="input-text list-item-value"
+                              className="input-text list-item-value input-bottle-date"
                               onChange={this.handleChange}
                               disabled={!this.props.forNewBeverage}/>
             </Form.Group>

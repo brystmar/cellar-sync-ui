@@ -28,11 +28,13 @@ function AttrLocation(props) {
             {props.forNewBeverage ? <Form.Label>Location</Form.Label> : ""}
 
             <Form.Control as="select"
+                          name="location"
                           size="sm"
                           disabled={!props.forNewBeverage}
-                          className="picklist-selector list-item-value"
+                          className="input-picklist list-item-value"
                           value={props.location}
-                          onChange={handleChange}>
+                          onChange={handleChange}
+                          required={true}>
                 {locations}
             </Form.Control>
         </Form.Group>

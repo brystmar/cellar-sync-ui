@@ -27,11 +27,7 @@ class App extends React.Component {
         // Retrieve the list of beverages from the backend
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar")
             .then(response => response.json())
-            .then(result => {
-                // console.log(result.data);
-                this.setState({beerList: result.data})
-            })
-            // .then(() => console.log(this.state.beerList))
+            .then(result => this.setState({beerList: result.data}))
             .catch(error => console.log("Error retrieving beer list data:", error));
 
         // Retrieve all picklist values from the backend
