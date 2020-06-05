@@ -15,6 +15,20 @@ class AttrStyle extends React.Component {
         this.handleSpStyleChange = this.handleSpStyleChange.bind(this);
     }
 
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        // Update when the form resets
+        if (this.props.style !== "" && nextProps.style === "") {
+            // Props were reset
+            this.updateSpStyleList("");
+            return true;
+        } else if (this.state.style !== nextState.style || this.state.spStyle !== nextState.spStyle) {
+            // Local state update
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     componentDidMount() {
         this.updateSpStyleList(this.state.style);
     }

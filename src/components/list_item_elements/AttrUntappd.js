@@ -33,7 +33,7 @@ class AttrUntappd extends React.Component {
 
                 <Form.Control name="untappd"
                               type="text"
-                              placeholder="Untappd Link"
+                              placeholder="https://untappd.com/b/..."
                               className="input-text-long list-item-value"
                               value={this.state.untappd}
                               onChange={this.handleChange}/>

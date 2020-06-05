@@ -15,6 +15,8 @@ import ActionButtons from "./list_item_elements/ActionButtons";
 import AttrTrade from "./list_item_elements/AttrTrade";
 import AttrTradeValue from "./list_item_elements/AttrTradeValue";
 import AttrAgingPotential from "./list_item_elements/AttrAgingPotential";
+import AttrName from "./list_item_elements/AttrName";
+import AttrProducer from "./list_item_elements/AttrProducer";
 
 class AddBeverageForm extends React.Component {
     constructor(props) {
@@ -49,18 +51,6 @@ class AddBeverageForm extends React.Component {
         this.resetBeverageData = this.resetBeverageData.bind(this);
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        // Store the initial state of this beverage once its data arrives
-        // if (this.state.originalData === "zzx"
-        //     && this.state.sizeValues.length > 0) {
-        //     this.setState({
-        //         originalData: this.props.data
-        //     })
-        //     console.log("Storing originalData:")
-        //     console.log(this.props.data)
-        // }
-    }
-
     handleChange(event) {
         // console.log("Event:")
         // console.log(event)
@@ -79,7 +69,6 @@ class AddBeverageForm extends React.Component {
         let newBeverage = {...this.state};
         delete newBeverage['editMode'];
         delete newBeverage['validated'];
-        delete newBeverage['originalData'];
         delete newBeverage['sizeValues'];
         delete newBeverage['styleValues'];
         delete newBeverage['locationValues'];
@@ -122,34 +111,33 @@ class AddBeverageForm extends React.Component {
             })
             .then(result => {
                 console.log("New beverage saved:", result.data);
-            }).then(() => this.setState({
-                beer_id: "",
-                name: "",
-                brewery: "",
-                year: "",
-                batch: "",
-                size: "",
-                bottle_date: "",
-                location: "",
-                style: "",
-                specific_style: "",
-                qty: 0,
-                qty_cold: 0,
-                untappd: "",
-                aging_potential: "",
-                trade_value: "",
-                for_trade: false,
-                note: "",
-                validated: false
-            }
-        ))
+                this.resetBeverageData();
+            })
             .catch(error => console.log("Error adding new beverage:", error));
     }
 
     resetBeverageData() {
-        console.log("Resetting the AddBev Form to:");
-        console.log(this.state.originalData);
-        this.setState(this.state.originalData);
+        console.log("Resetting the AddBev Form");
+        this.setState({
+            beer_id: "",
+            name: "",
+            brewery: "",
+            year: "",
+            batch: "",
+            size: "",
+            bottle_date: "",
+            location: "",
+            style: "",
+            specific_style: "",
+            qty: 0,
+            qty_cold: 0,
+            untappd: "",
+            aging_potential: "",
+            trade_value: "",
+            for_trade: false,
+            note: "",
+            validated: false
+        });
     }
 
     updateBeverageState(newData) {
@@ -164,31 +152,13 @@ class AddBeverageForm extends React.Component {
                   onSubmit={this.handleSubmit}
                   validated={this.state.validated}>
                 <Form.Row>
-                    <Form.Group controlId="formBevProducer" className="add-beverage-form-group">
-                        <img alt="Producer"
-                             src="./icons/address-card-regular.svg"
-                             className="list-item-icon-key"/>
-                        <Form.Label>Producer</Form.Label>
-                        <Form.Control type="text"
-                                      name="brewery"
-                                      placeholder="Tilquin"
-                                      value={this.state.brewery}
-                                      onChange={this.handleChange}
-                                      required={true}/>
-                    </Form.Group>
+                    <AttrProducer brewery={this.state.brewery}
+                                  forNewBeverage={true}
+                                  updateBeverageState={this.updateBeverageState}/>
 
-                    <Form.Group controlId="formBevName" className="add-beverage-form-group">
-                        <img alt="Beverage Name"
-                             src="./icons/nametag.svg"
-                             className="list-item-icon-key"/>
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control type="text"
-                                      name="name"
-                                      placeholder="Gueuze"
-                                      value={this.state.name}
-                                      onChange={this.handleChange}
-                                      required={true}/>
-                    </Form.Group>
+                    <AttrName name={this.state.name}
+                              forNewBeverage={true}
+                              updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
                 <Form.Row>
                     <AttrLocation location={this.state.location}
@@ -227,6 +197,16 @@ class AddBeverageForm extends React.Component {
                                updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
                 <Form.Row>
+                    <AttrUntappd untappd={this.state.untappd}
+                                 forNewBeverage={true}
+                                 updateBeverageState={this.updateBeverageState}/>
+                </Form.Row>
+                <Form.Row>
+                    <AttrNote note={this.state.note}
+                              forNewBeverage={true}
+                              updateBeverageState={this.updateBeverageState}/>
+                </Form.Row>
+                <Form.Row>
                     <AttrTrade for_trade={this.state.for_trade}
                                forNewBeverage={true}
                                updateBeverageState={this.updateBeverageState}/>
@@ -236,16 +216,6 @@ class AddBeverageForm extends React.Component {
                     <AttrAgingPotential aging_potential={this.state.aging_potential}
                                         forNewBeverage={true}
                                         updateBeverageState={this.updateBeverageState}/>
-                </Form.Row>
-                <Form.Row>
-                    <AttrUntappd untappd={this.state.untappd}
-                                 forNewBeverage={true}
-                                 updateBeverageState={this.updateBeverageState}/>
-                </Form.Row>
-                <Form.Row>
-                    <AttrNote note={this.state.note}
-                              forNewBeverage={true}
-                              updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
 
                 <ActionButtons
