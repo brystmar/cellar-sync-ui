@@ -12,23 +12,23 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            beerList: []
+            beverageList: []
         }
 
-        this.getAllBeers = this.getAllBeers.bind(this);
+        this.getAllBeverages = this.getAllBeverages.bind(this);
         this.updateBeverageList = this.updateBeverageList.bind(this);
     }
 
     componentDidMount() {
-        this.getAllBeers();
+        this.getAllBeverages();
     }
 
-    getAllBeers() {
+    getAllBeverages() {
         // Retrieve the list of beverages from the backend
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar")
             .then(response => response.json())
-            .then(result => this.setState({beerList: result.data}))
-            .catch(error => console.log("Error retrieving beer list data:", error));
+            .then(result => this.setState({beverageList: result.data}))
+            .catch(error => console.log("Error retrieving beverage list data:", error));
 
         // Retrieve all picklist values from the backend
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/picklist-data")
@@ -38,21 +38,21 @@ class App extends React.Component {
     }
 
     updateBeverageList(beverage, isNew = false) {
-        console.log(this.state.beerList);
-        let newState = this.state.beerList;
+        console.log(this.state.beverageList);
+        let newState = this.state.beverageList;
 
         if (!isNew) {
             // When updating an item, first remove the original beverage from the overall list
-            delete newState[beverage.beer_id]
+            delete newState[beverage.beverage_id]
         }
 
         // Add the new beverage
         newState.push(beverage);
-        console.log("Added new beer: " + JSON.stringify(beverage));
+        console.log("Added new beverage: " + JSON.stringify(beverage));
         console.log(newState);
 
         this.setState({
-            beerList: newState
+            beverageList: newState
         })
     }
 
@@ -68,10 +68,10 @@ class App extends React.Component {
                     <Switch>
                         <Route exact path="/">
                             <PageTitle title={userName} logo={cellarLogo}/>
-                            <BeverageDataTable beerList={this.state.beerList}
+                            <BeverageDataTable beverageList={this.state.beverageList}
                                                picklistData={this.state.picklistData}
                                                updateBeverageList={this.updateBeverageList}/>
-                            <AddBeverage beerList={this.state.beerList}
+                            <AddBeverage beverageList={this.state.beverageList}
                                          picklistData={this.state.picklistData}
                                          updateBeverageList={this.updateBeverageList}/>
                         </Route>

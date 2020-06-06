@@ -8,20 +8,20 @@ function BeverageDataTable(props) {
     return (
         <>
             <DataTableExtensions columns={beverageDataTableColumns}
-                                 data={props.beerList}
+                                 data={props.beverageList}
                                  filter={true}
                                  filterHidden={true}
                                  export={false}
                                  print={false}>
                 <DataTable columns={beverageDataTableColumns}
-                           data={props.beerList}
-                           keyField="beer_id"
+                           data={props.beverageList}
+                           keyField="beverage_id"
                            striped={true}
                            dense={true}
 
                            noHeader={true}
                            subHeader={false}
-                           defaultSortField="brewery"
+                           defaultSortField="producer"
 
                            expandableRows={true}
                            expandableRowsComponent={
@@ -42,7 +42,7 @@ function BeverageDataTable(props) {
 
 BeverageDataTable.defaultProps = {
     userName: "",
-    beerList: [],
+    beverageList: [],
     picklistData: [],
     paginationPerPage: 40,
     paginationRowsPerPageOptions: [20, 40, 60, 80, 100, 150, 200, 250, 300, 400, 500]

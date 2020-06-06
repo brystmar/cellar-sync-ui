@@ -2,29 +2,29 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import './styles/add_beverage_form.css';
 import parse_picklists from '../functions/parse_picklists';
-import AttrSize from "./list_item_elements/AttrSize";
-import AttrLocation from "./list_item_elements/AttrLocation";
-import AttrStyle from "./list_item_elements/AttrStyle";
-import AttrYear from "./list_item_elements/AttrYear";
-import AttrBottleDate from "./list_item_elements/AttrBottleDate";
-import AttrBatch from "./list_item_elements/AttrBatch";
-import AttrQty from "./list_item_elements/AttrQty";
-import AttrUntappd from "./list_item_elements/AttrUntappd";
-import AttrNote from "./list_item_elements/AttrNote";
-import ActionButtons from "./list_item_elements/ActionButtons";
-import AttrTrade from "./list_item_elements/AttrTrade";
-import AttrTradeValue from "./list_item_elements/AttrTradeValue";
-import AttrAgingPotential from "./list_item_elements/AttrAgingPotential";
-import AttrName from "./list_item_elements/AttrName";
-import AttrProducer from "./list_item_elements/AttrProducer";
+import AttrSize from './list_item_elements/AttrSize';
+import AttrLocation from './list_item_elements/AttrLocation';
+import AttrStyle from './list_item_elements/AttrStyle';
+import AttrYear from './list_item_elements/AttrYear';
+import AttrBottleDate from './list_item_elements/AttrBottleDate';
+import AttrBatch from './list_item_elements/AttrBatch';
+import AttrQty from './list_item_elements/AttrQty';
+import AttrUntappd from './list_item_elements/AttrUntappd';
+import AttrNote from './list_item_elements/AttrNote';
+import ActionButtons from './list_item_elements/ActionButtons';
+import AttrTrade from './list_item_elements/AttrTrade';
+import AttrTradeValue from './list_item_elements/AttrTradeValue';
+import AttrAgingPotential from './list_item_elements/AttrAgingPotential';
+import AttrName from './list_item_elements/AttrName';
+import AttrProducer from './list_item_elements/AttrProducer';
 
 class AddBeverageForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            beer_id: "",
+            beverage_id: "",
             name: "",
-            brewery: "",
+            producer: "",
             year: "",
             batch: "",
             size: "",
@@ -82,13 +82,13 @@ class AddBeverageForm extends React.Component {
         // event.stopPropagation();
         console.log("Form is valid!  event.currentTarget.checkValidity=" + event.currentTarget.checkValidity())
 
-        // Set the beer_id
+        // Set the beverage_id
         if (newBeverage.bottle_date && newBeverage.bottle_date !== "") {
             // Prefer bottle_date over batch
-            newBeverage.beer_id = newBeverage.brewery + "_" + newBeverage.name + "_" +
+            newBeverage.beverage_id = newBeverage.producer + "_" + newBeverage.name + "_" +
                 newBeverage.size + "_" + newBeverage.year + "_" + newBeverage.bottle_date
         } else {
-            newBeverage.beer_id = newBeverage.brewery + "_" + newBeverage.name + "_" +
+            newBeverage.beverage_id = newBeverage.producer + "_" + newBeverage.name + "_" +
                 newBeverage.size + "_" + newBeverage.year + "_" + newBeverage.batch
         }
 
@@ -119,9 +119,9 @@ class AddBeverageForm extends React.Component {
     resetBeverageData() {
         console.log("Resetting the AddBev Form");
         this.setState({
-            beer_id: "",
+            beverage_id: "",
             name: "",
-            brewery: "",
+            producer: "",
             year: "",
             batch: "",
             size: "",
@@ -152,7 +152,7 @@ class AddBeverageForm extends React.Component {
                   onSubmit={this.handleSubmit}
                   validated={this.state.validated}>
                 <Form.Row>
-                    <AttrProducer brewery={this.state.brewery}
+                    <AttrProducer producer={this.state.producer}
                                   forNewBeverage={true}
                                   updateBeverageState={this.updateBeverageState}/>
 
@@ -230,7 +230,7 @@ class AddBeverageForm extends React.Component {
 
 AddBeverageForm
     .defaultProps = {
-    beerList: [],
+    beverageList: [],
     picklistData: []
 }
 

@@ -5,7 +5,7 @@ class AttrProducer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            brewery: this.props.brewery
+            producer: this.props.producer
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -32,9 +32,9 @@ class AttrProducer extends React.Component {
                      className="list-item-icon-key"/>
                 <Form.Label>Producer</Form.Label>
                 <Form.Control type="text"
-                              name="brewery"
+                              name="producer"
                               placeholder="Brewery / Winery"
-                              value={this.state.brewery}
+                              value={this.state.producer}
                               onChange={this.handleChange}
                               required={true}/>
             </Form.Group>
@@ -43,7 +43,7 @@ class AttrProducer extends React.Component {
 }
 
 AttrProducer.defaultProps = {
-    brewery: "",
+    producer: "",
     forNewBeverage: false
 }
 

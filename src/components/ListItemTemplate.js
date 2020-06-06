@@ -33,7 +33,7 @@ class ListItemTemplate extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         // Store the initial state of this beverage once its data arrives
-        if (prevProps.data.beer_id !== this.props.beer_id
+        if (prevProps.data.beverage_id !== this.props.beverage_id
             && this.state.originalData === "") {
             this.setState({
                 originalData: this.props.data
@@ -80,8 +80,8 @@ class ListItemTemplate extends React.Component {
         delete beverageData['originalData'];
 
         // Update the item in the db
-        console.log("Calling PUT: `" + process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar/" + this.state.beer_id + "`");
-        fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar/" + this.state.beer_id, {
+        console.log("Calling PUT: `" + process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar/" + this.state.beverage_id + "`");
+        fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar/" + this.state.beverage_id, {
             method: "PUT",
             body: JSON.stringify(beverageData)
         })
@@ -97,7 +97,7 @@ class ListItemTemplate extends React.Component {
                 // Update state of the parent component using the provided function
                 this.props.updateBeverageList(result.data);
             })
-            .catch(error => console.log("Error retrieving beer list data:", error));
+            .catch(error => console.log("Error retrieving beverage list data:", error));
     }
 
     render() {
@@ -172,9 +172,9 @@ class ListItemTemplate extends React.Component {
 
 ListItemTemplate.defaultProps = {
     data: {
-        beer_id: "",
+        beverage_id: "",
         name: "",
-        brewery: "",
+        producer: "",
         year: 0,
         batch: 0,
         size: "",

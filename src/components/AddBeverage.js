@@ -10,7 +10,7 @@ function AddBeverage(props) {
         <Popover id="add-beverage-popover">
             <Popover.Title as="h3">Add New Beverage</Popover.Title>
             <Popover.Content>
-                <AddBeverageForm beerList={props.beerList}
+                <AddBeverageForm beerList={props.beverageList}
                                  picklistData={props.picklistData}
                                  updateBeverageList={props.updateBeverageList}/>
             </Popover.Content>
@@ -35,7 +35,7 @@ function AddBeverage(props) {
 }
 
 AddBeverage.defaultProps = {
-    beerList: [],
+    beverageList: [],
     picklistData: []
 }
 
