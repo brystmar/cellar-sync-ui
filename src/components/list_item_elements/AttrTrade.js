@@ -5,23 +5,20 @@ function AttrTrade(props) {
     return (
         <>
             {props.forNewBeverage ?
-                <Form.Group controlId="formTrade" className="list-item-form-group">
+                <Form.Group controlId="formTrade" className="form-input-group">
                     <Form.Label className="list-item-form-label">
                         <img alt="For Trade?"
                              src="./icons/exchange-alt-solid.svg"
                              className="list-item-icon-key"/>
                         For Trade?
                     </Form.Label>
-                    {/*<span className="v-align-helper"> </span>*/}
                     {mapForTradeIcons(props)}
                 </Form.Group>
 
-                : <Form.Group controlId="formTrade" className="list-item-form-group">
+                : <Form.Group controlId="formTrade" className="form-input-group">
                     <img alt="For Trade?"
                          src="./icons/exchange-alt-solid.svg"
                          className="list-item-icon-key"/>
-
-                    {/*<span className="v-align-helper"> </span>*/}
                     {mapForTradeIcons(props)}
                 </Form.Group>
             }
@@ -30,7 +27,6 @@ function AttrTrade(props) {
 }
 
 function mapForTradeIcons(props) {
-    // console.log(props.for_trade + ", type: " + typeof(props.for_trade));
     if (props.for_trade === true) {
         return <img alt="For Trade? Yes"
                     src="./icons/noun_true_2049512.svg"

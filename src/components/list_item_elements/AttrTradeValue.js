@@ -6,7 +6,7 @@ function AttrTradeValue(props) {
     return (
         <>
             {props.forNewBeverage ?
-                <Form.Group controlId="formTradeValue" className="list-item-form-group">
+                <Form.Group controlId="formTradeValue" className="form-input-group">
                     <Form.Label className="list-item-form-label">
                         <img alt="Trade Value"
                              src="./icons/euro-sign-solid.svg"
@@ -16,11 +16,10 @@ function AttrTradeValue(props) {
                     {mapTradeValueIcons(props)}
                 </Form.Group>
 
-                : <Form.Group controlId="formTradeValue" className="list-item-form-group">
+                : <Form.Group controlId="formTradeValue" className="form-input-group">
                     <img alt="Trade Value"
                          src="./icons/euro-sign-solid.svg"
                          className="list-item-icon-key"/>
-
                     {mapTradeValueIcons(props)}
                 </Form.Group>
             }

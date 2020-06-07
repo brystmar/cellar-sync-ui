@@ -6,7 +6,7 @@ function AttrAgingPotential(props) {
     return (
         <>
             {props.forNewBeverage ?
-                <Form.Group controlId="formAgingPotential" className="list-item-form-group">
+                <Form.Group controlId="formAgingPotential" className="form-input-group">
                     <Form.Label className="list-item-form-label">
                         <img alt="Aging Potential"
                              src="./icons/spider-solid.svg"
@@ -16,11 +16,10 @@ function AttrAgingPotential(props) {
                     {mapAgingPotentialIcons(props)}
                 </Form.Group>
 
-                : <Form.Group controlId="formAgingPotential" className="list-item-form-group">
+                : <Form.Group controlId="formAgingPotential" className="form-input-group">
                     <img alt="Aging Potential"
                          src="./icons/spider-solid.svg"
                          className="list-item-icon-key"/>
-
                     {mapAgingPotentialIcons(props)}
                 </Form.Group>
             }

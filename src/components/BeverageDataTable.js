@@ -1,7 +1,7 @@
 import React from 'react';
 import DataTable from 'react-data-table-component';
 import DataTableExtensions from 'react-data-table-component-extensions';
-import beverageDataTableColumns from './BeverageDataTableColumns';
+import beverageDataTableColumns from './defaults/beverageDataTableColumns';
 import ListItemTemplate from './ListItemTemplate';
 
 function BeverageDataTable(props) {

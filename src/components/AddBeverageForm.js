@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import './styles/add_beverage_form.css';
+import newBeverageDefaults from './defaults/newBeverageDefaults';
 import parse_picklists from '../functions/parse_picklists';
 import AttrSize from './list_item_elements/AttrSize';
 import AttrLocation from './list_item_elements/AttrLocation';
@@ -18,32 +19,16 @@ import AttrAgingPotential from './list_item_elements/AttrAgingPotential';
 import AttrName from './list_item_elements/AttrName';
 import AttrProducer from './list_item_elements/AttrProducer';
 
+
 class AddBeverageForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            beverage_id: "",
-            name: "",
-            producer: "",
-            year: "",
-            batch: "",
-            size: "",
-            bottle_date: "",
-            location: "",
-            style: "",
-            specific_style: "",
-            qty: 0,
-            qty_cold: 0,
-            untappd: "",
-            aging_potential: "",
-            trade_value: "",
-            for_trade: false,
-            note: "",
-            validated: false,
-            sizeValues: parse_picklists(this.props.picklistData, "size"),
-            locationValues: parse_picklists(this.props.picklistData, "location"),
-            styleValues: parse_picklists(this.props.picklistData, "style")
-        }
+        this.state = Object.assign(newBeverageDefaults,
+            {
+                sizeValues: parse_picklists(this.props.picklistData, "size"),
+                locationValues: parse_picklists(this.props.picklistData, "location"),
+                styleValues: parse_picklists(this.props.picklistData, "style")
+            })
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -51,13 +36,51 @@ class AddBeverageForm extends React.Component {
         this.resetBeverageData = this.resetBeverageData.bind(this);
     }
 
+    // shouldComponentUpdate(nextProps, nextState, nextContext) {
+    //     console.log("sCU in AddBevForm");
+    //     console.log("Current state:", this.state);
+    //     console.log("Next state:", nextState)
+    //     return true;
+    // }
+
     handleChange(event) {
-        // console.log("Event:")
-        // console.log(event)
         const {name, value} = event.target;
-        this.setState({
-            [name]: value
-        })
+
+        // Validate that qty >= qty_cold
+        if (name === "qty") {
+            if (value >= this.state.qty_cold) {
+                // Only update if the entry is valid
+                // `value` is a string here for some reason
+                if (value.toString() !== this.state.qty.toString()) {
+                    this.setState({
+                        qty: value
+                    })
+                }
+            } else {
+                // Reduce qty_cold to match qty
+                this.setState({
+                    qty: value,
+                    qty_cold: value
+                })
+            }
+        } else if (name === "qty_cold") {
+            if (value <= this.state.qty) {
+                // Only update if the entry is valid
+                if (value.toString() !== this.state.qty_cold.toString()) {
+                    this.setState({
+                        qty_cold: value
+                    })
+                }
+            } else {
+                this.setState({
+                    qty_cold: value
+                })
+            }
+        } else {
+            this.setState({
+                [name]: value
+            })
+        }
     }
 
     handleSubmit(event) {
@@ -118,32 +141,15 @@ class AddBeverageForm extends React.Component {
 
     resetBeverageData() {
         console.log("Resetting the AddBev Form");
-        this.setState({
-            beverage_id: "",
-            name: "",
-            producer: "",
-            year: "",
-            batch: "",
-            size: "",
-            bottle_date: "",
-            location: "",
-            style: "",
-            specific_style: "",
-            qty: 0,
-            qty_cold: 0,
-            untappd: "",
-            aging_potential: "",
-            trade_value: "",
-            for_trade: false,
-            note: "",
-            validated: false
-        });
+        this.setState(newBeverageDefaults);
     }
 
     updateBeverageState(newData) {
         // Update local state when values change on a child attribute
         this.setState(newData)
-        console.log("Updated " + JSON.stringify(newData));
+        // console.log("Updated " + JSON.stringify(newData));
+        // console.log("Current state is now:");
+        // console.log(this.state);
     }
 
     render() {
@@ -154,67 +160,81 @@ class AddBeverageForm extends React.Component {
                 <Form.Row>
                     <AttrProducer producer={this.state.producer}
                                   forNewBeverage={true}
+                                  handleChange={this.handleChange}
                                   updateBeverageState={this.updateBeverageState}/>
 
                     <AttrName name={this.state.name}
                               forNewBeverage={true}
+                              handleChange={this.handleChange}
                               updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
                 <Form.Row>
                     <AttrLocation location={this.state.location}
                                   forNewBeverage={true}
                                   picklistData={this.state.locationValues}
+                                  handleChange={this.handleChange}
                                   updateBeverageState={this.updateBeverageState}/>
 
                     <AttrSize size={this.state.size}
                               forNewBeverage={true}
                               picklistData={this.state.sizeValues}
+                              handleChange={this.handleChange}
                               updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
                 <Form.Row>
                     <AttrQty qty={this.state.qty}
                              qty_cold={this.state.qty_cold}
                              forNewBeverage={true}
+                             handleChange={this.handleChange}
                              updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
                 <Form.Row>
                     <AttrYear year={this.state.year}
                               forNewBeverage={true}
+                              handleChange={this.handleChange}
                               updateBeverageState={this.updateBeverageState}/>
 
                     <AttrBottleDate bottle_date={this.state.bottle_date}
                                     forNewBeverage={true}
+                                    handleChange={this.handleChange}
                                     updateBeverageState={this.updateBeverageState}/>
 
                     <AttrBatch batch={this.state.batch}
                                forNewBeverage={true}
+                               handleChange={this.handleChange}
                                updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
                 <Form.Row>
                     <AttrStyle style={this.state.style}
                                forNewBeverage={true}
                                picklistData={this.state.styleValues}
+                               handleChange={this.handleChange}
                                updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
                 <Form.Row>
                     <AttrUntappd untappd={this.state.untappd}
                                  forNewBeverage={true}
+                                 handleChange={this.handleChange}
                                  updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
                 <Form.Row>
                     <AttrNote note={this.state.note}
                               forNewBeverage={true}
+                              handleChange={this.handleChange}
                               updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
                 <Form.Row>
                     <AttrTrade for_trade={this.state.for_trade}
                                forNewBeverage={true}
+                               handleChange={this.handleChange}
                                updateBeverageState={this.updateBeverageState}/>
                     <AttrTradeValue trade_value={this.state.trade_value}
                                     forNewBeverage={true}
+                                    handleChange={this.handleChange}
                                     updateBeverageState={this.updateBeverageState}/>
                     <AttrAgingPotential aging_potential={this.state.aging_potential}
                                         forNewBeverage={true}
+                                        handleChange={this.handleChange}
                                         updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
 
@@ -228,8 +248,7 @@ class AddBeverageForm extends React.Component {
     }
 }
 
-AddBeverageForm
-    .defaultProps = {
+AddBeverageForm.defaultProps = {
     beverageList: [],
     picklistData: []
 }

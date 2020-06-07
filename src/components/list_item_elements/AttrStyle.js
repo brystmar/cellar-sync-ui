@@ -9,7 +9,6 @@ class AttrStyle extends React.Component {
             spStyle: this.props.specific_style ? this.props.specific_style : "",
             spStyleList: []
         }
-
         this.updateSpStyleList = this.updateSpStyleList.bind(this);
         this.handleStyleChange = this.handleStyleChange.bind(this);
         this.handleSpStyleChange = this.handleSpStyleChange.bind(this);
@@ -19,9 +18,10 @@ class AttrStyle extends React.Component {
         // Update when the form resets
         if (this.props.style !== "" && nextProps.style === "") {
             // Props were reset
-            this.updateSpStyleList("");
             return true;
-        } else if (this.state.style !== nextState.style || this.state.spStyle !== nextState.spStyle) {
+        } else if (this.state.style !== nextState.style
+            || this.state.spStyle !== nextState.spStyle
+            || this.state.spStyleList !== nextState.spStyleList) {
             // Local state update
             return true;
         } else {
@@ -33,7 +33,7 @@ class AttrStyle extends React.Component {
         this.updateSpStyleList(this.state.style);
     }
 
-    updateSpStyleList(newStyle = "") {
+    updateSpStyleList(newStyle = "", newSpStyle = "") {
         // Each Style has its own list of SpecificStyles, so update this dependent list when Style changes
         // console.log("Updating SpStyleList, newStyle: `" + newStyle + "`");
         if (// If picklistData is not empty
@@ -41,7 +41,9 @@ class AttrStyle extends React.Component {
             // ...and there's data for the current Style
             && this.props.picklistData.findIndex(style => style.value === newStyle) !== -1
             // ...and the data for this style has a non-null dependent_values list
-            && !!this.props.picklistData.find(style => style.value === newStyle).dependent_values) {
+            && !!this.props.picklistData.find(style => style.value === newStyle).dependent_values
+            // ...then
+        ) {
             this.setState({
                 spStyleList: this.props.picklistData.find(style => style.value === newStyle).dependent_values
             })
@@ -50,6 +52,7 @@ class AttrStyle extends React.Component {
             // console.log("List exists? " + !!this.props.picklistData.find(style => style.value === newStyle).dependent_values);
             // console.log("")
         } else {
+            // console.log("newStyle `" + newStyle + "` not found, resetting SS & SS list.");
             this.setState({
                 spStyle: "",
                 spStyleList: []
@@ -85,6 +88,7 @@ class AttrStyle extends React.Component {
 
         // Update specific_style & editMode on the parent beverage
         this.props.updateBeverageState({
+            style: this.state.style,
             specific_style: event.target.value,
             editMode: true
         })
@@ -113,7 +117,7 @@ class AttrStyle extends React.Component {
 
         return (
             <>
-                <Form.Group controlId="formStyle">
+                <Form.Group controlId="formStyle" className="form-input-group">
                     <img alt="Style"
                          src="./icons/noun_Beer_style1_1975813.svg"
                          className="list-item-icon-key"/>
@@ -129,7 +133,7 @@ class AttrStyle extends React.Component {
                     </Form.Control>
                 </Form.Group>
 
-                <Form.Group controlId="formSpecificStyle">
+                <Form.Group controlId="formSpecificStyle" className="form-input-group">
                     <img alt="Specific Style"
                          src="./icons/noun_Beer_style2_5693.svg"
                          className="list-item-icon-key"/>

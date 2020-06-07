@@ -10,18 +10,8 @@ function AttrSize(props) {
         sizes.unshift(<option key={"null"} value={""}>{""}</option>);
     }
 
-    function handleChange(event) {
-        const {name, value} = event.target;
-
-        // Update parent beverage state
-        props.updateBeverageState({
-            [name]: value,
-            editMode: true
-        })
-    }
-
     return (
-        <Form.Group controlId="formSize">
+        <Form.Group controlId="formSize" className="form-input-group">
             <img alt="Size"
                  src="./icons/wine-bottle-solid.svg"
                  className="list-item-icon-key"/>
@@ -33,7 +23,7 @@ function AttrSize(props) {
                           disabled={!props.forNewBeverage}
                           className="input-picklist list-item-value"
                           value={props.size}
-                          onChange={handleChange}
+                          onChange={props.handleChange}
                           required={true}>
                 {sizes}
             </Form.Control>

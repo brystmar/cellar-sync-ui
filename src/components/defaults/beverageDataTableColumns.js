@@ -1,4 +1,4 @@
-let beverageDataTableColumns = [
+const beverageDataTableColumns = [
         {
             name: 'Producer',
             selector: 'producer',

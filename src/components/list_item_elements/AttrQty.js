@@ -1,104 +1,44 @@
 import React from 'react';
-import Form from "react-bootstrap/Form";
+import Form from 'react-bootstrap/Form';
 
-class AttrQty extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            qty: this.props.qty,
-            qty_cold: this.props.qty_cold
-        }
-        this.handleChange = this.handleChange.bind(this);
-    }
+function AttrQty(props) {
+    return (
+        <>
+            <Form.Group controlId="formQty" className="form-input-group">
+                <img alt="Qty (Overall)"
+                     src="./icons/hashtag-solid.svg"
+                     className="list-item-icon-key"/>
+                {props.forNewBeverage ? <Form.Label>Qty</Form.Label> : ""}
 
-    handleChange(event) {
-        const {name, value} = event.target;
+                <Form.Control name="qty"
+                              type="number"
+                              min={0}
+                              max={99}
+                              placeholder="#"
+                              className="input-number list-item-value input-qty"
+                              value={props.qty}
+                              onChange={props.handleChange}
+                              onBlur={props.handleChange}/>
+            </Form.Group>
 
-        // Validate that qty >= qty_cold
-        if (name === "qty") {
-            if (value >= this.state.qty_cold) {
-                // Only update if the entry is valid
-                // `value` is a string here for some reason
-                if (value.toString() !== this.state.qty.toString()) {
-                    // Update local state
-                    this.setState({
-                        qty: value
-                    })
+            <Form.Group controlId="formQtyCold" className="form-input-group">
+                <img alt="Qty (Cold)"
+                     src="./icons/snowflake-regular.svg"
+                     className="list-item-icon-key"/>
+                {props.forNewBeverage ? <Form.Label>Cold</Form.Label> : ""}
 
-                    // Update state of the parent beverage
-                    this.props.updateBeverageState({
-                        [name]: value,
-                        editMode: true
-                    })
-                }
-            } else {
-                // Reduce qty_cold to match qty
-                this.setState({
-                    qty: value,
-                    qty_cold: value
-                })
-            }
-        } else if (name === "qty_cold") {
-            if (value <= this.state.qty) {
-                // Only update if the entry is valid
-                if (value.toString() !== this.state.qty_cold.toString()) {
-                    this.setState({
-                        qty_cold: value
-                    })
-
-                    // Update state of the parent beverage
-                    this.props.updateBeverageState({
-                        [name]: value,
-                        editMode: true
-                    })
-                }
-            } else {
-                this.setState({
-                    qty_cold: value
-                })
-            }
-        }
-    }
-
-    render() {
-        return (
-            <>
-                <Form.Group controlId="formQty">
-                    <img alt="Qty (Overall)"
-                         src="./icons/hashtag-solid.svg"
-                         className="list-item-icon-key"/>
-                    {this.props.forNewBeverage ? <Form.Label>Qty</Form.Label> : ""}
-
-                    <Form.Control name="qty"
-                                  type="number"
-                                  min={0}
-                                  max={99}
-                                  placeholder="#"
-                                  className="input-number list-item-value input-qty"
-                                  value={this.state.qty}
-                                  onChange={this.handleChange}
-                                  onBlur={this.handleChange}/>
-                </Form.Group>
-
-                <Form.Group controlId="formQtyCold">
-                    <img alt="Qty (Cold)"
-                         src="./icons/snowflake-regular.svg"
-                         className="list-item-icon-key"/>
-                    {this.props.forNewBeverage ? <Form.Label>Cold</Form.Label> : ""}
-
-                    <Form.Control name="qty_cold"
-                                  type="number"
-                                  min={0}
-                                  max={this.state.qty}
-                                  placeholder="#"
-                                  className="input-number list-item-value input-qty"
-                                  value={this.state.qty_cold}
-                                  onChange={this.handleChange}
-                                  onBlur={this.handleChange}/>
-                </Form.Group>
-            </>
-        )
-    }
+                <Form.Control name="qty_cold"
+                              type="number"
+                              min={0}
+                              max={props.qty}
+                              placeholder="#"
+                              className="input-number list-item-value input-qty"
+                              value={props.qty_cold}
+                              onChange={props.handleChange}
+                              onBlur={props.handleChange}/>
+            </Form.Group>
+        </>
+    )
 }
 
 AttrQty.defaultProps = {

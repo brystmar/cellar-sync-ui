@@ -10,18 +10,10 @@ function AttrLocation(props) {
         locations.unshift(<option key={"null"} value={""}>{""}</option>);
     }
 
-    function handleChange(event) {
-        const {name, value} = event.target;
-
-        // Update parent beverage state
-        props.updateBeverageState({
-            [name]: value,
-            editMode: true
-        })
-    }
+    // console.log("Location rendering");
 
     return (
-        <Form.Group controlId="formLocation">
+        <Form.Group controlId="formLocation" className="form-input-group">
             <img alt="Location"
                  src="./icons/map-marked-alt-solid.svg"
                  className="list-item-icon-key"/>
@@ -33,7 +25,7 @@ function AttrLocation(props) {
                           disabled={!props.forNewBeverage}
                           className="input-picklist list-item-value"
                           value={props.location}
-                          onChange={handleChange}
+                          onChange={props.handleChange}
                           required={true}>
                 {locations}
             </Form.Control>

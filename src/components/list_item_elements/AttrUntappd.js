@@ -1,45 +1,22 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 
-class AttrUntappd extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            untappd: this.props.untappd
-        }
-        this.handleChange = this.handleChange.bind(this);
-    }
+function AttrUntappd(props) {
+    return (
+        <Form.Group controlId="formUntappd" className="form-input-group">
+            <img src="./icons/link-solid.svg"
+                 alt="Untappd"
+                 className="list-item-icon-key"/>
+            {props.forNewBeverage ? <Form.Label>Untappd</Form.Label> : ""}
 
-    handleChange(event) {
-        const {name, value} = event.target;
-        this.setState({
-            [name]: value
-        })
-
-        // Update parent beverage state
-        this.props.updateBeverageState({
-            [name]: value,
-            editMode: true
-        })
-    }
-
-    render() {
-        return (
-            <Form.Group controlId="formUntappd">
-                <img src="./icons/link-solid.svg"
-                     alt="Untappd"
-                     className="list-item-icon-key"/>
-                {this.props.forNewBeverage ? <Form.Label>Untappd</Form.Label> : ""}
-
-                <Form.Control name="untappd"
-                              type="text"
-                              placeholder="https://untappd.com/b/..."
-                              className="input-text-long list-item-value"
-                              value={this.state.untappd}
-                              onChange={this.handleChange}/>
-            </Form.Group>
-        )
-    }
+            <Form.Control name="untappd"
+                          type="text"
+                          placeholder="https://untappd.com/b/..."
+                          className="input-text-long list-item-value"
+                          value={props.untappd}
+                          onChange={props.handleChange}/>
+        </Form.Group>
+    )
 }
 
 AttrUntappd.defaultProps = {

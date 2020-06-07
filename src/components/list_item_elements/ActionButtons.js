@@ -3,21 +3,20 @@ import Button from 'react-bootstrap/Button';
 
 function ActionButtons(props) {
     return (
-        <div className="list-item-buttons">
-            <Button type="reset"
+        <>
+            <Button type="button"
                     variant="danger"
-                    className="list-item-reset-button"
+                    className="list-item-button"
                     size="sm"
                     hidden={!props.editMode}
                     onClick={props.resetBeverageData}>Cancel</Button>
 
             <Button type="submit"
                     variant="primary"
-                    className="list-item-save-button"
+                    className="list-item-button"
                     size="sm"
-                    hidden={!props.editMode}
-                    onClick={props.handleSubmit}>Save</Button>
-        </div>
+                    hidden={!props.editMode}>Save</Button>
+        </>
     )
 }
 
