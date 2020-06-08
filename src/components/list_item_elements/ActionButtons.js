@@ -9,7 +9,14 @@ function ActionButtons(props) {
                     className="list-item-button"
                     size="sm"
                     hidden={!props.editMode}
-                    onClick={props.resetBeverageData}>Cancel</Button>
+                    onClick={() => {
+                        props.resetBeverageData();
+                        // Close the popover when this button is used in the AddBev form
+                        if (props.forNewBeverage) {
+                            document.body.click()
+                        }
+                    }}>
+                Cancel</Button>
 
             <Button type="submit"
                     variant="primary"

@@ -4,6 +4,12 @@
 	right: 20px;
 }
 
+.add-button-floating2 {
+	position: fixed;
+	bottom: 80px;
+	right: 20px;
+}
+
 .popover {
 	min-width: 500px;
 	min-height: 550px;

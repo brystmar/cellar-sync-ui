@@ -36,13 +36,6 @@ class AddBeverageForm extends React.Component {
         this.resetBeverageData = this.resetBeverageData.bind(this);
     }
 
-    // shouldComponentUpdate(nextProps, nextState, nextContext) {
-    //     console.log("sCU in AddBevForm");
-    //     console.log("Current state:", this.state);
-    //     console.log("Next state:", nextState)
-    //     return true;
-    // }
-
     handleChange(event) {
         const {name, value} = event.target;
 
@@ -84,9 +77,10 @@ class AddBeverageForm extends React.Component {
     }
 
     handleSubmit(event) {
-        console.log("AddBev form submitted.  Valid? " + event.currentTarget.checkValidity());
-        console.log(this.state);
+        // console.log("AddBev form submitted.  Valid? " + event.currentTarget.checkValidity());
+        // console.log(this.state);
         event.preventDefault();
+        event.stopPropagation();
 
         // Prep the new beverage for db insert
         let newBeverage = {...this.state};
@@ -95,15 +89,6 @@ class AddBeverageForm extends React.Component {
         delete newBeverage['sizeValues'];
         delete newBeverage['styleValues'];
         delete newBeverage['locationValues'];
-
-        // if (!this.state.validated) {
-        //     console.log("Form not valid.  Halting.")
-        //     return
-        // }
-
-        // event.preventDefault();
-        // event.stopPropagation();
-        console.log("Form is valid!  event.currentTarget.checkValidity=" + event.currentTarget.checkValidity())
 
         // Set the beverage_id
         if (newBeverage.bottle_date && newBeverage.bottle_date !== "") {
@@ -115,12 +100,7 @@ class AddBeverageForm extends React.Component {
                 newBeverage.size + "_" + newBeverage.year + "_" + newBeverage.batch
         }
 
-        console.log("Adding beverage:");
-        console.log(newBeverage);
-        // if (form.checkValidity() === false) {
-        //     event.preventDefault();
-        //     event.stopPropagation();
-        // }
+        console.log("Adding beverage:", newBeverage);
 
         // Retrieve the list of beverages from the backend
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar",
@@ -133,23 +113,26 @@ class AddBeverageForm extends React.Component {
                 return response.json();
             })
             .then(result => {
-                console.log("New beverage saved:", result.data);
+                // console.log("New beverage saved:", result.data);
                 this.resetBeverageData();
             })
             .catch(error => console.log("Error adding new beverage:", error));
+
+        // Update the master list
+        this.props.updateBeverageList(newBeverage, true);
     }
 
     resetBeverageData() {
         console.log("Resetting the AddBev Form");
         this.setState(newBeverageDefaults);
+
+        // Reset focus to the Producer field
+        document.getElementById("formBevProducer").focus();
     }
 
     updateBeverageState(newData) {
         // Update local state when values change on a child attribute
         this.setState(newData)
-        // console.log("Updated " + JSON.stringify(newData));
-        // console.log("Current state is now:");
-        // console.log(this.state);
     }
 
     render() {
@@ -240,7 +223,7 @@ class AddBeverageForm extends React.Component {
 
                 <ActionButtons
                     editMode={true}
-                    toggleEditMode={this.toggleEditMode}
+                    forNewBeverage={true}
                     resetBeverageData={this.resetBeverageData}
                     handleSubmit={this.handleSubmit}/>
             </Form>

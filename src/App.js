@@ -12,11 +12,13 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            beverageList: []
+            beverageList: [],
+            hackyKey: 1001
         }
-
         this.getAllBeverages = this.getAllBeverages.bind(this);
         this.updateBeverageList = this.updateBeverageList.bind(this);
+        this.deleteBeverage = this.deleteBeverage.bind(this);
+        this.deleteBeverageFromState = this.deleteBeverageFromState.bind(this);
     }
 
     componentDidMount() {
@@ -38,22 +40,48 @@ class App extends React.Component {
     }
 
     updateBeverageList(beverage, isNew = false) {
-        console.log(this.state.beverageList);
-        let newState = this.state.beverageList;
+        console.log("Called updateBeverageList, isNew=" + isNew, "| Current bevList:", this.state.beverageList);
+        let newList = this.state.beverageList;
 
         if (!isNew) {
             // When updating an item, first remove the original beverage from the overall list
-            delete newState[beverage.beverage_id]
+            delete newList[beverage.beverage_id]
         }
 
-        // Add the new beverage
-        newState.push(beverage);
-        console.log("Added new beverage: " + JSON.stringify(beverage));
-        console.log(newState);
+        newList.push(beverage);
 
         this.setState({
-            beverageList: newState
+            beverageList: newList,
+            dtKey: Math.random()
         })
+    }
+
+    deleteBeverage(beverageId, beverageLocation) {
+        // console.log("Called deleteBeverage(" + beverageId + ", " + beverageLocation + ").");
+        fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar/" + beverageId
+            + "/" + beverageLocation, {
+            method: "DELETE"
+        })
+            .then(response => {
+                if (response.ok) {
+                    this.deleteBeverageFromState(beverageId)
+                    // console.log("Delete successful");
+                } else {
+                    console.log("Delete failed, details:", response.body);
+                    return Promise.reject(response.statusText)
+                }
+            })
+            .catch(error => console.log("Delete failed:", error));
+    }
+
+    deleteBeverageFromState(beverageId) {
+        // Remove from local state
+        let newList = this.state.beverageList.filter((bev) => bev.beverage_id !== beverageId);
+
+        this.setState({
+            beverageList: newList,
+            dtKey: Math.random()
+        });
     }
 
     render() {
@@ -70,6 +98,8 @@ class App extends React.Component {
                             <PageTitle title={userName} logo={cellarLogo}/>
                             <BeverageDataTable beverageList={this.state.beverageList}
                                                picklistData={this.state.picklistData}
+                                               deleteBeverage={this.deleteBeverage}
+                                               hackyKey={this.state.hackyKey}
                                                updateBeverageList={this.updateBeverageList}/>
                             <AddBeverage beverageList={this.state.beverageList}
                                          picklistData={this.state.picklistData}

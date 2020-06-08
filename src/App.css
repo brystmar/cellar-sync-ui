@@ -40,6 +40,11 @@
 	margin-left: 20px;
 }
 
+.list-item-template-container .delete-button {
+	float: right;
+	margin: 5px 5px;
+}
+
 .footer-container {
 	font-size: small;
 	margin: 40px 3px 10px;
