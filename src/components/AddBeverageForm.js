@@ -25,6 +25,7 @@ class AddBeverageForm extends React.Component {
         super(props);
         this.state = Object.assign(newBeverageDefaults,
             {
+                validated: false,
                 sizeValues: parse_picklists(this.props.picklistData, "size"),
                 locationValues: parse_picklists(this.props.picklistData, "location"),
                 styleValues: parse_picklists(this.props.picklistData, "style")

@@ -3,20 +3,19 @@ const newBeverageDefaults = {
     name: "",
     producer: "",
     year: "",
-    batch: "",
     size: "",
-    bottle_date: "",
     location: "",
-    style: "",
-    specific_style: "",
+    batch: "",
+    bottle_date: "",
     qty: 0,
     qty_cold: 0,
-    untappd: "",
-    aging_potential: "",
+    style: "",
+    specific_style: "",
+    for_trade: true,
     trade_value: "",
-    for_trade: false,
-    note: "",
-    validated: false
+    aging_potential: "",
+    untappd: "",
+    note: ""
 };
 
 export default newBeverageDefaults;

@@ -20,12 +20,29 @@ import './list_item_elements/styles/list_items.css';
 class ListItemTemplate extends React.Component {
     constructor(props) {
         super(props);
-        this.state = Object.assign(this.props.data, {
+        this.state = {
+            beverage_id: this.props.beverage_id,
+            name: this.props.name,
+            producer: this.props.producer,
+            year: this.props.year,
+            size: this.props.size,
+            location: this.props.location,
+            batch: this.props.batch ? this.props.batch : "",
+            bottle_date: this.props.bottle_date ? this.props.bottle_date : "",
+            qty: this.props.qty,
+            qty_cold: this.props.qty_cold,
+            style: this.props.style ? this.props.style : "",
+            specific_style: this.props.specific_style ? this.props.specific_style : "",
+            for_trade: this.props.for_trade,
+            trade_value: this.props.trade_value ? this.props.trade_value : "",
+            aging_potential: this.props.aging_potential ? this.props.aging_potential : "",
+            untappd: this.props.untappd ? this.props.untappd : "",
+            note: this.props.note ? this.props.note : "",
             editMode: false,
             validated: false,
             originalData: "",
             formId: 0
-        });
+        };
 
         this.toggleEditMode = this.toggleEditMode.bind(this);
         this.updateBeverageState = this.updateBeverageState.bind(this);
@@ -82,14 +99,31 @@ class ListItemTemplate extends React.Component {
         event.preventDefault();
 
         // Organize the updated data object
-        let beverageData = this.state;
-        delete beverageData['editMode'];
-        delete beverageData['validated'];
-        delete beverageData['originalData'];
+        let beverageData = {
+            beverage_id: this.props.beverage_id,
+            name: this.props.name,
+            producer: this.props.producer,
+            year: this.props.year,
+            size: this.props.size,
+            location: this.props.location,
+            batch: this.state.batch ? this.state.batch : "",
+            bottle_date: this.state.bottle_date ? this.state.bottle_date : "",
+            qty: this.state.qty,
+            qty_cold: this.state.qty_cold,
+            style: this.state.style ? this.state.style : "",
+            specific_style: this.state.specific_style ? this.state.specific_style : "",
+            untappd: this.state.untappd ? this.state.untappd : "",
+            aging_potential: this.state.aging_potential ? this.state.aging_potential : "",
+            trade_value: this.state.trade_value ? this.state.trade_value : "",
+            for_trade: this.state.for_trade,
+            note: this.state.note ? this.state.note : ""
+        }
 
         // Update the item in the db
-        console.log("Calling PUT: `" + process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar/" + this.state.beverage_id + "`");
-        fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar/" + this.state.beverage_id, {
+        console.log("Calling PUT:", process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar/" + this.state.beverage_id
+            + "/" + this.state.location);
+        fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar/" + this.state.beverage_id
+            + "/" + this.state.location, {
             method: "PUT",
             body: JSON.stringify(beverageData)
         })
@@ -212,18 +246,18 @@ ListItemTemplate.defaultProps = {
         name: "",
         producer: "",
         year: 0,
-        batch: 0,
         size: "",
-        bottle_date: "",
         location: "",
-        style: "",
-        specific_style: "",
+        batch: 0,
+        bottle_date: "",
         qty: 0,
         qty_cold: 0,
-        untappd: "",
-        aging_potential: "",
-        trade_value: "",
+        style: "",
+        specific_style: "",
         for_trade: false,
+        trade_value: "",
+        aging_potential: "",
+        untappd: "",
         note: "",
         date_added: 0,
         last_modified: 0

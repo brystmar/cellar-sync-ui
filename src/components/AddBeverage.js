@@ -27,7 +27,6 @@ class AddBeverage extends React.Component {
                 <OverlayTrigger id="add-beverage-overlay-form"
                                 placement="left"
                                 trigger="click"
-                                rootClose={true}
                                 overlay={addForm}>
                     <img src="./icons/button_plus.png"
                          alt="Add Beverage"

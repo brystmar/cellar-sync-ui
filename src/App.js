@@ -27,15 +27,23 @@ class App extends React.Component {
 
     getAllBeverages() {
         // Retrieve the list of beverages from the backend
+        console.log("Retrieving BevList from", process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar");
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar")
             .then(response => response.json())
-            .then(result => this.setState({beverageList: result.data}))
+            .then(result => {
+                console.log("BevList response:", result.data)
+                this.setState({beverageList: result.data})
+            })
             .catch(error => console.log("Error retrieving beverage list data:", error));
 
         // Retrieve all picklist values from the backend
+        console.log("Retrieving picklists from", process.env.REACT_APP_BACKEND_URL + "/api/v1/picklist-data");
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/picklist-data")
             .then(response => response.json())
-            .then(result => this.setState({picklistData: result.data}))
+            .then(result => {
+                console.log("Picklist response:", result.data)
+                this.setState({picklistData: result.data})
+            })
             .catch(error => console.log("Error retrieving picklist data:", error));
     }
 

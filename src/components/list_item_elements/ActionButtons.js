@@ -12,11 +12,10 @@ function ActionButtons(props) {
                     onClick={() => {
                         props.resetBeverageData();
                         // Close the popover when this button is used in the AddBev form
-                        if (props.forNewBeverage) {
-                            document.body.click()
-                        }
-                    }}>
-                Cancel</Button>
+                        // if (props.forNewBeverage) {
+                        //     document.body.click()
+                        // }
+                    }}>Cancel</Button>
 
             <Button type="submit"
                     variant="primary"
