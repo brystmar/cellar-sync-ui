@@ -21,23 +21,23 @@ class ListItemTemplate extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            beverage_id: this.props.beverage_id,
-            name: this.props.name,
-            producer: this.props.producer,
-            year: this.props.year,
-            size: this.props.size,
-            location: this.props.location,
-            batch: this.props.batch ? this.props.batch : "",
-            bottle_date: this.props.bottle_date ? this.props.bottle_date : "",
-            qty: this.props.qty,
-            qty_cold: this.props.qty_cold,
-            style: this.props.style ? this.props.style : "",
-            specific_style: this.props.specific_style ? this.props.specific_style : "",
-            for_trade: this.props.for_trade,
-            trade_value: this.props.trade_value ? this.props.trade_value : "",
-            aging_potential: this.props.aging_potential ? this.props.aging_potential : "",
-            untappd: this.props.untappd ? this.props.untappd : "",
-            note: this.props.note ? this.props.note : "",
+            beverage_id: this.props.data.beverage_id,
+            name: this.props.data.name,
+            producer: this.props.data.producer,
+            year: this.props.data.year,
+            size: this.props.data.size,
+            location: this.props.data.location,
+            batch: this.props.data.batch ? this.props.data.batch : "",
+            bottle_date: this.props.data.bottle_date ? this.props.data.bottle_date : "",
+            qty: this.props.data.qty ? this.props.data.qty : 0,
+            qty_cold: this.props.data.qty_cold ? this.props.data.qty_cold : 0,
+            style: this.props.data.style ? this.props.data.style : "",
+            specific_style: this.props.data.specific_style ? this.props.data.specific_style : "",
+            for_trade: this.props.data.for_trade,
+            trade_value: this.props.data.trade_value ? this.props.data.trade_value : "",
+            aging_potential: this.props.data.aging_potential ? this.props.data.aging_potential : "",
+            untappd: this.props.data.untappd ? this.props.data.untappd : "",
+            note: this.props.data.note ? this.props.data.note : "",
             editMode: false,
             validated: false,
             originalData: "",
@@ -95,17 +95,17 @@ class ListItemTemplate extends React.Component {
     }
 
     handleSubmit(event) {
-        console.log("Clicked Save!")
+        console.log("Clicked Save")
         event.preventDefault();
 
         // Organize the updated data object
         let beverageData = {
-            beverage_id: this.props.beverage_id,
-            name: this.props.name,
-            producer: this.props.producer,
-            year: this.props.year,
-            size: this.props.size,
-            location: this.props.location,
+            beverage_id: this.props.data.beverage_id,
+            name: this.props.data.name,
+            producer: this.props.data.producer,
+            year: this.props.data.year,
+            size: this.props.data.size,
+            location: this.props.data.location,
             batch: this.state.batch ? this.state.batch : "",
             bottle_date: this.state.bottle_date ? this.state.bottle_date : "",
             qty: this.state.qty,
@@ -121,16 +121,14 @@ class ListItemTemplate extends React.Component {
 
         // Update the item in the db
         console.log("Calling PUT:", process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar/" + this.state.beverage_id
-            + "/" + this.state.location);
+            + "/" + this.state.location, " for beverage:");
+        console.log(JSON.stringify(beverageData));
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar/" + this.state.beverage_id
             + "/" + this.state.location, {
             method: "PUT",
             body: JSON.stringify(beverageData)
         })
-            .then(response => {
-                console.log("PUT complete, response:", response.status, response.ok);
-                return response.json();
-            })
+            .then(response => response.json())
             .then(result => {
                 console.log("Updated this beverage:", result.data);
                 // Reset buttons to their default state

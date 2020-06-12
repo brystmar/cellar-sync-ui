@@ -23,6 +23,7 @@ class App extends React.Component {
 
     componentDidMount() {
         this.getAllBeverages();
+        console.log("Once again, I am not cached.");
     }
 
     getAllBeverages() {

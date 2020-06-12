@@ -6,6 +6,7 @@ import beverageDataTableColumns from './defaults/beverageDataTableColumns';
 
 function BeverageDataTable(props) {
     // TODO: Figure out how to get these 3rd party components to re-render when bevList changes
+    // DataTable docs: https://github.com/jbetancur/react-data-table-component#header
     return (
         <DataTableExtensions columns={beverageDataTableColumns}
                              data={props.beverageList}
