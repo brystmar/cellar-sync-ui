@@ -1,3 +1,16 @@
+/* GLOBALS */
+
+input,
+button {
+	font-family: inherit;
+}
+
+button {
+	/* Add rounded corners */
+	border-radius: 5px;
+	/*border: 0;*/
+}
+
 .expanded-list-item-container {
 	display: grid;
 	grid-gap: 4px;
@@ -7,7 +20,8 @@
 
 .expanded-list-item-container > span {
 	display: flex;
-	/*justify-content: center;*/
+	justify-content: space-evenly;
+	/*justify-content: space-between;*/
 	/*align-items: center;*/
 }
 
@@ -145,7 +159,9 @@
 	width: min-content;
 }
 
-.list-item-table-value:hover input {
+.list-item-table-value:hover input,
+.list-item-table-value:focus input
+{
 	border-color: gray;
 }
 

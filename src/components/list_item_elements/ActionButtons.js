@@ -6,7 +6,7 @@ function ActionButtons(props) {
         <>
             <Button type="button"
                     variant="danger"
-                    className="list-item-button"
+                    className="btn btn-reset list-item-button"
                     size="sm"
                     hidden={!props.editMode}
                     onClick={() => {
@@ -19,7 +19,7 @@ function ActionButtons(props) {
 
             <Button type="submit"
                     variant="primary"
-                    className="list-item-button"
+                    className="btn btn-submit list-item-button"
                     size="sm"
                     hidden={!props.editMode}>Save</Button>
         </>

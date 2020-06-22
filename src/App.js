@@ -1,6 +1,5 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import './App.css';
 import Header from './components/Header';
 import PicklistValuesContainer from './components/PicklistValuesContainer';
 import BeverageDataTable from './components/BeverageDataTable';
@@ -23,7 +22,7 @@ class App extends React.Component {
 
     componentDidMount() {
         this.getAllBeverages();
-        console.log("Once again, I am not cached.");
+        console.log("I am not cached.");
     }
 
     getAllBeverages() {

@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+footer {
+  background: #007bff;
+  color: white;
+  font-size: 0.85rem;
+  text-align: left;
+  min-height: 5vh;
+  cursor: default;
+  margin: 0 auto;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0.7vw;
+  height: 100%;
+}
+.footer-container p {
+  margin-top: auto;
+}
+.footer-container a {
+  color: inherit;
+}
+.footer-container a:hover,
+.footer-container a:focus {
+  color: inherit;
+}
+.footer-container img {
+  max-height: 2vh;
+}
+
+.app-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+}
+.app-container .content-container {
+  display: initial;
+}
+.app-container header, .app-container footer, .app-container .content-container {
+  width: 100%;
+  max-width: 1280px;
+}
+.app-container header {
+  height: 6vh;
+}
+.app-container footer {
+  height: 5vh;
+  margin-top: auto;
+}
+
+.page-title {
+  cursor: default;
+}
+.page-title img {
+  max-height: 100px;
+}
+
+.navbar-custom-container,
+.content-container,
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.navbar-custom-container {
+  margin-bottom: 20px;
+}
+
+.content-container {
+  padding: 6px 6px;
+  text-align: -webkit-left;
+}
+
+.add-button-floating {
+  position: fixed;
+  bottom: 6vh;
+  right: 1vh;
+}
+
+.popover {
+  min-width: 500px;
+  min-height: 550px;
+}
+
+.add-beverage-form-group {
+  margin: 5px 5px 10px 5px;
+}
+
+.list-item-template-container .delete-button {
+  float: right;
+  margin: 5px 5px;
+}
+
+/*# sourceMappingURL=styles.css.map */

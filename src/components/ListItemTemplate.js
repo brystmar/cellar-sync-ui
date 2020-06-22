@@ -83,7 +83,7 @@ class ListItemTemplate extends React.Component {
     resetBeverageData() {
         // Reset the data for this list item to its initial state
         console.log("Resetting the ListItemTemplate");
-        this.setState(this.props.data);
+        this.setState(Object.assign(this.props.data, {editMode: false}));
     }
 
     handleChange(event) {

@@ -1,6 +1,5 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-import './styles/add_beverage_form.css';
 import newBeverageDefaults from './defaults/newBeverageDefaults';
 import parse_picklists from '../functions/parse_picklists';
 import AttrSize from './list_item_elements/AttrSize';
