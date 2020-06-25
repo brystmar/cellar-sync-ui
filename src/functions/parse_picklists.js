@@ -2,7 +2,7 @@
 // Alternatively, returns only the picklist values for the requested list
 
 function parse_picklists(picklistData, listName = "") {
-    // Ensure we receive data to parse
+    // Ensure we received data to parse
     if (typeof (picklistData) !== typeof ([]) || picklistData.length === 0) {
         console.log("picklistData is empty");
         return {};
