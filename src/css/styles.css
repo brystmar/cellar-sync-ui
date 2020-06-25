@@ -105,9 +105,15 @@ footer {
   margin: 5px 5px 10px 5px;
 }
 
-.list-item-template-container .delete-button {
+.delete-button {
   float: right;
-  margin: 5px 5px;
+  margin: 1vh 1vw;
+}
+
+.expanded-list-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 /*# sourceMappingURL=styles.css.map */

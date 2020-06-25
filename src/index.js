@@ -5,8 +5,9 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import './css/styles.css';
+import './css/list_items.css';
 import './css/autocomplete.css';
+import './css/styles.css';
 
 ReactDOM.render(
     <Router>
