@@ -43,7 +43,6 @@ header
   height: $header-height
   min-height: 6vh
   font-size: 1.35rem
-  border: 1px red solid
 
   .header-active
     color: #FFFFFF
@@ -60,7 +59,6 @@ footer
   min-height: 5vh
   font-size: 0.85rem
   margin: 0
-  border: 1px red solid
 
   .footer-content
     p
@@ -88,15 +86,22 @@ footer
 .content-container
   width: 100%
   display: initial
-  margin: 0 auto
+  margin-bottom: auto
 
 
 // Page Title
 .page-title
+  margin: 0 auto
   cursor: default
-
+  h1
+    font-size: 2.5em
+    margin: 0
+  hr
+    margin-top: 0
   img
     max-height: 100px
+    display: inline-block
+    margin-right: 2px
 
 // Content
 .content-container

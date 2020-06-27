@@ -39,7 +39,6 @@ header {
   height: 6vh;
   min-height: 6vh;
   font-size: 1.35rem;
-  border: 1px red solid;
 }
 header .header-active {
   color: #FFFFFF;
@@ -56,7 +55,6 @@ footer {
   min-height: 5vh;
   font-size: 0.85rem;
   margin: 0;
-  border: 1px red solid;
 }
 footer .footer-content p {
   margin: 0;
@@ -86,14 +84,24 @@ footer .footer-content img {
 .content-container {
   width: 100%;
   display: initial;
-  margin: 0 auto;
+  margin-bottom: auto;
 }
 
 .page-title {
+  margin: 0 auto;
   cursor: default;
+}
+.page-title h1 {
+  font-size: 2.5em;
+  margin: 0;
+}
+.page-title hr {
+  margin-top: 0;
 }
 .page-title img {
   max-height: 100px;
+  display: inline-block;
+  margin-right: 2px;
 }
 
 .content-container {

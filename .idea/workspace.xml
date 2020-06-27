@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrStyle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrStyle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PageTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageTitle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/styles.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/styles.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/styles.sass" afterDir="false" />
@@ -128,7 +126,7 @@
       <workItem from="1591074886726" duration="106000" />
       <workItem from="1591226772126" duration="82517000" />
       <workItem from="1591989863841" duration="5690000" />
-      <workItem from="1592269456463" duration="31952000" />
+      <workItem from="1592269456463" duration="33210000" />
     </task>
     <task id="LOCAL-00001" summary="Installed react-router">
       <created>1585522324328</created>
@@ -368,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593060605164</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Alignment &amp; spacing for header/footer">
+      <created>1593278046859</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1593278046859</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +384,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
-    <MESSAGE value="Working on the picklist page" />
     <MESSAGE value="All picklist values visible!" />
     <MESSAGE value="Working on picklist display" />
     <MESSAGE value="Working on display for Style &amp; Sub-Style" />
@@ -404,7 +408,8 @@
     <MESSAGE value="Flexbox to the rescue &amp; migrating stylesheets to SASS" />
     <MESSAGE value="Need to refactor AttrStyle" />
     <MESSAGE value="First attempt to refactor AttrStyle" />
-    <option name="LAST_COMMIT_MESSAGE" value="First attempt to refactor AttrStyle" />
+    <MESSAGE value="Alignment &amp; spacing for header/footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alignment &amp; spacing for header/footer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="643" y="235" key="#Plugins" timestamp="1592269437268">
@@ -420,10 +425,10 @@
     </state>
     <state x="845" y="333" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593060549811" />
     <state x="712" y="294" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.988@0.23.1680.988" timestamp="1590862298731" />
-    <state x="690" y="181" width="924" height="850" key="CommitChangelistDialog2" timestamp="1593060605036">
+    <state x="690" y="181" width="924" height="850" key="CommitChangelistDialog2" timestamp="1593278046701">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="690" y="181" width="924" height="850" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593060605036" />
+    <state x="690" y="181" width="924" height="850" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593278046701" />
     <state x="581" y="161" key="CommitChangelistDialog2/0.23.1680.988@0.23.1680.988" timestamp="1590859493562" />
     <state x="649" y="372" width="695" height="665" key="EditFileWatcherDialog" timestamp="1592789330559">
       <screen x="0" y="23" width="1994" height="1129" />
@@ -462,10 +467,10 @@
     </state>
     <state x="-1230" y="350" width="540" height="524" key="StructurePopup/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1593048408608" />
     <state x="717" y="337" width="561" height="503" key="StructurePopup/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593271962321" />
-    <state x="707" y="319" key="Vcs.Push.Dialog.v2" timestamp="1593060607807">
+    <state x="707" y="319" key="Vcs.Push.Dialog.v2" timestamp="1593278051182">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593060607807" />
+    <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593278051182" />
     <state x="784" y="411" key="com.intellij.ide.util.TipDialog" timestamp="1585706984671">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
