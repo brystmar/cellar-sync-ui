@@ -1,9 +1,10 @@
 // Variables
-$font-stack: Helvetica, sans-serif
+$font-stack-headings: 'Montserrat', sans-serif
+$font-stack-body: 'Lato', sans-serif
 $color-primary: #333333
-$color-secondary: #aaaaaa
-$footer-height: 5vh
-$header-height: $footer-height + 1vh
+$color-secondary: #bbb
+$footer-height: 4vh
+$header-height: $footer-height + 1.5vh
 
 // Globals
 *
@@ -11,8 +12,19 @@ $header-height: $footer-height + 1vh
 
 body
   margin: 0 auto
-  font-family: 'Ubuntu', sans-serif
-  font-size: 1rem
+  font-family: $font-stack-body
+  font-weight: 400
+  font-size: 16px
+  color: $color-primary
+  overflow-x: hidden
+  //background-image: url('background/moroccan-flower.png')
+  //background-image: url('background/circles-light.png')
+  //opacity: 0.15
+
+h1
+  font-family: $font-stack-headings
+  font-weight: 500
+  font-size: 3rem
 
 img
   max-width: 100%
@@ -20,50 +32,73 @@ img
 
 header,
 footer
-  margin: 0 auto
   width: 100%
+  margin: 0 auto
+  padding: 0 1rem
+  cursor: default
   background: rgb(0, 123, 255)
   color: rgb(255, 255, 255)
-  cursor: default
-  padding: 0 1rem
 
-  display: flex
-  flex-direction: column
-  justify-content: center
+  // Flexbox to center children vertically when height is <100%
+  //display: flex
+  //flex-direction: column
+  //justify-content: center
 
   .header-content,
   .footer-content
     display: flex
     flex-direction: row
-    justify-content: left
-    align-content: center
-    //border: 1px lightgreen solid
+    justify-content: flex-start
+    height: 100%
+
+//*** Flexbox Debugging ***
+//header,
+//footer
+//  border: 1px solid darkred
+//  .header-content,
+//  .footer-content
+//    border: 1px solid lightgreen
+//
+//  .header-content > *,
+//  .footer-content > *
+//    border: 1px solid darkorange
+//*** Flexbox Debugging ***
 
 header
   height: $header-height
-  min-height: 6vh
-  font-size: 1.35rem
-
-  .header-active
-    color: #FFFFFF
+  min-height: 40px
+  font-size: 1.5rem
 
   .header-content
     a
-      height: min-content
-      width: min-content
       margin-right: 1rem
       color: $color-secondary
+      text-decoration: none
+    .header-active
+      color: #eee
+    a:hover,
+    a:focus,
+    .header-hovers
+      color: #fff
+  .header-content > *
+    display: flex
+    flex-direction: column
+    justify-content: center
+    margin-left: -0.25rem
+    padding: 0 0.25rem
+
 
 footer
   height: $footer-height
-  min-height: 5vh
+  min-height: 30px
   font-size: 0.85rem
   margin: 0
-
   .footer-content
+    display: flex
+    flex-direction: column
+    justify-content: center
     p
       margin: 0
-      height: min-content
     a
       color: inherit
     a:hover,
@@ -71,17 +106,20 @@ footer
       color: inherit
     img
       max-height: 2vh
+  //.footer-content > *
+  //  border: 1px red solid
 
 
 // App Contents
 .app-container
-  margin: 0 auto
-  display: flex
-  flex-direction: column
-  justify-content: space-between
   height: 100vh
   width: 100vw
   max-width: 1200px
+  margin: 0 auto
+
+  display: flex
+  flex-direction: column
+  justify-content: space-between
 
 .content-container
   width: 100%
@@ -93,9 +131,6 @@ footer
 .page-title
   margin: 0 auto
   cursor: default
-  h1
-    font-size: 2.5em
-    margin: 0
   hr
     margin-top: 0
   img

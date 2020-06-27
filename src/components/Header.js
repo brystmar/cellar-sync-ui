@@ -1,12 +1,12 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 function Header(props) {
     return (
         <header>
             <nav className="header-content">
-                <Link to="/">Inventory</Link>
-                <Link to="/picklists">Picklists</Link>
+                <NavLink to="/" exact activeClassName="header-active">Inventory</NavLink>
+                <NavLink to="/picklists" activeClassName="header-active">Picklists</NavLink>
             </nav>
         </header>
     )
