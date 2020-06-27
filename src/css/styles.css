@@ -13,34 +13,63 @@ img {
   display: block;
 }
 
+header,
 footer {
+  margin: 0 auto;
+  width: 100%;
   background: #007bff;
   color: white;
-  font-size: 0.85rem;
-  text-align: left;
-  min-height: 5vh;
   cursor: default;
-  margin: 0 auto;
-}
-
-.footer-container {
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 0.7vw;
-  height: 100%;
 }
-.footer-container p {
-  margin-top: auto;
+header .header-content,
+header .footer-content,
+footer .header-content,
+footer .footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-content: center;
 }
-.footer-container a {
+
+header {
+  height: 6vh;
+  min-height: 6vh;
+  font-size: 1.35rem;
+  border: 1px red solid;
+}
+header .header-active {
+  color: #FFFFFF;
+}
+header .header-content a {
+  height: min-content;
+  width: min-content;
+  margin-right: 1rem;
+  color: #aaaaaa;
+}
+
+footer {
+  height: 5vh;
+  min-height: 5vh;
+  font-size: 0.85rem;
+  margin: 0;
+  border: 1px red solid;
+}
+footer .footer-content p {
+  margin: 0;
+  height: min-content;
+}
+footer .footer-content a {
   color: inherit;
 }
-.footer-container a:hover,
-.footer-container a:focus {
+footer .footer-content a:hover,
+footer .footer-content a:focus {
   color: inherit;
 }
-.footer-container img {
+footer .footer-content img {
   max-height: 2vh;
 }
 
@@ -51,20 +80,13 @@ footer {
   justify-content: space-between;
   height: 100vh;
   width: 100vw;
+  max-width: 1200px;
 }
-.app-container .content-container {
-  display: initial;
-}
-.app-container header, .app-container footer, .app-container .content-container {
+
+.content-container {
   width: 100%;
-  max-width: 1280px;
-}
-.app-container header {
-  height: 6vh;
-}
-.app-container footer {
-  height: 5vh;
-  margin-top: auto;
+  display: initial;
+  margin: 0 auto;
 }
 
 .page-title {
@@ -72,17 +94,6 @@ footer {
 }
 .page-title img {
   max-height: 100px;
-}
-
-.navbar-custom-container,
-.content-container,
-.footer-container {
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.navbar-custom-container {
-  margin-bottom: 20px;
 }
 
 .content-container {

@@ -1,8 +1,9 @@
 // Variables
 $font-stack: Helvetica, sans-serif
-$primary-color: #333
-$secondary-color: #999
+$color-primary: #333333
+$color-secondary: #aaaaaa
 $footer-height: 5vh
+$header-height: $footer-height + 1vh
 
 // Globals
 *
@@ -17,30 +18,61 @@ img
   max-width: 100%
   display: block
 
+header,
 footer
+  margin: 0 auto
+  width: 100%
   background: rgb(0, 123, 255)
   color: rgb(255, 255, 255)
-  font-size: 0.85rem
-  text-align: left
-  min-height: 5vh
   cursor: default
-  margin: 0 auto
+  padding: 0 1rem
 
-.footer-container
   display: flex
   flex-direction: column
   justify-content: center
-  padding: 0 .7vw
-  height: 100%
-  p
-    margin-top: auto
-  a
-    color: inherit
-  a:hover,
-  a:focus
-    color: inherit
-  img
-    max-height: 2vh
+
+  .header-content,
+  .footer-content
+    display: flex
+    flex-direction: row
+    justify-content: left
+    align-content: center
+    //border: 1px lightgreen solid
+
+header
+  height: $header-height
+  min-height: 6vh
+  font-size: 1.35rem
+  border: 1px red solid
+
+  .header-active
+    color: #FFFFFF
+
+  .header-content
+    a
+      height: min-content
+      width: min-content
+      margin-right: 1rem
+      color: $color-secondary
+
+footer
+  height: $footer-height
+  min-height: 5vh
+  font-size: 0.85rem
+  margin: 0
+  border: 1px red solid
+
+  .footer-content
+    p
+      margin: 0
+      height: min-content
+    a
+      color: inherit
+    a:hover,
+    a:focus
+      color: inherit
+    img
+      max-height: 2vh
 
 
 // App Contents
@@ -51,39 +83,20 @@ footer
   justify-content: space-between
   height: 100vh
   width: 100vw
+  max-width: 1200px
 
-  .content-container
-    //align-items: stretch
-    display: initial
-  //border: 3px black solid
-  header, footer, .content-container
-    width: 100%
-    max-width: 1280px
+.content-container
+  width: 100%
+  display: initial
+  margin: 0 auto
 
-  header
-    height: $footer-height + 1vh
 
-  footer
-    height: $footer-height
-    margin-top: auto
-
-// Header
+// Page Title
 .page-title
   cursor: default
 
   img
     max-height: 100px
-
-// Nav
-.navbar-custom-container,
-.content-container,
-.footer-container
-  max-width: 1280px
-  margin: 0 auto
-
-.navbar-custom-container
-  margin-bottom: 20px
-
 
 // Content
 .content-container

@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Form from 'react-bootstrap/Form';
 
 function AttrStyle(props) {
     const [spStyleList, updateSpStyleListState] = useState(updateSpStyleList(props.style, true));
-
-    // useEffect(updateSpStyleList(props.state), []);
 
     function updateSpStyleList(newStyle = "", initial = false) {
         // Each Style has its own list of SpecificStyles, so update this dependent list when Style changes
