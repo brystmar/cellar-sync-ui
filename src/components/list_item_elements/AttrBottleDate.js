@@ -8,9 +8,9 @@ function AttrBottleDate(props) {
     return (
         <Form.Group controlId="formBottleDate" className="form-input-group">
             <img alt="Bottle Date"
-                 src="./icons/calendar-alt-regular.svg"
+                 src="./icons/calendar-check-regular.svg"
                  className="list-item-icon-key"/>
-            {props.forNewBeverage ? <Form.Label>Bottle Date</Form.Label> : ""}
+            <Form.Label hidden={props.forNewBeverage}>Bottle Date</Form.Label>
 
             <Form.Control name="bottle_date"
                           type="text"
@@ -21,7 +21,6 @@ function AttrBottleDate(props) {
                           disabled={!props.forNewBeverage}/>
         </Form.Group>
     )
-
 }
 
 AttrBottleDate.defaultProps = {

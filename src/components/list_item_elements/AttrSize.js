@@ -15,7 +15,7 @@ function AttrSize(props) {
             <img alt="Size"
                  src="./icons/wine-bottle-solid.svg"
                  className="list-item-icon-key"/>
-            {props.forNewBeverage ? <Form.Label>Size</Form.Label> : ""}
+            <Form.Label hidden={props.forNewBeverage}>Size</Form.Label>
 
             <Form.Control as="select"
                           name="size"

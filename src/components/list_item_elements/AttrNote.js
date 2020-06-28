@@ -7,7 +7,7 @@ function AttrNote(props) {
             <img alt="Note"
                  src="./icons/sticky-note-regular.svg"
                  className="list-item-icon-key"/>
-            {props.forNewBeverage ? <Form.Label>Note</Form.Label> : ""}
+            <Form.Label hidden={props.forNewBeverage}>Note</Form.Label>
 
             <Form.Control name="note"
                           type="text"

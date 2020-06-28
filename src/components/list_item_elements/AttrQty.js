@@ -8,7 +8,7 @@ function AttrQty(props) {
                 <img alt="Qty (Overall)"
                      src="./icons/hashtag-solid.svg"
                      className="list-item-icon-key"/>
-                {props.forNewBeverage ? <Form.Label>Qty</Form.Label> : ""}
+                <Form.Label hidden={props.forNewBeverage}>Qty</Form.Label>
 
                 <Form.Control name="qty"
                               type="number"
@@ -25,7 +25,7 @@ function AttrQty(props) {
                 <img alt="Qty (Cold)"
                      src="./icons/snowflake-regular.svg"
                      className="list-item-icon-key"/>
-                {props.forNewBeverage ? <Form.Label>Cold</Form.Label> : ""}
+                <Form.Label hidden={props.forNewBeverage}>Cold</Form.Label>
 
                 <Form.Control name="qty_cold"
                               type="number"

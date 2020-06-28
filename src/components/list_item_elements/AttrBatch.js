@@ -7,7 +7,7 @@ function AttrBatch(props) {
             <img alt="Batch"
                  src="./icons/noun_Bat_2088669.svg"
                  className="list-item-icon-key"/>
-            {props.forNewBeverage ? <Form.Label>Batch</Form.Label> : ""}
+            <Form.Label hidden={props.forNewBeverage}>Batch</Form.Label>
 
             <Form.Control name="batch"
                           type="number"

@@ -3,6 +3,7 @@ $font-stack-headings: 'Montserrat', sans-serif
 $font-stack-body: 'Lato', sans-serif
 $color-primary: #333333
 $color-secondary: #bbb
+$color-danger: rgb(220, 53, 70)
 $footer-height: 4vh
 $header-height: $footer-height + 1.5vh
 
@@ -159,7 +160,24 @@ footer
   margin: 5px 5px 10px 5px
 
 // Forms
-.delete-button
+.btnn
+  background: rgb(0, 105, 220)
+  border: hidden
+  border-radius: 5px  // rounded corners
+  height: 36px
+  line-height: 24px
+  text-align: center
+  color: #fff
+  padding: 6px 12px
+
+.btnn:hover,
+.btnn:focus
+  background: cornflowerblue
+  border: 2px solid rgb(0, 105, 220)
+.btnn:active
+  color: white
+
+.btn-del
   float: right
   margin: 1vh 1vw
 

@@ -79,7 +79,7 @@ function AttrStyle(props) {
                 <img alt="Style"
                      src="./icons/noun_Beer_style1_1975813.svg"
                      className="list-item-icon-key"/>
-                {props.forNewBeverage ? <Form.Label>Style</Form.Label> : ""}
+                <Form.Label hidden={props.forNewBeverage}>Style</Form.Label>
 
                 <Form.Control as="select"
                               name="style"
@@ -95,7 +95,7 @@ function AttrStyle(props) {
                 <img alt="Specific Style"
                      src="./icons/noun_Beer_style2_5693.svg"
                      className="list-item-icon-key"/>
-                {props.forNewBeverage ? <Form.Label>Specific Style</Form.Label> : ""}
+                <Form.Label hidden={props.forNewBeverage}>Specific Style</Form.Label>
 
                 <Form.Control as="select"
                               name="specific_style"

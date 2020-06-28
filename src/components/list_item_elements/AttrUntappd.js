@@ -7,7 +7,7 @@ function AttrUntappd(props) {
             <img src="./icons/link-solid.svg"
                  alt="Untappd"
                  className="list-item-icon-key"/>
-            {props.forNewBeverage ? <Form.Label>Untappd</Form.Label> : ""}
+            <Form.Label hidden={props.forNewBeverage}>Untappd</Form.Label>
 
             <Form.Control name="untappd"
                           type="text"

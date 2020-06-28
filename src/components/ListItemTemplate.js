@@ -142,12 +142,10 @@ class ListItemTemplate extends React.Component {
     render() {
         return (
             <div className="list-item-template-container">
-                <Button type="button"
-                        variant="danger"
-                        className="delete-button"
-                        size="sm"
+                <button className="btnn btn-dangerous btn-del"
+                        type="button"
                         onClick={() => this.props.deleteBeverage(this.state.beverage_id,
-                            this.state.location)}>Delete</Button>
+                            this.state.location)}>Delete</button>
 
                 <Form className="expanded-list-item-container"
                       onSubmit={this.handleSubmit}

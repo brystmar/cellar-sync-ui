@@ -17,7 +17,7 @@ function AttrLocation(props) {
             <img alt="Location"
                  src="./icons/map-marked-alt-solid.svg"
                  className="list-item-icon-key"/>
-            {props.forNewBeverage ? <Form.Label>Location</Form.Label> : ""}
+            <Form.Label hidden={props.forNewBeverage}>Location</Form.Label>
 
             <Form.Control as="select"
                           name="location"

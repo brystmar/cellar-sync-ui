@@ -99,7 +99,7 @@ class App extends React.Component {
 
         return (
             <div className="app-container">
-                <Header userName={userName}/>
+                <Header/>
                 <div className="content-container">
                     <Switch>
                         <Route exact path="/">

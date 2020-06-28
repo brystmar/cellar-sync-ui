@@ -5,7 +5,7 @@ function AttrYear(props) {
     return (
         <Form.Group controlId="formYear" className="form-input-group">
             <img alt="Year"
-                 src="./icons/calendar-alt-solid.svg"
+                 src="./icons/calendar-alt-regular.svg"
                  className="list-item-icon-key"/>
             {props.forNewBeverage ? <Form.Label>Year</Form.Label> : ""}
 

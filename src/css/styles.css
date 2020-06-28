@@ -141,7 +141,28 @@ footer .footer-content img {
   margin: 5px 5px 10px 5px;
 }
 
-.delete-button {
+.btnn {
+  background: #0069dc;
+  border: hidden;
+  border-radius: 5px;
+  height: 36px;
+  line-height: 24px;
+  text-align: center;
+  color: #fff;
+  padding: 6px 12px;
+}
+
+.btnn:hover,
+.btnn:focus {
+  background: cornflowerblue;
+  border: 2px solid #0069dc;
+}
+
+.btnn:active {
+  color: white;
+}
+
+.btn-del {
   float: right;
   margin: 1vh 1vw;
 }
