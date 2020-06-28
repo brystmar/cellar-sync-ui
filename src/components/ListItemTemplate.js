@@ -14,7 +14,6 @@ import AttrAgingPotential from './list_item_elements/AttrAgingPotential';
 import AttrUntappd from './list_item_elements/AttrUntappd';
 import AttrNote from './list_item_elements/AttrNote';
 import parse_picklists from '../functions/parse_picklists';
-import Button from 'react-bootstrap/Button';
 
 class ListItemTemplate extends React.Component {
     constructor(props) {
@@ -142,8 +141,8 @@ class ListItemTemplate extends React.Component {
     render() {
         return (
             <div className="list-item-template-container">
-                <button className="btnn btn-dangerous btn-del"
-                        type="button"
+                <button type="button"
+                        className="btn btn-danger btn-del"
                         onClick={() => this.props.deleteBeverage(this.state.beverage_id,
                             this.state.location)}>Delete</button>
 

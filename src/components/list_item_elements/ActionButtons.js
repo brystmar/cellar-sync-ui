@@ -1,13 +1,10 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 
 function ActionButtons(props) {
     return (
         <>
-            <Button type="button"
-                    variant="danger"
-                    className="btn btn-reset list-item-button"
-                    size="sm"
+            <button type="button"
+                    className="btn btn-reset-outline"
                     hidden={!props.editMode}
                     onClick={() => {
                         props.resetBeverageData();
@@ -15,13 +12,11 @@ function ActionButtons(props) {
                         // if (props.forNewBeverage) {
                         //     document.body.click()
                         // }
-                    }}>Cancel</Button>
+                    }}>Cancel</button>
 
-            <Button type="submit"
-                    variant="primary"
-                    className="btn btn-submit list-item-button"
-                    size="sm"
-                    hidden={!props.editMode}>Save</Button>
+            <button type="submit"
+                    className="btn btn-primary-outline"
+                    hidden={!props.editMode}>Save</button>
         </>
     )
 }

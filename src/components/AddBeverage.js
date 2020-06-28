@@ -30,7 +30,7 @@ class AddBeverage extends React.Component {
                                 overlay={addForm}>
                     <img src="./icons/button_plus.png"
                          alt="Add Beverage"
-                         className="add-button-floating"/>
+                         className="btn-add-floating"/>
                 </OverlayTrigger>
             </div>
         )

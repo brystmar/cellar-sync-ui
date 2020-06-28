@@ -1,11 +1,39 @@
 // Variables
 $font-stack-headings: 'Montserrat', sans-serif
 $font-stack-body: 'Lato', sans-serif
-$color-primary: #333333
-$color-secondary: #bbb
-$color-danger: rgb(220, 53, 70)
-$footer-height: 4vh
-$header-height: $footer-height + 1.5vh
+
+$color-primary: #0068d5
+$color-primary-dark: #003fa3
+$color-primary-light: #5f95ff
+$color-primary-lighter: #69a4ff
+$color-primary-lighterer: #c3deff
+$color-primary-lightest: #e6f2ff
+$color-on-primary: #f5f5f5
+$color-on-primary-light: #121212
+$color-on-primary-dark: #f5f5f5
+$color-on-primary-dark-alt: #f0f0f0
+
+$color-secondary: #ccc
+$color-background: #fff
+$color-on-background: #121212
+$color-background-darker-1: #eee
+$color-background-darker-2: #ccc
+$color-background-darker-3: #aaa
+$color-danger: #B81F11
+$color-danger-light: #d78f8c
+$color-danger-dark: #8C180D
+$color-on-danger: #f5f5f5
+$color-on-danger-light: #121212
+$color-on-danger-dark: #f5f5f5
+
+$color-primary-complementary: #d56e00
+$color-primary-analogous-1: #00d1d5
+$color-primary-analogous-2: #0400d5
+$color-primary-triadic-1: #6e00d5
+$color-primary-triadic-2: #d50067
+
+$header-height: 3rem
+$footer-height: $header-height - 1rem
 
 // Globals
 *
@@ -16,7 +44,7 @@ body
   font-family: $font-stack-body
   font-weight: 400
   font-size: 16px
-  color: $color-primary
+  color: $color-on-background
   overflow-x: hidden
   //background-image: url('background/moroccan-flower.png')
   //background-image: url('background/circles-light.png')
@@ -37,8 +65,8 @@ footer
   margin: 0 auto
   padding: 0 1rem
   cursor: default
-  background: rgb(0, 123, 255)
-  color: rgb(255, 255, 255)
+  background: $color-primary-dark
+  color: $color-on-primary-dark
 
   // Flexbox to center children vertically when height is <100%
   //display: flex
@@ -74,13 +102,15 @@ header
     a
       margin-right: 1rem
       color: $color-secondary
+      opacity: 0.85
       text-decoration: none
     .header-active
-      color: #eee
+      color: $color-on-primary-dark-alt
+      opacity: 1
     a:hover,
     a:focus,
     .header-hovers
-      color: #fff
+      color: $color-background
   .header-content > *
     display: flex
     flex-direction: column
@@ -146,10 +176,10 @@ footer
 
 
 // Add Beverage Form
-.add-button-floating
+.btn-add-floating
   position: fixed
-  bottom: $footer-height + 1vh
-  right: 1vh
+  bottom: $footer-height + 1rem
+  right: 1rem
 
 .popover
   min-width: 500px
@@ -159,27 +189,72 @@ footer
 .add-beverage-form-group
   margin: 5px 5px 10px 5px
 
-// Forms
-.btnn
-  background: rgb(0, 105, 220)
-  border: hidden
-  border-radius: 5px  // rounded corners
-  height: 36px
-  line-height: 24px
+// Form Controls
+.btn
+  height: 2.5rem
   text-align: center
-  color: #fff
-  padding: 6px 12px
+  margin: 0.125rem 0.25rem
+  padding: 0.35rem 0.9rem
+  border-radius: 5px
 
-.btnn:hover,
-.btnn:focus
-  background: cornflowerblue
-  border: 2px solid rgb(0, 105, 220)
-.btnn:active
-  color: white
+.btn-sm
+  height: 2rem
+  text-align: center
+  margin: 0.1rem 0.2rem
+  padding: 0.28rem 0.8rem
+  border-radius: 5px
+
+.btn-primary
+  background: $color-primary
+  color: $color-on-primary
+  border: 2px solid $color-background
+.btn-primary:hover,
+.btn-primary:focus
+  border: 2px solid $color-primary-light
+.btn-primary:active
+  border: 2px solid $color-primary-dark
+
+.btn-primary-outline
+  background: $color-primary-lighterer
+  color: $color-on-primary-light
+  font-weight: 600
+  border: 1px solid $color-background
+.btn-primary-outline:hover,
+.btn-primary-outline:focus
+  //border: 2px solid $color-primary
+  background: $color-primary-lighter
+  //border: 1px solid $color-primary
+.btn-primary-outline:active
+  background: $color-primary-lighter
+  //border: 1px solid $color-primary
+  //border: 2px solid $color-primary-dark
+
+.btn-reset-outline
+  background: $color-background-darker-1
+  color: $color-on-background
+  font-weight: 400
+  border: 2px solid $color-background
+.btn-reset-outline:hover,
+.btn-reset-outline:focus
+  background: $color-background-darker-2
+  border: 2px solid $color-background
+.btn-reset-outline:active
+  background: $color-background-darker-3
+  border: 2px solid $color-background
+
+.btn-danger
+  background: $color-danger
+  color: $color-on-danger
+  border: 2px solid $color-background
+.btn-danger:hover,
+.btn-danger:focus
+  border: 2px solid $color-danger-light
+.btn-danger:active
+  border: 2px solid $color-danger-dark
 
 .btn-del
   float: right
-  margin: 1vh 1vw
+  margin: 1vh 1.5vw
 
 .expanded-list-item-container
   display: flex
