@@ -146,19 +146,19 @@ class ListItemTemplate extends React.Component {
                         onClick={() => this.props.deleteBeverage(this.state.beverage_id,
                             this.state.location)}>Delete</button>
 
-                <Form className="expanded-list-item-container"
+                <Form className="list-item-grid list-item-form"
                       onSubmit={this.handleSubmit}
                       key={this.state.formId}
                       validated={this.state.validated}>
 
-                    <span className="input-number-container">
+                    <span className="input-qty-container grid-cell">
                         <AttrQty
                             qty={this.state.qty}
                             qty_cold={this.state.qty_cold}
                             handleChange={this.handleChange}/>
                     </span>
 
-                    <span className="input-picklist-container">
+                    <span className="input-styles-container grid-cell flex-to-row">
                         {/*TODO: Replace parse_picklists with an arrow function*/}
                         <AttrStyle
                             style={this.state.style}
@@ -168,7 +168,7 @@ class ListItemTemplate extends React.Component {
                             updateBeverageState={this.updateBeverageState}/>
                     </span>
 
-                    <span className="clickable-toggles-container">
+                    <span className="input-clickable-toggles-container grid-cell">
                         <AttrTrade
                             for_trade={this.state.for_trade}
                             handleChange={this.handleChange}
@@ -185,7 +185,7 @@ class ListItemTemplate extends React.Component {
                             updateBeverageState={this.updateBeverageState}/>
                     </span>
 
-                    <span className="input-text-long-container">
+                    <span className="input-longtext-container grid-cell">
                         <AttrNote
                             note={this.state.note ? this.state.note : ""}
                             handleChange={this.handleChange}/>
@@ -194,26 +194,27 @@ class ListItemTemplate extends React.Component {
                             untappd={this.state.untappd ? this.state.untappd : ""}
                             handleChange={this.handleChange}/>
                     </span>
-                    {/*TODO: Replace parse_picklists with an arrow function*/}
-                    <span className="constants-picklist">
-                        <AttrLocation
-                            location={this.state.location}
-                            picklistData={parse_picklists(this.props.picklistData, "location")}
-                            handleChange={this.handleChange}/>
 
+                    {/*TODO: Replace parse_picklists with an arrow function*/}
+                    <span className="input-size-loc-container grid-cell input-static">
                         <AttrSize
                             size={this.state.size}
                             picklistData={parse_picklists(this.props.picklistData, "size")}
                             handleChange={this.handleChange}/>
+
+                        <AttrLocation
+                            location={this.state.location}
+                            picklistData={parse_picklists(this.props.picklistData, "location")}
+                            handleChange={this.handleChange}/>
                     </span>
 
-                    <span className="constants-dates">
-                        <AttrYear
-                            year={this.state.year}
-                            handleChange={this.handleChange}/>
-
+                    <span className="input-dates-container grid-cell input-static">
                         <AttrBottleDate
                             bottle_date={this.state.bottle_date ? this.state.bottle_date : ""}
+                            handleChange={this.handleChange}/>
+
+                        <AttrYear
+                            year={this.state.year}
                             handleChange={this.handleChange}/>
 
                         <AttrBatch
@@ -221,7 +222,7 @@ class ListItemTemplate extends React.Component {
                             handleChange={this.handleChange}/>
                     </span>
 
-                    <span className="eli-buttons">
+                    <span className="eli-buttons grid-cell">
                         <ActionButtons
                             editMode={this.state.editMode}
                             toggleEditMode={this.toggleEditMode}

@@ -3,19 +3,21 @@ const beverageDataTableColumns = [
             name: 'Producer',
             selector: 'producer',
             sortable: true,
-            grow: 0.8  // https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow
+            minWidth: '185px',
+            grow: 1
         },
         {
             name: 'Name',
             selector: 'name',
             sortable: true,
-            grow: 1.5
+            minWidth: '225px',
+            grow: 1.4
         },
         {
             name: 'Year',
             selector: 'year',
             sortable: true,
-            hide: 1079,
+            hide: 'sm',
             maxWidth: '50px',
             grow: 0
         },
@@ -24,7 +26,7 @@ const beverageDataTableColumns = [
             selector: 'location',
             sortable: true,
             hide: 'sm',
-            grow: 0.5
+            grow: 0
         },
         {
             name: 'Size',

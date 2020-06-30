@@ -10,14 +10,14 @@ function AttrLocation(props) {
         locations.unshift(<option key={"null"} value={""}>{""}</option>);
     }
 
-    // console.log("Location rendering");
-
     return (
-        <Form.Group controlId="formLocation" className="form-input-group">
-            <img alt="Location"
-                 src="./icons/map-marked-alt-solid.svg"
-                 className="list-item-icon-key"/>
-            <Form.Label hidden={props.forNewBeverage}>Location</Form.Label>
+        <Form.Group controlId="formLocation" className="input-loc input-group">
+            <span className="list-item-key">
+                <img alt="Location"
+                     src="./icons/map-marked-alt-solid.svg"
+                     className="list-item-key-icon"/>
+                <Form.Label hidden={props.forNewBeverage}>Location</Form.Label>
+            </span>
 
             <Form.Control as="select"
                           name="location"

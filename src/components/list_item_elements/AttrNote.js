@@ -3,16 +3,18 @@ import Form from 'react-bootstrap/Form';
 
 function AttrNote(props) {
     return (
-        <Form.Group controlId="formNote" className="form-input-group">
-            <img alt="Note"
-                 src="./icons/sticky-note-regular.svg"
-                 className="list-item-icon-key"/>
-            <Form.Label hidden={props.forNewBeverage}>Note</Form.Label>
+        <Form.Group controlId="formNote" className="input-note input-group">
+            <span className="list-item-key">
+                <img alt="Note"
+                     src="./icons/sticky-note-regular.svg"
+                     className="list-item-key-icon"/>
+                <Form.Label hidden={props.forNewBeverage}>Note</Form.Label>
+            </span>
 
             <Form.Control name="note"
                           type="text"
                           placeholder="Note"
-                          className="input-text-long list-item-value"
+                          className="input-longtext list-item-value"
                           value={props.note}
                           onChange={props.handleChange}/>
         </Form.Group>

@@ -5,24 +5,17 @@ import Form from "react-bootstrap/Form";
 function AttrTradeValue(props) {
     return (
         <>
-            {props.forNewBeverage ?
-                <Form.Group controlId="formTradeValue" className="form-input-group">
-                    <Form.Label className="list-item-form-label">
-                        <img alt="Trade Value"
-                             src="./icons/euro-sign-solid.svg"
-                             className="list-item-icon-key"/>
-                        Trade Value
-                    </Form.Label>
-                    {mapTradeValueIcons(props)}
-                </Form.Group>
-
-                : <Form.Group controlId="formTradeValue" className="form-input-group">
+            <Form.Group controlId="formTradeValue" className="input-trade-value input-group">
+                <span className="list-item-key">
                     <img alt="Trade Value"
                          src="./icons/euro-sign-solid.svg"
-                         className="list-item-icon-key"/>
-                    {mapTradeValueIcons(props)}
-                </Form.Group>
-            }
+                         className="list-item-key-icon"/>
+                    <Form.Label className="list-item-label">
+                        Trade Value
+                    </Form.Label>
+                </span>
+                {mapTradeValueIcons(props)}
+            </Form.Group>
         </>
     )
 }
@@ -31,7 +24,7 @@ function mapTradeValueIcons(props) {
     if (props.trade_value === 1) {
         return <img alt="Trade Value: High"
                     src="./icons/arrow-alt-circle-up-solid.svg"
-                    className="list-item-icon-value clickable-toggle"
+                    className="list-item-value-icon clickable-toggle"
                     onClick={() => props.updateBeverageState({
                         trade_value: toggle_value_icons(props.trade_value),
                         editMode: true
@@ -39,7 +32,7 @@ function mapTradeValueIcons(props) {
     } else if (props.trade_value === 3) {
         return <img alt="Trade Value: Low"
                     src="./icons/arrow-alt-circle-down-solid.svg"
-                    className="list-item-icon-value clickable-toggle"
+                    className="list-item-value-icon clickable-toggle"
                     onClick={() => props.updateBeverageState({
                         trade_value: toggle_value_icons(props.trade_value),
                         editMode: true
@@ -47,7 +40,7 @@ function mapTradeValueIcons(props) {
     } else {
         return <img alt="Trade Value: Moderate"
                     src="./icons/arrows-alt-horiz-solid.svg"
-                    className="list-item-icon-value clickable-toggle"
+                    className="list-item-value-icon clickable-toggle"
                     onClick={() => props.updateBeverageState({
                         trade_value: toggle_value_icons(props.trade_value),
                         editMode: true

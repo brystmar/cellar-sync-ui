@@ -75,11 +75,13 @@ function AttrStyle(props) {
 
     return (
         <>
-            <Form.Group controlId="formStyle" className="form-input-group">
-                <img alt="Style"
-                     src="./icons/noun_Beer_style1_1975813.svg"
-                     className="list-item-icon-key"/>
-                <Form.Label hidden={props.forNewBeverage}>Style</Form.Label>
+            <Form.Group controlId="formStyle" className="input-style input-group">
+                <span className="list-item-key">
+                    <img alt="Style"
+                         src="./icons/noun_Beer_style1_1975813.svg"
+                         className="list-item-key-icon"/>
+                    <Form.Label hidden={props.forNewBeverage}>Style</Form.Label>
+                </span>
 
                 <Form.Control as="select"
                               name="style"
@@ -91,11 +93,13 @@ function AttrStyle(props) {
                 </Form.Control>
             </Form.Group>
 
-            <Form.Group controlId="formSpecificStyle" className="form-input-group">
-                <img alt="Specific Style"
-                     src="./icons/noun_Beer_style2_5693.svg"
-                     className="list-item-icon-key"/>
-                <Form.Label hidden={props.forNewBeverage}>Specific Style</Form.Label>
+            <Form.Group controlId="formSpecificStyle" className="input-spstyle input-group">
+                <span className="list-item-key">
+                    <img alt="Specific Style"
+                         src="./icons/noun_Beer_style2_5693.svg"
+                         className="list-item-key-icon"/>
+                    <Form.Label hidden={props.forNewBeverage}>Specific Style</Form.Label>
+                </span>
 
                 <Form.Control as="select"
                               name="specific_style"

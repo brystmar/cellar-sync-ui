@@ -3,11 +3,13 @@ import Form from 'react-bootstrap/Form';
 
 function AttrBatch(props) {
     return (
-        <Form.Group className="form-input-group">
-            <img alt="Batch"
-                 src="./icons/noun_Bat_2088669.svg"
-                 className="list-item-icon-key"/>
-            <Form.Label hidden={props.forNewBeverage}>Batch</Form.Label>
+        <Form.Group className="input-batch input-group">
+            <span className="list-item-key">
+                <img alt="Batch"
+                     src="./icons/noun_Bat_2088669.svg"
+                     className="list-item-key-icon"/>
+                <Form.Label hidden={props.forNewBeverage}>Batch</Form.Label>
+            </span>
 
             <Form.Control name="batch"
                           type="number"

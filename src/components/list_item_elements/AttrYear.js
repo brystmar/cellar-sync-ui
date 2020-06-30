@@ -3,11 +3,13 @@ import Form from 'react-bootstrap/Form';
 
 function AttrYear(props) {
     return (
-        <Form.Group controlId="formYear" className="form-input-group">
-            <img alt="Year"
-                 src="./icons/calendar-alt-regular.svg"
-                 className="list-item-icon-key"/>
-            {props.forNewBeverage ? <Form.Label>Year</Form.Label> : ""}
+        <Form.Group controlId="formYear" className="input-year input-group">
+            <span className="list-item-key">
+                <img alt="Year"
+                     src="./icons/calendar-alt-regular.svg"
+                     className="list-item-key-icon"/>
+                <Form.Label hidden={props.forNewBeverage}>Year</Form.Label>
+            </span>
 
             <Form.Control name="year"
                           type="number"

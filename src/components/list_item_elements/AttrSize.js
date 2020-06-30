@@ -11,11 +11,13 @@ function AttrSize(props) {
     }
 
     return (
-        <Form.Group controlId="formSize" className="form-input-group">
-            <img alt="Size"
-                 src="./icons/wine-bottle-solid.svg"
-                 className="list-item-icon-key"/>
-            <Form.Label hidden={props.forNewBeverage}>Size</Form.Label>
+        <Form.Group controlId="formSize" className="input-size input-group">
+            <span className="list-item-key">
+                <img alt="Size"
+                     src="./icons/wine-bottle-solid.svg"
+                     className="list-item-key-icon"/>
+                <Form.Label hidden={props.forNewBeverage}>Size</Form.Label>
+            </span>
 
             <Form.Control as="select"
                           name="size"

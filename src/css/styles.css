@@ -9,6 +9,12 @@ body {
   font-size: 16px;
   color: #121212;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 h1 {
@@ -113,6 +119,8 @@ footer .footer-content img {
 .page-title {
   margin: 0 auto;
   cursor: default;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .page-title hr {
   margin-top: 0;
@@ -146,7 +154,7 @@ footer .footer-content img {
 .btn {
   height: 2.5rem;
   text-align: center;
-  margin: 0.125rem 0.25rem;
+  margin: 0.125rem 0.25rem 0.125rem 0;
   padding: 0.35rem 0.9rem;
   border-radius: 5px;
 }
@@ -154,7 +162,7 @@ footer .footer-content img {
 .btn-sm {
   height: 2rem;
   text-align: center;
-  margin: 0.1rem 0.2rem;
+  margin: 0.1rem 0.2rem 0.1rem 0;
   padding: 0.28rem 0.8rem;
   border-radius: 5px;
 }
@@ -226,12 +234,6 @@ footer .footer-content img {
 .btn-del {
   float: right;
   margin: 1vh 1.5vw;
-}
-
-.expanded-list-item-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 /*# sourceMappingURL=styles.css.map */

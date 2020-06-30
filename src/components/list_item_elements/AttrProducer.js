@@ -3,13 +3,16 @@ import Form from 'react-bootstrap/Form';
 
 function AttrProducer(props) {
     return (
-        <Form.Group className="form-input-group add-beverage-form-group">
-            <img alt="Producer"
-                 src="./icons/address-card-regular.svg"
-                 className="list-item-icon-key"/>
-            <Form.Label>Producer</Form.Label>
+        <Form.Group className="input-producer input-group">
+            <span className="list-item-key">
+                <img alt="Producer"
+                     src="./icons/address-card-regular.svg"
+                     className="list-item-key-icon"/>
+                <Form.Label>Producer</Form.Label>
+            </span>
             <Form.Control type="text"
                           name="producer"
+                          className="list-item-value input-text"
                           placeholder="Brewery / Winery"
                           value={props.producer}
                           onChange={props.handleChange}
