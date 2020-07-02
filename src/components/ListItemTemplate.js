@@ -141,11 +141,6 @@ class ListItemTemplate extends React.Component {
     render() {
         return (
             <div className="list-item-template-container">
-                <button type="button"
-                        className="btn btn-danger btn-del"
-                        onClick={() => this.props.deleteBeverage(this.state.beverage_id,
-                            this.state.location)}>Delete</button>
-
                 <Form className="list-item-grid list-item-form"
                       onSubmit={this.handleSubmit}
                       key={this.state.formId}
@@ -186,12 +181,12 @@ class ListItemTemplate extends React.Component {
                     </span>
 
                     <span className="input-longtext-container grid-cell">
-                        <AttrNote
-                            note={this.state.note ? this.state.note : ""}
-                            handleChange={this.handleChange}/>
-
                         <AttrUntappd
                             untappd={this.state.untappd ? this.state.untappd : ""}
+                            handleChange={this.handleChange}/>
+
+                        <AttrNote
+                            note={this.state.note ? this.state.note : ""}
                             handleChange={this.handleChange}/>
                     </span>
 
@@ -222,12 +217,20 @@ class ListItemTemplate extends React.Component {
                             handleChange={this.handleChange}/>
                     </span>
 
-                    <span className="eli-buttons grid-cell">
+                    <span className="button-container eli-buttons">
                         <ActionButtons
                             editMode={this.state.editMode}
                             toggleEditMode={this.toggleEditMode}
                             resetBeverageData={this.resetBeverageData}
                             handleSubmit={this.handleSubmit}/>
+                    </span>
+
+                    <span className="button-container del-button">
+                        <button type="button"
+                            className="btn btn-danger btn-del"
+                            onClick={() => this.props.deleteBeverage(this.state.beverage_id,
+                                this.state.location)}>Delete
+                        </button>
                     </span>
                 </Form>
             </div>

@@ -16,7 +16,7 @@ function AttrYear(props) {
                           min={1950}
                           max={(new Date()).getFullYear() + 1}
                           placeholder="YYYY"
-                          className="input-number list-item-value"
+                          className="input-number input-year list-item-value"
                           disabled={!props.forNewBeverage}
                           value={props.year}
                           onChange={props.handleChange}

@@ -23,7 +23,7 @@ function AttrLocation(props) {
                           name="location"
                           size="sm"
                           disabled={!props.forNewBeverage}
-                          className="input-picklist list-item-value"
+                          className="input-picklist-sm list-item-value"
                           value={props.location}
                           onChange={props.handleChange}
                           required={true}>

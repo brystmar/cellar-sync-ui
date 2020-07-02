@@ -23,7 +23,7 @@ function AttrSize(props) {
                           name="size"
                           size="sm"
                           disabled={!props.forNewBeverage}
-                          className="input-picklist list-item-value"
+                          className="input-picklist-sm list-item-value"
                           value={props.size}
                           onChange={props.handleChange}
                           required={true}>

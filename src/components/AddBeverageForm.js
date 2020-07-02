@@ -142,24 +142,24 @@ class AddBeverageForm extends React.Component {
                   validated={this.state.validated}>
                 <Form.Row>
                     <AttrProducer producer={this.state.producer}
-                                  forNewBeverage={true}
+                                  forNewBeverage={false}
                                   handleChange={this.handleChange}
                                   updateBeverageState={this.updateBeverageState}/>
 
                     <AttrName name={this.state.name}
-                              forNewBeverage={true}
+                              forNewBeverage={false}
                               handleChange={this.handleChange}
                               updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
                 <Form.Row>
                     <AttrLocation location={this.state.location}
-                                  forNewBeverage={true}
+                                  forNewBeverage={false}
                                   picklistData={this.state.locationValues}
                                   handleChange={this.handleChange}
                                   updateBeverageState={this.updateBeverageState}/>
 
                     <AttrSize size={this.state.size}
-                              forNewBeverage={true}
+                              forNewBeverage={false}
                               picklistData={this.state.sizeValues}
                               handleChange={this.handleChange}
                               updateBeverageState={this.updateBeverageState}/>
@@ -167,63 +167,65 @@ class AddBeverageForm extends React.Component {
                 <Form.Row>
                     <AttrQty qty={this.state.qty}
                              qty_cold={this.state.qty_cold}
-                             forNewBeverage={true}
+                             forNewBeverage={false}
                              handleChange={this.handleChange}
                              updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
                 <Form.Row>
-                    <AttrYear year={this.state.year}
-                              forNewBeverage={true}
-                              handleChange={this.handleChange}
-                              updateBeverageState={this.updateBeverageState}/>
-
                     <AttrBottleDate bottle_date={this.state.bottle_date}
-                                    forNewBeverage={true}
+                                    forNewBeverage={false}
                                     handleChange={this.handleChange}
                                     updateBeverageState={this.updateBeverageState}/>
 
-                    <AttrBatch batch={this.state.batch}
-                               forNewBeverage={true}
-                               handleChange={this.handleChange}
-                               updateBeverageState={this.updateBeverageState}/>
+                    <span className="input-year-batch-container">
+                        <AttrYear year={this.state.year}
+                                  forNewBeverage={false}
+                                  handleChange={this.handleChange}
+                                  updateBeverageState={this.updateBeverageState}/>
+
+                        <AttrBatch batch={this.state.batch}
+                                   forNewBeverage={false}
+                                   handleChange={this.handleChange}
+                                   updateBeverageState={this.updateBeverageState}/>
+                   </span>
                 </Form.Row>
                 <Form.Row>
                     <AttrStyle style={this.state.style}
-                               forNewBeverage={true}
+                               forNewBeverage={false}
                                picklistData={this.state.styleValues}
                                handleChange={this.handleChange}
                                updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
                 <Form.Row>
                     <AttrUntappd untappd={this.state.untappd}
-                                 forNewBeverage={true}
+                                 forNewBeverage={false}
                                  handleChange={this.handleChange}
                                  updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
                 <Form.Row>
                     <AttrNote note={this.state.note}
-                              forNewBeverage={true}
+                              forNewBeverage={false}
                               handleChange={this.handleChange}
                               updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
                 <Form.Row>
                     <AttrTrade for_trade={this.state.for_trade}
-                               forNewBeverage={true}
+                               forNewBeverage={false}
                                handleChange={this.handleChange}
                                updateBeverageState={this.updateBeverageState}/>
                     <AttrTradeValue trade_value={this.state.trade_value}
-                                    forNewBeverage={true}
+                                    forNewBeverage={false}
                                     handleChange={this.handleChange}
                                     updateBeverageState={this.updateBeverageState}/>
                     <AttrAgingPotential aging_potential={this.state.aging_potential}
-                                        forNewBeverage={true}
+                                        forNewBeverage={false}
                                         handleChange={this.handleChange}
                                         updateBeverageState={this.updateBeverageState}/>
                 </Form.Row>
 
                 <ActionButtons
                     editMode={true}
-                    forNewBeverage={true}
+                    forNewBeverage={false}
                     resetBeverageData={this.resetBeverageData}
                     handleSubmit={this.handleSubmit}/>
             </Form>

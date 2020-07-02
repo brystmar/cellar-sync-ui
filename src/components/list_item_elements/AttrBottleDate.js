@@ -1,8 +1,5 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-// import DatePicker from 'react-datepicker';
-// import DateTimeField from '@texada/date-picker';
-// import '@texada/date-picker/dist/styles.min.css';
 
 function AttrBottleDate(props) {
     return (

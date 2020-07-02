@@ -98,7 +98,7 @@ function AttrStyle(props) {
                     <img alt="Specific Style"
                          src="./icons/noun_Beer_style2_5693.svg"
                          className="list-item-key-icon"/>
-                    <Form.Label hidden={props.forNewBeverage}>Specific Style</Form.Label>
+                    <Form.Label hidden={props.forNewBeverage}>Sub-Style</Form.Label>
                 </span>
 
                 <Form.Control as="select"
