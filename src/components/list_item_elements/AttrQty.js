@@ -6,10 +6,11 @@ function AttrQty(props) {
         <>
             <Form.Group controlId="formQty" className="input-qty input-group">
                 <span className="list-item-key">
-                    <img alt="Qty (Overall)"
-                         src="./icons/hashtag-solid.svg"
-                         className="list-item-key-icon"/>
-                    <Form.Label hidden={props.forNewBeverage}>Qty</Form.Label>
+                    <span className="list-item-key-icon-container">
+                        <img alt="Qty (Overall)" src="./icons/hashtag-solid.svg"/>
+                    </span>
+                    <Form.Label className="list-item-label-sm"
+                                hidden={props.forNewBeverage}>Qty</Form.Label>
                 </span>
 
                 <Form.Control name="qty"
@@ -25,10 +26,11 @@ function AttrQty(props) {
 
             <Form.Group controlId="formQtyCold" className="input-qty-cold input-group">
                 <span className="list-item-key">
-                    <img alt="Qty (Cold)"
-                         src="./icons/snowflake-regular.svg"
-                         className="list-item-key-icon"/>
-                    <Form.Label hidden={props.forNewBeverage}>Cold</Form.Label>
+                    <span className="list-item-key-icon-container">
+                        <img alt="Qty (Cold)" src="./icons/snowflake-regular.svg"/>
+                    </span>
+                    <Form.Label className="list-item-label-sm"
+                                hidden={props.forNewBeverage}>Cold</Form.Label>
                 </span>
 
                 <Form.Control name="qty_cold"

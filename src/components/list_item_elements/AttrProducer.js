@@ -5,10 +5,10 @@ function AttrProducer(props) {
     return (
         <Form.Group className="input-producer input-group">
             <span className="list-item-key">
-                <img alt="Producer"
-                     src="./icons/address-card-regular.svg"
-                     className="list-item-key-icon"/>
-                <Form.Label>Producer</Form.Label>
+                <span className="list-item-key-icon-container">
+                    <img alt="Producer" src="./icons/address-card-regular.svg"/>
+                </span>
+                <Form.Label className="list-item-label-med">Producer</Form.Label>
             </span>
             <Form.Control type="text"
                           name="producer"

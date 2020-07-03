@@ -5,10 +5,11 @@ function AttrNote(props) {
     return (
         <Form.Group controlId="formNote" className="input-note input-group">
             <span className="list-item-key">
-                <img alt="Note"
-                     src="./icons/sticky-note-regular.svg"
-                     className="list-item-key-icon"/>
-                <Form.Label hidden={props.forNewBeverage}>Note</Form.Label>
+                <span className="list-item-key-icon-container">
+                    <img alt="Note" src="./icons/sticky-note-regular.svg"/>
+                </span>
+                <Form.Label className="list-item-label-sm"
+                            hidden={props.forNewBeverage}>Note</Form.Label>
             </span>
 
             <Form.Control name="note"

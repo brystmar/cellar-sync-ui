@@ -5,10 +5,11 @@ function AttrBottleDate(props) {
     return (
         <Form.Group controlId="formBottleDate" className="input-bottle-date input-group">
             <span className="list-item-key">
-                <img alt="Bottle Date"
-                     src="./icons/calendar-check-regular.svg"
-                     className="list-item-key-icon"/>
-                <Form.Label hidden={props.forNewBeverage}>Bottle Date</Form.Label>
+                <div className="list-item-key-icon-container">
+                    <img alt="Bottle Date" src="./icons/calendar-check-regular.svg"/>
+                </div>
+                <Form.Label className="list-item-label-lg"
+                            hidden={props.forNewBeverage}>Bottle Date</Form.Label>
             </span>
 
             <Form.Control name="bottle_date"

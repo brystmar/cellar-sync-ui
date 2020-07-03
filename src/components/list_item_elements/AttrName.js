@@ -6,10 +6,10 @@ function AttrName(props) {
         <Form.Group controlId="formBevName"
                     className="input-group input-name">
             <span className="list-item-key">
-                <img alt="Beverage Name"
-                     src="./icons/nametag.svg"
-                     className="list-item-key-icon"/>
-                <Form.Label>Name</Form.Label>
+                <span className="list-item-key-icon-container">
+                    <img alt="Beverage Name" src="./icons/nametag.svg"/>
+                </span>
+                <Form.Label className="list-item-label-sm">Name</Form.Label>
             </span>
             <Form.Control type="text"
                           name="name"

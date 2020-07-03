@@ -5,10 +5,11 @@ function AttrYear(props) {
     return (
         <Form.Group controlId="formYear" className="input-year input-group">
             <span className="list-item-key">
-                <img alt="Year"
-                     src="./icons/calendar-alt-regular.svg"
-                     className="list-item-key-icon"/>
-                <Form.Label hidden={props.forNewBeverage}>Year</Form.Label>
+                <span className="list-item-key-icon-container">
+                    <img alt="Year" src="./icons/calendar-alt-regular.svg"/>
+                </span>
+                <Form.Label className="list-item-label-sm"
+                            hidden={props.forNewBeverage}>Year</Form.Label>
             </span>
 
             <Form.Control name="year"

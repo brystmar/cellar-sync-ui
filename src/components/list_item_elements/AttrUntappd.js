@@ -4,12 +4,13 @@ import Form from 'react-bootstrap/Form';
 function AttrUntappd(props) {
     return (
         <Form.Group controlId="formUntappd" className="input-untappd input-group">
-            <span className="list-item-key">
-                <img src="./icons/link-solid.svg"
-                     alt="Untappd"
-                     className="list-item-key-icon"/>
-                <Form.Label hidden={props.forNewBeverage}>Untappd</Form.Label>
-            </span>
+            <div className="list-item-key">
+                <span className="list-item-key-icon-container">
+                    <img alt="Untappd" src="./icons/link-solid.svg"/>
+                </span>
+                <Form.Label className="list-item-label-med"
+                            hidden={props.forNewBeverage}>Untappd</Form.Label>
+            </div>
 
             <Form.Control name="untappd"
                           type="text"

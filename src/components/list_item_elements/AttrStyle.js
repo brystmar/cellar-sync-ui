@@ -77,10 +77,11 @@ function AttrStyle(props) {
         <>
             <Form.Group controlId="formStyle" className="input-style input-group">
                 <span className="list-item-key">
-                    <img alt="Style"
-                         src="./icons/noun_Beer_style1_1975813.svg"
-                         className="list-item-key-icon"/>
-                    <Form.Label hidden={props.forNewBeverage}>Style</Form.Label>
+                    <span className="list-item-key-icon-container">
+                        <img alt="Style" src="./icons/noun_Beer_style1_1975813.svg"/>
+                    </span>
+                    <Form.Label className="list-item-label-sm"
+                                hidden={props.forNewBeverage}>Style</Form.Label>
                 </span>
 
                 <Form.Control as="select"
@@ -95,10 +96,11 @@ function AttrStyle(props) {
 
             <Form.Group controlId="formSpecificStyle" className="input-spstyle input-group">
                 <span className="list-item-key">
-                    <img alt="Specific Style"
-                         src="./icons/noun_Beer_style2_5693.svg"
-                         className="list-item-key-icon"/>
-                    <Form.Label hidden={props.forNewBeverage}>Sub-Style</Form.Label>
+                    <span className="list-item-key-icon-container">
+                        <img alt="Specific Style" src="./icons/noun_Beer_style2_5693.svg"/>
+                    </span>
+                    <Form.Label className="list-item-label-med"
+                                hidden={props.forNewBeverage}>Sub-Style</Form.Label>
                 </span>
 
                 <Form.Control as="select"

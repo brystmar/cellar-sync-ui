@@ -5,10 +5,11 @@ function AttrBatch(props) {
     return (
         <Form.Group className="input-batch input-group">
             <span className="list-item-key">
-                <img alt="Batch"
-                     src="./icons/noun_Bat_2088669.svg"
-                     className="list-item-key-icon"/>
-                <Form.Label hidden={props.forNewBeverage}>Batch</Form.Label>
+                <span className="list-item-key-icon-container">
+                    <img alt="Batch" src="./icons/noun_Bat_2088669.svg"/>
+                </span>
+                <Form.Label className="list-item-label-sm"
+                            hidden={props.forNewBeverage}>Batch</Form.Label>
             </span>
 
             <Form.Control name="batch"

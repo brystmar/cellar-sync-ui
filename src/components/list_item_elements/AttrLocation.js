@@ -13,10 +13,11 @@ function AttrLocation(props) {
     return (
         <Form.Group controlId="formLocation" className="input-loc input-group">
             <span className="list-item-key">
-                <img alt="Location"
-                     src="./icons/map-marked-alt-solid.svg"
-                     className="list-item-key-icon"/>
-                <Form.Label hidden={props.forNewBeverage}>Location</Form.Label>
+                <span className="list-item-key-icon-container">
+                    <img alt="Location" src="./icons/map-marked-alt-solid.svg"/>
+                </span>
+                <Form.Label className="list-item-label-med"
+                            hidden={props.forNewBeverage}>Location</Form.Label>
             </span>
 
             <Form.Control as="select"

@@ -7,14 +7,16 @@ function AttrTradeValue(props) {
         <>
             <Form.Group controlId="formTradeValue" className="input-trade-value input-group">
                 <span className="list-item-key">
-                    <img alt="Trade Value"
-                         src="./icons/euro-sign-solid.svg"
-                         className="list-item-key-icon"/>
-                    <Form.Label className="list-item-label">
+                    <span className="list-item-key-icon-container">
+                        <img alt="Trade Value" src="./icons/euro-sign-solid.svg"/>
+                    </span>
+                    <Form.Label className="list-item-label-lg">
                         Trade Value
                     </Form.Label>
                 </span>
-                {mapTradeValueIcons(props)}
+                <span className="list-item-value clickable-toggle">
+                    {mapTradeValueIcons(props)}
+                </span>
             </Form.Group>
         </>
     )
@@ -24,7 +26,6 @@ function mapTradeValueIcons(props) {
     if (props.trade_value === 1) {
         return <img alt="Trade Value: High"
                     src="./icons/arrow-alt-circle-up-solid.svg"
-                    className="list-item-value-icon clickable-toggle"
                     onClick={() => props.updateBeverageState({
                         trade_value: toggle_value_icons(props.trade_value),
                         editMode: true
@@ -32,7 +33,6 @@ function mapTradeValueIcons(props) {
     } else if (props.trade_value === 3) {
         return <img alt="Trade Value: Low"
                     src="./icons/arrow-alt-circle-down-solid.svg"
-                    className="list-item-value-icon clickable-toggle"
                     onClick={() => props.updateBeverageState({
                         trade_value: toggle_value_icons(props.trade_value),
                         editMode: true
@@ -40,7 +40,6 @@ function mapTradeValueIcons(props) {
     } else {
         return <img alt="Trade Value: Moderate"
                     src="./icons/arrows-alt-horiz-solid.svg"
-                    className="list-item-value-icon clickable-toggle"
                     onClick={() => props.updateBeverageState({
                         trade_value: toggle_value_icons(props.trade_value),
                         editMode: true

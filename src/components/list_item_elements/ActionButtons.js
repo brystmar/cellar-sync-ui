@@ -2,7 +2,7 @@ import React from 'react';
 
 function ActionButtons(props) {
     return (
-        <div className="input-buttons-container">
+        <>
             <button type="button"
                     className="btn btn-reset-outline"
                     hidden={!props.editMode}
@@ -17,7 +17,7 @@ function ActionButtons(props) {
             <button type="submit"
                     className="btn btn-primary-outline"
                     hidden={!props.editMode}>Save</button>
-        </div>
+        </>
     )
 }
 
