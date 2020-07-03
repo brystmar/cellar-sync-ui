@@ -13,19 +13,20 @@ function PicklistValuesContainer(props) {
     if (props.data.length > 0) {
         let picklists = parse_picklists(props.data);
 
-        realData = <div className="picklist-values-container">
-            <Tabs defaultActiveKey="location" id="picklist-values-container">
-                <Tab eventKey="location" title="Location">
-                    <LocationPicklistValues data={picklists.location}/>
-                </Tab>
-                <Tab eventKey="size" title="Size">
-                    <SizePicklistValues data={picklists.size}/>
-                </Tab>
-                <Tab eventKey="style" title="Style">
-                    <StylePicklistValues data={picklists.style}/>
-                </Tab>
-            </Tabs>
-        </div>
+        realData =
+            <div className="picklist-values-container">
+                <Tabs defaultActiveKey="location" id="picklist-values-container">
+                    <Tab eventKey="location" title="Location">
+                        <LocationPicklistValues data={picklists.location}/>
+                    </Tab>
+                    <Tab eventKey="size" title="Size">
+                        <SizePicklistValues data={picklists.size}/>
+                    </Tab>
+                    <Tab eventKey="style" title="Style">
+                        <StylePicklistValues data={picklists.style}/>
+                    </Tab>
+                </Tabs>
+            </div>
     }
 
     return (

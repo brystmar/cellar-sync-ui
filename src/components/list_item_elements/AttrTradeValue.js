@@ -1,23 +1,22 @@
 import React from 'react';
 import toggle_value_icons from '../../functions/toggle_value_icons';
-import Form from "react-bootstrap/Form";
 
 function AttrTradeValue(props) {
     return (
         <>
-            <Form.Group controlId="formTradeValue" className="input-trade-value input-group">
+            <span className="input-trade-value input-group">
                 <span className="list-item-key">
                     <span className="list-item-key-icon-container">
                         <img alt="Trade Value" src="./icons/euro-sign-solid.svg"/>
                     </span>
-                    <Form.Label className="list-item-label-lg">
+                    <label className="list-item-label-lg">
                         Trade Value
-                    </Form.Label>
+                    </label>
                 </span>
                 <span className="list-item-value clickable-toggle">
                     {mapTradeValueIcons(props)}
                 </span>
-            </Form.Group>
+            </span>
         </>
     )
 }

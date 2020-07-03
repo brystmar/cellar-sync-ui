@@ -2,7 +2,7 @@ import React from 'react';
 
 function PageTitle(props) {
     return (
-        <div className="page-title">
+        <div className="page-title-container">
             <h1>
                 {props.logo ? props.logo : ""}
                 {props.title}

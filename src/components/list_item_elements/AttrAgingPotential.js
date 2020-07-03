@@ -1,23 +1,22 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
 import toggle_value_icons from '../../functions/toggle_value_icons';
 
 function AttrAgingPotential(props) {
     return (
         <>
-            <Form.Group controlId="formAgingPotential" className="input-aging input-group">
+            <span className="input-aging input-group">
                 <span className="list-item-key">
                     <span className="list-item-key-icon-container">
                         <img alt="Aging Potential" src="./icons/spider-solid.svg"/>
                     </span>
-                    <Form.Label className="list-item-label-lg">
+                    <label className="list-item-label-lg">
                         Ages Well
-                    </Form.Label>
+                    </label>
                 </span>
                 <span className="list-item-value clickable-toggle">
                     {mapAgingPotentialIcons(props)}
                 </span>
-            </Form.Group>
+            </span>
         </>
 
     )

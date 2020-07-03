@@ -116,16 +116,16 @@ footer .footer-content img {
   margin-bottom: auto;
 }
 
-.page-title {
+.page-title-container {
   margin: 0 auto;
   cursor: default;
   overflow: hidden;
   white-space: nowrap;
 }
-.page-title hr {
+.page-title-container hr {
   margin-top: 0;
 }
-.page-title img {
+.page-title-container img {
   max-height: 100px;
   display: inline-block;
   margin-right: 2px;

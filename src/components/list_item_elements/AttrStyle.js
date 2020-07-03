@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import Form from 'react-bootstrap/Form';
 
 function AttrStyle(props) {
     const [spStyleList, updateSpStyleListState] = useState(updateSpStyleList(props.style, true));
@@ -75,44 +74,42 @@ function AttrStyle(props) {
 
     return (
         <>
-            <Form.Group controlId="formStyle" className="input-style input-group">
+            <span className="input-style input-group">
                 <span className="list-item-key">
                     <span className="list-item-key-icon-container">
                         <img alt="Style" src="./icons/noun_Beer_style1_1975813.svg"/>
                     </span>
-                    <Form.Label className="list-item-label-sm"
-                                hidden={props.forNewBeverage}>Style</Form.Label>
+                    <label className="list-item-label-sm"
+                           hidden={props.forNewBeverage}>Style</label>
                 </span>
 
-                <Form.Control as="select"
-                              name="style"
-                              size="sm"
-                              className="input-picklist list-item-value"
-                              value={props.style}
-                              onChange={handleStyleChange}>
+                <select name="style"
+                        size="sm"
+                        className="input-picklist list-item-value"
+                        value={props.style}
+                        onChange={handleStyleChange}>
                     {styleValues}
-                </Form.Control>
-            </Form.Group>
+                </select>
+            </span>
 
-            <Form.Group controlId="formSpecificStyle" className="input-spstyle input-group">
+            <span className="input-spstyle input-group">
                 <span className="list-item-key">
                     <span className="list-item-key-icon-container">
                         <img alt="Specific Style" src="./icons/noun_Beer_style2_5693.svg"/>
                     </span>
-                    <Form.Label className="list-item-label-med"
-                                hidden={props.forNewBeverage}>Sub-Style</Form.Label>
+                    <label className="list-item-label-med"
+                           hidden={props.forNewBeverage}>Sub-Style</label>
                 </span>
 
-                <Form.Control as="select"
-                              name="specific_style"
-                              size="sm"
-                              className="input-picklist list-item-value"
-                              value={props.specific_style}
-                              disabled={spStyleList.length === 0}
-                              onChange={handleSpStyleChange}>
+                <select name="specific_style"
+                        size="sm"
+                        className="input-picklist list-item-value"
+                        value={props.specific_style}
+                        disabled={spStyleList.length === 0}
+                        onChange={handleSpStyleChange}>
                     {specificStyleValues}
-                </Form.Control>
-            </Form.Group>
+                </select>
+            </span>
         </>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
+// import {Form} from 'formik';
 import ActionButtons from './list_item_elements/ActionButtons';
 import AttrLocation from './list_item_elements/AttrLocation';
 import AttrQty from './list_item_elements/AttrQty';
@@ -140,100 +140,96 @@ class ListItemTemplate extends React.Component {
 
     render() {
         return (
-            <div className="list-item-template-container">
-                <Form className="list-item-grid list-item-form"
-                      onSubmit={this.handleSubmit}
-                      key={this.state.formId}
-                      validated={this.state.validated}>
+            <form className="list-item-grid list-item-form"
+                  onSubmit={this.handleSubmit}>
 
-                    <span className="input-qty-container grid-cell">
-                        <AttrQty
-                            qty={this.state.qty}
-                            qty_cold={this.state.qty_cold}
-                            handleChange={this.handleChange}/>
-                    </span>
+                <span className="input-qty-container grid-cell">
+                    <AttrQty
+                        qty={this.state.qty}
+                        qty_cold={this.state.qty_cold}
+                        handleChange={this.handleChange}/>
+                </span>
 
-                    <span className="input-styles-container grid-cell flex-to-row">
-                        {/*TODO: Replace parse_picklists with an arrow function*/}
-                        <AttrStyle
-                            style={this.state.style}
-                            specific_style={this.state.specific_style}
-                            picklistData={parse_picklists(this.props.picklistData, "style")}
-                            handleChange={this.handleChange}
-                            updateBeverageState={this.updateBeverageState}/>
-                    </span>
-
-                    <span className="input-clickable-toggles-container grid-cell">
-                        <AttrTrade
-                            for_trade={this.state.for_trade}
-                            handleChange={this.handleChange}
-                            updateBeverageState={this.updateBeverageState}/>
-
-                        <AttrTradeValue
-                            trade_value={this.state.trade_value ? this.state.trade_value : 2}
-                            handleChange={this.handleChange}
-                            updateBeverageState={this.updateBeverageState}/>
-
-                        <AttrAgingPotential
-                            aging_potential={this.state.aging_potential ? this.state.aging_potential : 2}
-                            handleChange={this.handleChange}
-                            updateBeverageState={this.updateBeverageState}/>
-                    </span>
-
-                    <span className="input-longtext-container grid-cell">
-                        <AttrUntappd
-                            untappd={this.state.untappd ? this.state.untappd : ""}
-                            handleChange={this.handleChange}/>
-
-                        <AttrNote
-                            note={this.state.note ? this.state.note : ""}
-                            handleChange={this.handleChange}/>
-                    </span>
-
+                <span className="input-styles-container grid-cell flex-to-row">
                     {/*TODO: Replace parse_picklists with an arrow function*/}
-                    <span className="input-size-loc-container grid-cell input-static">
-                        <AttrSize
-                            size={this.state.size}
-                            picklistData={parse_picklists(this.props.picklistData, "size")}
-                            handleChange={this.handleChange}/>
+                    <AttrStyle
+                        style={this.state.style}
+                        specific_style={this.state.specific_style}
+                        picklistData={parse_picklists(this.props.picklistData, "style")}
+                        handleChange={this.handleChange}
+                        updateBeverageState={this.updateBeverageState}/>
+                </span>
 
-                        <AttrLocation
-                            location={this.state.location}
-                            picklistData={parse_picklists(this.props.picklistData, "location")}
-                            handleChange={this.handleChange}/>
-                    </span>
+                <span className="input-clickable-toggles-container grid-cell">
+                    <AttrTrade
+                        for_trade={this.state.for_trade}
+                        handleChange={this.handleChange}
+                        updateBeverageState={this.updateBeverageState}/>
 
-                    <span className="input-dates-container grid-cell input-static">
-                        <AttrBottleDate
-                            bottle_date={this.state.bottle_date ? this.state.bottle_date : ""}
-                            handleChange={this.handleChange}/>
+                    <AttrTradeValue
+                        trade_value={this.state.trade_value ? this.state.trade_value : 2}
+                        handleChange={this.handleChange}
+                        updateBeverageState={this.updateBeverageState}/>
 
-                        <AttrYear
-                            year={this.state.year}
-                            handleChange={this.handleChange}/>
+                    <AttrAgingPotential
+                        aging_potential={this.state.aging_potential ? this.state.aging_potential : 2}
+                        handleChange={this.handleChange}
+                        updateBeverageState={this.updateBeverageState}/>
+                </span>
 
-                        <AttrBatch
-                            batch={this.state.batch ? this.state.batch : ""}
-                            handleChange={this.handleChange}/>
-                    </span>
+                <span className="input-longtext-container grid-cell">
+                    <AttrUntappd
+                        untappd={this.state.untappd ? this.state.untappd : ""}
+                        handleChange={this.handleChange}/>
 
-                    <span className="button-container eli-buttons">
-                        <ActionButtons
-                            editMode={this.state.editMode}
-                            toggleEditMode={this.toggleEditMode}
-                            resetBeverageData={this.resetBeverageData}
-                            handleSubmit={this.handleSubmit}/>
-                    </span>
+                    <AttrNote
+                        note={this.state.note ? this.state.note : ""}
+                        handleChange={this.handleChange}/>
+                </span>
 
-                    <span className="button-container del-button">
-                        <button type="button"
+                {/*TODO: Replace parse_picklists with an arrow function*/}
+                <span className="input-size-loc-container grid-cell input-static">
+                    <AttrSize
+                        size={this.state.size}
+                        picklistData={parse_picklists(this.props.picklistData, "size")}
+                        handleChange={this.handleChange}/>
+
+                    <AttrLocation
+                        location={this.state.location}
+                        picklistData={parse_picklists(this.props.picklistData, "location")}
+                        handleChange={this.handleChange}/>
+                </span>
+
+                <span className="input-dates-container grid-cell input-static">
+                    <AttrBottleDate
+                        bottle_date={this.state.bottle_date ? this.state.bottle_date : ""}
+                        handleChange={this.handleChange}/>
+
+                    <AttrYear
+                        year={this.state.year}
+                        handleChange={this.handleChange}/>
+
+                    <AttrBatch
+                        batch={this.state.batch ? this.state.batch : ""}
+                        handleChange={this.handleChange}/>
+                </span>
+
+                <span className="button-container eli-buttons">
+                    <ActionButtons
+                        editMode={this.state.editMode}
+                        toggleEditMode={this.toggleEditMode}
+                        resetBeverageData={this.resetBeverageData}
+                        handleSubmit={this.handleSubmit}/>
+                </span>
+
+                <span className="button-container del-button">
+                    <button type="button"
                             className="btn btn-danger btn-del"
                             onClick={() => this.props.deleteBeverage(this.state.beverage_id,
                                 this.state.location)}>Delete
-                        </button>
-                    </span>
-                </Form>
-            </div>
+                    </button>
+                </span>
+            </form>
         )
     }
 }

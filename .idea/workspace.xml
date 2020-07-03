@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/css/grid-templates.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/ActionButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/ActionButtons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddBeverage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddBeverage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddBeverageForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddBeverageForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ListItemTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItemTemplate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LocationDisplay.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LocationPicklistValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LocationPicklistValues.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PageTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PageTitle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PicklistValuesContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PicklistValuesContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SizePicklistValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SizePicklistValues.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StylePicklistValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StylePicklistValues.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrAgingPotential.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrAgingPotential.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrBatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrBatch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrBottleDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrBottleDate.js" afterDir="false" />
@@ -21,8 +28,9 @@
       <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrTradeValue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrTradeValue.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrUntappd.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrUntappd.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrYear.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrYear.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/grid-templates.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/grid-templates.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/list_items.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/list_items.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/styles.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/styles.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/styles.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
@@ -144,7 +152,7 @@
       <workItem from="1591074886726" duration="106000" />
       <workItem from="1591226772126" duration="82517000" />
       <workItem from="1591989863841" duration="5690000" />
-      <workItem from="1592269456463" duration="107331000" />
+      <workItem from="1592269456463" duration="111055000" />
     </task>
     <task id="LOCAL-00001" summary="Installed react-router">
       <created>1585522324328</created>
@@ -433,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593666990714</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Improved list item grid layout &amp; spacing">
+      <created>1593803683281</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1593803683281</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +459,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
-    <MESSAGE value="Added logo prop to title, other misc cleanup" />
     <MESSAGE value="Improved qty/qty_cold validation" />
     <MESSAGE value="Working on the Add button" />
     <MESSAGE value="Re-arranged fields under each list item" />
@@ -469,7 +483,8 @@
     <MESSAGE value="Defined color palette &amp; button styles" />
     <MESSAGE value="Working on grid for each table item" />
     <MESSAGE value="Grid is really coming together" />
-    <option name="LAST_COMMIT_MESSAGE" value="Grid is really coming together" />
+    <MESSAGE value="Improved list item grid layout &amp; spacing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved list item grid layout &amp; spacing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="643" y="235" key="#Plugins" timestamp="1592269437268">
@@ -489,10 +504,10 @@
     </state>
     <state x="845" y="333" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593060549811" />
     <state x="712" y="294" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.988@0.23.1680.988" timestamp="1590862298731" />
-    <state x="690" y="181" width="924" height="850" key="CommitChangelistDialog2" timestamp="1593666990555">
+    <state x="690" y="181" width="924" height="850" key="CommitChangelistDialog2" timestamp="1593803683069">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>
-    <state x="690" y="181" width="924" height="850" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593666990555" />
+    <state x="690" y="181" width="924" height="850" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593803683069" />
     <state x="581" y="161" key="CommitChangelistDialog2/0.23.1680.988@0.23.1680.988" timestamp="1590859493562" />
     <state x="649" y="372" width="695" height="665" key="EditFileWatcherDialog" timestamp="1592789330559">
       <screen x="0" y="23" width="1994" height="1129" />

@@ -1,25 +1,24 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
 
 function AttrProducer(props) {
     return (
-        <Form.Group className="input-producer input-group">
+        <span className="input-producer input-group">
             <span className="list-item-key">
                 <span className="list-item-key-icon-container">
                     <img alt="Producer" src="./icons/address-card-regular.svg"/>
                 </span>
-                <Form.Label className="list-item-label-med">Producer</Form.Label>
+                <label className="list-item-label-med">Producer</label>
             </span>
-            <Form.Control type="text"
-                          name="producer"
-                          className="list-item-value input-text"
-                          placeholder="Brewery / Winery"
-                          value={props.producer}
-                          onChange={props.handleChange}
-                          id="formBevProducer"
-                          autoFocus={true}
-                          required={true}/>
-        </Form.Group>
+            <input type="text"
+                   name="producer"
+                   className="list-item-value input-text"
+                   placeholder="Brewery / Winery"
+                   value={props.producer}
+                   onChange={props.handleChange}
+                   id="formBevProducer"
+                   autoFocus={true}
+                   required={true}/>
+        </span>
     )
 }
 

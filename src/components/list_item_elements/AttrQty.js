@@ -1,48 +1,47 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
 
 function AttrQty(props) {
     return (
         <>
-            <Form.Group controlId="formQty" className="input-qty input-group">
+            <span className="input-qty input-group">
                 <span className="list-item-key">
                     <span className="list-item-key-icon-container">
                         <img alt="Qty (Overall)" src="./icons/hashtag-solid.svg"/>
                     </span>
-                    <Form.Label className="list-item-label-sm"
-                                hidden={props.forNewBeverage}>Qty</Form.Label>
+                    <label className="list-item-label-sm"
+                           hidden={props.forNewBeverage}>Qty</label>
                 </span>
 
-                <Form.Control name="qty"
-                              type="number"
-                              min={0}
-                              max={99}
-                              placeholder="#"
-                              className="input-number list-item-value input-qty"
-                              value={props.qty}
-                              onChange={props.handleChange}
-                              onBlur={props.handleChange}/>
-            </Form.Group>
+                <input name="qty"
+                       type="number"
+                       min={0}
+                       max={99}
+                       placeholder="#"
+                       className="input-number list-item-value input-qty"
+                       value={props.qty}
+                       onChange={props.handleChange}
+                       onBlur={props.handleChange}/>
+            </span>
 
-            <Form.Group controlId="formQtyCold" className="input-qty-cold input-group">
+            <span className="input-qty-cold input-group">
                 <span className="list-item-key">
                     <span className="list-item-key-icon-container">
                         <img alt="Qty (Cold)" src="./icons/snowflake-regular.svg"/>
                     </span>
-                    <Form.Label className="list-item-label-sm"
-                                hidden={props.forNewBeverage}>Cold</Form.Label>
+                    <label className="list-item-label-sm"
+                           hidden={props.forNewBeverage}>Cold</label>
                 </span>
 
-                <Form.Control name="qty_cold"
-                              type="number"
-                              min={0}
-                              max={props.qty}
-                              placeholder="#"
-                              className="input-number list-item-value input-qty"
-                              value={props.qty_cold}
-                              onChange={props.handleChange}
-                              onBlur={props.handleChange}/>
-            </Form.Group>
+                <input name="qty_cold"
+                       type="number"
+                       min={0}
+                       max={props.qty}
+                       placeholder="#"
+                       className="input-number list-item-value input-qty"
+                       value={props.qty_cold}
+                       onChange={props.handleChange}
+                       onBlur={props.handleChange}/>
+            </span>
         </>
     )
 }

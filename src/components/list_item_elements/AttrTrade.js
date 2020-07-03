@@ -1,22 +1,21 @@
 import React from 'react';
-import Form from "react-bootstrap/Form";
 
 function AttrTrade(props) {
     return (
         <>
-            <Form.Group controlId="formTrade" className="input-trade input-group">
+            <span className="input-trade input-group">
                 <span className="list-item-key">
                     <span className="list-item-key-icon-container">
                         <img alt="For Trade?" src="./icons/exchange-alt-solid.svg"/>
                     </span>
-                    <Form.Label className="list-item-label-lg">
+                    <label className="list-item-label-lg">
                         For Trade
-                    </Form.Label>
+                    </label>
                 </span>
                 <span className="list-item-value clickable-toggle">
                     {mapForTradeIcons(props)}
                 </span>
-            </Form.Group>
+            </span>
         </>
     )
 }

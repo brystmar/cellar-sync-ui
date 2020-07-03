@@ -1,5 +1,4 @@
 import React from 'react';
-import Form from 'react-bootstrap/Form';
 import newBeverageDefaults from './defaults/newBeverageDefaults';
 import parse_picklists from '../functions/parse_picklists';
 import AttrSize from './list_item_elements/AttrSize';
@@ -137,10 +136,9 @@ class AddBeverageForm extends React.Component {
 
     render() {
         return (
-            <Form className="add-beverage-form"
-                  onSubmit={this.handleSubmit}
-                  validated={this.state.validated}>
-                <Form.Row>
+            <form className="add-beverage-form"
+                  onSubmit={this.handleSubmit}>
+                <span className="add-bev-row">
                     <AttrProducer producer={this.state.producer}
                                   forNewBeverage={false}
                                   handleChange={this.handleChange}
@@ -150,8 +148,8 @@ class AddBeverageForm extends React.Component {
                               forNewBeverage={false}
                               handleChange={this.handleChange}
                               updateBeverageState={this.updateBeverageState}/>
-                </Form.Row>
-                <Form.Row>
+                </span>
+                <span className="add-bev-row">
                     <AttrLocation location={this.state.location}
                                   forNewBeverage={false}
                                   picklistData={this.state.locationValues}
@@ -163,15 +161,15 @@ class AddBeverageForm extends React.Component {
                               picklistData={this.state.sizeValues}
                               handleChange={this.handleChange}
                               updateBeverageState={this.updateBeverageState}/>
-                </Form.Row>
-                <Form.Row>
+                </span>
+                <span className="add-bev-row">
                     <AttrQty qty={this.state.qty}
                              qty_cold={this.state.qty_cold}
                              forNewBeverage={false}
                              handleChange={this.handleChange}
                              updateBeverageState={this.updateBeverageState}/>
-                </Form.Row>
-                <Form.Row>
+                </span>
+                <span className="add-bev-row">
                     <AttrBottleDate bottle_date={this.state.bottle_date}
                                     forNewBeverage={false}
                                     handleChange={this.handleChange}
@@ -188,27 +186,27 @@ class AddBeverageForm extends React.Component {
                                    handleChange={this.handleChange}
                                    updateBeverageState={this.updateBeverageState}/>
                    </span>
-                </Form.Row>
-                <Form.Row>
+                </span>
+                <span className="add-bev-row">
                     <AttrStyle style={this.state.style}
                                forNewBeverage={false}
                                picklistData={this.state.styleValues}
                                handleChange={this.handleChange}
                                updateBeverageState={this.updateBeverageState}/>
-                </Form.Row>
-                <Form.Row>
+                </span>
+                <span className="add-bev-row">
                     <AttrUntappd untappd={this.state.untappd}
                                  forNewBeverage={false}
                                  handleChange={this.handleChange}
                                  updateBeverageState={this.updateBeverageState}/>
-                </Form.Row>
-                <Form.Row>
+                </span>
+                <span className="add-bev-row">
                     <AttrNote note={this.state.note}
                               forNewBeverage={false}
                               handleChange={this.handleChange}
                               updateBeverageState={this.updateBeverageState}/>
-                </Form.Row>
-                <Form.Row>
+                </span>
+                <span className="add-bev-row">
                     <AttrTrade for_trade={this.state.for_trade}
                                forNewBeverage={false}
                                handleChange={this.handleChange}
@@ -221,14 +219,14 @@ class AddBeverageForm extends React.Component {
                                         forNewBeverage={false}
                                         handleChange={this.handleChange}
                                         updateBeverageState={this.updateBeverageState}/>
-                </Form.Row>
+                </span>
 
                 <ActionButtons
                     editMode={true}
                     forNewBeverage={false}
                     resetBeverageData={this.resetBeverageData}
                     handleSubmit={this.handleSubmit}/>
-            </Form>
+            </form>
         )
     }
 }
