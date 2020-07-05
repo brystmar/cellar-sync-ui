@@ -101,10 +101,10 @@ footer .footer-content img {
 }
 
 .app-container {
+  margin: 0 auto;
   height: 100vh;
   width: 100vw;
   max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -133,20 +133,34 @@ footer .footer-content img {
 
 .content-container {
   padding: 6px 6px;
-  text-align: -webkit-left;
 }
 
-.btn-add-floating {
-  position: fixed;
-  bottom: 3rem;
-  right: 1rem;
+.add-beverage-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.add-beverage-container .floating-button-container img {
+  position: initial;
+  cursor: pointer;
+  margin: 0;
+}
+
+#add-beverage-popover {
+  display: inherit;
 }
 
 .popover {
-  min-width: 500px;
+  min-width: 350px;
   min-height: 550px;
 }
 
+@media (max-width: 1200px) {
+  .add-beverage-container {
+    position: fixed;
+    bottom: 3rem;
+    right: 0.5rem;
+  }
+}
 .add-beverage-form-group {
   margin: 5px 5px 10px 5px;
 }

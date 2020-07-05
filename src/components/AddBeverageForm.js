@@ -221,11 +221,13 @@ class AddBeverageForm extends React.Component {
                                         updateBeverageState={this.updateBeverageState}/>
                 </span>
 
-                <ActionButtons
-                    editMode={true}
-                    forNewBeverage={false}
-                    resetBeverageData={this.resetBeverageData}
-                    handleSubmit={this.handleSubmit}/>
+                <span className="button-container">
+                    <ActionButtons
+                        editMode={true}
+                        forNewBeverage={false}
+                        resetBeverageData={this.resetBeverageData}
+                        handleSubmit={this.handleSubmit}/>
+                </span>
             </form>
         )
     }

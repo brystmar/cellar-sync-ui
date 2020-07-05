@@ -23,14 +23,16 @@ class AddBeverage extends React.Component {
             </Popover>;
 
         return (
-            <div className="add-beverage">
+            <div className="add-beverage-container">
                 <OverlayTrigger id="add-beverage-overlay-form"
                                 placement="left"
                                 trigger="click"
                                 overlay={addForm}>
-                    <img src="./icons/button_plus.png"
-                         alt="Add Beverage"
-                         className="btn-add-floating"/>
+                    <div className="floating-button-container">
+                        <img src="./icons/button_plus.png"
+                             alt="Add Beverage"
+                             className="btn-add-floating"/>
+                    </div>
                 </OverlayTrigger>
             </div>
         )

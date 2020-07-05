@@ -1,7 +1,7 @@
 /* Adding all grid-template-area definitions since SASS doesn't support multi-line entries */
 
 .list-item-grid {
-	grid-template: 0.5em repeat(4, auto) 0.5em / 0.5em repeat(3, auto) 0.5em;
+	grid-template: 0.1em repeat(4, auto) 0.1em / 0.1em repeat(3, auto) 0.1em;
 	grid-template-areas:
 			". ... ..... ....... ."
 			". qty dates toggles ."

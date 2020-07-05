@@ -34,6 +34,7 @@ $color-primary-triadic-2: #d50067
 
 $header-height: 3rem
 $footer-height: $header-height - 1rem
+$app-max-width: 1200px
 
 // Globals
 *
@@ -142,16 +143,13 @@ footer
       color: inherit
     img
       max-height: 2vh
-  //.footer-content > *
-  //  border: 1px red solid
-
 
 // App Contents
 .app-container
+  margin: 0 auto
   height: 100vh
   width: 100vw
-  max-width: 1200px
-  margin: 0 auto
+  max-width: $app-max-width
 
   display: flex
   flex-direction: column
@@ -178,18 +176,32 @@ footer
 // Content
 .content-container
   padding: 6px 6px
-  text-align: -webkit-left
-
+  //border: 1px dashed black
 
 // Add Beverage Form
-.btn-add-floating
-  position: fixed
-  bottom: $footer-height + 1rem
-  right: 1rem
+.add-beverage-container
+  //border: 1px solid orange
+  display: flex
+  justify-content: flex-end
+
+  .floating-button-container
+    img
+      position: initial
+      cursor: pointer
+      margin: 0
+
+#add-beverage-popover
+  display: inherit
 
 .popover
-  min-width: 500px
+  min-width: 350px
   min-height: 550px
+
+@media (max-width: $app-max-width)
+  .add-beverage-container
+    position: fixed
+    bottom: 3rem
+    right: 0.5rem
 
 // TODO: Add tooltips to icons https://www.bitdegree.org/learn/css-tooltip
 .add-beverage-form-group
