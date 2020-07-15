@@ -11,8 +11,18 @@
 			". .............. . .......... .";
 }
 
-@media (min-width: 1600px) {
+@media (max-width: 740px) {
 	.list-item-grid {
-		grid-template-columns: 1em auto 1em;
+		grid-template: auto / auto;
+		grid-template-areas:
+			". ... . ."
+			". qty qty ."
+			". size-loc size-loc ."
+			". styles styles ."
+			". dates dates ."
+			". toggles toggles ."
+			". longtext longtext."
+			". action-buttons del-button ."
+			". .............. .......... .";
 	}
 }
