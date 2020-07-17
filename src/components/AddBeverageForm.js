@@ -223,7 +223,7 @@ class AddBeverageForm extends React.Component {
                                         updateBeverageState={this.updateBeverageState}/>
                 </span>
 
-                <span className="button-container">
+                <span className="button-container add-bev">
                     <ActionButtons
                         editMode={true}
                         forNewBeverage={false}

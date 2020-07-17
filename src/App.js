@@ -12,7 +12,8 @@ class App extends React.Component {
         super();
         this.state = {
             beverageList: [],
-            hackyKey: 1001
+            picklistData: [],
+            dtKey: 1
         }
         this.getAllBeverages = this.getAllBeverages.bind(this);
         this.updateBeverageList = this.updateBeverageList.bind(this);
@@ -58,10 +59,18 @@ class App extends React.Component {
 
         newList.push(beverage);
 
+        // TODO: Make the data table refresh based on deep comparison of beverageList so I can remove my crappy dtKey hack
         this.setState({
             beverageList: newList,
             dtKey: Math.random()
         })
+    }
+
+    updatePicklist(picklistName = "", newPicklistData) {
+        console.log("Called updatePicklist for", picklistName, newPicklistData);
+        // this.setState({
+        //     picklistData: newPicklistData
+        // })
     }
 
     deleteBeverage(beverageId, beverageLocation) {
@@ -92,6 +101,8 @@ class App extends React.Component {
         });
     }
 
+    // TODO: Support multiple users
+
     render() {
         const userName = "Barks & RAK";
         const cellarLogo = <img src="./icons/cellar-logo.jpg" alt="Cellar Logo"/>
@@ -106,8 +117,8 @@ class App extends React.Component {
                             <PageTitle title={userName} logo={cellarLogo}/>
                             <BeverageDataTable beverageList={this.state.beverageList}
                                                picklistData={this.state.picklistData}
+                                               dtKey={this.state.dtKey}
                                                deleteBeverage={this.deleteBeverage}
-                                               hackyKey={this.state.hackyKey}
                                                updateBeverageList={this.updateBeverageList}/>
                             <AddBeverage beverageList={this.state.beverageList}
                                          picklistData={this.state.picklistData}
@@ -115,7 +126,8 @@ class App extends React.Component {
                         </Route>
                         <Route path="/picklists">
                             <PageTitle title={"Picklist Values"}/>
-                            <PicklistValuesContainer data={this.state.picklistData}/>
+                            <PicklistValuesContainer data={this.state.picklistData}
+                                                     updatePicklist={this.updatePicklist}/>
                         </Route>
                     </Switch>
                 </div>

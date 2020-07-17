@@ -33,7 +33,7 @@ function AttrSize(props) {
 }
 
 AttrSize.defaultProps = {
-    size: "375 mL",
+    size: "",
     forNewBeverage: false,
     picklistData: {
         value: "",

@@ -1,14 +1,13 @@
 import React from 'react';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import LocationPicklistValues from './LocationPicklistValues';
-import SizePicklistValues from './SizePicklistValues';
+import PicklistValues from './PicklistValues';
 import StylePicklistValues from './StylePicklistValues';
 import parse_picklists from '../functions/parse_picklists';
 
 function PicklistValuesContainer(props) {
-    // TODO: Clean this up
-    let realData = <div>no data</div>;
+    // TODO: Make the picklist container less janky
+    let realData = <div>""</div>;
 
     if (props.data.length > 0) {
         let picklists = parse_picklists(props.data);
@@ -17,13 +16,19 @@ function PicklistValuesContainer(props) {
             <div className="picklist-values-container">
                 <Tabs defaultActiveKey="location" id="picklist-values-container">
                     <Tab eventKey="location" title="Location">
-                        <LocationPicklistValues data={picklists.location}/>
+                        <PicklistValues data={picklists.location}
+                                        picklistName="location"
+                                        updatePicklist={props.updatePicklist}/>
                     </Tab>
                     <Tab eventKey="size" title="Size">
-                        <SizePicklistValues data={picklists.size}/>
+                        <PicklistValues data={picklists.size}
+                                        picklistName="size"
+                                        updatePicklist={props.updatePicklist}/>
                     </Tab>
                     <Tab eventKey="style" title="Style">
-                        <StylePicklistValues data={picklists.style}/>
+                        <StylePicklistValues data={picklists.style}
+                                             picklistName="style"
+                                             updatePicklist={props.updatePicklist}/>
                     </Tab>
                 </Tabs>
             </div>

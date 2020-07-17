@@ -1,7 +1,9 @@
 import React from 'react';
 
 function StylePicklistValues(props) {
-    let orderedData = props.data.sort((a, b) => parseFloat(a.value) - parseFloat(b.value));
+    let orderedData = props.data.sort(
+        (a, b) => parseFloat(a.value) - parseFloat(b.value));
+    // console.log("Ordered Data:", orderedData);
     let styles = orderedData.map(item => {
         let styleDisplay = <input type="text"
                                   key={item.value}
@@ -32,19 +34,10 @@ function StylePicklistValues(props) {
 StylePicklistValues.defaultProps = {
     data: [
         {
-            value: "Default Style",
+            value: "",
             display_order: 0,
-            dependent_values: [
-                "Default 1.1", "Default 1.2"
-            ]
-        },
-        {
-            value: "Ratbier",
-            display_order: 1,
-            dependent_values: [
-                "Curie", "Ratøn"
-            ]
-        },
+            dependent_values: [""]
+        }
     ]
 }
 

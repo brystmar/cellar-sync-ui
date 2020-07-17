@@ -5,20 +5,20 @@ import ListItemTemplate from './ListItemTemplate';
 import beverageDataTableColumns from './defaults/beverageDataTableColumns';
 
 function BeverageDataTable(props) {
-    // TODO: Figure out how to get these 3rd party components to re-render when bevList changes
-    // DataTable docs: https://github.com/jbetancur/react-data-table-component#header
+    // TODO: Get these 3rd party components to re-render when bevList changes
+    //  https://github.com/jbetancur/react-data-table-component#header
     return (
         <DataTableExtensions columns={beverageDataTableColumns}
                              data={props.beverageList}
                              filter={true}
                              filterHidden={true}
                              export={false}
-                             key={props.hackyKey}
+                             key={props.dtKey}
                              print={false}>
             <DataTable columns={beverageDataTableColumns}
                        data={props.beverageList}
                        keyField="beverage_id"
-                       key={props.hackyKey}
+                       key={props.dtKey}
                        striped={true}
                        dense={true}
 
@@ -45,8 +45,9 @@ BeverageDataTable.defaultProps = {
     userName: "",
     beverageList: [],
     picklistData: [],
+    dtKey: 0,
     paginationPerPage: 40,
-    paginationRowsPerPageOptions: [20, 40, 60, 80, 100, 150, 200, 250, 300, 400, 500]
+    paginationRowsPerPageOptions: [25, 50, 75, 100, 200, 350, 500]
 }
 
 export default BeverageDataTable;

@@ -25,4 +25,8 @@
 			". action-buttons del-button ."
 			". .............. .......... .";
 	}
+
+	.add-bev {
+		justify-content: flex-end;
+	}
 }
