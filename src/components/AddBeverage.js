@@ -2,7 +2,6 @@ import React from 'react';
 import AddBeverageForm from './AddBeverageForm';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
-
 // import Tooltip from 'react-bootstrap/Tooltip';
 
 class AddBeverage extends React.Component {

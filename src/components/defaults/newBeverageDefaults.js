@@ -2,9 +2,9 @@ const newBeverageDefaults = {
     beverage_id: "",
     name: "",
     producer: "",
-    year: "",
-    size: "",
-    location: "",
+    year: (new Date()).getFullYear(),
+    size: "375 mL",
+    location: "Home",
     batch: "",
     bottle_date: "",
     qty: 0,
@@ -12,8 +12,8 @@ const newBeverageDefaults = {
     style: "",
     specific_style: "",
     for_trade: true,
-    trade_value: "",
-    aging_potential: "",
+    trade_value: 2,
+    aging_potential: 2,
     untappd: "",
     note: ""
 };

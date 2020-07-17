@@ -131,6 +131,7 @@ class AddBeverageForm extends React.Component {
 
     updateBeverageState(newData) {
         // Update local state when values change on a child attribute
+        console.log("Updating AddBevForm state:", newData)
         this.setState(newData)
     }
 
@@ -189,6 +190,7 @@ class AddBeverageForm extends React.Component {
                 </span>
                 <span className="add-bev-row">
                     <AttrStyle style={this.state.style}
+                               specific_style={this.state.specific_style}
                                forNewBeverage={false}
                                picklistData={this.state.styleValues}
                                handleChange={this.handleChange}

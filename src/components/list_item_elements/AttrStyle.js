@@ -3,8 +3,10 @@ import React, {useState} from 'react';
 function AttrStyle(props) {
     const [spStyleList, updateSpStyleListState] = useState(updateSpStyleList(props.style, true));
 
-    function updateSpStyleList(newStyle = "", initial = false) {
-        // Each Style has its own list of SpecificStyles, so update this dependent list when Style changes
+    function updateSpStyleList(newStyle = "", calledDuringInitialization = false) {
+        // Each Style has its own list of SpecificStyles
+        // Update this dependent list when Style changes
+        // console.log("Calling updateSpStyleList, newStyle =", newStyle, ", initial =", initial);
         if (// If picklistData is not empty
             props.picklistData.length > 0
             // ...and there's data for the current Style
@@ -13,18 +15,20 @@ function AttrStyle(props) {
             && !!props.picklistData.find(style => style.value === newStyle).dependent_values
             // ...then
         ) {
-            if (initial) {
-                return props.picklistData.find(style => style.value === newStyle).dependent_values
+            let output = props.picklistData.find(style => style.value === newStyle).dependent_values;
+            if (calledDuringInitialization) {
+                // Prevents an infinite loop since this function is called during init
+                return output
             }
             // Update local state with the list of values
-            updateSpStyleListState(props.picklistData.find(
-                style => style.value === newStyle).dependent_values)
+            updateSpStyleListState(output)
         } else {
-            if (initial) {
+            // picklistData is empty
+            if (calledDuringInitialization) {
                 return []
+            } else {
+                updateSpStyleListState([])
             }
-            // Update local state to null
-            updateSpStyleListState([])
         }
     }
 
@@ -33,6 +37,7 @@ function AttrStyle(props) {
         // Update Style & editMode on the parent beverage
         props.updateBeverageState({
             style: event.target.value,
+            specific_style: "",
             editMode: true
         })
 

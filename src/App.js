@@ -22,7 +22,7 @@ class App extends React.Component {
 
     componentDidMount() {
         this.getAllBeverages();
-        console.log("I am not cached.");
+        console.log("Cache is overrated.");
     }
 
     getAllBeverages() {
@@ -65,7 +65,7 @@ class App extends React.Component {
     }
 
     deleteBeverage(beverageId, beverageLocation) {
-        // console.log("Called deleteBeverage(" + beverageId + ", " + beverageLocation + ").");
+        console.log("Called deleteBeverage(" + beverageId + ", " + beverageLocation + ").");
         fetch(process.env.REACT_APP_BACKEND_URL + "/api/v1/cellar/" + beverageId
             + "/" + beverageLocation, {
             method: "DELETE"
