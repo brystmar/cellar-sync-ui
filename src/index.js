@@ -8,6 +8,7 @@ import './css/global_sass_variables.css';
 import './css/autocomplete.css';
 import './css/grid-templates.css';
 import './css/list_items.css';
+import './css/picklists.css';
 import './css/styles.css';
 
 ReactDOM.render(

@@ -125,7 +125,7 @@ class App extends React.Component {
                                          updateBeverageList={this.updateBeverageList}/>
                         </Route>
                         <Route path="/picklists">
-                            <PageTitle title={"Picklist Values"}/>
+                            <PageTitle title={"Picklist Values"} includeHr={false}/>
                             <PicklistValuesContainer data={this.state.picklistData}
                                                      updatePicklist={this.updatePicklist}/>
                         </Route>
