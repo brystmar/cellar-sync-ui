@@ -1,36 +1,38 @@
-.picklist-values-container {
-  display: grid;
-  grid-template: 1fr/1fr 2fr 3fr;
-  grid-gap: 2px;
-}
-.picklist-values-container .picklist-tab-nav-parent {
-  background: #e6f2ff;
+.picklist-container {
+  padding: 5px;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  padding: 2px;
-}
-.picklist-values-container button {
-  border: 1px red solid;
-  height: 2rem;
-  width: 5rem;
-}
-.picklist-values-container .picklist-tab-nav-child {
-  background: #69a4ff;
-}
-.picklist-values-container .picklist-tab-nav-child input {
-  border: 1px orange solid;
-  width: 80px;
-  height: 20px;
-}
-.picklist-values-container .picklist-tab-nav-grandchild {
-  background: #0068d5;
 }
 
-.picklist-tab-values {
-  border: 1px brown dotted;
-  width: 80px;
-  height: 20px;
+.picklist-values-container {
+  display: grid;
+  grid-template: 1fr/1fr 1fr 2fr;
+  grid-gap: 2px;
+}
+.picklist-values-container .picklist-nav-parent {
+  background: whitesmoke;
+  list-style: none;
+  text-align: center;
+}
+.picklist-values-container .picklist-nav-parent li:hover {
+  background: lightyellow;
+}
+.picklist-values-container .picklist-nav-parent a {
+  text-decoration: none;
+  width: 100%;
+  padding: 2px 10px;
+}
+.picklist-values-container .picklist-nav-child {
+  background: #e6f2ff;
+  justify-content: space-between;
+  width: max-content;
+}
+.picklist-values-container .picklist-nav-child input {
+  margin: 1px 0;
+}
+.picklist-values-container .picklist-nav-grandchild {
+  background: #c3deff;
 }
 
 /*# sourceMappingURL=picklists.css.map */

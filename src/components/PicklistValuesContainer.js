@@ -1,33 +1,34 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Route} from 'react-router-dom';
+import PicklistChild from './PicklistChild';
 
 function PicklistValuesContainer(props) {
     // TODO: Make the picklist container less janky
     // Build a list of the names of each picklist
-    let picklistNames = [], parentTabs = "", childTabData = "";
+    let picklistNames = [];
     for (let picklist of props.data) {
         picklistNames.push(picklist.list_name)
     }
 
-    if (props.data.length > 0) {
-        //             <PicklistValues data={picklistData.location}
-        //                             picklistName="location"
-        //                             updatePicklist={props.updatePicklist}/>
-        //             <StylePicklistValues data={picklistData.style}
-        //                                  picklistName="style"
-        //                                  updatePicklist={props.updatePicklist}/>
-
-        parentTabs = picklistNames.map(picklistName =>
-            <li key={picklistName}>
-                <NavLink to={`/picklists/${picklistName}`}>{picklistName}</NavLink>
-            </li>)
-    }
-
     return (
         <div className="picklist-values-container">
-            <ul className="picklist-tab-nav-parent">
-                {parentTabs}
-            </ul>
+            <div className="picklist-nav-parent picklist-container">
+                {picklistNames.map(picklistName =>
+                    <li key={picklistName}>
+                        <NavLink to={`/picklists/${picklistName}`}>{picklistName}</NavLink>
+                    </li>)}
+            </div>
+
+            <div className="picklist-nav-child picklist-container">
+                <Route exact path={`/picklists/:picklistName`}>
+                    <PicklistChild data={props.data}
+                                   updatePicklist={props.updatePicklist}/>
+                </Route>
+            </div>
+
+            <div className="picklist-nav-grandchild picklist-container">
+
+            </div>
         </div>
     )
 }
