@@ -2,16 +2,29 @@
 .picklist-values-container
   display: grid
   grid-template: 1fr / 1fr 2fr 3fr
+  grid-gap: 2px
   .picklist-tab-nav-parent
+    background: #e6f2ff
     display: flex
     flex-direction: column
+    justify-content: space-evenly
+    padding: 2px
+    //margin: 5px 5px
   button
     border: 1px red solid
     height: 2rem
     width: 5rem
 
-.picklist-tab-nav-child
-  input
-    border: 1px orange solid
-    width: 80px
-    height: 20px
+  .picklist-tab-nav-child
+    background: #69a4ff
+    input
+      border: 1px orange solid
+      width: 80px
+      height: 20px
+  .picklist-tab-nav-grandchild
+    background: #0068d5
+
+.picklist-tab-values
+  border: 1px brown dotted
+  width: 80px
+  height: 20px
