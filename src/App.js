@@ -68,6 +68,10 @@ class App extends React.Component {
 
     updatePicklist(picklistName = "", newPicklistData) {
         console.log("Called updatePicklist for", picklistName, newPicklistData);
+
+        // Re-assemble the picklist object with the modified field
+
+        // Update state with the new picklist object
         // this.setState({
         //     picklistData: newPicklistData
         // })

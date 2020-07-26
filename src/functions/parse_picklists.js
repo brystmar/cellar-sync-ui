@@ -5,7 +5,7 @@ function parse_picklists(picklistData, listName = "") {
     // Ensure we received data to parse
     if (typeof (picklistData) !== typeof ([]) || picklistData.length === 0) {
         console.log("picklistData is empty");
-        return {};
+        return [{value: ""}];
     }
 
     let i = 0, output = {};
@@ -23,7 +23,6 @@ function parse_picklists(picklistData, listName = "") {
         }
         i += 1;
     }
-
     return output;
 }
 

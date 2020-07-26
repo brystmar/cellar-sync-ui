@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/PicklistChildInput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PicklistChild.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PicklistChild.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PicklistValuesContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PicklistValuesContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/picklists.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/picklists.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/picklists.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/picklists.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/picklists.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/picklists.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functions/parse_picklists.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/parse_picklists.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,14 +136,7 @@
       <workItem from="1594417253711" duration="1067000" />
       <workItem from="1594943508283" duration="21000" />
       <workItem from="1594948702198" duration="1853000" />
-      <workItem from="1595004202983" duration="31509000" />
-    </task>
-    <task id="LOCAL-00002" summary="Proof of concept">
-      <created>1589171994498</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1589171994498</updated>
+      <workItem from="1595004202983" duration="40228000" />
     </task>
     <task id="LOCAL-00003" summary="Inventory table works &amp; rows expand">
       <created>1589515289527</created>
@@ -478,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595684777838</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Picklist nav is taking shape">
+      <created>1595688934212</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1595688934212</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +492,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
-    <MESSAGE value="Submitting works, but resetting the form doesn't clear all fields" />
     <MESSAGE value="Total app refactor to rename beer --&gt; beverage, brewery --&gt; producer" />
     <MESSAGE value="Single source of truth for values of all attributes" />
     <MESSAGE value="Delete button, plus better form/popover control overall" />
@@ -514,7 +516,8 @@
     <MESSAGE value="Added packages to support SASS" />
     <MESSAGE value="Stumbling my way through picklist custom nav buttons" />
     <MESSAGE value="Second-level nav for the picklists" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second-level nav for the picklists" />
+    <MESSAGE value="Picklist nav is taking shape" />
+    <option name="LAST_COMMIT_MESSAGE" value="Picklist nav is taking shape" />
   </component>
   <component name="WindowStateProjectService">
     <state x="557" y="422" width="392" height="228" key="#File_Watchers" timestamp="1595008469899">
@@ -539,11 +542,11 @@
     </state>
     <state x="845" y="333" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593060549811" />
     <state x="712" y="294" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.988@0.23.1680.988" timestamp="1590862298731" />
-    <state x="581" y="167" width="846" height="774" key="CommitChangelistDialog2" timestamp="1595684777593">
+    <state x="581" y="167" width="846" height="774" key="CommitChangelistDialog2" timestamp="1595688933998">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="690" y="181" width="924" height="850" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1594777782780" />
-    <state x="581" y="167" width="846" height="774" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1595684777593" />
+    <state x="581" y="167" width="846" height="774" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1595688933998" />
     <state x="581" y="161" key="CommitChangelistDialog2/0.23.1680.988@0.23.1680.988" timestamp="1590859493562" />
     <state x="547" y="340" width="695" height="665" key="EditFileWatcherDialog" timestamp="1595009040996">
       <screen x="0" y="23" width="1680" height="1027" />
@@ -636,11 +639,11 @@
     </state>
     <state x="-1230" y="350" width="540" height="524" key="StructurePopup/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1593048408608" />
     <state x="717" y="337" width="561" height="503" key="StructurePopup/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593271962321" />
-    <state x="596" y="292" key="Vcs.Push.Dialog.v2" timestamp="1595684780104">
+    <state x="596" y="292" key="Vcs.Push.Dialog.v2" timestamp="1595688936047">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1594777785095" />
-    <state x="596" y="292" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1595684780104" />
+    <state x="596" y="292" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1595688936047" />
     <state x="895" y="500" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591911897890">
       <screen x="0" y="23" width="1994" height="1129" />
     </state>

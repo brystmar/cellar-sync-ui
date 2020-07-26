@@ -1,45 +1,67 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useParams} from 'react-router-dom';
 import parse_picklists from '../functions/parse_picklists';
+import PicklistChildInput from "./PicklistChildInput";
 
 function PicklistChild(props) {
-    let {picklistName} = useParams(), childTabData = "";
+    let childListDisplay = "", grandchildData = "";
+    const {picklistChildName} = useParams();
+    const {picklistGrandchildName} = useParams();
 
-    if (props.data.length > 0) {
-        let picklistData = parse_picklists(props.data, picklistName);
-        console.log(picklistData, picklistData.length);
-
-        // Sort by display_order, when provided
-        if (Object.keys(picklistData[0]).indexOf('display_order') > -1) {
-            console.log("Sorting by display_order")
-            picklistData = picklistData.sort(
-                (a, b) => parseFloat(a.display_order) - parseFloat(b.display_order));
-        } else {
-            console.log("Sorting by value")
-            picklistData = picklistData.sort(
-                (a, b) => parseFloat(a.value) - parseFloat(b.value));
-        }
-
-        // Map to a structured input
-        console.log("Data to structure:", picklistData);
-        childTabData = picklistData.map(item =>
-            <input type="text"
-                   key={item.value}
-                   className="picklist-child-values"
-                   value={item.value}
-                   onChange={() => props.updatePicklist(picklistName, item.value)}
-            />);
+    function handleChange(index, newValue) {
+        console.log("Called handleChange(", index, newValue, ")");
+        let newPicklistData = childList;
+        console.log(newPicklistData);
+        newPicklistData[index].value = newValue;
+        console.log(newPicklistData);
+        updateChildList(newPicklistData);
     }
+
+    // Parse the data for this picklist
+    let picklistData = parse_picklists(props.data, picklistChildName);
+
+    // Sort by display_order (if provided), or by value.
+    if (Object.keys(picklistData[0]).indexOf('display_order') > -1) {
+        picklistData = picklistData.sort(
+            (a, b) => parseFloat(a.display_order) - parseFloat(b.display_order));
+    } else {
+        picklistData = picklistData.sort(
+            (a, b) => parseFloat(a.value) - parseFloat(b.value));
+    }
+
+    let [childList, updateChildList] = useState(picklistData);
+
+    // Map to a structured input
+    // console.log("Data to structure:", picklistData);
+    console.log(childList, picklistData);
+    childListDisplay = childList.map((item, index) =>
+        <PicklistChildInput index={index}
+                            name="inputPicklistChild"
+                            key={index}
+                            value={childList[index].value}
+                            updatePicklist={handleChange}
+        />);
 
     return (
         <>
-            {childTabData}
+            {childListDisplay}
+            <p onClick={() => {
+                console.log(childList, picklistData)
+                updateChildList(picklistData)
+            }}>
+                Click me to refresh & log
+            </p>
         </>
     )
 }
 
 PicklistChild.defaultProps = {
-    data: []
+    data: [
+        {
+            display_order: "",
+            value: ""
+        }
+    ]
 }
 
 export default PicklistChild;
