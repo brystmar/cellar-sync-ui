@@ -7,8 +7,8 @@ function PicklistChildInput(props) {
 
     return (
         <input type="text"
-               name="inputPicklistChild"
-               className="picklist-child-values"
+               name={props.name}
+               className={props.classToApply}
                value={props.value}
                onChange={handleChange}
         />
@@ -17,7 +17,9 @@ function PicklistChildInput(props) {
 
 PicklistChildInput.defaultProps = {
     index: 0,
-    value: ""
+    value: "",
+    classToApply: "",
+    name: ""
 }
 
 export default PicklistChildInput;

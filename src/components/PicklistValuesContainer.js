@@ -24,20 +24,10 @@ function PicklistValuesContainer(props) {
             </div>
 
             {/* Selectable options for each picklist */}
-            <div className="picklist-nav-child picklist-container">
-                <Route exact path={`/picklists/:picklistChildName`}>
-                    <PicklistChild data={props.data}
-                                   updatePicklist={props.updatePicklist}/>
-                </Route>
-            </div>
-
-            {/* Some lists have a second-level dependent picklist */}
-            <div className="picklist-nav-grandchild picklist-container">
-                <Route exact path={`/picklists/:picklistChildName/:picklistGrandchildName`}>
-                    <PicklistChild data={props.data}
-                                   updatePicklist={props.updatePicklist}/>
-                </Route>
-            </div>
+            <Route path={`/picklists/:picklistChildName`}>
+                <PicklistChild data={props.data}
+                               updatePicklist={props.updatePicklist}/>
+            </Route>
         </div>
     )
 }

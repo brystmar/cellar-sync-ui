@@ -1,20 +1,31 @@
 import React, {useState} from 'react';
-import {useParams} from 'react-router-dom';
+import {NavLink, Route, useParams} from 'react-router-dom';
 import parse_picklists from '../functions/parse_picklists';
 import PicklistChildInput from "./PicklistChildInput";
+import PicklistGrandchild from "./PicklistGrandchild";
 
 function PicklistChild(props) {
-    let childListDisplay = "", grandchildData = "";
+    let childListDisplay = [];
     const {picklistChildName} = useParams();
-    const {picklistGrandchildName} = useParams();
+    const [hidden, toggleHidden] = useState(true);
+    console.log("Child:", picklistChildName);
 
-    function handleChange(index, newValue) {
-        console.log("Called handleChange(", index, newValue, ")");
-        let newPicklistData = childList;
-        console.log(newPicklistData);
+    function handleChildChange(index, newValue) {
+        console.log("Called handleChildChange(", index, newValue, ")");
+        console.log(props.data);
+        let newPicklistData = parse_picklists(props.data, picklistChildName);
+        console.log("Before update:", newPicklistData);
         newPicklistData[index].value = newValue;
-        console.log(newPicklistData);
-        updateChildList(newPicklistData);
+        console.log("After update:", newPicklistData);
+    }
+
+    function handleGrandchildChange(index, newValue) {
+        console.log("Called handleGrandchildChange(", index, newValue, ")");
+        console.log(props.data);
+        let newPicklistData = parse_picklists(props.data, picklistChildName);
+        console.log("Before update:", newPicklistData);
+        newPicklistData[index].value = newValue;
+        console.log("After update:", newPicklistData);
     }
 
     // Parse the data for this picklist
@@ -29,28 +40,41 @@ function PicklistChild(props) {
             (a, b) => parseFloat(a.value) - parseFloat(b.value));
     }
 
-    let [childList, updateChildList] = useState(picklistData);
-
-    // Map to a structured input
-    // console.log("Data to structure:", picklistData);
-    console.log(childList, picklistData);
-    childListDisplay = childList.map((item, index) =>
-        <PicklistChildInput index={index}
-                            name="inputPicklistChild"
-                            key={index}
-                            value={childList[index].value}
-                            updatePicklist={handleChange}
-        />);
+    // console.log("PicklistData:", picklistData);
+    for (let i = 0; i < picklistData.length; i++) {
+        // Does this picklist have dependent values to render?
+        if (Object.keys(picklistData[i]).indexOf('dependent_values') > -1) {
+            childListDisplay.push(
+                <NavLink to={`/picklists/${picklistChildName}/${picklistData[i].value}`}
+                         key={picklistData[i].value}>
+                    {picklistData[i].value}
+                </NavLink>)
+        } else {
+            childListDisplay.push(
+                <PicklistChildInput name="inputPicklistChild"
+                                    value={picklistData[i].value}
+                                    key={picklistData[i].value}
+                                    classToApply="picklist-child-values"
+                                    onClick={() => toggleHidden(true)}
+                                    updatePicklist={handleChildChange}/>)
+        }
+    }
 
     return (
         <>
-            {childListDisplay}
-            <p onClick={() => {
-                console.log(childList, picklistData)
-                updateChildList(picklistData)
-            }}>
-                Click me to refresh & log
-            </p>
+            <div className="picklist-nav-child picklist-container">
+                {childListDisplay}
+            </div>
+
+            {/* Some lists have a second-level dependent picklist */}
+            <Route exact path={`/picklists/:picklistChildName/:picklistGrandchildName`}>
+                {picklistData.length > 0 ?
+                    <PicklistGrandchild
+                        values={picklistData}  // TODO: How to send only the specific picklist data?
+                        parentName={picklistChildName}
+                        updatePicklist={handleChildChange}/>
+                    : ""}
+            </Route>
         </>
     )
 }
