@@ -2,9 +2,8 @@ import React from 'react';
 import newBeverageDefaults from './defaults/newBeverageDefaults';
 import parse_picklists from '../functions/parse_picklists';
 import AttrSize from './list_item_elements/AttrSize';
-import AttrLocation from './list_item_elements/AttrLocation';
+import AttrLocationName from './list_item_elements/AttrLocationName';
 import AttrStyle from './list_item_elements/AttrStyle';
-import AttrYear from './list_item_elements/AttrYear';
 import AttrBottleDate from './list_item_elements/AttrBottleDate';
 import AttrBatch from './list_item_elements/AttrBatch';
 import AttrQty from './list_item_elements/AttrQty';
@@ -90,14 +89,7 @@ class AddBeverageForm extends React.Component {
         delete newBeverage['locationValues'];
 
         // Set the beverage_id
-        if (newBeverage.bottle_date && newBeverage.bottle_date !== "") {
-            // Prefer bottle_date over batch
-            newBeverage.beverage_id = newBeverage.producer + "_" + newBeverage.name + "_" +
-                newBeverage.size + "_" + newBeverage.year + "_" + newBeverage.bottle_date
-        } else {
-            newBeverage.beverage_id = newBeverage.producer + "_" + newBeverage.name + "_" +
-                newBeverage.size + "_" + newBeverage.year + "_" + newBeverage.batch
-        }
+        newBeverage.beverage_id = newBeverage.producer + ": " + newBeverage.name
 
         console.log("Adding beverage:", newBeverage);
 
@@ -151,11 +143,11 @@ class AddBeverageForm extends React.Component {
                               updateBeverageState={this.updateBeverageState}/>
                 </span>
                 <span className="add-bev-row">
-                    <AttrLocation location={this.state.location}
-                                  forNewBeverage={false}
-                                  picklistData={this.state.locationValues}
-                                  handleChange={this.handleChange}
-                                  updateBeverageState={this.updateBeverageState}/>
+                    <AttrLocationName location={this.state.location}
+                                      forNewBeverage={false}
+                                      picklistData={this.state.locationValues}
+                                      handleChange={this.handleChange}
+                                      updateBeverageState={this.updateBeverageState}/>
 
                     <AttrSize size={this.state.size}
                               forNewBeverage={false}
@@ -177,11 +169,6 @@ class AddBeverageForm extends React.Component {
                                     updateBeverageState={this.updateBeverageState}/>
 
                     <span className="input-year-batch-container">
-                        <AttrYear year={this.state.year}
-                                  forNewBeverage={false}
-                                  handleChange={this.handleChange}
-                                  updateBeverageState={this.updateBeverageState}/>
-
                         <AttrBatch batch={this.state.batch}
                                    forNewBeverage={false}
                                    handleChange={this.handleChange}

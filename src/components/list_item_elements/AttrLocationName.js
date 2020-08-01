@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AttrLocation(props) {
+function AttrLocationName(props) {
     let locations = props.picklistData.map(location =>
         <option key={location.value}>{location.value}</option>);
 
@@ -32,7 +32,7 @@ function AttrLocation(props) {
     )
 }
 
-AttrLocation.defaultProps = {
+AttrLocationName.defaultProps = {
     location: "",
     forNewBeverage: false,
     picklistData: {
@@ -41,4 +41,4 @@ AttrLocation.defaultProps = {
     }
 }
 
-export default AttrLocation;
+export default AttrLocationName;

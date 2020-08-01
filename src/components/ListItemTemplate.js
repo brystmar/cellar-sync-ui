@@ -1,11 +1,8 @@
 import React from 'react';
 // import {Form} from 'formik';
 import ActionButtons from './list_item_elements/ActionButtons';
-import AttrLocation from './list_item_elements/AttrLocation';
+import AttrLocationName from './list_item_elements/AttrLocationName';
 import AttrQty from './list_item_elements/AttrQty';
-import AttrBatch from './list_item_elements/AttrBatch';
-import AttrYear from './list_item_elements/AttrYear';
-import AttrBottleDate from './list_item_elements/AttrBottleDate';
 import AttrSize from './list_item_elements/AttrSize';
 import AttrStyle from './list_item_elements/AttrStyle';
 import AttrTrade from './list_item_elements/AttrTrade';
@@ -22,7 +19,6 @@ class ListItemTemplate extends React.Component {
             beverage_id: this.props.data.beverage_id,
             name: this.props.data.name,
             producer: this.props.data.producer,
-            year: this.props.data.year,
             size: this.props.data.size,
             location: this.props.data.location,
             batch: this.props.data.batch ? this.props.data.batch : "",
@@ -101,7 +97,6 @@ class ListItemTemplate extends React.Component {
             beverage_id: this.props.data.beverage_id,
             name: this.props.data.name,
             producer: this.props.data.producer,
-            year: this.props.data.year,
             size: this.props.data.size,
             location: this.props.data.location,
             batch: this.state.batch ? this.state.batch : "",
@@ -143,13 +138,6 @@ class ListItemTemplate extends React.Component {
             <form className="list-item-grid list-item-form"
                   onSubmit={this.handleSubmit}>
 
-                <span className="input-qty-container grid-cell">
-                    <AttrQty
-                        qty={this.state.qty}
-                        qty_cold={this.state.qty_cold}
-                        handleChange={this.handleChange}/>
-                </span>
-
                 <span className="input-styles-container grid-cell flex-to-row">
                     {/*TODO: Replace parse_picklists with an arrow function*/}
                     <AttrStyle
@@ -188,32 +176,6 @@ class ListItemTemplate extends React.Component {
                 </span>
 
                 {/*TODO: Replace parse_picklists with an arrow function*/}
-                <span className="input-size-loc-container grid-cell input-static">
-                    <AttrSize
-                        size={this.state.size}
-                        picklistData={parse_picklists(this.props.picklistData, "size")}
-                        handleChange={this.handleChange}/>
-
-                    <AttrLocation
-                        location={this.state.location}
-                        picklistData={parse_picklists(this.props.picklistData, "location")}
-                        handleChange={this.handleChange}/>
-                </span>
-
-                <span className="input-dates-container grid-cell input-static">
-                    <AttrBottleDate
-                        bottle_date={this.state.bottle_date ? this.state.bottle_date : ""}
-                        handleChange={this.handleChange}/>
-
-                    <AttrYear
-                        year={this.state.year}
-                        handleChange={this.handleChange}/>
-
-                    <AttrBatch
-                        batch={this.state.batch ? this.state.batch : ""}
-                        handleChange={this.handleChange}/>
-                </span>
-
                 <span className="button-container eli-buttons">
                     <ActionButtons
                         editMode={this.state.editMode}
@@ -235,28 +197,39 @@ class ListItemTemplate extends React.Component {
 }
 
 ListItemTemplate.defaultProps = {
+    picklistData: [],
     data: {
         beverage_id: "",
-        name: "",
         producer: "",
-        year: 0,
-        size: "",
-        location: "",
-        batch: 0,
-        bottle_date: "",
-        qty: 0,
-        qty_cold: 0,
+        name: "",
         style: "",
         specific_style: "",
-        for_trade: false,
-        trade_value: "",
         aging_potential: "",
-        untappd: "",
-        note: "",
+        trade_value: "",
+        qty_total: 0,
         date_added: 0,
-        last_modified: 0
-    },
-    picklistData: []
+        last_modified: 0,
+        vintages: [
+            {
+                bottle_date: "2020-01-01",
+                batch: 0,
+                size: "",
+                for_trade: false,
+                untappd: "",
+                note: "",
+                display_order: 0,
+                locations: [
+                    {
+                        name: "",
+                        qty: 0,
+                        qty_cold: 0,
+                        note: "",
+                        display_order: 0
+                    }
+                ]
+            }
+        ]
+    }
 }
 
 export default ListItemTemplate;

@@ -46,7 +46,7 @@ BeverageDataTable.defaultProps = {
     beverageList: [],
     picklistData: [],
     dtKey: 0,
-    paginationPerPage: 40,
+    paginationPerPage: 50,
     paginationRowsPerPageOptions: [25, 50, 75, 100, 200, 350, 500]
 }
 

@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
-import './styles/autocomplete.css'
+import './styles/autocomplete.styles'
 
 class Autocomplete extends React.Component {
     static propTypes = {

@@ -13,32 +13,24 @@ const beverageDataTableColumns = [
             minWidth: '225px',
             grow: 1.4
         },
-        {
-            name: 'Year',
-            selector: 'year',
-            sortable: true,
-            hide: 'sm',
-            maxWidth: '50px',
-            grow: 0
-        },
-        {
-            name: 'Location',
-            selector: 'location',
-            sortable: true,
-            hide: 'sm',
-            grow: 0
-        },
-        {
-            name: 'Size',
-            selector: 'size',
-            sortable: true,
-            hide: 'md',
-            maxWidth: '55px',
-            grow: 0
-        },
+        // {
+        //     name: 'Locations',
+        //     selector: 'location',
+        //     sortable: true,
+        //     hide: 'sm',
+        //     grow: 0
+        // },
+        // {
+        //     name: 'Size',
+        //     selector: 'size',
+        //     sortable: true,
+        //     hide: 'md',
+        //     maxWidth: '55px',
+        //     grow: 0
+        // },
         {
             name: 'Qty',
-            selector: 'qty',
+            selector: 'qty_total',
             sortable: true,
             hide: 'md',
             maxWidth: '25px',
