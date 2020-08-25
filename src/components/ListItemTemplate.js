@@ -1,9 +1,5 @@
 import React from 'react';
-// import {Form} from 'formik';
 import ActionButtons from './list_item_elements/ActionButtons';
-import AttrLocationName from './list_item_elements/AttrLocationName';
-import AttrQty from './list_item_elements/AttrQty';
-import AttrSize from './list_item_elements/AttrSize';
 import AttrStyle from './list_item_elements/AttrStyle';
 import AttrTrade from './list_item_elements/AttrTrade';
 import AttrTradeValue from './list_item_elements/AttrTradeValue';

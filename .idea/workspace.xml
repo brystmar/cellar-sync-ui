@@ -2,37 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="Dependent picklist display works, but it's fragile">
-      <change afterPath="$PROJECT_DIR$/src/components/list_item_elements/LocationContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/list_item_elements/LocationsSection.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/list_item_elements/VintageContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/list_item_elements/VintagesSection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/terminal.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddBeverageForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddBeverageForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AutoCompleteEx.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AutoCompleteEx.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BeverageDataTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BeverageDataTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ListItemTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItemTemplate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/defaults/beverageDataTableColumns.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/defaults/beverageDataTableColumns.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/defaults/newBeverageDefaults.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/defaults/newBeverageDefaults.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrLocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list_item_elements/AttrLocationName.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list_item_elements/AttrYear.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/autocomplete.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/autocomplete.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/autocomplete.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/autocomplete.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/autocomplete.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/autocomplete.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/global_sass_variables.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global_sass_variables.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/global_sass_variables.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global_sass_variables.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/global_sass_variables.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global_sass_variables.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/grid-templates.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/grid-templates.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/list_items.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/list_items.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/list_items.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/list_items.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/list_items.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/list_items.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/picklists.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/picklists.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/picklists.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/picklists.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/picklists.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/picklists.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/styles.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/autocomplete.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/autocomplete.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/global_sass_variables.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global_sass_variables.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/global_sass_variables.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global_sass_variables.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/picklists.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/picklists.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/styles.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +42,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="JupyterTrust" id="4dae4c61-adb1-4288-93a6-7d0d0c4bfec5" />
+  <component name="JupyterTrust" id="d8b031a3-e4c0-4c1d-815d-42de299f4606" />
   <component name="ProjectId" id="1Zp25BTQjoxbt2ru1qlvx4IXOtl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -168,6 +147,8 @@
       <workItem from="1595004202983" duration="54215000" />
       <workItem from="1596144661992" duration="457000" />
       <workItem from="1596145141666" duration="6156000" />
+      <workItem from="1596253638162" duration="338000" />
+      <workItem from="1596746548814" duration="8471000" />
     </task>
     <task id="LOCAL-00005" summary="Created components for each ELI attribute">
       <created>1589782047442</created>
