@@ -149,6 +149,9 @@ sketch
 # production
 /build
 
+# Local SSL
+/certs
+
 # misc
 **/.env
 .env
@@ -161,3 +164,4 @@ sketch
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/certs/

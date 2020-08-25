@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="Dependent picklist display works, but it's fragile">
+    <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="Added SSL support (hopefully?), plus some minor cleanup">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListItemTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItemTemplate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/autocomplete.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/autocomplete.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global_sass_variables.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global_sass_variables.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global_sass_variables.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global_sass_variables.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/picklists.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/picklists.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/styles.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,14 +158,9 @@
       <workItem from="1596144661992" duration="457000" />
       <workItem from="1596145141666" duration="6156000" />
       <workItem from="1596253638162" duration="338000" />
-      <workItem from="1596746548814" duration="8471000" />
-    </task>
-    <task id="LOCAL-00005" summary="Created components for each ELI attribute">
-      <created>1589782047442</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1589782047442</updated>
+      <workItem from="1596746548814" duration="8520000" />
+      <workItem from="1598391123008" duration="43000" />
+      <workItem from="1598391170379" duration="157000" />
     </task>
     <task id="LOCAL-00006" summary="Icon-based values now toggle when clicked">
       <created>1589950616139</created>
@@ -493,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595804191367</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Added SSL support (hopefully?), plus some minor cleanup">
+      <created>1598390991253</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1598390991253</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -502,12 +514,23 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
-    <MESSAGE value="Delete button, plus better form/popover control overall" />
     <MESSAGE value="Fixed missing argument on PUT request.  Also now explicitly setting beverage attribute defaults." />
     <MESSAGE value="PUT finally works.  Squashin' bugs." />
     <MESSAGE value="Flexbox to the rescue &amp; migrating stylesheets to SASS" />
@@ -532,7 +555,8 @@
     <MESSAGE value="Picklist nav is taking shape" />
     <MESSAGE value="About to change PicklistChild into a Container" />
     <MESSAGE value="Dependent picklist display works, but it's fragile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dependent picklist display works, but it's fragile" />
+    <MESSAGE value="Added SSL support (hopefully?), plus some minor cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added SSL support (hopefully?), plus some minor cleanup" />
   </component>
   <component name="WindowStateProjectService">
     <state x="557" y="422" width="392" height="228" key="#File_Watchers" timestamp="1595008469899">
@@ -657,9 +681,10 @@
     </state>
     <state x="-1230" y="350" width="540" height="524" key="StructurePopup/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1593048408608" />
     <state x="717" y="337" width="561" height="503" key="StructurePopup/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593271962321" />
-    <state x="596" y="292" key="Vcs.Push.Dialog.v2" timestamp="1595804193622">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="-1239" y="331" key="Vcs.Push.Dialog.v2" timestamp="1598390994043">
+      <screen x="-1920" y="23" width="1920" height="1177" />
     </state>
+    <state x="-1239" y="331" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1598390994043" />
     <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1594777785095" />
     <state x="596" y="292" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1595804193622" />
     <state x="895" y="500" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591911897890">
