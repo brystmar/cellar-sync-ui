@@ -19,9 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="Added SSL support (hopefully?), plus some minor cleanup">
+    <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="Updated gitignore for local certs">
+      <change afterPath="$PROJECT_DIR$/src/normalize.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cellar-sync-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cellar-sync-ui.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +36,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="Sass File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -71,7 +76,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="Sass" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.stylelint" value="project" />
@@ -160,14 +165,9 @@
       <workItem from="1596253638162" duration="338000" />
       <workItem from="1596746548814" duration="8520000" />
       <workItem from="1598391123008" duration="43000" />
-      <workItem from="1598391170379" duration="157000" />
-    </task>
-    <task id="LOCAL-00006" summary="Icon-based values now toggle when clicked">
-      <created>1589950616139</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1589950616139</updated>
+      <workItem from="1598391170379" duration="1661000" />
+      <workItem from="1598568782532" duration="104000" />
+      <workItem from="1598646030812" duration="340000" />
     </task>
     <task id="LOCAL-00007" summary="Updating listitem components to toggle for edits">
       <created>1590122186669</created>
@@ -505,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598390991253</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Updated gitignore for local certs">
+      <created>1598391340539</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1598391340539</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -531,7 +538,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
-    <MESSAGE value="Fixed missing argument on PUT request.  Also now explicitly setting beverage attribute defaults." />
     <MESSAGE value="PUT finally works.  Squashin' bugs." />
     <MESSAGE value="Flexbox to the rescue &amp; migrating stylesheets to SASS" />
     <MESSAGE value="Need to refactor AttrStyle" />
@@ -556,7 +562,8 @@
     <MESSAGE value="About to change PicklistChild into a Container" />
     <MESSAGE value="Dependent picklist display works, but it's fragile" />
     <MESSAGE value="Added SSL support (hopefully?), plus some minor cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added SSL support (hopefully?), plus some minor cleanup" />
+    <MESSAGE value="Updated gitignore for local certs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated gitignore for local certs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="557" y="422" width="392" height="228" key="#File_Watchers" timestamp="1595008469899">
@@ -589,9 +596,10 @@
     <state x="563" y="167" width="846" height="774" key="CommitChangelistDialog2/0.23.1628.1027@0.23.1628.1027" timestamp="1596241731396" />
     <state x="581" y="167" width="846" height="774" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1595804191150" />
     <state x="581" y="161" key="CommitChangelistDialog2/0.23.1680.988@0.23.1680.988" timestamp="1590859493562" />
-    <state x="547" y="340" width="695" height="665" key="EditFileWatcherDialog" timestamp="1595009040996">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="-1295" y="386" width="695" height="665" key="EditFileWatcherDialog" timestamp="1598646034604">
+      <screen x="-1920" y="23" width="1920" height="1177" />
     </state>
+    <state x="-1295" y="386" key="EditFileWatcherDialog/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1598646034604" />
     <state x="649" y="372" width="695" height="665" key="EditFileWatcherDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1592789330559" />
     <state x="547" y="340" width="695" height="665" key="EditFileWatcherDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1595009040996" />
     <state width="1603" height="239" key="GridCell.Tab.0.bottom" timestamp="1595126707380">
@@ -671,9 +679,10 @@
     </state>
     <state x="705" y="250" key="RollbackChangesDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1592796666015" />
     <state x="594" y="229" key="RollbackChangesDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1595795057757" />
-    <state x="420" y="208" key="SettingsEditor" timestamp="1595126635657">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="-1440" y="235" key="SettingsEditor" timestamp="1598646040830">
+      <screen x="-1920" y="23" width="1920" height="1177" />
     </state>
+    <state x="-1440" y="235" key="SettingsEditor/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1598646040830" />
     <state x="498" y="226" key="SettingsEditor/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1592789331051" />
     <state x="420" y="208" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1595126635657" />
     <state x="717" y="337" width="561" height="503" key="StructurePopup" timestamp="1593271962321">
@@ -681,10 +690,10 @@
     </state>
     <state x="-1230" y="350" width="540" height="524" key="StructurePopup/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1593048408608" />
     <state x="717" y="337" width="561" height="503" key="StructurePopup/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593271962321" />
-    <state x="-1239" y="331" key="Vcs.Push.Dialog.v2" timestamp="1598390994043">
+    <state x="-1239" y="331" key="Vcs.Push.Dialog.v2" timestamp="1598391343271">
       <screen x="-1920" y="23" width="1920" height="1177" />
     </state>
-    <state x="-1239" y="331" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1598390994043" />
+    <state x="-1239" y="331" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1598391343271" />
     <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1594777785095" />
     <state x="596" y="292" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1595804193622" />
     <state x="895" y="500" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591911897890">

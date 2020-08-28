@@ -1,11 +1,12 @@
 _UI for the [cellar sync](https://github.com/brystmar/cellar-sync/) project._
 
 # Cellar Sync
-Basic inventory management for bored tech workers with unwieldy cellars of beer, wine, mead, and/or cider.
+Basic inventory management for bored tech workers with unwieldy cellars of beer, wine, mead, and/or cider.  But mostly [lambic](https://www.lambic.info/) ;)
 
 
-# Attribution
-Icons from:
+### Attribution
+Using icons from:
+* [FavIcon.io](https://favicon.io/)
 * [Font Awesome](https://fontawesome.com/license)
 * David from [The Noun Project](https://thenounproject.com/)
 * Nikita Kozin from [The Noun Project](https://thenounproject.com/)

@@ -57,16 +57,6 @@ Temporary Items
 .idea/**/gradle.xml
 .idea/**/libraries
 
-# Gradle and Maven with auto-import
-# When using Gradle or Maven with auto-import, you should exclude module files,
-# since they will be recreated, and may cause churn.  Uncomment if using
-# auto-import.
-# .idea/modules.xml
-# .idea/*.iml
-# .idea/modules
-# *.iml
-# *.ipr
-
 # CMake
 cmake-build-*/
 
@@ -150,7 +140,8 @@ sketch
 /build
 
 # Local SSL
-/certs
+/.cert/
+/.cert
 
 # misc
 **/.env
@@ -164,4 +155,3 @@ sketch
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-/certs/
