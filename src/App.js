@@ -6,12 +6,8 @@ import BeverageDataTable from './components/BeverageDataTable';
 import PageTitle from './components/PageTitle';
 import Footer from './components/Footer';
 import AddBeverage from './components/AddBeverage';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/global_sass_variables.sass';
-import './styles/autocomplete.sass';
+import 'bootstrap/dist/css/bootstrap.min.css';  // TODO: Completely remove bootstrap
 import './styles/grid-templates.css';
-import './styles/list_items.sass';
-import './styles/picklists.sass';
 import './styles/styles.sass';
 
 class App extends React.Component {
