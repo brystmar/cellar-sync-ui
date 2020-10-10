@@ -19,23 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="Added normalize.css">
+    <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="Better CSS/SASS organization">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/normalize.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/autocomplete.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/autocomplete.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/autocomplete.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global_sass_variables.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global_sass_variables.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global_sass_variables.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/list_items.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/list_items.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/list_items.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/picklists.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/picklists.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/picklists.sass" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/styles.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.sass" afterDir="false" />
@@ -179,14 +164,10 @@
       <workItem from="1598391123008" duration="43000" />
       <workItem from="1598391170379" duration="1661000" />
       <workItem from="1598568782532" duration="104000" />
-      <workItem from="1598646030812" duration="1501000" />
-    </task>
-    <task id="LOCAL-00008" summary="Working on support for picklists">
-      <created>1590166894314</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1590166894314</updated>
+      <workItem from="1598646030812" duration="2975000" />
+      <workItem from="1598721716215" duration="1332000" />
+      <workItem from="1601877731616" duration="614000" />
+      <workItem from="1602129544387" duration="282000" />
     </task>
     <task id="LOCAL-00009" summary="editMode toggles work for all list item elements">
       <created>1590432620278</created>
@@ -524,7 +505,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598646429979</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Better CSS/SASS organization">
+      <created>1598647578969</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1598647578970</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -550,7 +538,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
-    <MESSAGE value="Flexbox to the rescue &amp; migrating stylesheets to SASS" />
     <MESSAGE value="Need to refactor AttrStyle" />
     <MESSAGE value="First attempt to refactor AttrStyle" />
     <MESSAGE value="Alignment &amp; spacing for header/footer" />
@@ -575,7 +562,8 @@
     <MESSAGE value="Added SSL support (hopefully?), plus some minor cleanup" />
     <MESSAGE value="Updated gitignore for local certs" />
     <MESSAGE value="Added normalize.css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added normalize.css" />
+    <MESSAGE value="Better CSS/SASS organization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Better CSS/SASS organization" />
   </component>
   <component name="WindowStateProjectService">
     <state x="557" y="422" width="392" height="228" key="#File_Watchers" timestamp="1595008469899">
@@ -702,10 +690,10 @@
     </state>
     <state x="-1230" y="350" width="540" height="524" key="StructurePopup/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1593048408608" />
     <state x="717" y="337" width="561" height="503" key="StructurePopup/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593271962321" />
-    <state x="-1239" y="331" key="Vcs.Push.Dialog.v2" timestamp="1598646433152">
+    <state x="-1239" y="331" key="Vcs.Push.Dialog.v2" timestamp="1598647581636">
       <screen x="-1920" y="23" width="1920" height="1177" />
     </state>
-    <state x="-1239" y="331" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1598646433152" />
+    <state x="-1239" y="331" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1598647581636" />
     <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1594777785095" />
     <state x="596" y="292" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1595804193622" />
     <state x="895" y="500" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591911897890">

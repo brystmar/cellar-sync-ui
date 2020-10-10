@@ -52,19 +52,19 @@ $border4: 1px solid darkgreen
 
 
 /*** Global Tags ***/
-*
+*,
+*::before,
+*::after
   box-sizing: border-box
 
-html
-  font-size: 16px
-
 body
-  margin: 0 auto
   font-family: $font-stack-body
-  font-weight: 400
+  font-variant: slashed-zero
   font-size: 16px
+  font-weight: 400
   color: $color-on-background
-  overflow-x: hidden
+  margin: 0 auto
+  //overflow-x: hidden
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   //background-image: url('background/moroccan-flower.png')
@@ -379,8 +379,7 @@ select
   min-width: min-content
   margin: 0.1em
   img
-    margin: 0
-    margin-right: 12px
+    margin: 0 12px 0 0
     width: 100%
     border: 1px solid red
     max-height: 18px  // skinny icons like € can get really tall
@@ -486,10 +485,10 @@ select
   grid-area: action-buttons
   display: flex
   align-items: center
-  margin: 0.2rem
-  padding: 0 0.2rem
+  margin: 0.2em
+  padding: 0 0.2em
   .btn-reset-outline
-    margin-right: 0.2rem
+    margin-right: 0.2em
 
 
 /*** Picklists ***/
