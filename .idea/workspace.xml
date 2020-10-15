@@ -19,11 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="Better CSS/SASS organization">
+    <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="Misc lingering layout updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/styles.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/styles.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,14 +164,9 @@
       <workItem from="1598646030812" duration="2975000" />
       <workItem from="1598721716215" duration="1332000" />
       <workItem from="1601877731616" duration="614000" />
-      <workItem from="1602129544387" duration="282000" />
-    </task>
-    <task id="LOCAL-00009" summary="editMode toggles work for all list item elements">
-      <created>1590432620278</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1590432620278</updated>
+      <workItem from="1602129544387" duration="446000" />
+      <workItem from="1602300062181" duration="207000" />
+      <workItem from="1602721941560" duration="23000" />
     </task>
     <task id="LOCAL-00010" summary="Working on the picklist page">
       <created>1590468066770</created>
@@ -512,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598647578970</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Misc lingering layout updates">
+      <created>1602299685368</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1602299685368</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TerminalProjectNonSharedOptionsProvider">
@@ -538,7 +537,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
-    <MESSAGE value="Need to refactor AttrStyle" />
     <MESSAGE value="First attempt to refactor AttrStyle" />
     <MESSAGE value="Alignment &amp; spacing for header/footer" />
     <MESSAGE value="Fixed primary content formatting" />
@@ -563,67 +561,51 @@
     <MESSAGE value="Updated gitignore for local certs" />
     <MESSAGE value="Added normalize.css" />
     <MESSAGE value="Better CSS/SASS organization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Better CSS/SASS organization" />
+    <MESSAGE value="Misc lingering layout updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Misc lingering layout updates" />
   </component>
   <component name="WindowStateProjectService">
     <state x="557" y="422" width="392" height="228" key="#File_Watchers" timestamp="1595008469899">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="557" y="422" width="392" height="228" key="#File_Watchers/0.23.1680.1027@0.23.1680.1027" timestamp="1595008469899" />
-    <state x="643" y="235" key="#Plugins" timestamp="1592269437268">
-      <screen x="0" y="23" width="1994" height="1129" />
-    </state>
-    <state x="643" y="235" key="#Plugins/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1592269437267" />
-    <state x="680" y="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591029950426">
-      <screen x="0" y="23" width="1994" height="1129" />
-    </state>
-    <state x="680" y="396" key="#com.intellij.fileTypes.FileTypeChooser/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1591029950426" />
     <state x="396" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595126893501">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="470" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593364183199" />
     <state x="396" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1595126893501" />
     <state x="690" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1596240676371">
       <screen x="0" y="23" width="1628" height="1027" />
     </state>
-    <state x="845" y="333" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593060549811" />
     <state x="690" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1628.1027@0.23.1628.1027" timestamp="1596240676371" />
-    <state x="712" y="294" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1680.988@0.23.1680.988" timestamp="1590862298731" />
     <state x="563" y="167" width="846" height="774" key="CommitChangelistDialog2" timestamp="1596241731396">
       <screen x="0" y="23" width="1628" height="1027" />
     </state>
     <state x="690" y="181" width="924" height="850" key="CommitChangelistDialog2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1594777782780" />
     <state x="563" y="167" width="846" height="774" key="CommitChangelistDialog2/0.23.1628.1027@0.23.1628.1027" timestamp="1596241731396" />
     <state x="581" y="167" width="846" height="774" key="CommitChangelistDialog2/0.23.1680.1027@0.23.1680.1027" timestamp="1595804191150" />
-    <state x="581" y="161" key="CommitChangelistDialog2/0.23.1680.988@0.23.1680.988" timestamp="1590859493562" />
     <state x="-1295" y="386" width="695" height="665" key="EditFileWatcherDialog" timestamp="1598646034604">
       <screen x="-1920" y="23" width="1920" height="1177" />
     </state>
     <state x="-1295" y="386" key="EditFileWatcherDialog/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1598646034604" />
-    <state x="649" y="372" width="695" height="665" key="EditFileWatcherDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1592789330559" />
     <state x="547" y="340" width="695" height="665" key="EditFileWatcherDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1595009040996" />
     <state width="1603" height="239" key="GridCell.Tab.0.bottom" timestamp="1595126707380">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1950" height="313" key="GridCell.Tab.0.bottom/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590698023764" />
     <state width="1358" height="330" key="GridCell.Tab.0.bottom/0.23.1628.1027@0.23.1628.1027" timestamp="1595004523563" />
     <state width="1603" height="239" key="GridCell.Tab.0.bottom/0.23.1680.1027@0.23.1680.1027" timestamp="1595126707380" />
     <state width="1603" height="239" key="GridCell.Tab.0.center" timestamp="1595126707380">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1950" height="313" key="GridCell.Tab.0.center/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590698023764" />
     <state width="1358" height="330" key="GridCell.Tab.0.center/0.23.1628.1027@0.23.1628.1027" timestamp="1595004523559" />
     <state width="1603" height="239" key="GridCell.Tab.0.center/0.23.1680.1027@0.23.1680.1027" timestamp="1595126707380" />
     <state width="1603" height="239" key="GridCell.Tab.0.left" timestamp="1595126707380">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1950" height="313" key="GridCell.Tab.0.left/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590698023763" />
     <state width="1358" height="330" key="GridCell.Tab.0.left/0.23.1628.1027@0.23.1628.1027" timestamp="1595004523557" />
     <state width="1603" height="239" key="GridCell.Tab.0.left/0.23.1680.1027@0.23.1680.1027" timestamp="1595126707380" />
     <state width="1603" height="239" key="GridCell.Tab.0.right" timestamp="1595126707380">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state width="1950" height="313" key="GridCell.Tab.0.right/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590698023764" />
     <state width="1358" height="330" key="GridCell.Tab.0.right/0.23.1628.1027@0.23.1628.1027" timestamp="1595004523562" />
     <state width="1603" height="239" key="GridCell.Tab.0.right/0.23.1680.1027@0.23.1680.1027" timestamp="1595126707380" />
     <state width="1603" height="239" key="GridCell.Tab.1.bottom" timestamp="1595126707381">
@@ -677,41 +659,17 @@
     <state x="594" y="229" key="RollbackChangesDialog" timestamp="1595795057757">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="705" y="250" key="RollbackChangesDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1592796666015" />
     <state x="594" y="229" key="RollbackChangesDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1595795057757" />
     <state x="-1440" y="235" key="SettingsEditor" timestamp="1598646040830">
       <screen x="-1920" y="23" width="1920" height="1177" />
     </state>
     <state x="-1440" y="235" key="SettingsEditor/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1598646040830" />
-    <state x="498" y="226" key="SettingsEditor/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1592789331051" />
     <state x="420" y="208" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1595126635657" />
-    <state x="717" y="337" width="561" height="503" key="StructurePopup" timestamp="1593271962321">
-      <screen x="0" y="23" width="1994" height="1129" />
-    </state>
-    <state x="-1230" y="350" width="540" height="524" key="StructurePopup/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1593048408608" />
-    <state x="717" y="337" width="561" height="503" key="StructurePopup/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1593271962321" />
-    <state x="-1239" y="331" key="Vcs.Push.Dialog.v2" timestamp="1598647581636">
+    <state x="-1239" y="331" key="Vcs.Push.Dialog.v2" timestamp="1602300069093">
       <screen x="-1920" y="23" width="1920" height="1177" />
     </state>
-    <state x="-1239" y="331" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1598647581636" />
+    <state x="-1239" y="331" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@-1920.23.1920.1177" timestamp="1602300069093" />
     <state x="707" y="319" key="Vcs.Push.Dialog.v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1594777785095" />
     <state x="596" y="292" key="Vcs.Push.Dialog.v2/0.23.1680.1027@0.23.1680.1027" timestamp="1595804193622" />
-    <state x="895" y="500" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591911897890">
-      <screen x="0" y="23" width="1994" height="1129" />
-    </state>
-    <state x="895" y="500" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1591911897890" />
-    <state x="796" y="471" key="scopes" timestamp="1592789068891">
-      <screen x="0" y="23" width="1994" height="1129" />
-    </state>
-    <state x="796" y="471" key="scopes/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1592789068891" />
-    <state x="662" y="252" width="670" height="676" key="search.everywhere.popup" timestamp="1592795507465">
-      <screen x="0" y="23" width="1994" height="1129" />
-    </state>
-    <state x="662" y="252" width="670" height="676" key="search.everywhere.popup/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1592795507465" />
-    <state x="558" y="223" width="670" height="592" key="search.everywhere.popup/0.23.1680.988@0.23.1680.988" timestamp="1590902875174" />
-    <state x="727" y="466" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1590985235568">
-      <screen x="0" y="23" width="1994" height="1129" />
-    </state>
-    <state x="727" y="466" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/-1920.23.1920.1177/0.23.1994.1129@0.23.1994.1129" timestamp="1590985235568" />
   </component>
 </project>
