@@ -18,3 +18,5 @@ Icons from:
 * Gabriele Malaspina from [The Noun Project](https://thenounproject.com/)
 * nauraicon from [The Noun Project](https://thenounproject.com/)
 * Pixel Perfect from [Flat Icon](https://www.flaticon.com/authors/pixel-perfect)
+* Simple background vector pattern by [Gabriel R](https://codepen.io/byrass/pen/JYrxLX)
+* Floral background vector created by Harryarts from [Freepik](https://www.freepik.com/vectors/background)

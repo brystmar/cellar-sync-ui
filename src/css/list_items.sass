@@ -1,22 +1,32 @@
+@import variables
+
 // Globals
 input,
 button
   font-family: inherit
+  outline: transparent
+.btn-del
+  display: none
 
 .list-item-grid
   margin: 0
-  background: lightcyan
+  border-radius: 0 0 6px 6px
   display: grid
   grid-gap: 3px
+  background: linear-gradient(135deg, black 25%, transparent 25%) -50px 0, linear-gradient(225deg, black 25%, transparent 25%) -50px 0, linear-gradient(315deg, black 25%, transparent 25%), linear-gradient(45deg, black 25%, transparent 25%)
+  background-size: 0.31em 0.31em
+  background-color: #343434
 
 .grid-cell
+  opacity: 1
   display: flex
-  background: lightyellow
+  background: whitesmoke
   flex-direction: column
   align-content: space-between
   //border: 1px solid gray
   border-radius: 3px
   margin: 0 0.1em
+  z-index: 10
 
 .list-item-key
   //border: 1px dashed saddlebrown
@@ -25,10 +35,9 @@ button
   min-width: min-content
   margin: 0.1em
   img
-    margin: 0
-    margin-right: 12px
+    margin: 0 0.2em 0 0
     width: 100%
-    border: 1px solid red
+    //border: 1px solid red
     max-height: 18px  // skinny icons like € can get really tall
   label
     margin: 0
@@ -58,6 +67,7 @@ button
   align-items: center
   margin: 0.1em
   border: 1px dashed blue
+  border-radius: 6px
 
 .clickable-toggle
   img

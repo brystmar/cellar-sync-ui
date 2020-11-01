@@ -4,12 +4,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './css/global_sass_variables.css';
-import './css/autocomplete.css';
+import './css/autocomplete.sass';
 import './css/grid-templates.css';
-import './css/list_items.css';
-import './css/picklists.css';
-import './css/styles.css';
+import './css/list_items.sass';
+import './css/picklists.sass';
+import './css/styles.sass';
 
 ReactDOM.render(
     <Router>
