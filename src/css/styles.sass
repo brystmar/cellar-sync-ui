@@ -172,7 +172,7 @@ footer
 .add-beverage-form-group
   margin: 5px 5px 10px 5px
 
-// Form Controls
+// Buttons
 .btn
   height: 2.5em
   text-align: center
@@ -235,3 +235,14 @@ footer
   border: 2px solid $color-danger-light
 .btn-danger:active
   border: 2px solid $color-danger-dark
+
+// Inputs
+input,
+select
+  padding: 0.35em 0.65em
+  border: 1px solid $color-outline
+  background-color: $color-input-background
+
+@media (max-width: 899px)
+  .btn-add-floating
+    display: none

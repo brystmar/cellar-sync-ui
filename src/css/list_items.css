@@ -4,10 +4,6 @@ button {
   outline: transparent;
 }
 
-.btn-del {
-  display: none;
-}
-
 .list-item-grid {
   margin: 0;
   border-radius: 0 0 6px 6px;
@@ -21,7 +17,7 @@ button {
 .grid-cell {
   opacity: 1;
   display: flex;
-  background: whitesmoke;
+  background: #f0f0f0;
   flex-direction: column;
   align-content: space-between;
   border-radius: 3px;
@@ -61,7 +57,6 @@ button {
   display: flex;
   align-items: center;
   margin: 0.1em;
-  border: 1px dashed blue;
   border-radius: 6px;
 }
 
@@ -76,7 +71,6 @@ button {
 .input-group {
   display: grid;
   grid-template: 1fr/3fr 7fr;
-  margin: auto;
 }
 
 .input-qty-container {
@@ -100,7 +94,6 @@ button {
   grid-area: toggles;
   display: flex;
   flex-direction: column;
-  margin: 0;
 }
 
 .input-size-loc-container {
@@ -127,17 +120,22 @@ button {
 
 .button-container {
   grid-area: action-buttons;
-  display: flex;
-  align-items: center;
   margin: 0.2rem;
   padding: 0 0.2rem;
 }
 .button-container .btn-reset-outline {
   margin-right: 0.2rem;
 }
+.button-container .btn,
+.button-container .btn-del {
+  outline: none;
+  border: 2px solid transparent;
+}
 
 .del-button {
   grid-area: del-button;
+  display: flex;
+  margin-right: 0.25em;
   justify-content: flex-end;
 }
 

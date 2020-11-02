@@ -8,7 +8,7 @@ function PicklistChild(props) {
     let childListDisplay = [];
     const {picklistChildName} = useParams();
     const [hidden, toggleHidden] = useState(true);
-    console.log("Child:", picklistChildName);
+    console.log("Child:", picklistChildName, hidden);
 
     function handleChildChange(index, newValue) {
         console.log("Called handleChildChange(", index, newValue, ")");
@@ -19,14 +19,14 @@ function PicklistChild(props) {
         console.log("After update:", newPicklistData);
     }
 
-    function handleGrandchildChange(index, newValue) {
-        console.log("Called handleGrandchildChange(", index, newValue, ")");
-        console.log(props.data);
-        let newPicklistData = parse_picklists(props.data, picklistChildName);
-        console.log("Before update:", newPicklistData);
-        newPicklistData[index].value = newValue;
-        console.log("After update:", newPicklistData);
-    }
+    // function handleGrandchildChange(index, newValue) {
+    //     console.log("Called handleGrandchildChange(", index, newValue, ")");
+    //     console.log(props.data);
+    //     let newPicklistData = parse_picklists(props.data, picklistChildName);
+    //     console.log("Before update:", newPicklistData);
+    //     newPicklistData[index].value = newValue;
+    //     console.log("After update:", newPicklistData);
+    // }
 
     // Parse the data for this picklist
     let picklistData = parse_picklists(props.data, picklistChildName);

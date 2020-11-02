@@ -23,7 +23,7 @@ class App extends React.Component {
 
     componentDidMount() {
         this.getAllBeverages();
-        console.log("Cache is overrated.");
+        // console.log("Cache is overrated.");
     }
 
     getAllBeverages() {
@@ -108,7 +108,7 @@ class App extends React.Component {
     // TODO: Support multiple users
 
     render() {
-        const userName = "Barks & RAK";
+        const userName = "RAK's Cellar";
         const cellarLogo = <img src="./icons/cellar-logo.jpg" alt="Cellar Logo"/>
         // console.log(this.state.picklistData)
 

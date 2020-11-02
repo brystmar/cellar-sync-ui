@@ -5,8 +5,6 @@ input,
 button
   font-family: inherit
   outline: transparent
-.btn-del
-  display: none
 
 .list-item-grid
   margin: 0
@@ -20,7 +18,7 @@ button
 .grid-cell
   opacity: 1
   display: flex
-  background: whitesmoke
+  background: #f0f0f0
   flex-direction: column
   align-content: space-between
   //border: 1px solid gray
@@ -66,7 +64,7 @@ button
   display: flex
   align-items: center
   margin: 0.1em
-  border: 1px dashed blue
+  //border: 1px dashed red
   border-radius: 6px
 
 .clickable-toggle
@@ -80,7 +78,7 @@ button
 .input-group
   display: grid
   grid-template: 1fr / 3fr 7fr
-  margin: auto
+  //margin: auto
   //.list-item-value,
   //.list-item-value-icon
   //  margin: auto 0  // center vertically
@@ -108,7 +106,6 @@ button
   grid-area: toggles
   display: flex
   flex-direction: column
-  margin: 0
   //.list-item-key
   //  min-width: 115px
 
@@ -153,13 +150,21 @@ button
 
 .button-container
   grid-area: action-buttons
-  display: flex
-  align-items: center
+  //display: flex
+  //align-items: center
   margin: 0.2rem
   padding: 0 0.2rem
+  //display: none
   .btn-reset-outline
     margin-right: 0.2rem
+  .btn,
+  .btn-del
+    outline: none
+    border: 2px solid transparent
 
 .del-button
   grid-area: del-button
+  display: flex
+  margin-right: 0.25em
   justify-content: flex-end
+

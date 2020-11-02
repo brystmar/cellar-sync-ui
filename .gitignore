@@ -149,6 +149,9 @@ sketch
 # production
 /build
 
+# SSL certs
+/.cert/**
+
 # misc
 **/.env
 .env

@@ -19,23 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="">
+    <list default="true" id="12017ab0-1e1c-41f9-a26d-b1577e980f88" name="Default Changelist" comment="Cleaned up a bunch of SASS artifacts; added background pattern">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cellar-sync-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cellar-sync-ui.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/autocomplete.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/autocomplete.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/autocomplete.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/autocomplete.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/global_sass_variables.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/_variables.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/global_sass_variables.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/_variables.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/global_sass_variables.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/_variables.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PicklistChild.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PicklistChild.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/_variables.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/_variables.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/list_items.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/list_items.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/list_items.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/list_items.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/list_items.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/list_items.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/picklists.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/picklists.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/picklists.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/picklists.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/styles.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/styles.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/styles.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,13 +160,6 @@
       <workItem from="1594943508283" duration="21000" />
       <workItem from="1594948702198" duration="1853000" />
       <workItem from="1595004202983" duration="52347000" />
-    </task>
-    <task id="LOCAL-00004" summary="Edit buttons in place but don't work yet.  Added icons.">
-      <created>1589771293168</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1589771293168</updated>
     </task>
     <task id="LOCAL-00005" summary="Created components for each ELI attribute">
       <created>1589782047442</created>
@@ -507,13 +497,29 @@
       <option name="project" value="LOCAL" />
       <updated>1595789315669</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Cleaned up a bunch of SASS artifacts; added background pattern">
+      <created>1604270035055</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1604270035055</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
@@ -521,7 +527,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="true" />
-    <MESSAGE value="Single source of truth for values of all attributes" />
     <MESSAGE value="Delete button, plus better form/popover control overall" />
     <MESSAGE value="Fixed missing argument on PUT request.  Also now explicitly setting beverage attribute defaults." />
     <MESSAGE value="PUT finally works.  Squashin' bugs." />
@@ -546,7 +551,8 @@
     <MESSAGE value="Second-level nav for the picklists" />
     <MESSAGE value="Picklist nav is taking shape" />
     <MESSAGE value="About to change PicklistChild into a Container" />
-    <option name="LAST_COMMIT_MESSAGE" value="About to change PicklistChild into a Container" />
+    <MESSAGE value="Cleaned up a bunch of SASS artifacts; added background pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up a bunch of SASS artifacts; added background pattern" />
   </component>
   <component name="WindowStateProjectService">
     <state x="770" y="434" width="545" height="367" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604264717133">

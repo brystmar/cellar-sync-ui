@@ -248,4 +248,17 @@ footer .footer-content img {
   border: 2px solid #8C180D;
 }
 
+input,
+select {
+  padding: 0.35em 0.65em;
+  border: 1px solid #808080;
+  background-color: #fff;
+}
+
+@media (max-width: 899px) {
+  .btn-add-floating {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */

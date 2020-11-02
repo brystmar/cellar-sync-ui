@@ -5,7 +5,7 @@ function Footer() {
         <footer className="footer-container">
             <div className="footer-content">
                 <p>
-                    Another mediocre app from <a href="http://github.com/brystmar/"
+                    Another mediocre app by <a href="http://github.com/brystmar/"
                                                  target="_blank"
                                                  rel="noopener noreferrer">brystmar</a>
                 </p>
